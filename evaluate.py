@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import argparse
 from collections import Counter
 import json
@@ -20,9 +21,9 @@ def main():
                         help='run bootstrap for differences')
     parser.add_argument('--output', type=Path, help='output results as json')
     args = parser.parse_args()
-    ground_truth = load_json(Path('ground-truth.json'))
+    ground_truth = load_json(Path('new-ground-truth.json'))
     metrics_by_name = {}
-    for path in sorted(Path('output').glob('*.json')):
+    for path in sorted(Path('newoutput').glob('*.json')):
         name = path.stem
         metrics = evaluate(ground_truth, load_json(path), args.n_bootstrap)
         print('{name:<20} '
