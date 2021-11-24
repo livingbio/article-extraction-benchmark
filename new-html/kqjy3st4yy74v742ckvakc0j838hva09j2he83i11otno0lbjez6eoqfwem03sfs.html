@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+
+<html class="ie" lang="zh-TW">
+
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-TW" class="no-js">
+<!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"601262072",accountID:"3322454",trustKey:"3322454",xpid:"VwUFU1JWDBAFUFhQAgcFU1A=",licenseKey:"NRJS-c7dc86a4994fc7e5967",applicationID:"549256254"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(32),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(33),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),P=t(15),S=t(10),M=t("ee"),N=M.get("tracer"),C=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),S.on(p,r),M.on(d,o),b.on(l,o),S.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),P.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),N.buffer([u,"no-"+u]),S.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(S,"new-jsonp"),a(S,"jsonp-end"),a(S,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,C(!0)),w[v]("load",i,C(!0)),w[v]("popstate",function(){i(0,U>1)},C(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(33),a=t(32);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(32),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(29),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=NREUM.o.REQ,y=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof y&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof y&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof y&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;"string"==typeof i?n=i:"object"==typeof i&&i instanceof g?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n);var s=(""+(i&&i instanceof g&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.endTime=a.now(),this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(32),s=t(33),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(34);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],28:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(c&&c<r.startTime)return;p("lcp",[r])}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof v&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),g=!0,p("timing",["fi",e,n])}}function s(t){"hidden"===t&&(c=l.now(),p("pageHide",[c]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d,p=t("handle"),l=t("loader"),h=t(31),m=t(23),v=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(w){}u=new PerformanceObserver(o);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(w){}d=new PerformanceObserver(i);try{d.observe({type:"layout-shift",buffered:!0})}catch(w){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(t){document.addEventListener(t,a,m(!1))})}h(s)}},{}],29:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],30:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],31:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],32:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],33:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],34:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(32),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=T.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(R,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+T.offset],null,"api"),s("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=h+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===v.readyState&&i()}function i(){s("mark",["domContent",a()+T.offset],null,"api")}var a=t(26),s=t("handle"),c=t(32),f=t("ee"),u=t(30),d=t(27),p=t(21),l=t(23),h=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,w="addEventListener",g="attachEvent",y=m.XMLHttpRequest,x=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var E=""+location,R={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1212.min.js"},O=y&&x&&x[w]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:u,disabled:b};if(!b){t(20),t(28),v[w]?(v[w]("DOMContentLoaded",i,l(!1)),m[w]("load",r,l(!1))):(v[g]("onreadystatechange",o),m[g]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(33),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+<meta name="robots" content="all" />
+<meta name="author" content="熱血玩台南。跳躍新世界" />
+<meta name="rating" content="general" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="alternate" title="RSS 2.0 訂閱最新文章" href="https://decing.tw/feed/" />
+<link rel="pingback" href="https://decing.tw/xmlrpc.php">
+<!--[if lt IE 9]>
+
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+	<![endif]-->
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>【台南美食】金門58度高粱酒香腸「空運快閃」台南三天！量少只接受預購，台南自取運費省起來~ - 熱血玩台南。跳躍新世界</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A100%7CLora&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A100%7CLora&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A100%7CLora&#038;display=swap" /></noscript>
+<link rel="canonical" href="https://decing.tw/tainan-jinjiawang/" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="【台南美食】金門58度高粱酒香腸「空運快閃」台南三天！量少只接受預購，台南自取運費省起來~ - 熱血玩台南。跳躍新世界" />
+<meta property="og:description" content="台南快閃團又來了！這次的快閃團可是從金門遠道而來的「金門58高粱香腸」真的是直接加入金門58度高粱下去製作，不 [&hellip;]" />
+<meta property="og:url" content="https://decing.tw/tainan-jinjiawang/" />
+<meta property="og:site_name" content="熱血玩台南。跳躍新世界" />
+<meta property="article:publisher" content="https://www.facebook.com/hotainnan/" />
+<meta property="article:author" content="https://www.facebook.com/hotainnan/" />
+<meta property="article:published_time" content="2021-09-05T14:05:59+00:00" />
+<meta property="article:modified_time" content="2021-09-07T13:18:53+00:00" />
+<meta property="og:image" content="https://decing.tw/wp-content/uploads/20210907210551_44.jpg" />
+<meta property="og:image:width" content="1000" />
+<meta property="og:image:height" content="500" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://decing.tw/#website","url":"https://decing.tw/","name":"\u71b1\u8840\u73a9\u53f0\u5357\u3002\u8df3\u8e8d\u65b0\u4e16\u754c","description":"\u7f8e\u98df\u3002\u65c5\u904a\u3002\u751f\u6d3b","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://decing.tw/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"zh-TW"},{"@type":"ImageObject","@id":"https://decing.tw/tainan-jinjiawang/#primaryimage","inLanguage":"zh-TW","url":"https://decing.tw/wp-content/uploads/20210907210551_44.jpg","contentUrl":"https://decing.tw/wp-content/uploads/20210907210551_44.jpg","width":1000,"height":500},{"@type":"WebPage","@id":"https://decing.tw/tainan-jinjiawang/#webpage","url":"https://decing.tw/tainan-jinjiawang/","name":"\u3010\u53f0\u5357\u7f8e\u98df\u3011\u91d1\u958058\u5ea6\u9ad8\u7cb1\u9152\u9999\u8178\u300c\u7a7a\u904b\u5feb\u9583\u300d\u53f0\u5357\u4e09\u5929\uff01\u91cf\u5c11\u53ea\u63a5\u53d7\u9810\u8cfc\uff0c\u53f0\u5357\u81ea\u53d6\u904b\u8cbb\u7701\u8d77\u4f86~ - \u71b1\u8840\u73a9\u53f0\u5357\u3002\u8df3\u8e8d\u65b0\u4e16\u754c","isPartOf":{"@id":"https://decing.tw/#website"},"primaryImageOfPage":{"@id":"https://decing.tw/tainan-jinjiawang/#primaryimage"},"datePublished":"2021-09-05T14:05:59+00:00","dateModified":"2021-09-07T13:18:53+00:00","author":{"@id":"https://decing.tw/#/schema/person/88493d9f7d4581c60c4e836aa12a616f"},"breadcrumb":{"@id":"https://decing.tw/tainan-jinjiawang/#breadcrumb"},"inLanguage":"zh-TW","potentialAction":[{"@type":"ReadAction","target":["https://decing.tw/tainan-jinjiawang/"]}]},{"@type":"BreadcrumbList","@id":"https://decing.tw/tainan-jinjiawang/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"\u9996\u9801","item":"https://decing.tw/"},{"@type":"ListItem","position":2,"name":"\u3010\u53f0\u5357\u7f8e\u98df\u3011\u91d1\u958058\u5ea6\u9ad8\u7cb1\u9152\u9999\u8178\u300c\u7a7a\u904b\u5feb\u9583\u300d\u53f0\u5357\u4e09\u5929\uff01\u91cf\u5c11\u53ea\u63a5\u53d7\u9810\u8cfc\uff0c\u53f0\u5357\u81ea\u53d6\u904b\u8cbb\u7701\u8d77\u4f86~"}]},{"@type":"Person","@id":"https://decing.tw/#/schema/person/88493d9f7d4581c60c4e836aa12a616f","name":"\u71b1\u8840\u73a9\u53f0\u5357","image":{"@type":"ImageObject","@id":"https://decing.tw/#personlogo","inLanguage":"zh-TW","url":"https://secure.gravatar.com/avatar/d6c0b94743c45390a7fddaeac2a6b642?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/d6c0b94743c45390a7fddaeac2a6b642?s=96&d=mm&r=g","caption":"\u71b1\u8840\u73a9\u53f0\u5357"},"description":"\u55e8~\u5927\u5bb6\u597d\uff0c\u6211\u5011\u662f\u71b1\u8840\u73a9\u53f0\u5357\uff01 \u9ed1\u9ed1\u53c8\u58ef\u58ef\u7684\u7537\u751f\u662f\u71b1\u8840\uff0c\u767d\u767d\u53c8\u7f8e\u7f8e\u7684\u5973\u5b69\u662f\u5fc3\u611ba\uff01 \u6211\u5011\u5f9e\u53f0\u5357\u51fa\u767c\uff0c\u7acb\u8db3\u53f0\u7063\uff01\u5e36\u8457\u4e00\u9846\u540d\u70ba\u3010\u521d\u8877\u3011\u7684\u5fc3\uff0c\u9818\u8457\u5927\u5bb6\u4e00\u8d77\u770b\u898b\u53f0\u7063\u548c\u4e16\u754c\u98a8\u666f\uff0c\u5403\u904d\u9053\u5730\u7f8e\u98df\u8207\u5c0f\u5403\uff01","sameAs":["https://decing.tw/","https://www.facebook.com/hotainnan/"]}]}</script>
+
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="訂閱《熱血玩台南。跳躍新世界 》&raquo;〈【台南美食】金門58度高粱酒香腸「空運快閃」台南三天！量少只接受預購，台南自取運費省起來~〉留言的資訊提供" href="https://decing.tw/tainan-jinjiawang/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://decing.tw/wp-includes/css/dist/block-library/style.min.css?ver=5.7.4' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='mediaelement-css' href='https://decing.tw/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://decing.tw/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='quads-style-css-css' href='https://decing.tw/wp-content/plugins/quick-adsense-reloaded/includes/gutenberg/dist/blocks.style.build.css?ver=2.0.30' type='text/css' media='all' />
+<link rel='stylesheet' id='to-top-font-awesome-css' href='https://decing.tw/wp-content/plugins/to-top/public/css/font-awesome/css/font-awesome.min.css?ver=4.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='to-top-css' href='https://decing.tw/wp-content/plugins/to-top/public/css/to-top-public.css?ver=2.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-icomoon-css' href='https://decing.tw/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=2.0.17' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-toc-css' href='https://decing.tw/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.17' type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+</style>
+<noscript>
+</noscript><link rel='stylesheet' id='achang-icon-css' href='https://decing.tw/wp-content/themes/achang-quill/img/icon-font/style.css?ver=5.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='achang-style-css' href='https://decing.tw/wp-content/themes/achang-quill/css/style.min.css?ver=1.2.12.9' type='text/css' media='all' />
+<link rel='stylesheet' id='achang_theme-style-rwd-css' href='https://decing.tw/wp-content/themes/achang-quill/css/style.rwd.min.css?ver=1.2.12.9' type='text/css' media='all' />
+
+<style id='jetpack_facebook_likebox-inline-css' type='text/css'>
+.widget_facebook_likebox {
+	overflow: hidden;
+}
+
+</style>
+<link rel='stylesheet' id='stickercss-css' href='https://decing.tw/wp-content/plugins/pixnet/resource/css/custom.css?ver=2.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://decing.tw/wp-content/plugins/tablepress/css/default.min.css?ver=1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='achang-jvc-init-css' href='https://decing.tw/wp-content/plugins/achangJetPackVirtualCounter/assets/minify/stylesheet.min.css?ver=2.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://decing.tw/wp-content/plugins/jetpack/css/jetpack.css?ver=10.1' type='text/css' media='all' />
+<link rel='stylesheet' id='dtree.css-css' href='https://decing.tw/wp-content/plugins/wp-dtree-30/wp-dtree.min.css?ver=4.4.5' type='text/css' media='all' />
+<style id='quads-styles-inline-css' type='text/css'>
+
+    .quads-location ins.adsbygoogle {
+        background: transparent !important;
+    }
+    
+    .quads-ad-label { font-size: 12px; text-align: center; color: #333;}
+</style>
+<script type='text/javascript' src='https://decing.tw/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js' defer></script>
+<script type='text/javascript' src='https://decing.tw/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' id='to-top-js-extra'>
+/* <![CDATA[ */
+var to_top_options = {"scroll_offset":"100","icon_opacity":"70","style":"font-awesome-icon","icon_type":"dashicons-arrow-up-alt","icon_color":"#ff0000","icon_bg_color":"#000000","icon_size":"32","border_radius":"5","image":"https:\/\/decing.tw\/wp-content\/plugins\/to-top\/admin\/images\/default.png","image_width":"65","image_alt":"","location":"bottom-right","margin_x":"20","margin_y":"20","show_on_admin":"0","enable_autohide":"0","autohide_time":"2","enable_hide_small_device":"","small_device_max_width":"640","reset":"0"};
+/* ]]> */
+</script>
+<script async type='text/javascript' src='https://decing.tw/wp-content/plugins/to-top/public/js/to-top-public.js?ver=2.2.2' id='to-top-js'></script>
+<script type='text/javascript' id='wk-tag-manager-script-js-after'>
+function shouldTrack(){
+var trackLoggedIn = true;
+var loggedIn = false;
+if(!loggedIn){
+return true;
+} else if( trackLoggedIn ) {
+return true;
+}
+return false;
+}
+function hasWKGoogleAnalyticsCookie() {
+return (new RegExp('wp_wk_ga_untrack_' + document.location.hostname)).test(document.cookie);
+}
+if (!hasWKGoogleAnalyticsCookie() && shouldTrack()) {
+//Google Tag Manager
+(function (w, d, s, l, i) {
+w[l] = w[l] || [];
+w[l].push({
+'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+});
+var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+j.async = true;
+j.src =
+'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-PXTD3C7');
+}
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/themes/achang-quill/js/rwd-menu.min.js?ver=1.2.12.9' id='achang_rwd-menu-js' defer></script>
+<script type='text/javascript' src='https://decing.tw/wp-content/themes/achang-quill/inc/js/achang.custom.js?ver=1.0' id='achang-custom-js' defer></script>
+<script type='text/javascript' id='stickerjs-js-extra'>
+/* <![CDATA[ */
+var object_name = {"stickerUrl":"https:\/\/decing.tw\/wp-content\/plugins\/pixnet\/resource\/img","siteUrl":"https:\/\/decing.tw","is_mobile":"","is_set":"","is_onrank":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/pixnet/resource/js/stickers.js?ver=2.9.9' id='stickerjs-js' defer></script>
+<script type='text/javascript' id='achang-jvc-init-js-extra'>
+/* <![CDATA[ */
+var jvc_init_params = {"ajaxurl":"https:\/\/decing.tw\/wp-admin\/admin-ajax.php?action=achang_jvc","widget_id":"achang_jetpack_virtual_counter-3","count_text":"\u7d71\u8a08\u4e2d...","security":"b2b84a5dc7"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/achangJetPackVirtualCounter/assets/minify/init.min.js?ver=2.8.1' id='achang-jvc-init-js' defer></script>
+<script type='text/javascript' id='dtree-js-extra'>
+/* <![CDATA[ */
+var WPdTreeSettings = {"animate":"1","duration":"250","imgurl":"https:\/\/decing.tw\/wp-content\/plugins\/wp-dtree-30\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/wp-dtree-30/wp-dtree.min.js?ver=4.4.5' id='dtree-js' defer></script>
+<link rel="https://api.w.org/" href="https://decing.tw/wp-json/" /><link rel="alternate" type="application/json" href="https://decing.tw/wp-json/wp/v2/posts/60115" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://decing.tw/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://decing.tw/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.7.4" />
+<link rel='shortlink' href='https://decing.tw/?p=60115' />
+<link rel="alternate" type="application/json+oembed" href="https://decing.tw/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdecing.tw%2Ftainan-jinjiawang%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://decing.tw/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdecing.tw%2Ftainan-jinjiawang%2F&#038;format=xml" />
+<meta property="dable:item_id" content="60115"><meta property="dable:published_time" content="2021-09-05T22:05:59+08:00"><meta property="dable:author" content="熱血玩台南"><meta property="dable:image" content="https://decing.tw/wp-content/uploads/20210907210551_44-250x125.jpg"><meta property="article:section" content="快閃團"><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>document.cookie = 'quads_browser_width='+screen.width;</script><style type='text/css'>img#wpstats{display:none}</style>
+<meta property="fb:app_id" content="1859004517696066" /><link rel="Shortcut Icon" href="https://decing.tw/wp-content/uploads/20170620141039_100.png" /><script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {jQuery($ => {
+        $("#achang-menu").on("click",e=>{
+            if($(e.target).hasClass("search-icon")){
+                $("#primary-search").show();
+                $("#search-cover").show();
+                $("#achang-menu .textfield").focus();
+            }else{
+                if( 0 === $(e.target).parents("#primary-search").length){
+                    $("#primary-search").hide();
+                    $("#search-cover").hide();
+                }
+            }
+        })
+    })});</script> <style type="text/css">
+        #header,
+        #header .no-logo,
+        #achang-menu,
+        #primary-search,
+        #footer,
+        #access ul ul,
+        .readmore-link a{
+            background-color: #ed154e;
+        }
+
+        #access ul li:after{
+            color: #ed154e;
+        }
+
+        #achang_menu_wrap>li>ul:before{
+            border-color: transparent transparent #ed154e transparent;
+        }
+        </style>
+<link rel="preload" as="image" href="https://i0.wp.com/decing.tw/wp-content/uploads/20210907210551_44.jpg?quality=90&ssl=1" /> <meta name="onesignal" content="wordpress-plugin" />
+<script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PARAM = { scope: "/" };
+        OneSignal.setDefaultNotificationUrl("https://decing.tw");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '0851b364-9640-4e80-8e92-71e32d3e1538';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://decing.tw/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.4bf73218-3550-4659-982d-970270d14d2d";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-left';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['showCredit'] = true;
+oneSignal_options['notifyButton']['text'] = {};
+                OneSignal.init(window._oneSignalInitOptions);
+                OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<script type="rocketlazyloadscript">
+            var _piq = _piq || [];
+        _piq.push(
+                ['setCustomVar', 'venue', '17-5ac2088869de5'],
+                ['trackPageView'],
+                ['trackPageClick']
+                );
+        (function(d, t, u, f, j) {
+         f = d.getElementsByTagName(t)[0];
+         j = d.createElement(t);
+         j.async = 1;
+         j.src = u;
+         f.parentNode.insertBefore(j, f);
+         })(document, 'script', '//s.pixanalytics.com/js/pi.min.js');
+        </script>
+<meta name="google-site-verification" content="Q5ROqs7e-cirBFMkyL_YZ54IsE6xEjxo9Nmu0IxCHKw" /><link rel="preconnect" href="//connect.facebook.net/zh_TW/sdk.js" /><script type="text/javascript" charset="utf-8" src="//a.breaktime.com.tw/js/au.js?spj=Y6U2218"></script>
+<meta name='dailymotion-domain-verification' content='dmooynbtts4i560ab' /><link rel="icon" href="https://decing.tw/wp-content/uploads/20190207011042_17-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://decing.tw/wp-content/uploads/20190207011042_17-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://decing.tw/wp-content/uploads/20190207011042_17-180x180.png" />
+<meta name="msapplication-TileImage" content="https://decing.tw/wp-content/uploads/20190207011042_17-270x270.png" />
+<style type="text/css" id="wp-custom-css">
+			#header .no-logo,#header {
+    background-color: #fff;
+}
+
+ #achang-menu, #primary-search, #footer, #access ul ul, .readmore-link a,#footer,.pagination .current, .pagination a:hover {
+    background-color: #3A8FB7;
+}
+
+#achang_menu_wrap>li>ul:before {
+    border-color: transparent transparent #3A8FB7 transparent;
+}
+#header .no-logo a{
+    color:#3A8FB7;
+}
+#access {
+    margin: 0 ; 
+}
+#access a {
+    padding: 5px 15px 25px;
+}
+
+#access ul li:after{
+    content: ".";
+    border-right: 1px solid #CCC;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 15px;
+    left: -3px;
+    color: #3A8FB7;
+}
+
+svg.search-icon.icon {
+    display: none;
+}
+
+
+.pagination .current, .pagination a:hover { border: 1px solid transparent; }
+
+@media screen and (max-width: 1112px){
+    #access a {
+    padding: 5px 5px 25px;
+    }
+    
+}
+@media screen and (max-width: 875px){
+    svg.search-icon.icon {
+       display: inherit;
+    }
+    #access {
+        margin: 0 24px; 
+    }
+    
+    #primary-search {
+        background-color: transparent;
+    }
+
+    #access ul li:after{
+        content: " ";
+    }
+}
+/*以下為原有的*/		</style>
+<style type='text/css'>#to_top_scrollup {color: #ff0000;opacity: 0.7;}</style>
+</head>
+<body data-rsssl=1 class="post-template-default single single-post postid-60115 single-format-standard">
+<div class="zi_ad_top"></div>
+<header id="header">
+<h1 class="has-logo"><a id="logo" href="https://decing.tw" title="熱血玩台南。跳躍新世界" class="logo"><img src="https://decing.tw/wp-content/uploads/20210429100920_93.jpg" alt="熱血玩台南。跳躍新世界"></a></h1>
+</header>
+<div class="sticky-menu">
+<div id="rwd-header"><a id="rwd-logo" href="https://decing.tw" title="熱血玩台南。跳躍新世界" style="color: #ffffff; font-size: 20px;">熱血玩台南。跳躍新世界</a></div>
+<div id="achang-menu">
+<nav id="access" role="navigation">
+<header><h3 class="assistive-text">Main Menu</h3></header>
+<svg viewBox="0 0 18 18" preserveAspectRatio="xMidYMid meet" focusable="false" class="search-icon icon"><path d="M 10,10 16.5,16.5 M 11,6 A 5,5 0 0 1 6,11 5,5 0 0 1 1,6 5,5 0 0 1 6,1 5,5 0 0 1 11,6 Z" class="search-icon icon" style="fill:none;stroke:#FFF;stroke-width:2px;stroke-linecap:round;stroke-miterlimit:10"></path></svg><div id="primary-search"><form role="search" method="get" id="searchform" action="https://decing.tw/">
+<div class="search-box">
+<input type="text" class="textfield" placeholder="搜尋文章..." value="" name="s" id="s" />
+<button type="submit" aria-label="搜尋">
+<i class="icon-search"></i>
+</button>
+</div>
+</form></div><div id="search-cover"></div><ul id="achang_menu_wrap" class="menu rwd-menu"><li id="menu-item-612" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-612"><a>台南美食</a>
+<ul class="sub-menu">
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-613"><a target="_blank" rel="noopener" href="https://decing.tw/category/tainan-food/food-foreign/">異國料理</a></li>
+<li id="menu-item-614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-614"><a target="_blank" rel="noopener" href="https://decing.tw/category/tainan-food/local-food/">道地小吃</a></li>
+<li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a target="_blank" rel="noopener" href="https://decing.tw/category/tainan-food/hot-pot/">鍋物料理</a></li>
+<li id="menu-item-617" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-617"><a target="_blank" rel="noopener" href="https://decing.tw/category/tainan-food/sweet/">甜點冰品</a></li>
+<li id="menu-item-618" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-618"><a target="_blank" rel="noopener" href="https://decing.tw/category/tainan-food/bbq/">鐵板燒烤</a></li>
+<li id="menu-item-616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-616"><a target="_blank" rel="noopener" href="https://decing.tw/category/tainan-food/brunch/">早午餐類</a></li>
+<li id="menu-item-630" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-630"><a href="https://decing.tw/2014-01-31-234/">小吃懶人包</a></li>
+</ul>
+</li>
+<li id="menu-item-619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-619"><a>台南旅遊</a>
+<ul class="sub-menu">
+<li id="menu-item-16616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16616"><a href="https://decing.tw/tainan-travelall/">台南半日一日遊規劃</a></li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a target="_blank" rel="noopener" href="https://decing.tw/2015-01-10-63/">台南二日遊規劃</a></li>
+<li id="menu-item-623" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-623"><a target="_blank" rel="noopener" href="https://decing.tw/2016-06-07-513/">神農街小旅行</a></li>
+<li id="menu-item-620" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-620"><a target="_blank" rel="noopener" href="https://decing.tw/2016-10-15-284/">楠西玉井二日遊</a></li>
+</ul>
+</li>
+<li id="menu-item-882" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-882"><a>台灣旅遊</a>
+<ul class="sub-menu">
+<li id="menu-item-886" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-886"><a target="_blank" rel="noopener" href="https://decing.tw/category/kao-travel/">高雄景點</a></li>
+<li id="menu-item-883" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-883"><a target="_blank" rel="noopener" href="https://decing.tw/category/hualien-travel/hualien-view/">花蓮景點</a></li>
+<li id="menu-item-887" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-887"><a target="_blank" rel="noopener" href="https://decing.tw/category/chiayi-travel/chiayi-view/">嘉義景點</a></li>
+<li id="menu-item-888" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-888"><a target="_blank" rel="noopener" href="https://decing.tw/category/penghu-travel/penghu-view/">澎湖景點</a></li>
+</ul>
+</li>
+<li id="menu-item-625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-625"><a>國外旅遊</a>
+<ul class="sub-menu">
+<li id="menu-item-13665" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13665"><a href="https://decing.tw/category/world-trip/%e6%97%a5%e6%9c%ac%e4%bb%99%e5%8f%b0/">日本仙台</a></li>
+<li id="menu-item-13666" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13666"><a href="https://decing.tw/category/world-trip/%e6%97%a5%e6%9c%ac%e5%b1%b1%e5%bd%a2/">日本山形</a></li>
+<li id="menu-item-1325" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1325"><a target="_blank" rel="noopener" href="https://decing.tw/japan-kyushu-1/">日本九州</a></li>
+<li id="menu-item-626" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-626"><a target="_blank" rel="noopener" href="https://decing.tw/category/world-trip/kansai/">日本關西</a></li>
+<li id="menu-item-4686" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4686"><a target="_blank" rel="noopener" href="https://decing.tw/category/world-trip/hkmacao/">香港澳門</a></li>
+<li id="menu-item-627" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-627"><a target="_blank" rel="noopener" href="https://decing.tw/category/world-trip/australia/">澳洲雪梨</a></li>
+</ul>
+</li>
+<li id="menu-item-628" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-628"><a href="https://decing.tw/category/group-buy/buybuy/">宅配美食</a></li>
+<li id="menu-item-573" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-573"><a target="_blank" rel="noopener" href="https://decing.tw/about-me/">關於熱血玩台南</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div id="content">
+<div id="main" role="main">
+<article id="post-60115" role="article" class="page-single">
+<header>
+<h1>【台南美食】金門58度高粱酒香腸「空運快閃」台南三天！量少只接受預購，台南自取運費省起來~</h1>
+<div class="post-meta">
+<time datetime="2021-09-05T22:05:59+08:00" data-updated="true">
+<span class="post-date">2021.09.05</span>
+</time>
+<div class="cat">
+<a href="https://decing.tw/category/group-buy/%e5%bf%ab%e9%96%83%e5%9c%98/" rel="category tag">快閃團</a>
+</div>
+</div>
+</header>
+<div id="share-box">
+<div class="sn">
+<div class="fb-like" data-href="https://decing.tw/tainan-jinjiawang/" data-send="true" data-layout="box_count" data-width="60" data-show-faces="false"></div>
+</div>
+<div class="sn">
+<div class="fb-send" data-href="https://decing.tw/tainan-jinjiawang/"></div>
+</div>
+<div class="sn">
+<div class="line-it-button" data-lang="zh_Hant" data-type="share-e" data-ver="2" data-url="https://decing.tw/tainan-jinjiawang/" style="display: none;"></div>
+<script type="rocketlazyloadscript" src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+</div>
+</div>
+<div class="single-top"></div>
+<div class="Zi_ad_ar_iR"><div itemprop="articleBody" class="dable-content-wrapper"><p>台南快閃團又來了！這次的快閃團可是從金門遠道而來的<span style="color: #ff0000;"><strong><span style="text-decoration: underline;"><a style="color: #ff0000; text-decoration: underline;" href="https://decing.tw/tainan-jinjiawang/" target="_blank" rel="noopener">「金門58高粱香腸」</a></span></strong></span>真的是直接加入金門58度高粱下去製作，不誇張沒有在跟你客氣的，這間可是各大百貨公司都邀請快閃的金門名店，這次快閃來到台南，<span style="color: #0000ff;">只開放預購四天(2021/9/5~9/8)，台南地區限定自取也只有三天的時間(9/16~9/18)</span>，時間有限數量也有限，建議大家可以先加入<span style="color: #0000ff;">我是快閃王JUMP官方line帳號</span>，可搜尋<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://page.line.me/588yeiht" target="_blank" rel="noopener">@588yeiht</a></span>，或點連結加入：<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://page.line.me/588yeiht"><strong>https://page.line.me/588yeiht</strong></a></span>直接可以下訂單喔~</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60174" src="https://decing.tw/wp-content/uploads/20210907210551_44.jpg" alt="" width="1000" height="500" srcset="https://decing.tw/wp-content/uploads/20210907210551_44.jpg 1000w, https://decing.tw/wp-content/uploads/20210907210551_44-768x384.jpg 768w, https://decing.tw/wp-content/uploads/20210907210551_44-250x125.jpg 250w" sizes="(max-width: 1000px) 100vw, 1000px" /></p>
+<p><span id="more-60115"></span>
+<span class="single-mid"></span>
+</p>
+<p><img class="alignnone size-full wp-image-63031" src="https://decing.tw/wp-content/uploads/20211104012110_25.jpg" alt="" width="1000" height="459" /></p>
+<div id="ez-toc-container" class="ez-toc-v2_0_17 counter-hierarchy counter-decimal ez-toc-grey">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">內容目錄</p>
+<span class="ez-toc-title-toggle"><a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle" style="display: none;"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1"><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#%E9%87%91%E9%96%8058%E9%AB%98%E7%B2%B1%E9%A6%99%E8%85%B8" title="金門58高粱香腸">金門58高粱香腸</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#%E9%87%91%E9%96%8058%E9%AB%98%E7%B2%B1%E9%A6%99%E8%85%B8_%E5%94%AE%E5%83%B9" title="金門58高粱香腸 售價">金門58高粱香腸 售價</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="#%E4%B8%8B%E5%96%AE%E6%96%B9%E5%BC%8F_%E5%8F%96%E8%B2%A8%E9%BB%9E" title="下單方式&amp;取貨點">下單方式&amp;取貨點</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="#%E6%9B%B4%E5%A4%9A%E5%8F%B0%E5%8D%97%E8%B3%87%E8%A8%8A%E4%BD%A0%E5%8F%AF%E4%BB%A5%E7%9E%A7%E7%9E%A7" title="更多台南資訊你可以瞧瞧">更多台南資訊你可以瞧瞧</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="%E9%87%91%E9%96%8058%E9%AB%98%E7%B2%B1%E9%A6%99%E8%85%B8"></span><span style="color: #ff0000;"><strong>金門58高粱香腸</strong></span><span class="ez-toc-section-end"></span></h2>
+<p>這次來快閃的金門58高粱香腸是直接從金門空運過來台南，趁著這次中秋檔期大家快點吃起來~</p>
+<p>直擊金門58高粱香腸工廠，可以看到他們真的是整罐的金門58高粱酒在倒，光看畫面就讓人好期待這口感！</p>
+<p><strong><span style="color: #0000ff;">只開放預購四天(2021/9/5~9/8)，台南地區限定自取也只有三天的時間(9/16~9/18)</span></strong></p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60104" src="https://decing.tw/wp-content/uploads/20210905194856_61.jpg" alt="" width="596" height="494" srcset="https://decing.tw/wp-content/uploads/20210905194856_61.jpg 596w, https://decing.tw/wp-content/uploads/20210905194856_61-250x207.jpg 250w" sizes="(max-width: 596px) 100vw, 596px" /> <img loading="lazy" class="alignnone size-full wp-image-60113" src="https://decing.tw/wp-content/uploads/20210905194939_33.jpg" alt="" width="620" height="443" srcset="https://decing.tw/wp-content/uploads/20210905194939_33.jpg 620w, https://decing.tw/wp-content/uploads/20210905194939_33-250x179.jpg 250w" sizes="(max-width: 620px) 100vw, 620px" /></p>
+<h2><span class="ez-toc-section" id="%E9%87%91%E9%96%8058%E9%AB%98%E7%B2%B1%E9%A6%99%E8%85%B8_%E5%94%AE%E5%83%B9"></span><span style="color: #ff0000;"><strong>金門58高粱香腸 售價</strong></span><span class="ez-toc-section-end"></span></h2>
+<p>這金門高粱58香腸在金門本地售價是250元，但因為空運來台南一定須要加收運費，從金門低溫冷凍寄過來直接運費就要加收250元，但如果從快閃王JUMP這邊直接購買只需要加收一包20元就能買到，<span style="color: #0000ff;">所以台南販售點一包是270元，但如果是直接購買4盒或是4盒以上都直接算一包250元</span>，等於直接幫你把冷凍運費給省了起來，而且這次只有一檔，又是全台南獨賣，想吃真的要好好把握，不用再跑金門，也不用等宅配，直接來台南現場取貨點<strong>「原型鋪子」</strong>就可以取得，但要記得先預購喔~</p>
+<blockquote><p><strong>可以先加入<span style="color: #0000ff;">我是快閃王JUMP官方line帳號</span>，可搜尋<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://page.line.me/588yeiht" target="_blank" rel="noopener">@588yeiht</a></span>，或點連結加入：<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://page.line.me/588yeiht">https://page.line.me/588yeiht</a></span>直接可以下訂單</strong></p></blockquote>
+<p><img loading="lazy" class="alignnone size-full wp-image-60106" src="https://decing.tw/wp-content/uploads/20210905194912_15.jpg" alt="" width="728" height="485" srcset="https://decing.tw/wp-content/uploads/20210905194912_15.jpg 728w, https://decing.tw/wp-content/uploads/20210905194912_15-250x167.jpg 250w" sizes="(max-width: 728px) 100vw, 728px" /></p>
+<p>一盒金門高粱香腸總共有14根(每包約560公克)，如果以250元價格來算的話，一根大約是18元，其實真的不貴啊！</p>
+<p>而且還是純正金門高粱酒下來製作，在台南甚至是整個台灣都很少見，今年沒意外只會快閃這一次，有興趣的朋友可以揪朋友一起購買，更加划算~</p>
+<p><span style="color: #0000ff;">高粱酒香腸保存期限可以達一年的時間，放在冷凍可以慢慢吃~要烤之前記得先泡水解凍喔。</span></p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60107" src="https://decing.tw/wp-content/uploads/20210905194918_60.jpg" alt="" width="728" height="485" srcset="https://decing.tw/wp-content/uploads/20210905194918_60.jpg 728w, https://decing.tw/wp-content/uploads/20210905194918_60-250x167.jpg 250w" sizes="(max-width: 728px) 100vw, 728px" /></p>
+<p>嚴選優質CAS健康百份百整塊台灣溫體豬後腿肉，遵循古法製作，以獨家配方搭配金門高粱酒調製而成，口感紥實，鮮嫩多汁，且保證不含防腐劑~</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60108" src="https://decing.tw/wp-content/uploads/20210905194921_10.jpg" alt="" width="728" height="485" srcset="https://decing.tw/wp-content/uploads/20210905194921_10.jpg 728w, https://decing.tw/wp-content/uploads/20210905194921_10-250x167.jpg 250w" sizes="(max-width: 728px) 100vw, 728px" /></p>
+<p>烤香腸的方式很多，用烤盤烤也是一種，用烤箱也可以，中秋烤肉想要怎麼吃就怎麼吃，有一種吃法可以試試看，就是先把香腸用蒸的方式處理一次，然後再烤，不但可以保留高粱酒的香氣，吃起來更會噴汁喔~而且不建議剪切來吃，直接整條拿起來嗑最能吃到這高粱酒香腸的原汁原味~</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60109" src="https://decing.tw/wp-content/uploads/20210905194927_41.jpg" alt="" width="728" height="485" srcset="https://decing.tw/wp-content/uploads/20210905194927_41.jpg 728w, https://decing.tw/wp-content/uploads/20210905194927_41-250x167.jpg 250w" sizes="(max-width: 728px) 100vw, 728px" /><img loading="lazy" class="alignnone size-full wp-image-60105" src="https://decing.tw/wp-content/uploads/20210905194906_83.jpg" alt="" width="1000" height="697" srcset="https://decing.tw/wp-content/uploads/20210905194906_83.jpg 1000w, https://decing.tw/wp-content/uploads/20210905194906_83-768x535.jpg 768w, https://decing.tw/wp-content/uploads/20210905194906_83-250x174.jpg 250w" sizes="(max-width: 1000px) 100vw, 1000px" /></p>
+<p>台南取貨點選在仁德區的<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/tainan-whole2/" target="_blank" rel="noopener">原型舖子</a></span>，建議大家可以先找到德南國小正門，從德南國小正對面的德南路一直往下開，左手邊就會看到這間原型舖子了，這間可以說是社區型態的好市多原肉專賣店，除了購買金門58高粱香腸外，其他商品也可以一起帶~</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60119" src="https://decing.tw/wp-content/uploads/20210905210224_75.jpg" alt="" width="1000" height="678" srcset="https://decing.tw/wp-content/uploads/20210905210224_75.jpg 1000w, https://decing.tw/wp-content/uploads/20210905210224_75-768x521.jpg 768w, https://decing.tw/wp-content/uploads/20210905210224_75-250x170.jpg 250w" sizes="(max-width: 1000px) 100vw, 1000px" /></p>
+<p>市面上少見的金門高粱酒58香腸這次快閃台南只有三天，想吃的朋友真的要先預訂，因為接近中秋節，廠商提供的數量不多，所以要買要快，不然下次要再來台南快閃就不知道甚麼時候了~想要購買的朋友記得先加入<strong><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://page.line.me/588yeiht">「我是快閃王JUMP</a></span>」</strong>的官方LINE！</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-60110" src="https://decing.tw/wp-content/uploads/20210905194933_30.jpg" alt="" width="728" height="485" srcset="https://decing.tw/wp-content/uploads/20210905194933_30.jpg 728w, https://decing.tw/wp-content/uploads/20210905194933_30-250x167.jpg 250w" sizes="(max-width: 728px) 100vw, 728px" /></p>
+<blockquote>
+<h2><span class="ez-toc-section" id="%E4%B8%8B%E5%96%AE%E6%96%B9%E5%BC%8F_%E5%8F%96%E8%B2%A8%E9%BB%9E"></span><span style="color: #ff0000;"><strong>下單方式&amp;取貨點</strong></span><span class="ez-toc-section-end"></span></h2>
+<p>1.請先加入我是快閃王JUMP官方line帳號，可搜尋<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600;" href="https://page.line.me/588yeiht"><strong>@588yeiht</strong></a></span>或點連結加入：<span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600;" href="https://page.line.me/588yeiht"><strong>https://page.line.me/588yeiht</strong></a></span></p>
+<p>2.私訊line帳號填寫預約資料<br />
+姓名：<br />
+電話：<br />
+數量：<br />
+取貨日期：</p>
+<p><strong><span style="color: #0000ff;">台南地區限定自取時間：9/16~9/18</span></strong></p>
+<p>3.請於預約日期到指定地點取貨，未如期且未先告知，將拉黑名單無法參加後續快閃活動，目前官方訊息較多，回覆會比較慢。</p>
+<p>4.如果路途遙遠的朋友，建議一定要帶保冷袋來購買喔！</p>
+<p><strong>取貨點：原型舖子</strong><br />
+<strong>地址：台南市仁德區德南路185號</strong><br />
+<strong>快閃日期：9/16~9/18 早上10點~晚上8點皆可領取</strong></p></blockquote>
+<p></p>
+<p><span style="color: #3366ff;"><strong>美食的口感屬熱血個人感受，僅供參考~</strong></span></p>
+<p><span style="color: #3366ff;"><strong>旅遊景點、食記均有一定時效性，正確資訊須以官方公告為主喔！</strong></span></p>
+<h2><span class="ez-toc-section" id="%E6%9B%B4%E5%A4%9A%E5%8F%B0%E5%8D%97%E8%B3%87%E8%A8%8A%E4%BD%A0%E5%8F%AF%E4%BB%A5%E7%9E%A7%E7%9E%A7"></span><span style="color: #ff0000;"><strong>更多台南資訊你可以瞧瞧</strong></span><span class="ez-toc-section-end"></span></h2>
+<p><span style="text-decoration: underline;"><a href="https://decing.tw/tainan-breakfastlazy/" target="_blank" rel="noopener"><span style="color: #ff6600; text-decoration: underline;">台南傳統早餐懶人包</span></a></span></p>
+<p><span style="color: #ff6600;"><a style="color: #ff6600;" href="https://decing.tw/tainan-convenientmore/" target="_blank" rel="noopener"><span style="text-decoration: underline;">台南便當懶人包</span></a></span></p>
+<p><a href="https://decing.tw/tainan-kidslazy/" target="_blank" rel="noopener"><span style="text-decoration: underline;"><span style="color: #ff6600; text-decoration: underline;">台南親子旅遊最新景點</span></span></a></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/tainan-shinhwalazy/" target="_blank" rel="noopener">新化美食跟著我這樣吃不踩雷</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/liveintainan/" target="_blank" rel="noopener noreferrer">台南合法民宿懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/tainan-travelall/" target="_blank" rel="noopener">台南旅遊一日遊、半日遊路線行程推薦</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/supper/" target="_blank" rel="noopener noreferrer">台南宵夜懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/tainan-drinks/" target="_blank" rel="noopener noreferrer">台南限定飲料店懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/tainan-souvenir/" target="_blank" rel="noopener noreferrer">台南伴手禮懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/2014-07-01-426/" target="_blank" rel="noopener noreferrer">台南必吃冰店懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/2014-01-31-234/" target="_blank" rel="noopener noreferrer">台南人推薦必吃美食小吃懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/hotpot-lazy/" target="_blank" rel="noopener noreferrer">台南火鍋懶人包必吃特輯</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/yongkangfood/" target="_blank" rel="noopener noreferrer">台南永康區必吃美食小吃懶人包</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/2015-01-10-63/" target="_blank" rel="noopener noreferrer">台南二日遊行程規劃</a></span></p>
+<p><span style="text-decoration: underline; color: #ff6600;"><a style="color: #ff6600; text-decoration: underline;" href="https://decing.tw/2014-12-25-182/" target="_blank" rel="noopener noreferrer">沙崙高鐵站轉乘台南市區交通指引</a></span></p>
+</div>
+<div id="dablewidget_x7yLQ4o6" data-widget_id="x7yLQ4o6">
+<script type="rocketlazyloadscript">
+(function(d,a,b,l,e,_) {
+if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+_=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);
+})(window,document,'dable','script');
+dable('setService', 'decing.tw');
+dable('sendLogOnce');
+dable('renderWidget', 'dablewidget_x7yLQ4o6');
+</script>
+</div>
+</div>
+<div class="Zi_ad_ar_linkad"></div>
+<div class="Zi_ad_ar_Rec"></div>
+<div class="single-btm"></div>
+
+<div class="quads-location quads-ad3" id="quads-ad3" style="float:none;margin:10px 0 10px 0;text-align:center;">
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhotainnan%2F&tabs&width=500&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1859004517696066" width="500" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+<br />
+</div>
+<div class="fix"></div>
+<footer>
+<span class="tag">標籤: <a href="https://decing.tw/tag/%e7%86%b1%e8%a1%80%e7%8e%a9%e5%8f%b0%e5%8d%97/" rel="tag">熱血玩台南</a>, <a href="https://decing.tw/tag/%e9%87%91%e9%96%80%e9%ab%98%e7%b2%b1%e9%85%9258%e9%a6%99%e8%85%b8/" rel="tag">金門高粱酒58香腸</a>, <a href="https://decing.tw/tag/%e5%8f%b0%e5%8d%97%e5%bf%ab%e9%96%83%e5%9c%98/" rel="tag">台南快閃團</a></span>
+</footer>
+</article>
+<section id="next-prev-posts">
+<header>
+<h3 class="assistive-text">上 / 下一篇文章</h3>
+</header>
+<div class="prev-post np-post item-1">
+<figure>
+<a rel="bookmark" title="閱讀：【台南景點】最夯台劇「斯卡羅」台南拍攝場景，完美復刻明清時期的府城樣貌：岸內糖廠影視基地" href="https://decing.tw/tainan-seqalu/"><img src="https://i1.wp.com/decing.tw/wp-content/uploads/20210904155740_13.jpg?quality=90&ssl=1&resize=350%2C233" title="【台南景點】最夯台劇「斯卡羅」台南拍攝場景，完美復刻明清時期的府城樣貌：岸內糖廠影視基地" alt="【台南景點】最夯台劇「斯卡羅」台南拍攝場景，完美復刻明清時期的府城樣貌：岸內糖廠影視基地" /></a>
+<figcaption>
+<h4>
+<a rel="bookmark" title="閱讀：【台南景點】最夯台劇「斯卡羅」台南拍攝場景，完美復刻明清時期的府城樣貌：岸內糖廠影視基地" href="https://decing.tw/tainan-seqalu/">
+<span class="inner-wrap">
+<span class="np">上一篇文章</span>
+<span class="title">【台南景點】最夯台劇「斯卡羅」台南拍攝場景，完美復刻明清時期的府城樣貌：岸內糖廠影視基地</span>
+</span>
+</a>
+</h4>
+</figcaption>
+</figure>
+</div>
+<div class="next-post np-post item-2">
+<figure>
+<a rel="bookmark" title="閱讀：【台南公益】台南喜憨兒庇護工場推出中秋烤肉組！這個中秋給你最不一樣的烤肉味~" href="https://decing.tw/tainan-careus2/"><img src="https://i2.wp.com/decing.tw/wp-content/uploads/20210902143710_54.jpg?quality=90&ssl=1&resize=350%2C233" title="【台南公益】台南喜憨兒庇護工場推出中秋烤肉組！這個中秋給你最不一樣的烤肉味~" alt="【台南公益】台南喜憨兒庇護工場推出中秋烤肉組！這個中秋給你最不一樣的烤肉味~" /></a>
+<figcaption>
+<h4>
+<a rel="bookmark" title="閱讀：【台南公益】台南喜憨兒庇護工場推出中秋烤肉組！這個中秋給你最不一樣的烤肉味~" href="https://decing.tw/tainan-careus2/">
+<span class="inner-wrap">
+<span class="np">下一篇文章</span>
+<span class="title">【台南公益】台南喜憨兒庇護工場推出中秋烤肉組！這個中秋給你最不一樣的烤肉味~</span>
+</span>
+</a>
+</h4>
+</figcaption>
+</figure>
+</div>
+</section>
+<div id="next-prev-post-arrow">
+<ul>
+<li class="next-post icon-angle-double-right"><span class="pn pt">同分類下一篇</span><span class="link"><a href="https://decing.tw/tainan-chaichaifood/" rel="next"> 【台南快閃】雲林黃金蒜片快閃台南！你沒想過的蒜頭滋味，限量限時預購只有四天~ </li></a></span>
+</ul>
+</div>
+<div class="achang-comments">
+<div class="achang-fb">
+<h4><span class="t">臉書留言</span></h4>
+<div class="fb-comments" data-href="https://decing.tw/tainan-jinjiawang/" data-order-by="reverse_time" data-width="100%" data-numposts="10" data-colorscheme="light"></div>
+</div>
+<div class="achang-wp">
+<h4><span class="t">一般留言</span></h4>
+<div id="comments" class="comments-area">
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">發佈留言 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/tainan-jinjiawang/#respond" style="display:none;">取消回覆</a></small></h3><form action="https://decing.tw/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">發佈留言必須填寫的電子郵件地址不會公開。</span> 必填欄位標示為 <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">留言</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">顯示名稱 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">電子郵件地址 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">個人網站網址</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">在<strong>瀏覽器</strong>中儲存顯示名稱、電子郵件地址及個人網站網址，以供下次發佈留言時使用。</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="發佈留言" /> <input type='hidden' name='comment_post_ID' value='60115' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b559bbd65c" /></p><input type="hidden" id="ak_js" name="ak_js" value="108" /><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea></form> </div>
+</div>
+</div>
+</div>
+</div>
+<aside id="sidebar">
+<section class="widget author_avatar">
+<h3 class="assistive-text">About</h3>
+<div class="userinfo">
+<a href="https://www.facebook.com/hotainnan/" title="熱血玩台南"><img src="https://decing.tw/wp-content/uploads/20171010155047_96.jpg" title="關於熱血玩台南" alt="熱血玩台南" /></a>
+<div class="desc">
+<p>嗨~大家好，我們是熱血玩台南！</p>
+<p>黑黑又壯壯的男生是熱血，白白又美美的女孩是心愛a！我們從台南出發，立足台灣！帶著一顆名為【初衷】的心，領著大家一起看見台灣和世界風景，吃遍道地美食與小吃！我沒有太多頭銜稱號，但我有顆熱血和腳踏實地的心。</p>
+<h2><a href="/cdn-cgi/l/email-protection#97f0fef8a0a6a3a7a4a1d7f0faf6fefbb9f4f8fa" target="_blank" rel="noopener"><img class="alignnone  wp-image-18707" src="https://decing.tw/wp-content/uploads/20190425091357_100.png" alt="" width="53" height="53" /></a> <strong><span style="color: #3366ff;" data-darkreader-inline-color="">聯繫請點我</span></strong></h2>
+</div>
+</div>
+</section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="Zi_ad_a_SB"></div></div></section><section id="side_medal_widget-2" class="widget side_medal">
+<div style="text-align: center;">
+<iframe src="//pixstar.events.pixnet.net/2020/sticker/?user=gio714036" frameborder="0" scrolling="no" width="180" height="300"></iframe>
+</div>
+</section><section id="custom_html-7" class="widget_text widget widget_custom_html"><h3>食尚玩家特派員</h3><div class="textwidget custom-html-widget">
+<span style="text-align:center;display:block;padding:10px 0">
+<a title="食尚玩家圈圈計畫 地區特派員" href="https://supertaste.tvbs.com.tw/hot/327984" target="_blank" rel="noopener">
+<img src="https://twida.org.tw/logo/supertaste-2021.png" alt="食尚玩家圈圈計畫 地區特派員" title="食尚玩家圈圈計畫 地區特派員" />
+</a>
+</span>
+</div></section><section id="facebook-likebox-2" class="widget widget_facebook_likebox"><h3><a href="https://www.facebook.com/hotainnan">熱血玩台南粉絲團</a></h3> <div id="fb-root"></div>
+<div class="fb-page" data-href="https://www.facebook.com/hotainnan" data-width="340" data-height="432" data-hide-cover="false" data-show-facepile="true" data-tabs="false" data-hide-cta="false" data-small-header="true">
+<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/hotainnan"><a href="https://www.facebook.com/hotainnan">熱血玩台南粉絲團</a></blockquote></div>
+</div>
+</section><section id="media_image-2" class="widget widget_media_image"><h3>輕旅行駐站玩家</h3><a href="https://travel.yam.com/Expert.aspx?sn=65"><img width="200" height="200" src="https://decing.tw/wp-content/uploads/20201231143935_72.jpg" class="image wp-image-47489  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://decing.tw/wp-content/uploads/20201231143935_72.jpg 200w, https://decing.tw/wp-content/uploads/20201231143935_72-150x150.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /></a></section><section id="custom_html-8" class="widget_text widget widget_custom_html"><h3>2020年12月份-人氣窩客</h3><div class="textwidget custom-html-widget"><a href="https://www.walkerland.com.tw/article/view/279194" target="_blank" rel="noopener"> <img src="https://www.walkerland.com.tw/images/member_badge/member_badge_5fca83dea97bb_20201205024550.png" border="0" alt="2020年11月「17家浮誇系美食」入選推薦" title="2020年11月「17家浮誇系美食」入選推薦" /></a>
+</div></section><section id="media_image-3" class="widget widget_media_image"><h3>2019年8月-人氣窩客</h3><img width="500" height="500" src="https://decing.tw/wp-content/uploads/20210306110404_30.jpg" class="image wp-image-51214  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://decing.tw/wp-content/uploads/20210306110404_30.jpg 500w, https://decing.tw/wp-content/uploads/20210306110404_30-150x150.jpg 150w, https://decing.tw/wp-content/uploads/20210306110404_30-250x250.jpg 250w" sizes="(max-width: 500px) 100vw, 500px" /></section><section id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="https://decing.tw/">
+<div class="search-box">
+<input type="text" class="textfield" placeholder="搜尋文章..." value="" name="s" id="s" />
+<button type="submit" aria-label="搜尋">
+<i class="icon-search"></i>
+</button>
+</div>
+</form></section><section id="wpdt-categories-widget-2" class="widget wpdt-categories"><h3>分類文章</h3><div class="dtree"><span class='oclinks oclinks_cat' id='oclinks_cat1'><a href='javascript:cat1.openAll();' title='展開全部'>展開全部</a><span class='oclinks_sep oclinks_sep_cat' id='oclinks_sep_cat1'> | </span><a href='javascript:cat1.closeAll();' title='收合全部'>收合全部</a></span>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+/* <![CDATA[ */
+try{
+if(document.getElementById && document.getElementById('oclinks_cat1')){document.getElementById('oclinks_cat1').style.display = 'block';}
+var cat1 = new wpdTree('cat1', 'https://decing.tw/','0');
+cat1.config.useLines=1;
+cat1.config.useIcons=0;
+cat1.config.closeSameLevel=1;
+cat1.config.folderLinks=0;
+cat1.config.useSelection=0;
+cat1.a(0,'root','','','','','');
+cat1.a(-24,-78,'懶人包','','category/tainan-lazy/lazy-bag/','','');
+cat1.a(-49,-80,'背包客','','category/taiwan-saty/bagpack/','','');
+cat1.a(-50,-4009,'員林美食','','category/%e5%93%a1%e6%9e%97%e6%97%85%e9%81%8a/yuanlin/','','');
+cat1.a(-70,0,'台南美食','','category/tainan-food/','','');
+cat1.a(-421,-4004,'雲林美食','','category/%e9%9b%b2%e6%9e%97%e6%97%85%e9%81%8a/%e9%9b%b2%e6%9e%97%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-435,-79,'高雄','','category/show/%e9%ab%98%e9%9b%84/','','');
+cat1.a(-603,-51,'住宿','','category/world-trip/kansai/%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-665,-753,'台南租車','','category/traffic-tainan/%e5%8f%b0%e5%8d%97%e7%a7%9f%e8%bb%8a/','','');
+cat1.a(-1052,-998,'台東住宿','','category/%e5%8f%b0%e6%9d%b1%e6%97%85%e9%81%8a/%e5%8f%b0%e6%9d%b1%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-1347,-77,'日本仙台','','category/world-trip/%e6%97%a5%e6%9c%ac%e4%bb%99%e5%8f%b0/','','');
+cat1.a(-1348,-1347,'仙台美食','','category/world-trip/%e6%97%a5%e6%9c%ac%e4%bb%99%e5%8f%b0/%e4%bb%99%e5%8f%b0%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-1382,-1381,'山形景點','','category/world-trip/%e6%97%a5%e6%9c%ac%e5%b1%b1%e5%bd%a2/%e5%b1%b1%e5%bd%a2%e6%99%af%e9%bb%9e/','','');
+cat1.a(-1415,-1414,'台南庇護工場','','category/%e5%8f%b0%e5%8d%97%e5%85%ac%e7%9b%8a%e5%96%ae%e4%bd%8d/%e5%8f%b0%e5%8d%97%e5%ba%87%e8%ad%b7%e5%b7%a5%e5%a0%b4/','','');
+cat1.a(-1589,-1588,'苗栗景點','','category/%e8%8b%97%e6%a0%97%e6%97%85%e9%81%8a/%e8%8b%97%e6%a0%97%e6%99%af%e9%bb%9e/','','');
+cat1.a(-1913,-4223,'台南素食','','category/%e7%b4%a0%e9%a3%9f%e5%b0%88%e5%8d%80/%e5%8f%b0%e5%8d%97%e7%b4%a0%e9%a3%9f/','','');
+cat1.a(-2145,-2138,'馬祖住宿','','category/mazu/%e9%a6%ac%e7%a5%96%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-2315,-949,'台中景點','','category/taichung-travel/%e5%8f%b0%e4%b8%ad%e6%99%af%e9%bb%9e/','','');
+cat1.a(-2489,-2488,'新竹伴手禮','','category/%e6%96%b0%e7%ab%b9%e6%97%85%e9%81%8a/%e6%96%b0%e7%ab%b9%e4%bc%b4%e6%89%8b%e7%a6%ae/','','');
+cat1.a(-2832,-2831,'桃園景點','','category/%e6%a1%83%e5%9c%92%e6%97%85%e9%81%8a/%e6%a1%83%e5%9c%92%e6%99%af%e9%bb%9e/','','');
+cat1.a(-2919,-2918,'台南小農','','category/%e5%8f%b0%e5%8d%97%e4%ba%ba%e7%89%a9%e8%aa%8c/%e5%8f%b0%e5%8d%97%e5%b0%8f%e8%be%b2/','','');
+cat1.a(-3061,-72,'南化區','','category/tainan-view/%e5%8d%97%e5%8c%96%e5%8d%80/','','');
+cat1.a(-3133,-2837,'宜蘭美食','','category/%e5%ae%9c%e8%98%ad%e6%97%85%e9%81%8a/%e5%ae%9c%e8%98%ad%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-3293,-3292,'好市多美食','','category/%e5%a5%bd%e5%b8%82%e5%a4%9a/%e5%a5%bd%e5%b8%82%e5%a4%9a%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-3473,-863,'高雄伴手禮','','category/kao-travel/%e9%ab%98%e9%9b%84%e4%bc%b4%e6%89%8b%e7%a6%ae/','','');
+cat1.a(-3535,-2022,'台北景點','','category/%e5%8f%b0%e5%8c%97%e6%97%85%e9%81%8a/%e5%8f%b0%e5%8c%97%e6%99%af%e9%bb%9e/','','');
+cat1.a(-3543,-3542,'彰化美食','','category/%e5%bd%b0%e5%8c%96%e6%97%85%e9%81%8a/%e5%bd%b0%e5%8c%96%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-3576,-74,'講師課程論壇系列','','category/life-share/%e8%ac%9b%e5%b8%ab%e8%aa%b2%e7%a8%8b%e8%ab%96%e5%a3%87%e7%b3%bb%e5%88%97/','','');
+cat1.a(-3577,-866,'屏東飲料','','category/pingtung-travel/%e5%b1%8f%e6%9d%b1%e9%a3%b2%e6%96%99/','','');
+cat1.a(-3603,-70,'台南冰店','','category/tainan-food/%e5%8f%b0%e5%8d%97%e5%86%b0%e5%ba%97/','','');
+cat1.a(-3865,-732,'澎湖冰店','','category/penghu-travel/%e6%be%8e%e6%b9%96%e5%86%b0%e5%ba%97/','','');
+cat1.a(-4188,-4187,'南投伴手禮','','category/%e5%8d%97%e6%8a%95%e6%97%85%e9%81%8a/%e5%8d%97%e6%8a%95%e4%bc%b4%e6%89%8b%e7%a6%ae/','','');
+cat1.a(-4336,-889,'花蓮飲料','','category/hualien-travel/%e8%8a%b1%e8%93%ae%e9%a3%b2%e6%96%99/','','');
+cat1.a(-4438,-3329,'台南親子體驗','','category/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e7%9b%b8%e9%97%9c/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e9%ab%94%e9%a9%97-%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e7%9b%b8%e9%97%9c/','','');
+cat1.a(-4891,-69,'快閃團','','category/group-buy/%e5%bf%ab%e9%96%83%e5%9c%98/','','');
+cat1.a(-5061,-793,'嘉義飲料','','category/chiayi-travel/%e5%98%89%e7%be%a9%e9%a3%b2%e6%96%99/','','');
+cat1.a(-5101,-5100,'小琉球交通','','category/%e5%b0%8f%e7%90%89%e7%90%83%e6%97%85%e9%81%8a/%e5%b0%8f%e7%90%89%e7%90%83%e4%ba%a4%e9%80%9a/','','');
+cat1.a(-5208,-5207,'金門美食','','category/%e9%87%91%e9%96%80%e6%97%85%e9%81%8a/%e9%87%91%e9%96%80%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-13,-69,'宅配','','category/group-buy/buybuy/','','');
+cat1.a(-28,-753,'台南公車資訊','','category/traffic-tainan/tainan-bus/','','');
+cat1.a(-52,-80,'飯店','','category/taiwan-saty/hotel/','','');
+cat1.a(-72,0,'台南旅遊','','category/tainan-view/','','');
+cat1.a(-452,-79,'台南','','category/show/%e5%8f%b0%e5%8d%97/','','');
+cat1.a(-611,-51,'美食','','category/world-trip/kansai/%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-758,-732,'澎湖甜點','','category/penghu-travel/%e6%be%8e%e6%b9%96%e7%94%9c%e9%bb%9e/','','');
+cat1.a(-864,-863,'高雄景點','','category/kao-travel/kao-view-kao-travel/','','');
+cat1.a(-999,-998,'台東景點','','category/%e5%8f%b0%e6%9d%b1%e6%97%85%e9%81%8a/%e5%8f%b0%e6%9d%b1%e6%99%af%e9%bb%9e/','','');
+cat1.a(-1371,-1347,'仙台住宿','','category/world-trip/%e6%97%a5%e6%9c%ac%e4%bb%99%e5%8f%b0/%e4%bb%99%e5%8f%b0%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-1381,-77,'日本山形','','category/world-trip/%e6%97%a5%e6%9c%ac%e5%b1%b1%e5%bd%a2/','','');
+cat1.a(-1385,-1381,'山形住宿','','category/world-trip/%e6%97%a5%e6%9c%ac%e5%b1%b1%e5%bd%a2/%e5%b1%b1%e5%bd%a2%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-1487,-949,'搭飛機資訊','','category/taichung-travel/%e6%90%ad%e9%a3%9b%e6%a9%9f%e8%b3%87%e8%a8%8a-taichung-travel/','','');
+cat1.a(-1542,-74,'急難救助','','category/life-share/%e6%80%a5%e9%9b%a3%e6%95%91%e5%8a%a9/','','');
+cat1.a(-2118,-2022,'台北美食','','category/%e5%8f%b0%e5%8c%97%e6%97%85%e9%81%8a/%e5%8f%b0%e5%8c%97%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-2139,-2138,'馬祖景點','','category/mazu/%e9%a6%ac%e7%a5%96%e6%97%85%e9%81%8a/','','');
+cat1.a(-2838,-2837,'宜蘭住宿','','category/%e5%ae%9c%e8%98%ad%e6%97%85%e9%81%8a/%e5%ae%9c%e8%98%ad%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-3072,-72,'左鎮區','','category/tainan-view/%e5%b7%a6%e9%8e%ae%e5%8d%80/','','');
+cat1.a(-3294,-3292,'好市多活動','','category/%e5%a5%bd%e5%b8%82%e5%a4%9a/%e5%a5%bd%e5%b8%82%e5%a4%9a%e6%b4%bb%e5%8b%95/','','');
+cat1.a(-3330,-3329,'台南親子課程','','category/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e7%9b%b8%e9%97%9c/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e8%aa%b2%e7%a8%8b/','','');
+cat1.a(-3638,-866,'屏東咖啡店','','category/pingtung-travel/%e5%b1%8f%e6%9d%b1%e5%92%96%e5%95%a1%e5%ba%97/','','');
+cat1.a(-3771,-70,'台南景觀餐廳','','category/tainan-food/%e5%8f%b0%e5%8d%97%e6%99%af%e8%a7%80%e9%a4%90%e5%bb%b3/','','');
+cat1.a(-4005,-4004,'雲林批發','','category/%e9%9b%b2%e6%9e%97%e6%97%85%e9%81%8a/%e9%9b%b2%e6%9e%97%e6%89%b9%e7%99%bc/','','');
+cat1.a(-4189,-4187,'南投景點','','category/%e5%8d%97%e6%8a%95%e6%97%85%e9%81%8a/%e5%8d%97%e6%8a%95%e6%99%af%e9%bb%9e/','','');
+cat1.a(-4380,-889,'花蓮伴手禮','','category/hualien-travel/%e8%8a%b1%e8%93%ae%e4%bc%b4%e6%89%8b%e7%a6%ae/','','');
+cat1.a(-4392,-793,'市集活動','','category/chiayi-travel/%e5%b8%82%e9%9b%86%e6%b4%bb%e5%8b%95/','','');
+cat1.a(-5,-70,'台南道地小吃','','category/tainan-food/local-food/','','');
+cat1.a(-46,-79,'台北','','category/show/taipei/','','');
+cat1.a(-54,-80,'民宿','','category/taiwan-saty/sleep-bed/','','');
+cat1.a(-466,-77,'日本九州','','category/world-trip/%e6%97%a5%e6%9c%ac%e4%b9%9d%e5%b7%9e/','','');
+cat1.a(-743,-753,'搭飛機資訊','','category/traffic-tainan/%e6%90%ad%e9%a3%9b%e6%a9%9f%e8%b3%87%e8%a8%8a/','','');
+cat1.a(-767,-732,'澎湖住宿','','category/penghu-travel/%e6%be%8e%e6%b9%96%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-865,-863,'高雄住宿','','category/kao-travel/%e9%ab%98%e9%9b%84%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-950,-949,'台中住宿','','category/taichung-travel/taichung-live/','','');
+cat1.a(-1166,-74,'政府相關','','category/life-share/%e6%94%bf%e5%ba%9c%e7%9b%b8%e9%97%9c/','','');
+cat1.a(-1228,-889,'花蓮住宿','','category/hualien-travel/%e8%8a%b1%e8%93%ae%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-1386,-1381,'山形美食','','category/world-trip/%e6%97%a5%e6%9c%ac%e5%b1%b1%e5%bd%a2/%e5%b1%b1%e5%bd%a2%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-1807,-3329,'台南親子景點','','category/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e7%9b%b8%e9%97%9c/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e6%99%af%e9%bb%9e/','','');
+cat1.a(-2023,-2022,'台北住宿','','category/%e5%8f%b0%e5%8c%97%e6%97%85%e9%81%8a/%e5%8f%b0%e5%8c%97%e4%bd%8f%e5%ae%bf/','','');
+cat1.a(-2980,-72,'白河區','','category/tainan-view/%e7%99%bd%e6%b2%b3%e5%8d%80/','','');
+cat1.a(-3295,-3292,'好市多生活用品','','category/%e5%a5%bd%e5%b8%82%e5%a4%9a/%e5%a5%bd%e5%b8%82%e5%a4%9a%e7%94%9f%e6%b4%bb%e7%94%a8%e5%93%81/','','');
+cat1.a(-3329,0,'台南親子相關','','category/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e7%9b%b8%e9%97%9c/','','');
+cat1.a(-3467,-866,'屏東美食','','category/pingtung-travel/%e5%b1%8f%e6%9d%b1%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-3591,-793,'嘉義伴手禮','','category/chiayi-travel/%e5%98%89%e7%be%a9%e4%bc%b4%e6%89%8b%e7%a6%ae/','','');
+cat1.a(-34,-863,'高雄美食','','category/kao-travel/kao-food/','','');
+cat1.a(-44,-753,'高鐵轉乘','','category/traffic-tainan/speed-rail/','','');
+cat1.a(-527,-74,'娛樂活動','','category/life-share/%e5%a8%9b%e6%a8%82%e6%b4%bb%e5%8b%95/','','');
+cat1.a(-573,-77,'交通服務','','category/world-trip/%e4%ba%a4%e9%80%9a%e6%9c%8d%e5%8b%99/','','');
+cat1.a(-697,-949,'台中美食','','category/taichung-travel/taichung-food/','','');
+cat1.a(-733,-732,'澎湖景點','','category/penghu-travel/penghu-view/','','');
+cat1.a(-890,-889,'花蓮景點','','category/hualien-travel/hualien-view/','','');
+cat1.a(-1813,-3329,'台南親子餐廳','','category/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e7%9b%b8%e9%97%9c/%e5%8f%b0%e5%8d%97%e8%a6%aa%e5%ad%90%e9%a4%90%e5%bb%b3/','','');
+cat1.a(-1988,-70,'台南便當店','','category/tainan-food/%e4%be%bf%e7%95%b6%e5%ba%97/','','');
+cat1.a(-2001,-866,'屏東交通','','category/pingtung-travel/%e5%b1%8f%e6%9d%b1%e4%ba%a4%e9%80%9a/','','');
+cat1.a(-2896,-72,'東山區','','category/tainan-view/%e6%9d%b1%e5%b1%b1%e5%8d%80/','','');
+cat1.a(-3935,-793,'嘉義食品行','','category/chiayi-travel/%e5%98%89%e7%be%a9%e9%a3%9f%e5%93%81%e8%a1%8c/','','');
+cat1.a(-4531,0,'台南賣場','','category/%e5%8f%b0%e5%8d%97%e8%b3%a3%e5%a0%b4/','','');
+cat1.a(-14,-74,'公益活動','','category/life-share/begoodman/','','');
+cat1.a(-81,-889,'花蓮美食','','category/hualien-travel/hualien-food/','','');
+cat1.a(-646,-77,'香港澳門','','category/world-trip/hkmacao/','','');
+cat1.a(-742,-732,'澎湖美食','','category/penghu-travel/%e6%be%8e%e6%b9%96%e7%be%8e%e9%a3%9f/','','');
+cat1.a(-867,-866,'屏東景點','','category/pingtung-travel/pingtung-view/','','');
+cat1.a(-2618,-72,'柳營區','','category/tainan-view/%e6%9f%b3%e7%87%9f%e5%8d%80/','','');
+cat1.a(-3166,-70,'台南宵夜','','category/tainan-food/%e5%8f%b0%e5%8d%97%e5%ae%b5%e5%a4%9c/','','');
+cat1.a(-3413,-793,'嘉義咖啡店','','category/chiayi-travel/%e5%98%89%e7%be%a9%e5%92%96%e5%95%a1%e5%ba%97/','','');
+cat1.a(-4050,0,'台南文具行','','category/%e5%8f%b0%e5%8d%97%e6%96%87%e5%85%b7%e8%a1%8c/','','');
+cat1.a(-18,-74,'3C用品','','category/life-share/3c/','','');
+cat1.a(-51,-77,'日本關西','','category/world-trip/kansai/','','');
+cat1.a(-753,0,'台南交通資訊','','category/traffic-tainan/','','');
+cat1.a(-868,-866,'屏東住宿','','category/pingtung-travel/pingtung-live/','','');
+cat1.a(-2367,-72,'楠西區','','category/tainan-view/%e6%a5%a0%e8%a5%bf%e5%8d%80/','','');
+cat1.a(-2906,-70,'台南酒吧','','category/tainan-food/%e5%8f%b0%e5%8d%97%e9%85%92%e5%90%a7/','','');
+cat1.a(-3452,-793,'嘉義批發','','category/chiayi-travel/%e5%98%89%e7%be%a9%e6%89%b9%e7%99%bc/','','');
+cat1.a(-20,-74,'特賣會活動','','category/life-share/onsale/','','');
+cat1.a(-32,-77,'澳洲雪梨','','category/world-trip/australia/','','');
+cat1.a(-877,-793,'生活用品','','category/chiayi-travel/%e7%94%9f%e6%b4%bb%e7%94%a8%e5%93%81/','','');
+cat1.a(-1414,0,'台南公益單位','','category/%e5%8f%b0%e5%8d%97%e5%85%ac%e7%9b%8a%e5%96%ae%e4%bd%8d/','','');
+cat1.a(-2403,-72,'山上區','','category/tainan-view/%e5%b1%b1%e4%b8%8a%e5%8d%80/','','');
+cat1.a(-3367,-70,'台南日式居酒屋','','category/tainan-food/%e6%97%a5%e5%bc%8f%e5%b1%85%e9%85%92%e5%b1%8b/','','');
+cat1.a(-3,-72,'中西區','','category/tainan-view/central/','','');
+cat1.a(-11,-70,'台南火鍋店','','category/tainan-food/hot-pot/','','');
+cat1.a(-26,-74,'活動紀錄','','category/life-share/activity/','','');
+cat1.a(-794,-793,'嘉義景點','','category/chiayi-travel/chiayi-view/','','');
+cat1.a(-2918,0,'台南人物誌','','category/%e5%8f%b0%e5%8d%97%e4%ba%ba%e7%89%a9%e8%aa%8c/','','');
+cat1.a(-41,-74,'生活用品','','category/life-share/life-work/','','');
+cat1.a(-53,-793,'嘉義住宿','','category/chiayi-travel/chiayi-live/','','');
+cat1.a(-1607,-72,'鹽水區','','category/tainan-view/%e9%b9%bd%e6%b0%b4%e5%8d%80/','','');
+cat1.a(-2146,-70,'台南海產店','','category/tainan-food/%e6%b0%b4%e7%94%a2%e6%b5%b7%e7%94%a2%e9%a1%9e/','','');
+cat1.a(-2979,0,'台南百貨公司','','category/%e5%8f%b0%e5%8d%97%e7%99%be%e8%b2%a8%e5%85%ac%e5%8f%b8/','','');
+cat1.a(-38,-793,'嘉義美食','','category/chiayi-travel/chiayi-food-2/','','');
+cat1.a(-57,-74,'補教訊息','','category/life-share/buxi/','','');
+cat1.a(-71,0,'台南住宿','','category/tainan-stay/','','');
+cat1.a(-1638,-72,'龍崎區','','category/tainan-view/%e9%be%8d%e5%b4%8e%e5%8d%80/','','');
+cat1.a(-2450,-70,'台南炸物專賣','','category/tainan-food/%e7%82%b8%e7%89%a9%e5%b0%88%e8%b3%a3/','','');
+cat1.a(-12,-74,'體育用品','','category/life-share/sport/','','');
+cat1.a(-1711,-72,'安定區','','category/tainan-view/%e5%ae%89%e5%ae%9a%e5%8d%80/','','');
+cat1.a(-1823,0,'台南批發','','category/%e5%8f%b0%e5%8d%97%e6%89%b9%e7%99%bc/','','');
+cat1.a(-1891,-70,'台南菜市場','','category/tainan-food/%e5%8f%b0%e5%8d%97%e8%8f%9c%e5%b8%82%e5%a0%b4/','','');
+cat1.a(-25,-70,'台南咖啡店','','category/tainan-food/cafe/','','');
+cat1.a(-62,-74,'按摩美容','','category/life-share/masagi/','','');
+cat1.a(-793,0,'嘉義旅遊','','category/chiayi-travel/','','');
+cat1.a(-1726,-72,'仁德區','','category/tainan-view/%e4%bb%81%e5%be%b7%e5%8d%80/','','');
+cat1.a(-1952,-70,'台南熱炒店','','category/tainan-food/%e7%86%b1%e7%82%92%e9%a1%9e/','','');
+cat1.a(-2085,-72,'玉井區','','category/tainan-view/%e7%8e%89%e4%ba%95%e5%8d%80/','','');
+cat1.a(-4223,0,'素食專區','','category/%e7%b4%a0%e9%a3%9f%e5%b0%88%e5%8d%80/','','');
+cat1.a(-1533,-72,'六甲區','','category/tainan-view/%e5%85%ad%e7%94%b2%e5%8d%80/','','');
+cat1.a(-1865,0,'連鎖餐飲','','category/%e9%80%a3%e9%8e%96%e9%a4%90%e9%a3%b2/','','');
+cat1.a(-1997,-70,'台南拉麵','','category/tainan-food/%e5%8f%b0%e5%8d%97%e6%8b%89%e9%ba%b5/','','');
+cat1.a(-1180,-72,'新營區','','category/tainan-view/%e6%96%b0%e7%87%9f%e5%8d%80/','','');
+cat1.a(-1855,-70,'台南鐵板燒','','category/tainan-food/%e9%90%b5%e6%9d%bf%e7%87%92/','','');
+cat1.a(-5207,0,'金門旅遊','','category/%e9%87%91%e9%96%80%e6%97%85%e9%81%8a/','','');
+cat1.a(-889,0,'花蓮旅遊','','category/hualien-travel/','','');
+cat1.a(-1197,-72,'善化區','','category/tainan-view/%e5%96%84%e5%8c%96%e5%8d%80/','','');
+cat1.a(-1569,-70,'台南夜市','','category/tainan-food/%e5%8f%b0%e5%8d%97%e5%a4%9c%e5%b8%82/','','');
+cat1.a(-4,-70,'台南異國料理','','category/tainan-food/food-foreign/','','');
+cat1.a(-998,0,'台東旅遊','','category/%e5%8f%b0%e6%9d%b1%e6%97%85%e9%81%8a/','','');
+cat1.a(-1307,-72,'新化區','','category/tainan-view/%e6%96%b0%e5%8c%96%e5%8d%80/','','');
+cat1.a(-7,-70,'台南飲品類','','category/tainan-food/drinks/','','');
+cat1.a(-413,-72,'關廟區','','category/tainan-view/%e9%97%9c%e5%bb%9f%e5%8d%80/','','');
+cat1.a(-863,0,'高雄旅遊','','category/kao-travel/','','');
+cat1.a(-8,-70,'台南甜點','','category/tainan-food/sweet/','','');
+cat1.a(-548,-72,'官田區','','category/tainan-view/%e5%ae%98%e7%94%b0%e5%8d%80/','','');
+cat1.a(-949,0,'台中旅遊','','category/taichung-travel/','','');
+cat1.a(-16,-70,'台南早午餐','','category/tainan-food/brunch/','','');
+cat1.a(-726,-72,'學甲區','','category/tainan-view/%e5%ad%b8%e7%94%b2%e5%8d%80/','','');
+cat1.a(-866,0,'屏東旅遊','','category/pingtung-travel/','','');
+cat1.a(-21,-70,'台南燒烤店','','category/tainan-food/bbq/','','');
+cat1.a(-31,-72,'後壁區','','category/tainan-view/hobi/','','');
+cat1.a(-5100,0,'小琉球旅遊','','category/%e5%b0%8f%e7%90%89%e7%90%83%e6%97%85%e9%81%8a/','','');
+cat1.a(-6,-72,'安平區','','category/tainan-view/aping/','','');
+cat1.a(-27,-70,'傳統早餐店','','category/tainan-food/breakfast/','','');
+cat1.a(-732,0,'澎湖旅遊','','category/penghu-travel/','','');
+cat1.a(-9,-72,'北門區','','category/tainan-view/bamen/','','');
+cat1.a(-36,-70,'台南麵包店','','category/tainan-food/bakery/','','');
+cat1.a(-2138,0,'馬祖旅遊','','category/mazu/','','');
+cat1.a(-15,-72,'西港區','','category/tainan-view/west-port/','','');
+cat1.a(-37,-70,'台南餐酒館','','category/tainan-food/dinner/','','');
+cat1.a(-4004,0,'雲林旅遊','','category/%e9%9b%b2%e6%9e%97%e6%97%85%e9%81%8a/','','');
+cat1.a(-17,-72,'將軍區','','category/tainan-view/general/','','');
+cat1.a(-40,-70,'台南伴手禮','','category/tainan-food/gift-food/','','');
+cat1.a(-4009,0,'員林旅遊','','category/%e5%93%a1%e6%9e%97%e6%97%85%e9%81%8a/','','');
+cat1.a(-19,-72,'北區','','category/tainan-view/%e5%8c%97%e5%8d%80/','','');
+cat1.a(-42,-70,'台南吃到飽餐廳','','category/tainan-food/eat-fat/','','');
+cat1.a(-1588,0,'苗栗旅遊','','category/%e8%8b%97%e6%a0%97%e6%97%85%e9%81%8a/','','');
+cat1.a(-23,-72,'東區','','category/tainan-view/eastern/','','');
+cat1.a(-65,-70,'台南喜宴餐廳','','category/tainan-food/happy/','','');
+cat1.a(-2022,0,'台北旅遊','','category/%e5%8f%b0%e5%8c%97%e6%97%85%e9%81%8a/','','');
+cat1.a(-33,-72,'南區','','category/tainan-view/south/','','');
+cat1.a(-2831,0,'桃園旅遊','','category/%e6%a1%83%e5%9c%92%e6%97%85%e9%81%8a/','','');
+cat1.a(-4727,-70,'台南防疫箱','','category/tainan-food/%e5%8f%b0%e5%8d%97%e9%98%b2%e7%96%ab%e7%ae%b1/','','');
+cat1.a(-35,-72,'永康區','','category/tainan-view/yongkang/','','');
+cat1.a(-2837,0,'宜蘭旅遊','','category/%e5%ae%9c%e8%98%ad%e6%97%85%e9%81%8a/','','');
+cat1.a(-43,-72,'下營區','','category/tainan-view/xia-ying/','','');
+cat1.a(-2488,0,'新竹旅遊','','category/%e6%96%b0%e7%ab%b9%e6%97%85%e9%81%8a/','','');
+cat1.a(-47,-72,'歸仁區','','category/tainan-view/guiren/','','');
+cat1.a(-3542,0,'彰化旅遊','','category/%e5%bd%b0%e5%8c%96%e6%97%85%e9%81%8a/','','');
+cat1.a(-48,-72,'七股區','','category/tainan-view/qigu/','','');
+cat1.a(-4187,0,'南投旅遊','','category/%e5%8d%97%e6%8a%95%e6%97%85%e9%81%8a/','','');
+cat1.a(-60,-72,'大內區','','category/tainan-view/danei/','','');
+cat1.a(-69,0,'團購美食','','category/group-buy/','','');
+cat1.a(-61,-72,'佳里區','','category/tainan-view/jiali/','','');
+cat1.a(-78,0,'台南懶人包','','category/tainan-lazy/','','');
+cat1.a(-66,-72,'麻豆區','','category/tainan-view/mado/','','');
+cat1.a(-80,0,'台灣住宿','','category/taiwan-saty/','','');
+cat1.a(-67,-72,'新市區','','category/tainan-view/xinshi/','','');
+cat1.a(-77,0,'國外旅遊','','category/world-trip/','','');
+cat1.a(-68,-72,'安南區','','category/tainan-view/annan/','','');
+cat1.a(-4142,0,'線上課程','','category/%e7%b7%9a%e4%b8%8a%e8%aa%b2%e7%a8%8b/','','');
+cat1.a(-1750,0,'全台超商美食','','category/chaoshang/','','');
+cat1.a(-2956,-72,'廟宇文化','','category/tainan-view/%e5%bb%9f%e5%ae%87%e6%96%87%e5%8c%96/','','');
+cat1.a(-2995,-72,'台南書店','','category/tainan-view/%e5%8f%b0%e5%8d%97%e6%9b%b8%e5%ba%97/','','');
+cat1.a(-3292,0,'好市多','','category/%e5%a5%bd%e5%b8%82%e5%a4%9a/','','');
+cat1.a(-74,0,'生活分享','','category/life-share/','','');
+cat1.a(-2904,0,'月份活動','','category/%e6%9c%88%e4%bb%bd%e6%b4%bb%e5%8b%95/','','');
+cat1.a(-79,0,'台灣展覽','','category/show/','','');
+cat1.a(-2981,0,'Telegram活動好康','','category/telegram%e6%b4%bb%e5%8b%95%e5%a5%bd%e5%ba%b7/','','');
+cat1.a(-1,0,'尚未整理','','category/uncategorized/','','');
+document.write(cat1);
+}catch(e){} /* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+/* <![CDATA[ */
+try{
+cat1.openTo('-4891', true); /*get the category*/
+}catch(e){} /* ]]> */
+</script>
+</div></section><section id="custom_html-10" class="widget_text widget widget_custom_html"><h3>友站連結</h3><div class="textwidget custom-html-widget"><a href="https://margaret.tw/" target="_blank" rel="noopener">瑪格。圖寫生活</a>
+<a href="https://t-players.com/" target="_blank" rel="noopener">台南大玩咖</a></div></section><section id="achang_jetpack_virtual_counter-3" class="widget widget_jetpack_virtual_counter"><h3>網站人氣統計</h3>
+<div class="achang_jvc">
+<div class="today">今日人氣：<span class="achang_jvc_today"><img src="https://decing.tw/wp-content/plugins/achangJetPackVirtualCounter/assets/ic_loading.gif" /></span></div>
+<div class="total">累計人氣：<span class="achang_jvc_total"><img src="https://decing.tw/wp-content/plugins/achangJetPackVirtualCounter/assets/ic_loading.gif" /></span></div>
+</div>
+</section><section id="side_sticker_widget-2" class="widget side_sticker">
+<div id='sticker' class='sticker'>
+<a target='_blank' href='https://pixranking.events.pixnet.net/personal?utm_source=personal-medium&utm_medium=sticker&utm_campaign=achang' rel='noopener'><img id='pixnet_league' class='no-display' src='https://decing.tw/wp-content/plugins/pixnet/resource/img/league_mobile.jpg' alt='個人媒體聯盟貼紙' loading='false'></a>
+<a target='_blank' href='https://pixranking.events.pixnet.net/personalrank?utm_source=personal-medium&utm_medium=stickerrank&utm_campaign=achang' rel='noopener'><img id='pixnet_rank' class='no-display' src='https://decing.tw/wp-content/plugins/pixnet/resource/img/ranking_mobile.jpg' alt='社群影響力貼紙' loading='false'></a>
+</div>
+</section><section id="custom_html-11" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="Zi_ad_a_SBS"></div></div></section>
+</aside>
+<div class="fix"></div>
+</div>
+<div class="socials">
+<a rel="nofollow noopener noreferrer" href="https://www.facebook.com/hotainnan/" title="Facebook" target="_blank"><i class="icon-facebook"></i>Facebook</a>
+<a rel="nofollow noopener noreferrer" href="https://www.instagram.com/hotainan/" title="Instagram" target="_blank"><i class="icon-instagram"></i>Instgram</a>
+<a rel="nofollow noopener noreferrer" href="http://pic.sopili.net/lnk/*http://tw.piliapp.com/email-html/show/?text=gio714036%40gmail.com" title="Email" target="_blank"><i class="icon-mail"></i>Email</a>
+<a rel="nofollow" href="https://decing.tw/feed/" title="RSS" target="_blank"><i class="icon-feed"></i>RSS</a>
+</div>
+<footer id="footer">
+<div id="foot-inner">
+<div class="footer-logo">
+<h1 class="no-logo"><a id="footer-logo" href="https://decing.tw" title="熱血玩台南。跳躍新世界" class="text">熱血玩台南。跳躍新世界</a></h1>
+</div>
+<div id="copyright">
+<div class="title">
+<span class="info">&copy; 2021 <a href="https://decing.tw" title="熱血玩台南。跳躍新世界">熱血玩台南。跳躍新世界 美食。旅遊。生活</a></span>
+<span class="free-themes">佈景：<a href="https://achang.tw/themes.html" title="本站使用「Quill」佈景主題。">Quill</a>.</span>
+<span class="design">網頁設計：<a href="https://achang.tw" title="WordPress設計">阿腸網頁設計</a>.</span>
+</div>
+<div class="fix"></div>
+</div>
+</div>
+<div class="fix"></div>
+</footer>
+<span aria-hidden="true" id="to_top_scrollup" class="fa fa-arrow-up"><span class="screen-reader-text">Scroll Up</span></span><noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXTD3C7" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe>
+</noscript>
+<div id="fb-root"></div>
+<script type="rocketlazyloadscript">
+            (function(d, s, id) {
+
+            var js, fjs = d.getElementsByTagName(s)[0];
+
+            if (d.getElementById(id)) return;
+
+            js = d.createElement(s); js.id = id;
+
+            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=&version=v2.6";
+            js.async = true;
+            js.defer = true;
+            js.crossorigin="anonymous";
+
+            fjs.parentNode.insertBefore(js, fjs);
+
+            }(document, "script", "facebook-jssdk"));
+        </script><script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/decing.tw","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-includes/js/comment-reply.min.js?ver=5.7.4' id='comment-reply-js' defer></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=1.2.12.9' id='devicepx-js' defer></script>
+<script type='text/javascript' id='jetpack-facebook-embed-js-extra'>
+/* <![CDATA[ */
+var jpfbembed = {"appid":"249643311490","locale":"zh_TW"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/jetpack/_inc/build/facebook-embed.min.js' id='jetpack-facebook-embed-js' defer></script>
+<script type='text/javascript' id='q2w3_fixed_widget-js-extra'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"sidebar","margin_top":50,"margin_bottom":0,"stop_id":"footer","screen_max_width":768,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["custom_html-11"]}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min.js?ver=5.3.0' id='q2w3_fixed_widget-js' defer></script>
+<script type='text/javascript' src='https://decing.tw/wp-includes/js/wp-embed.min.js?ver=5.7.4' id='wp-embed-js' defer></script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/quick-adsense-reloaded/assets/js/ads.js?ver=2.0.30' id='quads-admin-ads-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=5.7.4' async='async' id='remote_sdk-js'></script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?ver=2.2.0' id='jquery-smooth-scroll-js' defer></script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.2.1' id='js-cookie-js' defer></script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2' id='jquery-sticky-kit-js' defer></script>
+<script type='text/javascript' id='ez-toc-js-js-extra'>
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","width":"auto","scroll_offset":"30"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://decing.tw/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=2.0.17-1617301799' id='ez-toc-js-js' defer></script>
+<script defer type='text/javascript' src='https://decing.tw/wp-content/plugins/akismet/_inc/form.js?ver=4.1.12' id='akismet-form-js'></script>
+<script src='https://stats.wp.com/e-202147.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.1',blog:'130881750',post:'60115',tz:'8',srv:'decing.tw'} ]);
+	_stq.push([ 'clickTrackerInit', '130881750', '60115' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-c7dc86a4994fc7e5967","applicationID":"549256254","transactionName":"MgAGZUBZCEYDVRELCwtKMUNbFw9bBlMdTBQNFQ==","queueTime":0,"applicationTime":2,"atts":"HkcFEwhDG0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

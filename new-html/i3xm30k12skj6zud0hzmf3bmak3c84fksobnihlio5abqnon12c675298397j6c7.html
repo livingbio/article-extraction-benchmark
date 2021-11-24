@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+
+<script type="text/javascript">
+	_atrk_opts = { atrk_acct:"QF2yu1rcy520uW", domain:"kocpc.com.tw",dynamic: true};
+	(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+	</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=QF2yu1rcy520uW" style="display:none" height="1" width="1" alt="" /></noscript>
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta name="google-site-verification" content="NlxNlD6xDEGBgBHuePnycFkwoJ2HejSFRMaK6rzMtBQ" />
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-cb3633bb93cd3bac1ff",applicationID:"342639249"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="referrer" content="unsafe-url">
+<link rel="shortcut icon" type="image/x-icon" href="https://www.kocpc.com.tw/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.kocpc.com.tw/feed" />
+<link rel="alternate" type="text/xml" title="RSS .92" href="https://www.kocpc.com.tw/feed/rss" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="https://www.kocpc.com.tw/feed/atom" />
+<link rel="pingback" href="https://www.kocpc.com.tw/xmlrpc.php" />
+<style>li#wp-admin-bar-updates { display: none; } mark, ins { background: transparent!important; } li#wp-admin-bar-rank-math { display: none; } </style> 
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W22DLMZ');</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6G9DTX');</script>
+
+
+<script>var _comscore = _comscore || [];_comscore.push({ c1: "2", c2: "25796225" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script>
+
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"phrYp1KAfD20Cs", domain:"kocpc.com.tw",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=phrYp1KAfD20Cs" style="display:none" height="1" width="1" alt="" /></noscript>
+
+<meta name='dailymotion-domain-verification' content='dmknnwk0o9xp28dil' />
+<style>
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+.video-container iframe, .video-container object, .video-container embed {
+position: absolute;
+top: 0;left: 0;
+width: 100%;
+height: 100%;}
+.kocpc_bot_mobile{
+width:320px;
+margin:auto;
+}
+</style>
+<meta name="google-site-verification" content="vZebtIrgWMcwDz87H3XNBkM73fqPdZDzVP0L89zCVsE" />
+
+<title>在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單 - 電腦王阿達</title>
+<meta name="description" content="對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。" />
+<link rel="canonical" href="https://www.kocpc.com.tw/archives/328192" />
+<link rel="publisher" href="https://plus.google.com/+KocpcTw" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單 - 電腦王阿達" />
+<meta property="og:description" content="對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。" />
+<meta property="og:url" content="https://www.kocpc.com.tw/archives/328192" />
+<meta property="og:site_name" content="電腦王阿達" />
+<meta property="article:publisher" content="https://www.facebook.com/kocpctw" />
+<meta property="article:author" content="https://www.facebook.com/kocpctw/" />
+<meta property="article:tag" content="Android 音樂" />
+<meta property="article:tag" content="運動" />
+<meta property="article:tag" content="運動音樂" />
+<meta property="article:tag" content="鍛鍊" />
+<meta property="article:tag" content="鍛鍊音樂" />
+<meta property="article:section" content="Android App分享介紹" />
+<meta property="article:published_time" content="2020-06-18T16:31:47+08:00" />
+<meta property="fb:app_id" content="1080156882061038" />
+<meta property="og:image" content="https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg" />
+<meta property="og:image:secure_url" content="https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="534" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。" />
+<meta name="twitter:title" content="在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單 - 電腦王阿達" />
+<meta name="twitter:site" content="@kocpc" />
+<meta name="twitter:image" content="https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg" />
+<meta name="twitter:creator" content="@Rocky_Hsu" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.kocpc.com.tw\/","name":"\u96fb\u8166\u738b\u963f\u9054","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.kocpc.com.tw\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.kocpc.com.tw\/archives\/328192","sameAs":["https:\/\/www.facebook.com\/kocpctw","https:\/\/www.instagram.com\/kocpc\/","https:\/\/tw.linkedin.com\/in\/cheng-ta-shen-81871a75\/zh-tw","https:\/\/plus.google.com\/+KocpcTw","https:\/\/www.youtube.com\/user\/kocpc","https:\/\/twitter.com\/kocpc"],"@id":"#organization","name":"\u96fb\u8166\u738b\u963f\u9054","logo":"https:\/\/media.kocpc.com.tw\/kocpc\/2016\/10\/1475827816-bacab62ae95f373b99581d2296ee0298.png"}</script>
+
+<script id="kocpc-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+<link rel="stylesheet" href="https://www.kocpc.com.tw/wp-content/cache/minify/a5ff7.css?x36564" media="all" />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" href="https://www.kocpc.com.tw/wp-content/cache/minify/b9db2.css?x36564" media="all" />
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js?ver=3.1.1'></script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/bbcfb.js?x36564"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var advads_options = {"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+/* ]]> */
+</script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/2c6e9.js?x36564"></script>
+<link rel='shortlink' href='https://www.kocpc.com.tw/?p=328192' />
+<link rel="alternate" type="application/json+oembed" href="https://www.kocpc.com.tw/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.kocpc.com.tw%2Farchives%2F328192" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.kocpc.com.tw/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.kocpc.com.tw%2Farchives%2F328192&#038;format=xml" />
+<meta property="dable:item_id" content="328192"><meta property="dable:published_time" content="2020-06-18T16:31:47+08:00"><meta property="dable:author" content="Rocky"><meta property="dable:image" content="https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4-250x167.jpg"><meta property="og:image" content="https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4-250x167.jpg"><meta property="og:url" content="https://www.kocpc.com.tw/archives/328192"><meta property="og:title" content="在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單"><meta property="og:description" content="對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。"><meta property="article:published_time" content="2020-06-18T16:31:47+08:00"><meta property="article:section" content="Android App分享介紹"><meta property="article:section2" content="Android軟體分享與刷機教學"> 
+<script>
+	(function(d,a,b,l,e,_) { d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';_=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);})(window,document,'dable','script');
+	dable('setService', 'kocpc.com.tw/zimedia');
+	dable('sendLogOnce');
+	</script>
+
+<script>document.kocpcPostId = 328192;</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.kocpc.com.tw/archives/328192"},"headline":"在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單","image":{"@type":"ImageObject","url":"https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg","width":800,"height":534},"datePublished":"2020-06-18T16:31:47","dateModified":"2020-06-18T16:31:47","author":{"@type":"Person","name":"Rocky"},"publisher":{"@type":"Organization","name":"電腦王阿達","logo":{"@type":"ImageObject","url":"https://i0.zi.org.tw/kocpc/2020/01/1578275126-9a8a4c38fdbbb09907d2a7eaa11f9f75-456x60.png"}},"description":"對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。","keywords":["Android 音樂","運動","運動音樂","鍛鍊","鍛鍊音樂"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.kocpc.com.tw/archives/328192"},"headline":"在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單","image":{"@type":"ImageObject","url":"https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg","width":800,"height":534},"datePublished":"2020-06-18T16:31:47","dateModified":"2020-06-18T16:31:47","author":{"@type":"Person","name":"Rocky"},"publisher":{"@type":"Organization","name":"電腦王阿達","logo":{"@type":"ImageObject","url":"https://i0.zi.org.tw/kocpc/2020/01/1578275126-9a8a4c38fdbbb09907d2a7eaa11f9f75-456x60.png"}},"description":"對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。","keywords":["Android 音樂","運動","運動音樂","鍛鍊","鍛鍊音樂"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.kocpc.com.tw/archives/328192"},"headline":"在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單","image":{"@type":"ImageObject","url":"https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg","width":800,"height":534},"datePublished":"2020-06-18T16:31:47","dateModified":"2020-06-18T16:31:47","author":{"@type":"Person","name":"Rocky"},"publisher":{"@type":"Organization","name":"電腦王阿達","logo":{"@type":"ImageObject","url":"https://i0.zi.org.tw/kocpc/2020/01/1578275126-9a8a4c38fdbbb09907d2a7eaa11f9f75-456x60.png"}},"description":"對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。","keywords":["Android 音樂","運動","運動音樂","鍛鍊","鍛鍊音樂"]}</script><script type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u6700\u65b0\u79d1\u6280\u65b0\u805e","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/3c%e6%96%b0%e5%93%81%e6%90%b6%e5%85%88%e5%a0%b1"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u6700\u65b0\u79d1\u6280\u7522\u54c1\u5831\u5c0e","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"3C\u7522\u54c1\u958b\u7bb1\/\u5ee0\u5546\u9080\u6e2c","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/3c%e7%94%a2%e5%93%81%e9%96%8b%e7%ae%b1%e8%88%87%e5%bb%a0%e5%95%86%e9%82%80%e6%b8%ac"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"GPS\/\u884c\u8eca\u8a18\u9304\u5668\u8a55\u6e2c","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/gps%e8%a1%8c%e8%bb%8a%e8%a8%98%e9%8c%84%e5%99%a8%e8%a9%95%e6%b8%ac"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u79d1\u6280\u5ee0\u5546\u5c08\u8a2a\u5831\u5c0e","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e5%90%88%e4%bd%9c%e5%bb%a3%e7%b7%a8%e5%bb%a0%e5%95%86%e9%82%80%e8%ab%8b%e5%b0%88%e8%a8%aa"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u5c08\u984c\u5831\u5c0e","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/3c%e7%94%a2%e5%93%81%e9%96%8b%e7%ae%b1%e8%88%87%e5%bb%a0%e5%95%86%e9%82%80%e6%b8%ac"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u96fb\u8166\u786c\u9ad4\u5468\u908a\u60c5\u5831","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/hardware"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Android\u5468\u908a","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/android%e5%91%a8%e9%82%8a"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"iOS\u5468\u908a","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0\/ios%e5%91%a8%e9%82%8a"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u597d\u7528App\u4ecb\u7d39","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Android App\u5206\u4eab\u4ecb\u7d39","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8\/android-app%e5%88%86%e4%ba%ab%e4%bb%8b%e7%b4%b9"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Android \u57fa\u790e\u6559\u5b78","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8\/android-%e5%9f%ba%e7%a4%8e%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"iPhone\/iPad \u8edf\u9ad4\u4ecb\u7d39","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0\/iphoneipad-%e8%bb%9f%e9%ab%94%e4%bb%8b%e7%b4%b9"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"iPhone\/iPad \u4f7f\u7528\u6559\u5b78","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0\/iphoneipad-%e4%bd%bf%e7%94%a8%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"iOS JB\u6559\u5b78","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0\/ios-jb%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"iOS\u8edf\u9ad4\u8207JB\u76f8\u95dc\u6587\u7ae0","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"iOS JB\/CYDIA\u61c9\u7528","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0\/ios-jbcydia%e6%87%89%e7%94%a8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u8de8\u5e73\u53f0App","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8\/%e8%b7%a8%e5%b9%b3%e5%8f%b0app"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u901a\u8a0a\u9054\u4eba","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%80%9a%e8%a8%8a%e9%81%94%e4%ba%ba"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Telegram","url":"https:\/\/www.kocpc.com.tw\/archives\/tag\/telegram"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u96fb\u8166\u61c9\u7528\u8207\u5176\u4ed6\u6559\u5b78","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Mac OS \u8edf\u9ad4\u5206\u4eab\u8207\u6559\u5b78","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/mac-os-%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u7db2\u8def\u8207\u8edf\u9ad4\u61c9\u7528","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/%e7%b6%b2%e8%b7%af%e8%88%87%e8%bb%9f%e9%ab%94%e6%87%89%e7%94%a8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"WordPress \u67b6\u7ad9\u6559\u5b78\u5206\u4eab","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/wordpress-%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u591a\u5a92\u9ad4\u8f49\u6a94\/\u904b\u7528","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/%e5%a4%9a%e5%aa%92%e9%ab%94%e8%bd%89%e6%aa%94%e9%81%8b%e7%94%a8"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u8a9e\u6587\u5b78\u7fd2","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/%e8%aa%9e%e6%96%87%e5%ad%b8%e7%bf%92"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u8f49\u8cbc\u597d\u6587","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/%e8%bd%89%e8%b2%bc%e5%a5%bd%e6%96%87"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u5176\u4ed6\u6587\u7ae0","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac\/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8\/%e5%85%b6%e4%bb%96%e6%96%87%e7%ab%a0"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u65c5\u904a\u8207\u7f8e\u98df","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a\/%e6%97%85%e9%81%8a%e8%88%87%e7%be%8e%e9%a3%9f"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u751f\u6d3b\u8207\u65c5\u904a","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u5716\u6587\u5275\u4f5c","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a\/%e5%9c%96%e6%96%87%e5%89%b5%e4%bd%9c"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u6709\u8da3\u5f71\u7247","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a\/%e6%9c%89%e8%b6%a3%e5%bd%b1%e7%89%87"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u52d5\u6f2b\u3001\u73a9\u5177\u3001\u6557\u5bb6","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a\/%e5%8b%95%e6%bc%ab%e3%80%81%e7%8e%a9%e5%85%b7%e3%80%81%e6%95%97%e5%ae%b6"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u8001\u5f1f\u7d19\u6a21\u578b\u4f5c\u54c1\u96c6","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a\/%e8%80%81%e5%bc%9f%e7%b4%99%e6%a8%a1%e5%9e%8b%e4%bd%9c%e5%93%81%e9%9b%86"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"KUSO","url":"https:\/\/www.kocpc.com.tw\/archives\/category\/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a\/kuso"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u963f\u9054\u73a9App","url":"http:\/\/playapp.kocpc.com.tw\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Pokemon Go\u653b\u7565","url":"http:\/\/bit.ly\/2aEhtMN"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u96fb\u8166\u738b\u5718\u968a","url":"https:\/\/www.kocpc.com.tw\/about"}]}</script>
+<script async type='text/javascript' charset='utf-8' src='//a.breaktime.com.tw/js/au.js?spj=3WYST18'></script>
+<meta name="google-site-verification" content="ytnHAe2TuPr_78J5Mpv_vpV-q9C5htt9WNpg6EHVFtM" />
+<script type="text/javascript">
+		var advadsCfpQueue = [];
+		var advadsCfpAd = function( adID ){
+			if ( 'undefined' == typeof advadsProCfp ) { advadsCfpQueue.push( adID ) } else { advadsProCfp.addElement( adID ) }
+		};
+		</script>
+<style type='text/css'>img#wpstats{display:none}</style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-9551091120417573" crossorigin="anonymous"></script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> <style id="wpsp-style-frontend"></style>
+<style type="text/css" id="wp-custom-css">
+			@media screen and (min-width:768px) { .slick-slide img {
+    display: block;
+    height: 445px;
+    overflow: hidden;
+	  width: 100%;
+}
+}
+
+
+#btcl { 
+	left: calc(50% + (320px/2) - 15px);
+	top: -10px; 
+}
+
+@media screen and (min-width:768px) { #btcl { 
+	left: calc(50% + (728px/2) - 13px);
+	top: -12px; 
+}
+}
+/* 20211001 - HOS-1678 
+.Zi_ad_a_H{
+	min-height:200px;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+}
+.zi_hosting_rhs{
+	min-height:300px;
+}
+.Zi_ad_a_SB{
+	min-height:300px;
+}
+*/		</style>
+<meta property="dable:item_id" content="kocpc-328192">
+<meta property="dable:author" content="Rocky">
+
+<link rel="stylesheet" href="https://www.kocpc.com.tw/wp-content/cache/minify/40fff.css?x36564" media="all" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://images.zi.org.tw/kocpc/2016/04/bs-alert.css">
+
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/5a9e4.js?x36564"></script>
+
+<script type="text/javascript" src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer"></script>
+<script async src="https://www.kocpc.com.tw/wp-content/cache/minify/cc666.js?x36564"></script>
+<style>.feedburn a {
+    background: linear-gradient(#4c7dbe, #4961a9);
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 15px;
+    padding: 10px 15px;
+    margin: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.btnn {
+width: 25px;
+position: absolute;
+}
+#btcl {
+width: 25px;
+position: absolute;
+}
+</style>
+
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "25796225" });
+(function() {
+var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="https://sb.scorecardresearch.com/p?c1=2&c2=25796225&cv=2.0&cj=1" />
+</noscript>
+
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59J7GTJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="kocpc_bot_ad" id="kocpc_bot_ad">
+<div class="kocpc_bot_desktop">
+<a id="btnn"><img src="https://i0.zi.org.tw/kocpc/2021/01/1610012926-e8d9ffa80ab50db74aaa79235a038531.png" id="btcl"></a>
+
+<div id='div-gpt-ad-1616632794102-0'>
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1616632794102-0'); });
+  </script>
+</div>
+
+</div>
+<div class="kocpc_bot_mobile">
+<a id="btnn"><img src="https://i0.zi.org.tw/kocpc/2021/01/1610012926-e8d9ffa80ab50db74aaa79235a038531.png" id="btcl"></a>
+
+<div id='div-gpt-ad-1616641814101-0' style='width: 320px; height: 100px;'>
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1616641814101-0'); });
+  </script>
+</div>
+
+</div>
+</div>
+<script>
+var Btn = document.getElementById('btnn');
+Btn.onclick = function () {
+    document.getElementById('kocpc_bot_ad').remove();
+    this.remove();
+};
+</script>
+<div id="main">
+<div id="header">
+<header class="the-logo-at-top">
+<a href="https://www.kocpc.com.tw" title="電腦王阿達"><img src="https://images.zi.org.tw/kocpc/2020/01/1578275126-9a8a4c38fdbbb09907d2a7eaa11f9f75.png" class="sco_logo"><img src="https://images.zi.org.tw/kocpc/2019/01/1546656116-26cedaf0e724674f8526f6f3e073d154.png" class="sco_logo_m"></a>
+</header>
+<div class="topbarad"><div id="zi_ad_header"></div>
+<div class="Zi_ad_a_H"></div></div>
+<nav id="ddmenu" role="navigation">
+<ul id="menu-%e9%81%b8%e5%96%ae" class="nav superfish"><li id="menu-item-1868" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1868"><a title="電腦王阿達" href="https://www.kocpc.com.tw/">首頁</a></li>
+<li id="menu-item-2143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2143"><a>科技新聞</a>
+<ul class="sub-menu">
+<li id="menu-item-2150" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2150"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/3c%e6%96%b0%e5%93%81%e6%90%b6%e5%85%88%e5%a0%b1">最新科技新聞</a></li>
+<li id="menu-item-2381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2381"><a href="#">產品評測</a>
+<ul class="sub-menu">
+<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2148"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/gps%e8%a1%8c%e8%bb%8a%e8%a8%98%e9%8c%84%e5%99%a8%e8%a9%95%e6%b8%ac">GPS/行車記錄器評測</a></li>
+<li id="menu-item-2145" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2145"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/ios%e5%91%a8%e9%82%8a">iOS周邊</a></li>
+<li id="menu-item-2146" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2146"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/android%e5%91%a8%e9%82%8a">Android周邊</a></li>
+</ul>
+</li>
+<li id="menu-item-2149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2149"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e5%90%88%e4%bd%9c%e5%bb%a3%e7%b7%a8%e5%bb%a0%e5%95%86%e9%82%80%e8%ab%8b%e5%b0%88%e8%a8%aa">科技廠商專訪報導</a></li>
+<li id="menu-item-141186" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141186"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/hardware">電腦硬體周邊情報</a></li>
+<li id="menu-item-185722" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-185722"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/camera-3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac">相機</a></li>
+</ul>
+</li>
+<li id="menu-item-311877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-311877"><a href="https://www.kocpc.com.tw/archives/tag/%e9%96%8b%e7%ae%b1">酷品開箱</a></li>
+<li id="menu-item-22948" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-22948"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%80%9a%e8%a8%8a%e9%81%94%e4%ba%ba">通訊達人</a>
+<ul class="sub-menu">
+<li id="menu-item-215933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215933"><a href="https://www.kocpc.com.tw/speedtest">電腦王阿達測速工具</a></li>
+</ul>
+</li>
+<li id="menu-item-2152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2152"><a>休閒/教學</a>
+<ul class="sub-menu">
+<li id="menu-item-141187" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141187"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/games">遊戲電玩</a></li>
+<li id="menu-item-2153" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2153"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8">電腦應用與其他教學</a>
+<ul class="sub-menu">
+<li id="menu-item-4302" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4302"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e7%b6%b2%e8%b7%af%e8%88%87%e8%bb%9f%e9%ab%94%e6%87%89%e7%94%a8">網路與軟體應用</a></li>
+<li id="menu-item-6153" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6153"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/camera">攝影教學</a></li>
+<li id="menu-item-4300" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4300"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e5%a4%9a%e5%aa%92%e9%ab%94%e8%bd%89%e6%aa%94%e9%81%8b%e7%94%a8">多媒體轉檔/運用</a></li>
+<li id="menu-item-4303" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4303"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e8%bd%89%e8%b2%bc%e5%a5%bd%e6%96%87">轉貼好文</a></li>
+<li id="menu-item-4304" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4304"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e5%85%b6%e4%bb%96%e6%96%87%e7%ab%a0">其他文章</a></li>
+</ul>
+</li>
+<li id="menu-item-132571" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132571"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/mac-os-%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e6%95%99%e5%ad%b8">Mac 軟體分享與教學</a></li>
+<li id="menu-item-6003" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6003"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/wordpress-%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8">WordPress 架站教學分享</a></li>
+<li id="menu-item-132584" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132584"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e8%aa%9e%e6%96%87%e5%ad%b8%e7%bf%92">語文學習</a></li>
+<li id="menu-item-2154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2154"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a">生活與旅遊</a></li>
+<li id="menu-item-5322" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5322"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/kuso">KUSO</a>
+<ul class="sub-menu">
+<li id="menu-item-5321" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5321"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e6%9c%89%e8%b6%a3%e5%bd%b1%e7%89%87">有趣影片</a></li>
+</ul>
+</li>
+<li id="menu-item-5323" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5323"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e5%9c%96%e6%96%87%e5%89%b5%e4%bd%9c">圖文創作</a></li>
+<li id="menu-item-2696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2696"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e5%8b%95%e6%bc%ab%e3%80%81%e7%8e%a9%e5%85%b7%e3%80%81%e6%95%97%e5%ae%b6">動漫、玩具、敗家</a>
+<ul class="sub-menu">
+<li id="menu-item-2697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2697"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e8%80%81%e5%bc%9f%e7%b4%99%e6%a8%a1%e5%9e%8b%e4%bd%9c%e5%93%81%e9%9b%86">老弟紙模型作品集</a></li>
+</ul>
+</li>
+<li id="menu-item-105260" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-105260"><a href="https://bit.ly/2aEhtMN">Pokemon GO攻略</a></li>
+<li id="menu-item-2155" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2155"><a href="https://www.kocpc.com.tw/archives/category/%e6%9c%aa%e5%88%86%e9%a1%9e%e6%96%87%e7%ab%a0">未分類文章</a></li>
+<li id="menu-item-223856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223856"><a href="https://www.kocpc.com.tw/%e8%b6%85%e5%a5%bd%e7%94%a8%e6%87%b6%e4%ba%ba%e5%8c%85/%e6%9c%80%e6%96%b0%e6%8a%bd%e7%8d%8e%e6%83%85%e5%a0%b1%e5%85%ac%e5%91%8a">最新抽獎情報公告</a></li>
+</ul>
+</li>
+<li id="menu-item-2142" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2142"><a>懶人包/App</a>
+<ul class="sub-menu">
+<li id="menu-item-223858" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223858"><a href="https://www.kocpc.com.tw/%e8%b6%85%e5%a5%bd%e7%94%a8%e6%87%b6%e4%ba%ba%e5%8c%85">超好用懶人包</a></li>
+<li id="menu-item-2379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2379"><a href="#">Android相關資訊</a>
+<ul class="sub-menu">
+<li id="menu-item-2136" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2136"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-app%e5%88%86%e4%ba%ab%e4%bb%8b%e7%b4%b9">Android App分享介紹</a></li>
+<li id="menu-item-2307" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2307"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-%e5%9f%ba%e7%a4%8e%e6%95%99%e5%ad%b8">Android 基礎教學</a></li>
+<li id="menu-item-2308" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2308"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/%e6%99%ba%e6%85%a7%e6%89%8b%e6%a9%9f%e9%9f%8c%e9%ab%94%e6%9b%b4%e6%96%b0">智慧手機韌體更新</a></li>
+<li id="menu-item-2151" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2151"><a href="https://www.kocpc.com.tw/archives/category/windows-mobile%e6%89%8b%e6%a9%9f%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0">Windows Mobile手機相關文章</a></li>
+</ul>
+</li>
+<li id="menu-item-2380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2380"><a href="#">iPhone/iPad相關</a>
+<ul class="sub-menu">
+<li id="menu-item-2137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2137"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/iphoneipad-%e8%bb%9f%e9%ab%94%e4%bb%8b%e7%b4%b9">iPhone/iPad 軟體介紹</a></li>
+<li id="menu-item-2309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2309"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/iphoneipad-%e4%bd%bf%e7%94%a8%e6%95%99%e5%ad%b8">iPhone/iPad 使用教學</a></li>
+<li id="menu-item-2138" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2138"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/ios-jbcydia%e6%87%89%e7%94%a8">iOS JB/CYDIA應用</a></li>
+</ul>
+</li>
+<li id="menu-item-2144" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2144"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/%e8%b7%a8%e5%b9%b3%e5%8f%b0app">跨平台App</a></li>
+<li id="menu-item-311875" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-311875"><a href="https://www.kocpc.com.tw/archives/tag/telegram">Telegram</a></li>
+<li id="menu-item-3229" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3229"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/line-3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac">LINE</a></li>
+</ul>
+</li>
+<li id="menu-item-181567" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-181567"><a target="_blank" rel="nofollow" href="https://zi.media?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">字媒體</a>
+<ul class="sub-menu">
+<li id="menu-item-181568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181568"><a target="_blank" rel="nofollow" href="https://zi.media/category/food?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">美食</a></li>
+<li id="menu-item-181569" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181569"><a target="_blank" rel="nofollow" href="https://zi.media/category/travel?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">旅遊</a></li>
+<li id="menu-item-181570" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181570"><a target="_blank" rel="noopener noreferrer" href="https://zi.media/category/3c?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">3C</a></li>
+<li id="menu-item-181571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181571"><a target="_blank" rel="nofollow" href="https://zi.media/category/fashion?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">時尚</a></li>
+<li id="menu-item-181572" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181572"><a target="_blank" rel="nofollow" href="https://zi.media/category/family?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">親子</a></li>
+<li id="menu-item-181573" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181573"><a target="_blank" rel="nofollow" href="https://zi.media/category/entertainment?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">娛樂</a></li>
+<li id="menu-item-181574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181574"><a target="_blank" rel="nofollow" href="https://zi.media/category/life?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">生活</a></li>
+<li id="menu-item-181575" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181575"><a target="_blank" rel="nofollow" href="https://zi.media/category/universal?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">寰宇</a></li>
+</ul>
+</li>
+<li id="menu-item-1870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1870"><a href="https://www.kocpc.com.tw/contact">電腦王團隊</a></li>
+</ul> </nav>
+</div>
+<div class="zi_mobile_nav">
+<div class="mobile-nav">
+<div class="nav-side" style="left: 0; right: initial">
+<i class="fa fa-search"></i>
+</div>
+<div class="nav-shares">
+<a href="https://www.kocpc.com.tw/"><img src="https://images.zi.org.tw/kocpc/2019/11/1574319145-73a9bff340d6c450a490f657c306fdf8.png" style="height: 42px;"></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kocpc.com.tw/archives/328192" data-share="facebook" data-mua-safety="false">
+<img width="42" src="https://www.kocpc.com.tw/wp-content/themes/new-sco_plus/images/icons/facebook.png">
+</a>
+</div>
+<div class="nav-side">
+<i class="fa fa-bars"></i>
+</div>
+</div>
+<div class="mobile-side">
+<div class="side-close"><i class="fa fa-times"></i></div>
+<div class="search-side">
+<div id="search">
+<form action="/">
+<input id="csetext" type="search" name="s" placeholder="從這裡搜尋..." />
+<button id="searchsubmit" class="sh-btn fa fa-search" value="搜尋" /></button>
+</form>
+</div>
+</div>
+<nav class="navigation">
+<div class="menu-%e9%81%b8%e5%96%ae-container"><ul id="menu-%e9%81%b8%e5%96%ae-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1868"><a title="電腦王阿達" href="https://www.kocpc.com.tw/">首頁</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2143"><a>科技新聞</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2150"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/3c%e6%96%b0%e5%93%81%e6%90%b6%e5%85%88%e5%a0%b1">最新科技新聞</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2381"><a href="#">產品評測</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2148"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/gps%e8%a1%8c%e8%bb%8a%e8%a8%98%e9%8c%84%e5%99%a8%e8%a9%95%e6%b8%ac">GPS/行車記錄器評測</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2145"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/ios%e5%91%a8%e9%82%8a">iOS周邊</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2146"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/android%e5%91%a8%e9%82%8a">Android周邊</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2149"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e5%90%88%e4%bd%9c%e5%bb%a3%e7%b7%a8%e5%bb%a0%e5%95%86%e9%82%80%e8%ab%8b%e5%b0%88%e8%a8%aa">科技廠商專訪報導</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141186"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/hardware">電腦硬體周邊情報</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-185722"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/camera-3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac">相機</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-311877"><a href="https://www.kocpc.com.tw/archives/tag/%e9%96%8b%e7%ae%b1">酷品開箱</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-22948"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%80%9a%e8%a8%8a%e9%81%94%e4%ba%ba">通訊達人</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215933"><a href="https://www.kocpc.com.tw/speedtest">電腦王阿達測速工具</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2152"><a>休閒/教學</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141187"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/games">遊戲電玩</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2153"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8">電腦應用與其他教學</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4302"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e7%b6%b2%e8%b7%af%e8%88%87%e8%bb%9f%e9%ab%94%e6%87%89%e7%94%a8">網路與軟體應用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6153"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/camera">攝影教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4300"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e5%a4%9a%e5%aa%92%e9%ab%94%e8%bd%89%e6%aa%94%e9%81%8b%e7%94%a8">多媒體轉檔/運用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4303"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e8%bd%89%e8%b2%bc%e5%a5%bd%e6%96%87">轉貼好文</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4304"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e5%85%b6%e4%bb%96%e6%96%87%e7%ab%a0">其他文章</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132571"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/mac-os-%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e6%95%99%e5%ad%b8">Mac 軟體分享與教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6003"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/wordpress-%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8">WordPress 架站教學分享</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132584"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e8%aa%9e%e6%96%87%e5%ad%b8%e7%bf%92">語文學習</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2154"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a">生活與旅遊</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5322"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/kuso">KUSO</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5321"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e6%9c%89%e8%b6%a3%e5%bd%b1%e7%89%87">有趣影片</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5323"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e5%9c%96%e6%96%87%e5%89%b5%e4%bd%9c">圖文創作</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2696"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e5%8b%95%e6%bc%ab%e3%80%81%e7%8e%a9%e5%85%b7%e3%80%81%e6%95%97%e5%ae%b6">動漫、玩具、敗家</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2697"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e8%80%81%e5%bc%9f%e7%b4%99%e6%a8%a1%e5%9e%8b%e4%bd%9c%e5%93%81%e9%9b%86">老弟紙模型作品集</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-105260"><a href="https://bit.ly/2aEhtMN">Pokemon GO攻略</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2155"><a href="https://www.kocpc.com.tw/archives/category/%e6%9c%aa%e5%88%86%e9%a1%9e%e6%96%87%e7%ab%a0">未分類文章</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223856"><a href="https://www.kocpc.com.tw/%e8%b6%85%e5%a5%bd%e7%94%a8%e6%87%b6%e4%ba%ba%e5%8c%85/%e6%9c%80%e6%96%b0%e6%8a%bd%e7%8d%8e%e6%83%85%e5%a0%b1%e5%85%ac%e5%91%8a">最新抽獎情報公告</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2142"><a>懶人包/App</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223858"><a href="https://www.kocpc.com.tw/%e8%b6%85%e5%a5%bd%e7%94%a8%e6%87%b6%e4%ba%ba%e5%8c%85">超好用懶人包</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2379"><a href="#">Android相關資訊</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2136"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-app%e5%88%86%e4%ba%ab%e4%bb%8b%e7%b4%b9">Android App分享介紹</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2307"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-%e5%9f%ba%e7%a4%8e%e6%95%99%e5%ad%b8">Android 基礎教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2308"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/%e6%99%ba%e6%85%a7%e6%89%8b%e6%a9%9f%e9%9f%8c%e9%ab%94%e6%9b%b4%e6%96%b0">智慧手機韌體更新</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2151"><a href="https://www.kocpc.com.tw/archives/category/windows-mobile%e6%89%8b%e6%a9%9f%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0">Windows Mobile手機相關文章</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2380"><a href="#">iPhone/iPad相關</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2137"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/iphoneipad-%e8%bb%9f%e9%ab%94%e4%bb%8b%e7%b4%b9">iPhone/iPad 軟體介紹</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2309"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/iphoneipad-%e4%bd%bf%e7%94%a8%e6%95%99%e5%ad%b8">iPhone/iPad 使用教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2138"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/ios-jbcydia%e6%87%89%e7%94%a8">iOS JB/CYDIA應用</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2144"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/%e8%b7%a8%e5%b9%b3%e5%8f%b0app">跨平台App</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-311875"><a href="https://www.kocpc.com.tw/archives/tag/telegram">Telegram</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3229"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/line-3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac">LINE</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-181567"><a target="_blank" rel="nofollow" href="https://zi.media?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">字媒體</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181568"><a target="_blank" rel="nofollow" href="https://zi.media/category/food?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">美食</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181569"><a target="_blank" rel="nofollow" href="https://zi.media/category/travel?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">旅遊</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181570"><a target="_blank" rel="noopener noreferrer" href="https://zi.media/category/3c?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">3C</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181571"><a target="_blank" rel="nofollow" href="https://zi.media/category/fashion?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">時尚</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181572"><a target="_blank" rel="nofollow" href="https://zi.media/category/family?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">親子</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181573"><a target="_blank" rel="nofollow" href="https://zi.media/category/entertainment?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">娛樂</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181574"><a target="_blank" rel="nofollow" href="https://zi.media/category/life?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">生活</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181575"><a target="_blank" rel="nofollow" href="https://zi.media/category/universal?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">寰宇</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1870"><a href="https://www.kocpc.com.tw/contact">電腦王團隊</a></li>
+</ul></div> </nav>
+</div>
+<div class="mobile-nav">
+<div class="nav-side" style="left: 0; right: initial">
+<i class="fa fa-search"></i>
+</div>
+<div class="nav-shares">
+<a href="https://www.kocpc.com.tw/"><img src="https://images.zi.org.tw/kocpc/2019/11/1574319145-73a9bff340d6c450a490f657c306fdf8.png" style="height: 42px;"></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kocpc.com.tw/archives/328192" data-share="facebook" data-mua-safety="false">
+<img width="42" src="https://www.kocpc.com.tw/wp-content/themes/new-sco_plus/images/icons/facebook.png">
+</a>
+</div>
+<div class="nav-side">
+<i class="fa fa-bars"></i>
+</div>
+</div>
+<div class="mobile-side">
+<div class="side-close"><i class="fa fa-times"></i></div>
+<div class="search-side">
+<div id="search">
+<form action="/">
+<input id="csetext" type="search" name="s" placeholder="從這裡搜尋..." />
+<button id="searchsubmit" class="sh-btn fa fa-search" value="搜尋" /></button>
+</form>
+</div>
+</div>
+<nav class="navigation">
+<div class="menu-%e9%81%b8%e5%96%ae-container"><ul id="menu-%e9%81%b8%e5%96%ae-2" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1868"><a title="電腦王阿達" href="https://www.kocpc.com.tw/">首頁</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2143"><a>科技新聞</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2150"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/3c%e6%96%b0%e5%93%81%e6%90%b6%e5%85%88%e5%a0%b1">最新科技新聞</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2381"><a href="#">產品評測</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2148"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/gps%e8%a1%8c%e8%bb%8a%e8%a8%98%e9%8c%84%e5%99%a8%e8%a9%95%e6%b8%ac">GPS/行車記錄器評測</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2145"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/ios%e5%91%a8%e9%82%8a">iOS周邊</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2146"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/android%e5%91%a8%e9%82%8a">Android周邊</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2149"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e5%90%88%e4%bd%9c%e5%bb%a3%e7%b7%a8%e5%bb%a0%e5%95%86%e9%82%80%e8%ab%8b%e5%b0%88%e8%a8%aa">科技廠商專訪報導</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141186"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/hardware">電腦硬體周邊情報</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-185722"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/camera-3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac">相機</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-311877"><a href="https://www.kocpc.com.tw/archives/tag/%e9%96%8b%e7%ae%b1">酷品開箱</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-22948"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%80%9a%e8%a8%8a%e9%81%94%e4%ba%ba">通訊達人</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215933"><a href="https://www.kocpc.com.tw/speedtest">電腦王阿達測速工具</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2152"><a>休閒/教學</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141187"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/games">遊戲電玩</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2153"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8">電腦應用與其他教學</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4302"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e7%b6%b2%e8%b7%af%e8%88%87%e8%bb%9f%e9%ab%94%e6%87%89%e7%94%a8">網路與軟體應用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6153"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/camera">攝影教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4300"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e5%a4%9a%e5%aa%92%e9%ab%94%e8%bd%89%e6%aa%94%e9%81%8b%e7%94%a8">多媒體轉檔/運用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4303"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e8%bd%89%e8%b2%bc%e5%a5%bd%e6%96%87">轉貼好文</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4304"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e5%85%b6%e4%bb%96%e6%96%87%e7%ab%a0">其他文章</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132571"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/mac-os-%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e6%95%99%e5%ad%b8">Mac 軟體分享與教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6003"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/wordpress-%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8">WordPress 架站教學分享</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132584"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/%e9%9b%bb%e8%85%a6%e6%87%89%e7%94%a8%e8%88%87%e5%85%b6%e4%bb%96%e6%95%99%e5%ad%b8/%e8%aa%9e%e6%96%87%e5%ad%b8%e7%bf%92">語文學習</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2154"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a">生活與旅遊</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5322"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/kuso">KUSO</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5321"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e6%9c%89%e8%b6%a3%e5%bd%b1%e7%89%87">有趣影片</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5323"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e5%9c%96%e6%96%87%e5%89%b5%e4%bd%9c">圖文創作</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2696"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e5%8b%95%e6%bc%ab%e3%80%81%e7%8e%a9%e5%85%b7%e3%80%81%e6%95%97%e5%ae%b6">動漫、玩具、敗家</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2697"><a href="https://www.kocpc.com.tw/archives/category/%e7%94%9f%e6%b4%bb%e8%88%87%e6%97%85%e9%81%8a/%e8%80%81%e5%bc%9f%e7%b4%99%e6%a8%a1%e5%9e%8b%e4%bd%9c%e5%93%81%e9%9b%86">老弟紙模型作品集</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-105260"><a href="https://bit.ly/2aEhtMN">Pokemon GO攻略</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2155"><a href="https://www.kocpc.com.tw/archives/category/%e6%9c%aa%e5%88%86%e9%a1%9e%e6%96%87%e7%ab%a0">未分類文章</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223856"><a href="https://www.kocpc.com.tw/%e8%b6%85%e5%a5%bd%e7%94%a8%e6%87%b6%e4%ba%ba%e5%8c%85/%e6%9c%80%e6%96%b0%e6%8a%bd%e7%8d%8e%e6%83%85%e5%a0%b1%e5%85%ac%e5%91%8a">最新抽獎情報公告</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2142"><a>懶人包/App</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223858"><a href="https://www.kocpc.com.tw/%e8%b6%85%e5%a5%bd%e7%94%a8%e6%87%b6%e4%ba%ba%e5%8c%85">超好用懶人包</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2379"><a href="#">Android相關資訊</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2136"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-app%e5%88%86%e4%ba%ab%e4%bb%8b%e7%b4%b9">Android App分享介紹</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2307"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-%e5%9f%ba%e7%a4%8e%e6%95%99%e5%ad%b8">Android 基礎教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2308"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/%e6%99%ba%e6%85%a7%e6%89%8b%e6%a9%9f%e9%9f%8c%e9%ab%94%e6%9b%b4%e6%96%b0">智慧手機韌體更新</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2151"><a href="https://www.kocpc.com.tw/archives/category/windows-mobile%e6%89%8b%e6%a9%9f%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0">Windows Mobile手機相關文章</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2380"><a href="#">iPhone/iPad相關</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2137"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/iphoneipad-%e8%bb%9f%e9%ab%94%e4%bb%8b%e7%b4%b9">iPhone/iPad 軟體介紹</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2309"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/iphoneipad-%e4%bd%bf%e7%94%a8%e6%95%99%e5%ad%b8">iPhone/iPad 使用教學</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2138"><a href="https://www.kocpc.com.tw/archives/category/ios%e8%bb%9f%e9%ab%94%e8%88%87jb%e7%9b%b8%e9%97%9c%e6%96%87%e7%ab%a0/ios-jbcydia%e6%87%89%e7%94%a8">iOS JB/CYDIA應用</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2144"><a href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/%e8%b7%a8%e5%b9%b3%e5%8f%b0app">跨平台App</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-311875"><a href="https://www.kocpc.com.tw/archives/tag/telegram">Telegram</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3229"><a href="https://www.kocpc.com.tw/archives/category/3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac/line-3c%e6%96%b0%e8%81%9e%e8%88%87%e7%94%a2%e5%93%81%e8%a9%95%e6%b8%ac">LINE</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-181567"><a target="_blank" rel="nofollow" href="https://zi.media?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">字媒體</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181568"><a target="_blank" rel="nofollow" href="https://zi.media/category/food?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">美食</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181569"><a target="_blank" rel="nofollow" href="https://zi.media/category/travel?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">旅遊</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181570"><a target="_blank" rel="noopener noreferrer" href="https://zi.media/category/3c?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">3C</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181571"><a target="_blank" rel="nofollow" href="https://zi.media/category/fashion?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">時尚</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181572"><a target="_blank" rel="nofollow" href="https://zi.media/category/family?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">親子</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181573"><a target="_blank" rel="nofollow" href="https://zi.media/category/entertainment?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">娛樂</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181574"><a target="_blank" rel="nofollow" href="https://zi.media/category/life?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">生活</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181575"><a target="_blank" rel="nofollow" href="https://zi.media/category/universal?utm_source=www.kocpc.com.tw&#038;utm_medium=channel_tag&#038;utm_term=food&#038;utm_campaign=kocpc_2018">寰宇</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1870"><a href="https://www.kocpc.com.tw/contact">電腦王團隊</a></li>
+</ul></div> </nav>
+</div>
+</div>
+
+<div id="site_content">
+<aside id="sidebar">
+<div class="sidebar">
+<h3>網站搜尋</h3>
+<div id="search">
+<form action="/" method="get" class="search-box">
+<input type="search" name="s" class="search-input" placeholder="從這裡搜尋..." value="">
+<button type="submit" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+</form>
+</div> </div>
+<div class="widget sidebar" id="text-16"><h3>優質廣告推薦</h3> <div class="textwidget"><div id="zi_ad_lhs_1"></div>
+<div class="Zi_ad_a_O_1"></div>
+<p>
+<div id="zi_ad_lhs_2"></div></p>
+<div class="Zi_ad_a_O_2"></div>
+<p>
+<div id="zi_ad_lhs_3"></div></p>
+<div class="Zi_ad_a_O_3"></div>
+<p>
+<div id="zi_ad_lhs_4"></div></p>
+<div class="Zi_ad_a_O_4"></div></div>
+</div><div class="widget_text widget sidebar" id="custom_html-5"><h3>電腦王阿達粉絲頁</h3><div class="textwidget custom-html-widget"><div class="fb-page" data-href="https://www.facebook.com/kocpctw/" data-tabs="timeline" data-width="250" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kocpctw/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kocpctw/">電腦王阿達</a></blockquote></div></div></div><div class="widget_text widget sidebar" id="custom_html-4"><h3>訂閱電腦王阿達</h3><div class="textwidget custom-html-widget"><div class="feedburn">
+<a title="使用 FeedBurner 訂閱電腦王阿達" target="_blank" href="https://feedburner.google.com/fb/a/mailverify?uri=com/brEv" data-mua-safety="false" rel="noopener noreferrer">
+<i class="fa fa-envelope" aria-hidden="true"></i>
+<span>使用 FeedBurner 訂閱</span>
+</a>
+</div>
+
+<div class="feedly-link">
+<a title="在 Feedly 上訂閱電腦王阿達" target="_blank" href="https://feedly.com/i/feed/content/feed/https://www.kocpc.com.tw/feed" data-mua-safety="false" rel="noopener noreferrer">
+<i class="fa fa-rss" aria-hidden="true"></i>
+<span>在 Feedly 上訂閱</span>
+</a>
+</div>
+
+<div class="rss-feed-link">
+<a title="RSS Feed 連結" target="_blank" href="https://www.kocpc.com.tw/feed" data-mua-safety="false" rel="noopener noreferrer">
+<i class="fa fa-rss-square" aria-hidden="true"></i>
+<span>RSS 2.0 Feed</span>
+</a>
+</div>
+
+<div style="text-align: center; margin: 10px 0;">
+<div id="zi_ad_lhs_belowfeed"></div>
+<div class="Zi_ad_a_SBS"></div>
+</div></div></div><div class="widget_text widget sidebar" id="custom_html-6"><h3>離站頁JS</h3><div class="textwidget custom-html-widget">
+
+<script>
+document.muaSafetySettings = { exclude: [ 'zi.media', 'wreadit.tw', 'youtu.be', 'event.tstartel.com','wuangus.cc','kocpc.tw','facebook.com','youtube.com','line.me','q-r.tw','lihi1.com' ], };
+</script>
+
+
+<script>
+!function(t){function e(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return t[o].call(r.exports,r,r.exports,e),r.l=!0,r.exports}var n={};return e.m=t,e.c=n,e.i=function(t){return t},e.d=function(t,e,n){Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:n})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=5)}({5:function(t,e){"use strict";var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol?"symbol":typeof t};!function(){if("object"===n(document.muaSafetySettings)){var t=document.querySelectorAll('a[href]:not([data-mua-safety="false"])'),e=void 0,o=function(){var o=t[e];if(!o.href||"#"==o.href||!o.hostname)return"continue";var r=document.muaSafetySettings,u=!1;if("object"===n(r.exclude)&&r.exclude.length>0&&u===!1){var c=void 0;for(c=0;c<r.exclude.length;c++){var f=r.exclude[c];f==o.hostname&&(u=!0)}}return window.location.hostname==o.hostname&&(u=!0),u?"continue":void(o.onclick=function(t){t.preventDefault(),window.open("https://sn.kocpc.com.tw/?url="+encodeURIComponent(o.href))})};for(e=0;e<t.length;e++)o()}else console.log("Mua Safety not Setup.")}()}});
+</script>
+
+</div></div><div class="widget_text widget sidebar" id="custom_html-8"><div class="textwidget custom-html-widget"></div></div></aside>
+<div id="content">
+
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to 電腦王阿達." href="https://www.kocpc.com.tw" class="home"><span property="name">首頁</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Android軟體分享與刷機教學 category archives." href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8" class="taxonomy category"><span property="name">Android軟體分享與刷機教學</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Android App分享介紹 category archives." href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-app%e5%88%86%e4%ba%ab%e4%bb%8b%e7%b4%b9" class="taxonomy category"><span property="name">Android App分享介紹</span></a><meta property="position" content="3"></span> &gt; <span class="post post-post current-item">在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單</span> </div>
+
+
+<article class="post">
+
+<header>
+<h1 id="tc2sc-title"><a href="https://www.kocpc.com.tw/archives/328192" title="在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單">在找運動聽的音樂嗎？ 4 款免費健身音樂 Android App 推薦清單</a></h1>
+<div class="post-info">
+<div class="info-item">
+<i class="fa fa-user-circle" aria-hidden="true"></i>
+<span><a href="https://www.kocpc.com.tw/archives/author/rockyhsu" title="「Rocky」的文章" rel="author">Rocky</a></span>
+</div>
+<div class="info-item">
+<i class="fa fa-calendar-o" aria-hidden="true"></i>
+<span data-moment-humanize="true" data-moment-time="1592469107">2020/06/18</span>
+</div>
+<div class="info-item">
+<i class="fa fa-bar-chart" aria-hidden="true"></i>
+<span class="post-pageviews">Loading...</span>
+</div>
+</div>
+</header>
+
+<div class="Zi_ad_ar_O_3"></div>
+
+<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'zh-TW'}</script>
+<div id="share_button info">
+
+
+
+
+
+
+<div class="sbutton2">
+<div class="fb-share-button" data-href="https://www.kocpc.com.tw/archives/328192" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">分享</a></div>
+</div>
+<div class="sbutton2">
+<div class="g-plusone" data-size="tall"></div>
+</div>
+<div class="sbutton2" style="width: 56px">
+<div class="line-it-button" style="display: none; margin: 0px auto; display: block;" data-type="share-e" data-lang="zh-Hant"></div>
+</div>
+<div class="sbutton2">
+<a href="javascript:void(window.open('https://twitter.com/home/?status='.concat(encodeURIComponent(document.title)).concat(' ').concat(encodeURIComponent('https://www.kocpc.com.tw/archives/328192'))));">
+<img width="50" src="https://images.zi.org.tw/kocpc/2015/07/1438248527-a2f205396a9c252a4abcf6ecbf610823.png" />
+</a>
+</div>
+<div class="sbutton2">
+<a href="https://line.me/R/ti/p/%40fhf8929l" target="_blank" style="display: block;">
+<img style="max-height:50px;" src="https://images.zi.org.tw/kocpc/2018/07/1531797385-5c0aea85862dcd35e25fd900521f4f3b.png" align="absmiddle" border="0" />
+</a>
+</div>
+<div class="sbutton1">
+<div class="fb-save" data-uri="https://www.kocpc.com.tw/archives/328192" data-size="large"></div>
+</div>
+</div>
+
+
+<div class="summary">
+
+<div class="center">
+<div id="zi_ad_article_below_title"></div> </div>
+
+
+<div id="tc2sc-content">
+<div itemprop="articleBody">
+<div itemprop="articleBody" class="dable-content-wrapper"><div class="Zi_ad_ar_iR" itemprop="articleBody"><p>對於經常運動、上健身房的人來說，一定會想要聽一些能讓自己能更興奮、更有動力繼續下去的音樂，網路上雖然可以找到不少，但如果你很懶得自己搜尋，Google Play 中其實有不少相關的免費健身音樂 Apps，這篇就幫大家整理四個我覺得不錯。</p>
+<p><img loading="lazy" style="border: 0px currentcolor; display: inline; background-image: none;" title="Closeup of weightlift workout at the gym with barbell. " src="https://i0.zi.org.tw/kocpc/2020/06/1592469000-099ebe232be61c42a8a2d35cda27f1d4.jpg" alt="Closeup of weightlift workout at the gym with barbell. " width="800" height="534" border="0" /></p>
+<p><span id="more-328192"><div class="single_ads"><div id="readmoread">
+<div id="readmore-l">
+<div id="zi_ad_article_inread_leftabove" class="Zi_ad_ar_O_1"></div>
+</div>
+<div id="readmore-r">
+<div id="zi_ad_article_inread_rightbelow" class="Zi_ad_ar_O_2"></div>
+</div>
+</div></div></span></p>
+<h2>4 款免費健身音樂 Android App 推薦清單</h2>
+<h3>1. Gym Radio – Workout Music 2020</h3>
+<p><img loading="lazy" style="border: 0px currentcolor; display: inline; background-image: none;" title="1" src="https://i0.zi.org.tw/kocpc/2020/06/1592469003-e53b192dfc698981e6acf62bef1b6381.jpg" alt="1" width="772" height="800" border="0" /></p>
+<p>Gym Radio – Workout Music 2020 是一款集結全球提供健身音樂廣播電台的免費 App，快速掃描一下至少有 20 台以上，完全不怕聽膩，也提供我的最愛功能，方便你未來快速播放。不過，既然是廣播電台，當然無法跳過或切換下一首、選擇想聽的音樂。</p>
+<ul>
+<li>下載位置：<a href="https://play.google.com/store/apps/details?id=com.ihippo.workout.music&amp;hl=zh_TW" target="_blank" rel="noopener noreferrer">點我前往</a></li>
+</ul>
+<h3>2. 訓練音樂、勵志音樂</h3>
+<p><img loading="lazy" style="border: 0px currentcolor; display: inline; background-image: none;" title="2" src="https://i0.zi.org.tw/kocpc/2020/06/1592469006-12cfda33f33fb7c87ac6938f3cb20dda.jpg" alt="2" width="772" height="800" border="0" /></p>
+<p>訓練音樂、勵志音樂是一款非常懶人的健身音樂 App，已經整理好 15 首，一打開就能播放聆聽，每一首音樂的長度不確定，無法觀看播放時間點，但可以拖拉快轉或返回，如果不喜歡這一首，也能快轉到下一首，或是直接選擇想聽的，背景與待機播放都沒問題。</p>
+<ul>
+<li>下載位置：<a href="https://play.google.com/store/apps/details?id=com.zdn35.music.songs.audio.trainingmusicoffline&amp;hl=zh_TW" target="_blank" rel="noopener noreferrer">點我前往</a></li>
+</ul>
+<h3>3. 健身房的鍛鍊音樂，免費應用</h3>
+<p><img loading="lazy" style="border: 0px currentcolor; display: inline; background-image: none;" title="3" src="https://i0.zi.org.tw/kocpc/2020/06/1592469010-121734c53e1fd4eea3cf287c576254fc.jpg" alt="3" width="772" height="800" border="0" /></p>
+<p>這款 App 跟上一個感覺是同一位製作者，介面設計完全相同，甚至每首音樂的背景圖也一樣，不過提供的 16 首音樂就不太一樣，因此很推薦一起下載，30 首絕對夠你聽。</p>
+<ul>
+<li>下載位置：<a href="https://play.google.com/store/apps/details?id=com.zdn35.music.songs.audio.workoutmusicforthegymfreeapp&amp;hl=zh_TW" target="_blank" rel="noopener noreferrer">點我前往</a></li>
+</ul>
+<h3>4. 鍛鍊音樂</h3>
+<p><img loading="lazy" style="border: 0px currentcolor; display: inline; background-image: none;" title="4" src="https://i0.zi.org.tw/kocpc/2020/06/1592469014-33a4d139cf39dee6cd4bb6cb220cc3e9.jpg" alt="4" width="772" height="800" border="0" /></p>
+<p>鍛鍊音樂是一款集結 YouTube 中熱門的健身音樂影片，不僅數量超多，也有適合各種運動類型的音樂，不過既然是 YouTube 影片，播放時你必須開著這個 App，也就是無法背景與待機播放，比較適合在家、辦公室、工作室使用。</p>
+<ul>
+<li>下載位置：<a href="https://play.google.com/store/apps/details?id=workoutmusic.exercisemusic&amp;hl=zh_TW" target="_blank" rel="noopener noreferrer">點我前往</a></li>
+</ul>
+<h2>總結</h2>
+<p>以上這 4 款其實都能下載下來收藏，畢竟提供的音樂都不太一樣，這樣你就不用再花時間找，或怕聽膩之類的情形。</p>
+<blockquote class="wp-embedded-content" data-secret="S0AGDVH8G3"><p><a href="https://www.kocpc.com.tw/archives/325796">在沒有設備的家中鍛鍊　提供 28 天挑戰、各部位鍛鍊計劃，無需使用器材</a></p></blockquote>
+<p><iframe title="在沒有設備的家中鍛鍊　提供 28 天挑戰、各部位鍛鍊計劃，無需使用器材 &#8212; 電腦王阿達" class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://www.kocpc.com.tw/archives/325796/embed#?secret=S0AGDVH8G3" data-secret="S0AGDVH8G3" width="500" height="282" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+</div><div id="zi_hosting_below_article"></div><div class="Zi_ad_ar_linkad"></div><div class="Zi_ad_ar_Rec"></div><div class="Zi_ar_rec"></div></div><h4 id="mayYouLike">您也許會喜歡：</h4><div id="zi_ad_article_below_purecontent"></div><p id="tstartel-pokomon-ad"><div class="info"><a data-mua-safety="false" href="https://bit.ly/2Rf70wC" target="_blank" style="color: #4578C4; font-size: 20px; line-height: 20px; text-decoration: none; padding-bottom: 10px; padding-top: 10px; font-weight: 500;">【推爆】終身$0月租 打電話只要1元/分</a></div></p><p><div class="info"><a data-mua-safety="false" href="https://www.liidda.com.tw/" target="_blank" style="color: #4578C4; font-size: 20px; line-height: 20px; text-decoration: none; padding-bottom: 10px; padding-top: 10px; font-weight: 500;">立達合法徵信社-讓您安心的選擇</a></div></p><div id="_popIn_recommend_word"></div> </div>
+</div>
+
+
+<nav class="pageview">
+</nav>
+
+
+<div class="center">
+<div id="zi_ad_hot_recommend" class="Zi_ad_ar_Rec"></div><div id="_popIn_recommend"></div>
+<p><div id="zi_ad_hot_recommend_2" class="Zi_ad_ar_Rec_2"></div>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9551091120417573",
+          enable_page_level_ads: true
+     });
+</script> </div>
+
+
+
+<div style="clear:both;"></div>
+</div>
+
+
+<footer>
+<div class="post-meta">
+<div class="post-meta-container">
+<div class="post-meta-row">
+<div class="post-meta-title">分類</div>
+<div class="post-meta-content">
+<a class="post-meta-item" href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8/android-app%e5%88%86%e4%ba%ab%e4%bb%8b%e7%b4%b9" title="Android App分享介紹">Android App分享介紹</a><a class="post-meta-item" href="https://www.kocpc.com.tw/archives/category/android%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%e8%88%87%e5%88%b7%e6%a9%9f%e6%95%99%e5%ad%b8" title="Android軟體分享與刷機教學">Android軟體分享與刷機教學</a> </div>
+</div>
+</div>
+<div class="post-meta-container">
+<div class="post-meta-row">
+<div class="post-meta-title">標籤</div>
+<div class="post-meta-content">
+<a class="post-meta-item" href="https://www.kocpc.com.tw/archives/tag/android-%e9%9f%b3%e6%a8%82" title="Android 音樂">Android 音樂</a><a class="post-meta-item" href="https://www.kocpc.com.tw/archives/tag/%e9%81%8b%e5%8b%95" title="運動">運動</a><a class="post-meta-item" href="https://www.kocpc.com.tw/archives/tag/%e9%81%8b%e5%8b%95%e9%9f%b3%e6%a8%82" title="運動音樂">運動音樂</a><a class="post-meta-item" href="https://www.kocpc.com.tw/archives/tag/%e9%8d%9b%e9%8d%8a" title="鍛鍊">鍛鍊</a><a class="post-meta-item" href="https://www.kocpc.com.tw/archives/tag/%e9%8d%9b%e9%8d%8a%e9%9f%b3%e6%a8%82" title="鍛鍊音樂">鍛鍊音樂</a> </div>
+</div>
+</div>
+ </div>
+<div class="author-bio-box">
+<div class="author-bio-avatar">
+<img src="https://i0.wp.com/i.imgur.com/lCCT51F.jpg?w=250&h=250" alt="Rocky的頭像">
+</div>
+<div class="author-bio-name">Rocky</div>
+<div class="author-bio-introduce">熱愛科技新知，只要是有趣、不錯的新產品以及科技新聞，都恨不得立刻分享給身邊朋友！人現居日本，想了解更多日本旅遊或生活資訊，可以至：<a href="https://www.rockyhsu.com/">https://www.rockyhsu.com/</a><br />
+<br />
+如果您對文章內容有任何問題，請移駕到電腦王阿達的<a href="https://www.facebook.com/kocpctw">FB粉絲頁</a>或<a href="https://plus.google.com/u/0/b/115126589384280564770/115126589384280564770/posts">G+專頁</a>發問，更歡迎大家加入我的粉絲頁與<a href="https://line.me/R/ti/p/%40fhf8929l">LINE@帳號</a>！隨時提供最新3C資訊給您！<br />
+<a href="https://goo.gl/N5qycK">Andrioid版下載請點我</a> /<a href="https://line.me/R/ti/p/%40fhf8929l">加入 LINE＠ 官方帳號</a></div>
+<div class="author-bio-links">
+<div class="author-links-item author-links-facebook">
+<a href="https://www.facebook.com/kocpctw/" title="Rocky 的 Facebook" data-mua-safety="false">
+<i class="fa fa-facebook"></i>
+</a>
+</div>
+<div class="author-links-item author-links-googleplus">
+<a href="https://plus.google.com/+RockyHsu/posts" title="Rocky 的 Google +" data-mua-safety="false">
+<i class="fa fa-google-plus"></i>
+</a>
+</div>
+<div class="author-links-item author-links-twitter">
+<a href="https://twitter.com/Rocky_Hsu" title="Rocky 的 Twitter" data-mua-safety="false">
+<i class="fa fa-twitter"></i>
+</a>
+</div>
+<div class="author-links-item author-links-articles">
+<a href="https://www.kocpc.com.tw/archives/author/rockyhsu" title="瀏覽由 Rocky 發表的文章">
+<i class="fa fa-file"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+
+</article>
+
+
+<section id="comments">
+
+
+
+
+</section>
+
+</div>
+</div>
+<div class="footer-contact">
+<p>歡迎手機廠商、iPhone 周邊產品業者、APP軟體開發商洽談合作或產品測試事宜</p>
+<p class="the-email">koc <i class="fa fa-envelope-o" aria-hidden="true"></i> kocpc.com.tw</p>
+<p><a title="Breaktime 富盈數據" href="https://www.breaktime.com.tw/">Breaktime inc. 富盈數據</a></p>
+</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+/*global jQuery*/
+(function($) {
+    $(function() {$(".gbox").hover(function() {$(this).stop().animate({right: "0"}, "medium");}, function() {$(this).stop().animate({right: "-250"}, "medium");}, 500);});
+    // $(function() {$(".w2bslikebox").hover(function() {$(this).stop().animate({right: "46"}, "medium");}, function() {$(this).stop().animate({right: "-200"}, "medium");}, 500);});
+})(jQuery);
+</script>
+<script type="text/javascript">
+  window.___gcfg = {lang: 'zh-TW'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script><script>
+    /*global ga*/
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    // Send pageview to GA
+    ga('create', 'UA-36886945-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<noscript>
+      <!-- Google Tag Manager For Web Migrate Customer (noscript) -->
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W22DLMZ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <!-- End Google Tag Manager For Web Migrate Customer (noscript) -->
+      <!-- Google Tag Manager For Web Hosting Ad (noscript) -->
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6G9DTX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <!-- End Google Tag Manager For Web Hosting Ad (noscript) -->
+      <!-- Breaktime Hosting ComScore (noscript) -->
+      <img src="https://sb.scorecardresearch.com/p?c1=2&c2=25796225&cv=2.0&cj=1" />
+      <!-- End Breaktime Hosting ComScore (noscript) -->
+      </noscript>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/40655003/All_Float', [[1,1],[728, 90], [320, 100]], 'div-gpt-ad-1616632794102-0').addService(googletag.pubads()).setTargeting('zi-path', location.pathname).setTargeting('zi-web', location.hostname);
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<script>
+window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() {
+googletag.defineSlot('/40655003/All_Float_Mobile',[[1,1],[320, 100]], 'div-gpt-ad-1616641814101-0').addService(googletag.pubads()).setTargeting('zi-path', location.pathname).setTargeting('zi-web', location.hostname);
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<script>
+var BtnMobile = document.getElementsByClassName("kocpc_bot_mobile")[0].childNodes[1];BtnMobile.onclick = function () {
+    document.getElementById('kocpc_bot_ad').remove();
+    this.remove();
+};
+</script>
+<div class="kocpc-bt_a_fl kocpc-sticky" id="kocpc-981132866" style="position: fixed; bottom: 0; z-index: 10000; ">
+<div id='div-gpt-ad-1633335451875-0' style='min-width: 320px; min-height: 50px;'>
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1633335451875-0'); });
+  </script>
+</div></div><script>( window.advanced_ads_ready || jQuery( document ).ready ).call( null, function() {var wrapper_id = "#kocpc-981132866"; var $wrapper = jQuery( wrapper_id );advads.move( wrapper_id, "", {  });window.advanced_ads_sticky_items = window.advanced_ads_sticky_items || {};advanced_ads_sticky_items[ "kocpc-981132866" ] = { "can_convert_to_abs": "1", "initial_css": $wrapper.attr( "style" ), "modifying_func": function() { $wrapper.css({ "-webkit-transform": "translateX(-50%)", "-moz-transform": "translateX(-50%)", "transform": "translateX(-50%)", "left": "50%", "margin-right": "-50%" });}};
+if ( advads.wait_for_images ) { 
+    var sticky_wait_for_images_time = new Date().getTime();
+    $wrapper.data( "sticky_wait_for_images_time", sticky_wait_for_images_time );
+    advads.wait_for_images( $wrapper, function() {
+        // At the moment when this function is called, it is possible that 
+        // the placement has been updated using "Reload ads on resize" feature of Responsive add-on 
+        if ( $wrapper.data( "sticky_wait_for_images_time" ) === sticky_wait_for_images_time ) {
+            advanced_ads_sticky_items[ "kocpc-981132866" ]["modifying_func"]();
+        } 
+    } );
+} else { 
+    advanced_ads_sticky_items[ "kocpc-981132866" ]["modifying_func"]();
+};
+});</script><script type='text/javascript'>
+/* <![CDATA[ */
+var advanced_ads_responsive = {"reload_on_resize":"0"};
+/* ]]> */
+</script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/7334c.js?x36564"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var advanced_ads_sticky_settings = {"check_position_fixed":"","sticky_class":"kocpc-sticky","placements":["bt_a_top_anchor","bt_a_fl"]};
+/* ]]> */
+</script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/90f39.js?x36564"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment-with-locales.min.js?ver=2.16.0'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/locale/zh-tw.js?ver=2.16.0'></script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/c200a.js?x36564"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"sidebar-1","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["custom_html-4"]}];
+/* ]]> */
+</script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/10927.js?x36564"></script>
+<script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><script type='text/javascript' src='https://stats.wp.com/e-202147.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.1',blog:'43495525',post:'328192',tz:'8',srv:'www.kocpc.com.tw'} ]);
+	_stq.push([ 'clickTrackerInit', '43495525', '328192' ]);
+</script>
+<script type="text/javascript" id="wpsp-script-frontend"></script>
+<script defer src="https://www.kocpc.com.tw/wp-content/cache/minify/a2fde.js?x36564"></script>
+
+<script>
+    /*global fbq*/
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '462252907280257');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=462252907280257&ev=PageView&noscript=1" /></noscript>
+
+<script type="text/javascript">
+(function() {
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.charset = "utf-8"; pa.async = true;
+    pa.src = window.location.protocol + "//api.popin.cc/searchbox/kocpc.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+})();
+</script>
+<script>!function(e){function t(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,t,n){Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=8)}({8:function(e,t){"use strict";var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol?"symbol":typeof e};!function(){if("object"===n(document.muaSafetySettings)){var e=document.querySelectorAll('a[href]:not([data-mua-safety="false"])'),t=void 0,o=function(){var o=e[t];if(!o.href||"#"==o.href||!o.hostname)return"continue";var r=document.muaSafetySettings,u=!1;if("object"===n(r.exclude)&&r.exclude.length>0&&u===!1){var c=void 0;for(c=0;c<r.exclude.length;c++){var f=r.exclude[c];f==o.hostname&&(u=!0)}}return window.location.hostname==o.hostname&&(u=!0),u?"continue":void(o.onclick=function(e){e.preventDefault(),window.open("https://sn.kocpc.com.tw/index.html?url="+encodeURIComponent(o.href))})};for(t=0;t<e.length;t++)o()}else console.log("Mua Safety not Setup.")}()}});</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-59J7GTJ');</script>
+
+<script type="text/javascript">window.AviviD = window.AviviD || {settings:{},status:{}}; AviviD.web_id = "kocpc"; AviviD.category_id = "20190212000012"; AviviD.tracking_platform = 'likr'; (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&timestamp='+new Date().getTime();f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W9F4QDN'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&timestamp='+new Date().getTime();f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MKB8VFG');</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.7&appId=1080156882061038";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script async type='text/javascript' charset='utf-8' src='//a.breaktime.com.tw/js/au.js?spj=3WYST18'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-cb3633bb93cd3bac1ff","applicationID":"342639249","transactionName":"ZwFVNUtUCEpYUhIIV15LdgJNXAlXFkIPD19cAQ==","queueTime":0,"applicationTime":230,"atts":"S0ZWQwNOG0Q=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

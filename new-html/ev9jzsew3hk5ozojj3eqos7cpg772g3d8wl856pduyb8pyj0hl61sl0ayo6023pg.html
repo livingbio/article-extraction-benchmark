@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-0&cb=1', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=195-0&cb=14', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=195-0&cb=3', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/rochester.js', '/detroitchicago/rochester.js?gcb=195-0&cb=12', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}
+function AddPixelById(impFullId,pixelData,isOrig){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}})}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=195-0&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-0&cb=4', false, [], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=195-0&cb=5', false, [], true, false, true, false);</script>
+	<meta name="dailymotion-domain-verification" content="dmadqmytmi8mos5fy"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+
+	<meta name="Description" content="不少人頭痛英文的if,then條件句的文法，到底該用哪種動詞型態？何時該用would？何時該用will？來中英物語學習吧!"/>
+		
+	<meta property="fb:admins" content="feedthehungry"/>
+	<meta property="fb:app_id" content="370869749602419"/>
+	
+		<meta property="og:image" content="https://www.chtoen.com/image/%E4%BA%BA%E8%B7%9F%E5%95%8F%E8%99%9F.jpg"/>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+	
+	<script>
+	//my own code that I want executed ASAP
+	wideDevice = screen.width >= 768; // correct value is "screen.width >= 768"
+	
+	if(wideDevice){		
+		document.writeln("<link rel='stylesheet' href='/css/chtoen.1608802663.css'/>");
+	}else{	
+		document.writeln("<link rel='stylesheet' href='/css/chtoenM.1608802663.css'/>");
+	}
+	</script>
+
+		<title>英文中的 if... then... 條件句到底怎麼說才對? - 中英物語知道</title>
+	
+	
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-16331158-14"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-16331158-14');
+
+	</script>
+		
+<link rel='canonical' href='https://www.chtoen.com/if-then-%E6%A2%9D%E4%BB%B6%E5%8F%A5%E6%96%87%E6%B3%95%E8%A7%A3%E8%AA%AA' />
+<script type="text/javascript">var ezouid = "1";</script><base href="https://www.chtoen.com/if-then-%E6%A2%9D%E4%BB%B6%E5%8F%A5%E6%96%87%E6%B3%95%E8%A7%A3%E8%AA%AA"><script type='text/javascript'>
+var ezoTemplate = 'old_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 289902;
+var ezdomain = 'chtoen.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Taipei","country":"TW","days_since_last_visit":-1,"domain_id":289902,"engaged_time_visit":0,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"96d9b4f9-18a5-49d9-6ebd-37597b4fde40","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":33886,"response_time_orig":2,"serverid":"54.189.153.156:6638","state":"TPE","t_epoch":1637742927,"template_id":120,"time_on_site_visit":0,"url":"https://www.chtoen.com/if-then-%E6%A2%9D%E4%BB%B6%E5%8F%A5%E6%96%87%E6%B3%95%E8%A7%A3%E8%AA%AA","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":446,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_289902=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["96d9b4f9-18a5-49d9-6ebd-37597b4fde40", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+
+<body>
+
+	<div id="fb-root"></div>
+	
+
+
+	
+<!--timestamp: 2021-11-13 15:49:51 --><!--path: www.chtoen.com/if-then-條件句文法解說 -->	
+  	 
+	<header>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	  <a class="navbar-brand" href="/">中英物語 ChToEn</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  
+	  	
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	    
+	    
+	    		    		<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">麵包</a>
+				<div class="dropdown-menu">
+				<a class="dropdown-item" href="/全麥麵包的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/全麥麵包.jpg" alt="全麥麵包"/> 全麥麵包</a><a class="dropdown-item" href="/牛角麵包的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/牛角麵包.jpg" alt="牛角麵包"/> 牛角麵包</a><a class="dropdown-item" href="/圓奶油麵包的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/圓奶油麵包.jpg" alt="圓奶油麵包"/> 圓奶油麵包</a><a class="dropdown-item" href="/法式長棍麵包的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/法式長棍麵包.jpg" alt="法式長棍麵包"/> 法式長棍麵包</a><a class="dropdown-item" href="/丹麥麵包的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/丹麥麵包.jpg" alt="丹麥麵包"/> 丹麥麵包</a>					<a class="dropdown-item" href="/各種麵包的英文怎麼說">更多</a>
+					</div>
+				</li>
+					    		<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">美食</a>
+				<div class="dropdown-menu">
+				<a class="dropdown-item" href="/豬肉包的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/叉燒包.jpg" alt="豬肉包"/> 豬肉包</a><a class="dropdown-item" href="/雞米花的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/雞米花.jpg" alt="雞米花"/> 雞米花</a><a class="dropdown-item" href="/布丁的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/布丁.jpg" alt="布丁"/> 布丁</a><a class="dropdown-item" href="/大腸麵線的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/大腸麵線.jpg" alt="大腸麵線"/> 大腸麵線</a><a class="dropdown-item" href="/紅油炒手的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/紅油炒手.jpg" alt="紅油炒手"/> 紅油炒手</a>					<a class="dropdown-item" href="/各種美食的英文怎麼說">更多</a>
+					</div>
+				</li>
+					    		<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">飲料</a>
+				<div class="dropdown-menu">
+				<a class="dropdown-item" href="/百香綠茶的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/冰百香綠茶.jpg" alt="百香綠茶"/> 百香綠茶</a><a class="dropdown-item" href="/蜂蜜綠茶的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/蜂蜜綠茶.jpg" alt="蜂蜜綠茶"/> 蜂蜜綠茶</a><a class="dropdown-item" href="/檸檬紅茶的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/檸檬紅茶.jpg" alt="檸檬紅茶"/> 檸檬紅茶</a><a class="dropdown-item" href="/蜂蜜拿鐵的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/熱拿鐵咖啡.jpg" alt="蜂蜜拿鐵"/> 蜂蜜拿鐵</a><a class="dropdown-item" href="/鐵觀音奶茶的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/熱奶茶.jpg" alt="鐵觀音奶茶"/> 鐵觀音奶茶</a>					<a class="dropdown-item" href="/各種飲料的英文怎麼說">更多</a>
+					</div>
+				</li>
+					    		<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">水果</a>
+				<div class="dropdown-menu">
+				<a class="dropdown-item" href="/桑葚的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/桑葚.jpg" alt="桑葚"/> 桑葚</a><a class="dropdown-item" href="/楊桃的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/楊桃.jpg" alt="楊桃"/> 楊桃</a><a class="dropdown-item" href="/榴槤的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/榴槤.jpg" alt="榴槤"/> 榴槤</a><a class="dropdown-item" href="/釋迦的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/釋迦.jpg" alt="釋迦"/> 釋迦</a><a class="dropdown-item" href="/菠蘿蜜的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/菠蘿蜜.jpg" alt="菠蘿蜜"/> 菠蘿蜜</a>					<a class="dropdown-item" href="/各種水果的英文怎麼說">更多</a>
+					</div>
+				</li>
+					    		<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">狗</a>
+				<div class="dropdown-menu">
+				<a class="dropdown-item" href="/邊境牧羊犬的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/邊境牧羊犬.jpg" alt="邊境牧羊犬"/> 邊境牧羊犬</a><a class="dropdown-item" href="/拉布拉多的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/拉布拉多犬.jpg" alt="拉布拉多"/> 拉布拉多</a><a class="dropdown-item" href="/傑克羅素㹴的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/傑克羅素㹴.jpg" alt="傑克羅素㹴"/> 傑克羅素㹴</a><a class="dropdown-item" href="/臘腸狗的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/臘腸狗.jpg" alt="臘腸狗"/> 臘腸狗</a><a class="dropdown-item" href="/貴賓犬的英文怎麼說"><img src="/css/loading.jpg" data-src="/image/貴賓狗.jpg" alt="貴賓犬"/> 貴賓犬</a>					<a class="dropdown-item" href="/各種狗的英文怎麼說">更多</a>
+					</div>
+				</li>
+					    
+			
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">其他</a>
+				<div class="dropdown-menu">
+					
+					<a class="dropdown-item" href="/各種麵的英文怎麼說">各種麵的英文</a><a class="dropdown-item" href="/各種魚的英文怎麼說">各種魚的英文</a><a class="dropdown-item" href="/各種配菜的英文怎麼說">各種配菜的英文</a><a class="dropdown-item" href="/各種食物的英文怎麼說">各種食物的英文</a><a class="dropdown-item" href="/各種夜市小吃的英文怎麼說">各種夜市小吃的英文</a>				</div>
+			</li>
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">更多</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/forum/">FB論壇</a>
+					<a class="dropdown-item" href="/articles/">FB文章</a>
+					<a class="dropdown-item" href="/最新中英翻譯">最新翻譯</a>
+					<a class="dropdown-item" href="/熱門中英翻譯">熱門網頁</a>
+					<a class="dropdown-item" href="/最新英文教學">最新教學</a>
+					<a class="dropdown-item userInstruction" href="/image/site/chtoen-website-user-manual.jpg">使用說明</a>
+					<a class="dropdown-item" href="/選擇題-被愛比愛人幸福的英文怎麼說">選擇題</a>
+					<a class="dropdown-item" href="/填空題-不爭氣">填空題</a>
+					<a class="dropdown-item" href="/about-this-website.php">中英物語</a>
+					<a class="dropdown-item" href="/about-me.php">作者</a>
+					<a class="dropdown-item" href="/privacy-policy.php">隱私規範</a>
+				</div>
+			</li>	 
+	    </ul>
+	    
+	    <form id="searchForm" style="width:227px" class="form-inline my-2 my-lg-0">
+	      <input style="width:150px" name="query" id="searchBar" onkeypress="if (event.keyCode == 13){gtag(&#34;event&#34;, &#34;useSearchBarEnter&#34;);doSearch();return false;}" class="form-control mr-sm-2" type="search" placeholder="榛果、廢黜、衛冕冠軍、誰配不上誰、什麼主義者" aria-label="中翻英"/>
+	      <button style="width:58px" onclick="gtag(&#34;event&#34;, &#34;useSearchBarButton&#34;);doSearch();return false;" class="btn btn-outline-success my-2 my-sm-0" type="submit">翻英</button>
+	    </form>
+	  </div>
+	</nav>
+	</header>
+	
+
+	<div class="mb10"></div>
+	
+	<div id="rasBg"><img alt="correct" id="ras" src="/image/check.png"/></div>
+	<div id="wasBg"><img alt="wrong" id="was" src="/image/cross.png"/></div>
+		<!-- content past the black background top -->
+		
+			<div class="exactMatch mb10"><h1>英文中的 if... then... 條件句到底怎麼說才對?</h1> <a href="#" onclick="return false;" class="star nul">★</a><a style="" title="我要在 FB 上發問" href="#fbComment" class="gotQuestion nul"><span class="fbIconAll"><span class="fbIcon">f</span>我要發問</span></a></div>		
+		
+		
+		
+		
+		<div id="mainText">
+			<main><img style="width:300px" alt="英文中的 if... then... 條件句到底怎麼說才對?" title="英文中的 if... then... 條件句到底怎麼說才對?" class="showTip round10 center" src="/image/%E4%BA%BA%E8%B7%9F%E5%95%8F%E8%99%9F.jpg"/><div id="articleBody">不少人對於 if... then... (英文為 conditional，中文為條件句) 裡面的動詞型態有問題，不知道何時用 will，何時用 would，以下我做個解說。<br/><br/><b>1. 事實</b><br/><br/>如果你要敘述的條件句是一個事實，而且後面很快就會發生，則都用動詞簡單式，例如:<br/><br/>If I slap you in the face, your face becomes red.<br/><br/>如果後面需要一些時間才會發生，則前面用動詞簡單式，後面用未來簡單式，例如:<br/><br/>If you run, you will breathe fast.<br/><br/><b>2. 未發生，但可能發生</b><br/><br/>這類的條件句是敘述一種還未發生的情況，但它是一般的情況，所以發生率很高。前面用現在簡單式，後面用未來式。<br/><br/>例如，你跟我正在走路，你突然說想要奔跑，我就可以說:<br/><br/>If you run, you will breathe fast.<br/><br/>後面也能用未來進行式，例如:<br/><br/>If you run, you will be breathing fast for a couple of hours due to asthma.<br/><br/>如果想強調一剎那的時間點，就用未來簡單式，如果想強調會持續一段時間，就用未來進行式。<br/><br/><br/><b>3. 未發生，也很不可能發生</b><br/><br/>這類的條件句是敘述一種還未發生也很不可能發生的情況，發生率很低。前面用過去簡單式，後面用 would + 動詞簡單式，例如:<br/><br/>If you saw a horse running down the street, what would you do? (假設現在你看到一隻馬在路上奔跑，你會怎麼做?)<br/><br/>同樣的，以下的句子也可以:<br/><br/>If you saw a horse running down the street, what would you be doing?<br/><br/>如果想強調一剎那的時間點，就用 would + 動詞簡單式，如果想強調會持續一段時間，就用 would + 動詞進行式。<br/><br/>由於說者認為在路上看到馬是個很不可能發生的情況，所以可以用這樣子的表達方式，但如果在某個地方在路上常常看到馬，說者就不會用此句型了。<br/><br/><br/><b>4. 未發生，但假設過去真的發生了，說者認為過去會接著發生什麼事情</b><br/><br/>也就是說，過去雖然沒發生此事，但假如發生了，又會接著發生什麼事，例如:<br/><br/>If you had shot him dead, you would have gone to jail.<br/><br/>但事實上，你並沒有開槍打死人，所以也沒有進監牢。<br/><br/>前面用過去完成式 (had + 過去分詞)，後面用 would have + 過去分詞。<br/><br/>過去分詞的英文為 past participle。<br/><br/>再來，would have 後面也能加動詞進行式，原因同上，例如:<br/><br/>If you had been shot, you would have been screaming in pain for hours.<br/><br/>再來，這類情況也可以用否定，例如:<br/><br/>If you had NOT been shot, you would NOT have gone to the hospital. (假設你沒被槍打到，你就不用就醫了)<br/><br/>事實上，你真的被槍打到了也就醫了。<br/><br/>再來，此情況跟發生率無關，即使發生率很低，也能用此句型，例如:<br/><br/>If you had seen a horse running down the street, what would you have done? (假設你過去看到一隻馬在路上奔跑，你過去會怎麼做?)<br/><br/><br/><b>5. 未發生，但假設過去真的發生了，說者認為現在會發生什麼事情</b><br/><br/>前面用過去完成式 (had + 過去分詞)，後面用 would + 動詞簡單式，以下是例句:<br/><br/>If you had shot him dead, you would be in jail now.<br/><br/>If you had been shot, you would be in the hospital now.<br/><br/>If you had been shot, your folks would flip out.<br/><br/>If you hadn&#39;t been shot, you wouldn&#39;t be wearing bandages or feeling down.<br/><br/>大家都明白了嗎？有問題歡迎在底下的FB發問，有問必答~<br/></div><div class="cb"></div>
+<div class="mb10"></div></main>				
+				<div style="font-size:17px" class="fl">還有問題？<a href="#fbComment" class="" style="">請發問</a></div>
+				<div class="fbLikeButton fr"></div>
+				<div class="cb"></div>
+				<div class="mb10"></div>
+				
+				
+				
+				請參考 <a class="" href="https://track.abzcoupon.com/track/clicks/4435/c627c2b9980627d7f99cbd2e8d2b891473624ccf77ebf0ab416db6016401">eTalking 線上英語學習</a><div class="pb10"></div>
+<p class="subheading" style="">
+	<span style="color:red">選擇題</span>
+</p>
+ 
+
+<p>
+</p><h3 style="margin:0 10px"><a href="/狹持的英文怎麼說">狹持</a><span style="font-weight:normal">的英文怎麼說?</span> <span style="color:#aaa;font-weight:normal;">(二選一)</span></h3>
+<p></p>
+
+<div data-nextpath="/選擇題-沒有來電顯示的英文怎麼說" style="margin:0 10px 10px 10px" class="quan refreshMe wrong button ">get greedy</div><div data-nextpath="/選擇題-沒有來電顯示的英文怎麼說" style="margin:0 10px" class="quan refreshMe correct button">held hostage</div><div class="mb10"></div>
+<a class="" style="font-size:17px;margin-left:10px" title="選擇題 - 沒有來電顯示的英文是什麼?" href="/選擇題-沒有來電顯示的英文怎麼說">下一題 - 沒有來電顯示</a>
+<a style="" title="我要在 FB 上發問" href="#fbComment" class="gotQuestion nul"><span class="fbIconAll"><span class="fbIcon">f</span>我要發問</span></a>				
+				
+				<p style="margin:40px"></p>
+				
+				
+
+<p class="subheading" style="">
+		<span style="color:red">填空題</span>
+</p>
+ 
+
+<h3 style="font-weight:normal;margin:0 10px">建造新的捷運站是個艱辛的工程。<span style="color:#aaa;"> (請填空)</span></h3>
+
+<div id="challengeSentence" style="margin:0 10px">Building a new MRT station is a <input id="cabg" data-answerlength="1" data-nexttermpath="/填空題-不爭氣" data-correctsentencered="Building a new MRT station is a &lt;span style=&#39;color:red;font-weight:bold&#39;&gt;t&lt;/span&gt;ough project." data-correctsentencegreen="Building a new MRT station is a &lt;span style=&#39;color:green;font-weight:bold&#39;&gt;t&lt;/span&gt;ough project." data-challengecorrectanswer="t" placeholder="1 個字母" type="text" size="7" maxlength="25"/>ough project.</div><div class="mb10"></div>
+<a class="" style="font-size:17px;margin-left:10px" title="填空題 - 不爭氣" href="/填空題-不爭氣">下一題 - 不爭氣</a>
+<a style="" title="我要在 FB 上發問" href="#fbComment" class="gotQuestion nul"><span class="fbIconAll"><span class="fbIcon">f</span>我要發問</span></a><div><div class="pb10"></div></div><p style="font-size:20px;">以下是最近<a href="/article/5486484711377820">最熱門的FB貼文</a>，請<span style="color:red">按讚</span>支持我們免費教中翻英</p><div style="overflow:hidden;margin:10px"><div class="fb-post center" style="display:block;" data-href="http://www.facebook.com/Ch2En/posts/5486484711377820"></div></div>			
+				
+				<div id="fbLikeBox" style="">
+					<p style="font-size:20px;">請<span style="color:red">按讚</span>支持<a href="https://www.facebook.com/Ch2En/">中英物語的FB</a>免費教英文</p>
+					<div id="fbPageBottomPc" class="fb-page center" style="display:block;overflow:hidden;margin:10px" data-tabs="timeline" data-href="https://www.facebook.com/Ch2En" data-width="500" data-height="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" data-adapt-container-width="true"></div>
+				</div>
+				<div class="mb10"></div>
+					
+			
+			
+			
+								
+			
+			
+		</div><!-- mainText -->
+		
+		
+		
+		<div id="leftSideText" style="overflow: hidden;">
+		
+					
+			
+			
+
+					
+			<div id="favoriteTermsHeading" class="subheading mb10"><span style="color:orange">★</span> 我的最愛 <span style="color:orange">★</span><a style="" class="cross" href="#" onclick="deleteAllFavoriteCookies();alert(&#34;清除完畢!&#34;);return false;">x</a></div>
+			<div id="favoriteTerms"></div>
+			<div class="pb20"></div>
+			
+			
+			
+							<!-- Chtoen-300x1050 left ad-->
+									
+				<!-- Chtoen-300x600f -->
+				<!-- 
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:300px;height:600px"
+				     data-ad-client="ca-pub-3404770245697982"
+				     data-ad-slot="6402405758"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+				 -->
+				<div class="pb20"></div>	
+							
+			
+			
+			<div class="subheading mb10">我的搜查紀錄 <a style="" class="cross" href="#" onclick="deleteAllTermCookies();alert(&#34;清除完畢!&#34;);return false;">x</a></div>
+			<div id="history"></div>
+			<div class="pb10"></div>
+			<div class="subheading mb10">隨機抽詞</div><a title="被愛比愛人幸福的英文怎麼說" class="ll" href="/被愛比愛人幸福的英文怎麼說">被愛比愛人幸福</a><div class="pb10"></div><div class="subheading mb10">以下如何翻成英文？</div><a style="" href="/填空題-沒眼光" class="nul bgOnHover">他對骨董沒眼光。<span class="readMore">看解答</span></a><div class="mb10"></div>				
+				<div class="subheading mb10">猜猜以下是啥英文？</div>
+				<ul class="bxslider" style="visibility:hidden;">
+										<li>
+						<div class="bgOnHover">
+														<a href="/曬不到陽光的座位的英文怎麼說" class="nul">
+							
+							<img src="/css/loading.jpg" style="margin-top:5px;margin-bottom:15px;" class="center round10 sideImage" data-src="/image/充滿陽光的樹林.jpg" alt="曬不到陽光的座位" title="曬不到陽光的座位"/>
+							
+							<span class="readMore nul">看解答</span>
+							</a>
+						</div>
+					</li>
+										<li>
+						<div class="bgOnHover">
+														<a href="/西裝頭的英文怎麼說" class="nul">
+							
+							<img src="/css/loading.jpg" style="margin-top:5px;margin-bottom:15px;" class="center round10 sideImage" data-src="/image/西裝頭.jpg" alt="西裝頭" title="西裝頭"/>
+							
+							<span class="readMore nul">看解答</span>
+							</a>
+						</div>
+					</li>
+										<li>
+						<div class="bgOnHover">
+														<a href="/別得意忘形的英文怎麼說" class="nul">
+							
+							<img src="/css/loading.jpg" style="margin-top:5px;margin-bottom:15px;" class="center round10 sideImage" data-src="/image/戴墨鏡的男人.jpg" alt="別得意忘形" title="別得意忘形"/>
+							
+							<span class="readMore nul">看解答</span>
+							</a>
+						</div>
+					</li>
+									</ul>
+				<div class="pb10"></div>
+			<div class="subheading mb10">以下的圖是什麼英文？</div>		<a class="bgOnHover" href="/潛在理由的英文怎麼說">
+			<img src="/css/loading.jpg" class="center round10 sideImage" style="" data-src="/image/男女吵架.jpg" alt="潛在理由"/>
+		</a> 
+		<div class="mb10"></div>		<a class="bgOnHover" href="/無業遊民的英文怎麼說">
+			<img src="/css/loading.jpg" class="center round10 sideImage" style="" data-src="/image/流浪漢.jpg" alt="無業遊民"/>
+		</a> 
+		<div class="mb10"></div>			
+		</div> <!-- leftSideText -->
+		<div id="rightSideText" style="overflow: hidden;">
+			<div class="subheading mb10">最新教學</div><div class="bgOnHover"><a title="來中英物語學習有關電池的英文，包括「電池變弱直到沒電」、「電池正在充電」、「電池沒電了」等。" href="/關於電池的英文" class="center nul">來中英物語學習有關電池的英文，包括「電池變弱直到沒電」、「電池正在充電」、「電池沒電了」等。<br/><img src="/css/loading.jpg" style="margin-top:5px;" class="center round10 sideImage" data-src="/image/AA電池.jpg" alt="來中英物語學習有關電池的英文，包括「電池變弱直到沒電」、「電池正在充電」、「電池沒電了」等。" title="來中英物語學習有關電池的英文，包括「電池變弱直到沒電」、「電池正在充電」、「電池沒電了」等。"/></a></div><a style="margin: 10px;" class="readMore nul" title="英文教學" href="/最新英文教學">(更多...)</a><div class="mb10"></div><div class="pb20"></div><div class="subheading mb10">最新翻譯</div><a title="榛果的英文怎麼說" class="ll" href="/榛果的英文怎麼說">榛果</a><a title="廢黜的英文怎麼說" class="ll" href="/廢黜的英文怎麼說">廢黜</a><a title="衛冕冠軍的英文怎麼說" class="ll" href="/衛冕冠軍的英文怎麼說">衛冕冠軍</a><a title="脂粉味的男生的英文怎麼說" class="ll" href="/脂粉味的男生的英文怎麼說">脂粉味的男生</a><a title="濾掛式咖啡的英文怎麼說" class="ll" href="/濾掛式咖啡的英文怎麼說">濾掛式咖啡</a><div class="mb5"></div><a style="margin: 10px;" class="readMore nul" title="最新中英翻譯" href="/最新中英翻譯">(更多...)</a><div class="pb10"></div><div class="subheading mb10">熱門網頁</div><a title="4057 人瀏覽了首頁" class="ll" href="/">4057 人瀏覽了首頁</a><a title="2102 人瀏覽了姓氏張的英文怎麼說" class="ll" href="/姓氏張的英文怎麼說">2102 人瀏覽了姓氏張的英文怎麼說</a><a title="1496 人瀏覽了無奈的英文怎麼說" class="ll" href="/無奈的英文怎麼說">1496 人瀏覽了無奈的英文怎麼說</a><a title="1349 人瀏覽了插頭插座插孔的英文是甚麼-有孔跟沒孔的插頭又是甚麼" class="ll" href="/插頭插座插孔的英文是甚麼-有孔跟沒孔的插頭又是甚麼">1349 人瀏覽了插頭插座插孔的英文是甚麼-有孔跟沒孔的插頭又是甚麼</a><a title="1217 人瀏覽了姓氏謝的英文怎麼說" class="ll" href="/姓氏謝的英文怎麼說">1217 人瀏覽了姓氏謝的英文怎麼說</a><div class="mb5"></div><a style="margin: 10px;" class="readMore nul" title="熱門網頁" href="/熱門中英翻譯">(更多...)</a><div class="mb10"></div><div class="subheading mb10">以下的圖是什麼英文？</div>		<a class="bgOnHover" href="/低頭族的英文怎麼說">
+			<img src="/css/loading.jpg" class="center round10 sideImage" style="" data-src="/image/低頭族.jpg" alt="低頭族"/>
+		</a> 
+		<div class="mb10"></div>		<a class="bgOnHover" href="/鐵窗的英文怎麼說">
+			<img src="/css/loading.jpg" class="center round10 sideImage" style="" data-src="/image/鐵窗.jpg" alt="鐵窗"/>
+		</a> 
+		<div class="mb10"></div>		</div> <!-- rightSideText -->
+		
+		<!-- footer -->
+		<div class="cb"></div>
+		
+		<div id="internalAd" class="round10 lbh nul " style="padding: 10px;display:block;margin:0 20px 20px 20px">
+			<span class="subheading" style="display:block;background:transparent;">您有以下問題嗎？<a href="#fbComment">歡迎發問</a>！<a href="javascript:void(0);" style="" class="cross" onclick="addCookie(&#34;internalAd&#34;, &#34;0&#34;, 30);$(&#34;#internalAd&#34;).hide(1000);return false;">x</a></span>
+			<ul class="ticker2" style="font-size:20px;">
+				<li>珍珠奶茶的英文怎麼說?</li>
+				<li>You failed me 是什麼意思?</li>
+				<li>I am well 跟 I am good 的差別?</li>
+			</ul>
+		</div>
+		
+		<div id="fbComment" class="" style="background: #DFE6F2;color: red;padding: 10px;text-align: center;">
+			有任何問題請在下面發問，有問必答!
+		</div>
+		<div style="margin: 15px;">
+			<div class="fb-comments" data-href="www.chtoen.com" data-width="100%" data-numposts="2" data-order-by="reverse_time"></div>
+		</div>
+		
+		 
+		<div class="fbLikeButton fl" style="padding-left:20px"></div>
+		<a style="padding-right:20px" class="fr nul" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.chtoen.com%2Fif-then-%25E6%25A2%259D%25E4%25BB%25B6%25E5%258F%25A5%25E6%2596%2587%25E6%25B3%2595%25E8%25A7%25A3%25E8%25AA%25AA"><span class="fbIconAll"><span class="fbIcon">f</span>分享</span></a>
+		<div class="cb"></div>
+		
+		
+				<footer class="center round10" style="color:#777;margin: 20px;">
+			<a style="color:#777;" class="userInstruction" href="/image/site/chtoen-website-user-manual.jpg">使用說明</a> 
+			| <a style="color:#777;" href="/about-this-website.php">關於中英物語</a> 
+			| <a style="color:#777;" href="/about-me.php">關於作者</a> 
+			| <a style="color:#777;" href="/選擇題-被愛比愛人幸福的英文怎麼說">選擇題</a> 
+			| <a style="color:#777;" href="/填空題-不爭氣">填空題</a> 
+			| <a style="color:#777;" href="/forum/">FB中翻英論壇</a> 
+			| <a style="color:#777;" href="/articles/">FB粉絲頁的PO文</a>
+			| <a style="color:#777;" href="/privacy-policy.php">隱私規範</a> 
+			<br/>
+			ChToEn.com - 中英物語 - <a target="_blank" href="https://michael.chtoen.com/">Michael Wen</a> 創立. 歡迎在<a target="_blank" href="https://www.facebook.com/feedthehungry">臉書</a>找到 <a target="_blank" href="https://michael.chtoen.com/">Michael</a>
+		</footer>
+		<!-- END footer -->
+			
+			
+			
+		<!-- lightbox popup definitions -->
+		<div id="twAffPopup" style="display:none;color:gray;text-align:center;padding-bottom: 1px;width:300px">
+			<div style="font-weight:bold;color:black">別灰心，請參考下列的英文服務！</div>
+			<br/>
+			<div style="font-size:80%">
+			六書堂期望在數位學習平台上翻轉教育，讓學習無遠國界，無論你身在哪裡，都能透過輕鬆的1堂25分鐘，體驗到最有效的英文課程。			</div>
+			<br/>
+			<a style="width:250px;font-size:90%;margin-bottom:20px" class="buttonPink" href="https://track.affsrc.com/track/clicks/5055/c627c2bf9d0826ddf88eec35dc2e9753743940c873efe0e25826bf0067015a">WUWOW 線上真人英文</a>
+		</div>
+		
+		
+			
+		<!-- END lighbox definitions -->
+		
+	<img src="/css/up-arrow.png" alt="up arrow" class="goToTop goToButton" style="bottom:130px;"/>
+	<img src="/css/down-arrow.png" alt="down arrow" class="goToBottom goToButton" style=""/>
+			
+		<a class="lazyHover" id="paa" href="/important-to-%E9%82%84%E6%98%AF-important-for" title="上一題: Important to me or i.." style="">
+		<!-- https://icons8.com/web-app/1806/back#filled -->
+		<img class="arrow" alt="left arrow" style="float:left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACyUlEQVR4Xu3d4VHDMAwF4McEMAJMAGwAG7ASE7ACI7ABbABMAGwAG3A6mmvaa5OYq1VJ7+Vvc42qL7LdnB2fQEeoDJyEikbBQCDBbgKBCCRYBoKFowoRSLAMbIZzDuABwA2AMwBPAO4BvHlFrQpZZ/oKwPMKYpz/bwC3XigC+Uv9PowBxirk2qNKBDKPMThcAPjsjcIOMlcZ4/wLpPPd2ILxvmrWOocE2n/qLRg/K4zuzZVpMzZZrRg2BNawt1PbEBqDrULCYzCBpMBgAUmDwQCSCqM6SDqMyiApMaqCpMWoCJIaoxpIeoxKICUwqoCUwagAUgojO0g5jMwgJTGygpTFyAhSGiMbSHmMTCAUGFlAaDAygFBhRAehw4gMQokRFYQWIyIINUY0EHqMSCDCWE3VjDC3VxijebPHBhHG1iTmY4IIY8eM8mOBCGPP9P5jgAhjYq2FN4gwJjC8h722KP91xzrwXSHaMjLXlUszeXL72LNCDMMqZO6gxfCsEKuOjzkJANQYEUFcX2Ox4AZxP8WzybKVrJcLfiE1iieINVuGciqU/RnwBLEorFN/EUocEKEE+h8yDkWVEujRyRCKUAI9XBRKwAoRSsAKEcoWivewd2qMoT4l4Puy6FEiVYiar4AVQo8SsUKoUSKDUD5miQ5Ch5IBhAolCwgNSiYQCpRsIOVRMoKURskKUhYlM0hJlOwg5VAqgJRCqQJSBqUSSAmUaiDpUSqCpEapCpIWpTJISpTqIOlQGEBSobCApEFhAkmBwgYSHoUR5D8otnW3tl6dmgh8gM9apq1qP/UDJHzJV7SgaPvuJRk9wDlLUazZ6r5JMWsfsu04h/IFwJZ1dz8Esk7xFIpLdVgoAtm85w3lcfTGCauMO4+maghDILsboeGtRd37jO3LC6R7r9B2AYG05av72QLpnuK2CwikLV/dzxZI9xS3XeAXBiIAdJqbxRMAAAAASUVORK5CYII="/>
+		
+		<div class="text" style="margin-right: 5px;">Important to me or i..</div>
+		<img src="/css/loading.jpg" class="image" alt="Important to me or i.." style="" data-src="/image/%E6%83%B3%E4%BA%8B%E6%83%85%E7%9A%84%E5%A5%B3%E7%94%9F.jpg"/>
+		
+	</a>
+		<a class="lazyHover" id="naa" href="/%E5%9C%8B%E5%AE%9A%E5%81%87%E6%97%A5%E6%88%96%E7%AF%80%E6%97%A5%E6%80%8E%E9%BA%BC%E7%BF%BB%E8%AD%AF%E6%88%90%E8%8B%B1%E6%96%87" title="下一題: 國定假日或節日怎麼翻譯成英文?" style="">
+		<!-- https://icons8.com/web-app/61/forward#filled -->
+		<img class="arrow" alt="right arrow" style="float:right" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACtUlEQVR4Xu3d/U3cQBAF8EcFpAOgA+ggVBA6gBJCRbRAB0kHkA5SAqkg0UiOZB3njwvK7Jt5z/9ypxvPb2fHtrzLGXxQZeCMKhoHA4OQDQKDGIQsA2ThuELEQe4BfAVwDeANwHcAjwB+kuVlWDiZFfIA4OnImQbMLYDXYVkg+uFMkJepMo6dvlGmrGSC/N4YiEYBUu9DIuHnRlnPQGaFPAP4smO6lq6UTJDLqXFvVUmYyaJkgkSi43I3LnWNsjBVZIMYZWPOHgFilBWUUSBGIZqy5qG4pxzAjKyQv6EYZYbCAOLpixDEKAOeZe24Sfd9CsuU5UZPWiHyjZ6xQqRRmEEkGz07iBxKBRAplCogMiiVQCRQqoG0R6kI0hqlKkhblMogLVGqg7RD6QDSCqULSBuUTiAtULqBlEfpCFIapStIWZTOICVRuoOUQ1EAKYWiAlIGRQmkBIoaCD2KIsi/oNxkbW6gCnIqSmxqECj//VAGORXlKqNKDAJ8A/Bpx9A3yI4kfeQjsVBoL8aPlW1BPhLDu++qVsgpGL8mjJQdixRBTsX4nLlTkRoINUbMX0og9BhKICUwVEDKYCiAlMLoDlIOozNISYyuIGUxOoKUxugGUh6jE0gLjC4gbTA6gLTCqA7SDqMySEuMqiBtMSqCtMaoBtIeoxKIBEYVEBmMCiBSGOwgchjMIJIYrCCyGIwg0hhsIPIYTCDGmF67Znhz0Rizd+BHgxjjYEHCSBBjHFlZMgrEGAvLfEaAGGMBY8RVljFWMLJBjLGBkQ2y9v/U56HGmr7UZWQ78pT2kaweEtURIFuHNEZmhewBkcfIBInfimXFFwslYowBj06WqsQYAx+dBMrzrFJih4S7jD1EtpoXy9+zmvrh+QbMmyHeD4NRICwDki4Og5CRGMQgZBkgC8cVQgbyB3WUB3RuNnglAAAAAElFTkSuQmCC"/>
+		<img src="/css/loading.jpg" class="image" alt="國定假日或節日怎麼翻譯成英文?" style="margin-left: 10px;" data-src="/image/%E5%88%92%E9%BE%8D%E8%88%9F.jpg"/>
+		
+		<div class="text" style="">國定假日或節日怎麼翻譯成英文?</div>
+	</a>
+	
+	
+	
+	<script>
+	if(!wideDevice){	//mobile: show ad. I used to use the code "screen.width < 768" but changed it to use wideDevice variable already exist
+		var adCode = '<ins class="clickforceads" id="cfa3" style="display:inline-block;width:150px;height:150px" data-ad-zone="4820"></ins><script async src="//cdn.holmesmind.com/js/init.js"></'+'script>';
+		document.writeln(adCode);
+		
+	}else{	//PC: don't show ad cuz it's a full screen ad on PC and it's annoying
+	}
+	
+	/*
+201104: with or without "defer" i sometimes get the error:
+Failed to load resource: the server responded with a status of 500 () www.facebook.com/plugins/feedback.php?app_id=370869749602419&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfb532375206fac%26domain%3Dwww.chtoen.com%26origin%3Dhttp%253A%252F%252Fwww.chtoen.com%252Ffe416ae87714b%26relation%3Dparent.parent&container_width=1374&height=100&href=http%3A%2F%2Fwww.chtoen.com%2F&locale=zh_TW&numposts=2&order_by=reverse_time&sdk=joey&version=v8.0&width:1
+also, i verified "defer" does keep execution order by testing 4 javascript files	
+with defer: 1/9 works in chrome
+without defer: 3/9 works in chrome
+so it makes no difference whether i add "defer". i add it cuz it may improve UX		
+how to make it 100% work? nobody on google knows.
+	*/
+	if(wideDevice){
+		document.writeln("<script defer src='/js/chtoen.1608802663.js'></"+"script>");
+	}else{	
+		document.writeln("<script defer src='/js/chtoenM.1608802663.js'></"+"script>");
+	}
+
+	</script>
+	
+	<script defer="" crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js"></script>
+	
+	 
+
+	
+	
+
+<script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('/detroitchicago/edmonton.webp', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('/porpoiseant/jellyfish.webp', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=34', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="chtoen_com",_audins_did=289902;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=195-0");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.chtoen_com,DomainId.289902" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+<script type="text/javascript" data-cfasync="false"></script>
+<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=0&cb=3', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script></body></html>
