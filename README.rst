@@ -1,6 +1,34 @@
 Article extraction benchmark: open-source libraries and commercial services
 ===========================================================================
 
+Available datasets
+-------------------
+- Ureka: /ureka-html + ureka_dataset.json
+- Original author: /html + ground-truth.json
+- Original + gparsers data: /test2-html + test2.json
+
+Create new datasets
+-------------------
+- rules: follow their `paper <https://github.com/scrapinghub/article-extraction-benchmark/releases/tag/v1.0.0>`_.'s main content's defination
+- follow `Annotation.ipynb` to annotate your data
+- parse by several parsers: except from gparser and gparser_machinev2, you can use `Extractor.ipynb` to parse
+- HTML file parse by gparser and gparser_machinev2:
+1. clone `gparsed <https://github.com/livingbio/gparsed>`_.
+2. copy `Machine.ipynb` to gparsed repo to parse by machine parser
+3. run docker and parse by gparser. You can check `this <https://github.com/livingbio/gparsed/blob/56cf7c0117be76aea256305bdb33a76447760c93/src/main.py#L43>`_
+(If you need GOOGLE_APPLICATION_CREDENTIALS, download this `file <https://github.com/livingbio/dubee/blob/a2d8e4ac1ddf7eb56f4aa8bb663138753f7505b5/src/unlimited.json>`_)
+
+Evaluate
+-------------------
+- Use `evaluate.py`
+- Change ground truth `path <https://github.com/livingbio/article-extraction-benchmark/blob/7e84bb05aee637199d3c89d735e35bc7fbbcf39a/evaluate.py#L24>`_
+- Change every parser's result `path <https://github.com/livingbio/article-extraction-benchmark/blob/7e84bb05aee637199d3c89d735e35bc7fbbcf39a/evaluate.py#L26>`_
+- The default evaluation is mainly comparing the content which parser can successfully parse.
+- If you want to penalize the parsers which fail to parse (result = ""), comment `this <https://github.com/livingbio/article-extraction-benchmark/blob/7e84bb05aee637199d3c89d735e35bc7fbbcf39a/evaluate.py#L109>`_
+- If you want to penalize the parsers which parse completely different content from ground truth, comment `this <https://github.com/livingbio/article-extraction-benchmark/blob/7e84bb05aee637199d3c89d735e35bc7fbbcf39a/evaluate.py#L112>`_
+see more detail in `here <https://paper.dropbox.com/doc/Benchmark-A.I.-Parser--BYc6Nqe8egJpgdfQHLeQoL9LAg-UPbZxMrxYm4XWR452HaTq>`_
+
+-------------------
 We evaluate the quality of article body
 extraction for commercial services
 `Zyte Automatic Extraction (ours) <https://www.zyte.com/data-types/news-scraping-api/>`_,
