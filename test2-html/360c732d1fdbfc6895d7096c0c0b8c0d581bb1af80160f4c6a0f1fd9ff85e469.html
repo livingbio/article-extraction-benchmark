@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+				<script>
+
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'Article Publish Date': "2019-11-20",
+				'Page Type': "post",
+				'Primary Category': "Markets",
+				'Secondary  Category': "",
+				'Primary Section': "Markets &amp; Economics",
+				'Secondary Section': "",
+				'Post Author': "Anna Menin",
+							});
+
+		</script>
+				<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NH9SN8S');</script>
+		<!-- End Google Tag Manager -->
+				<!-- The Publisher Desk Ads Script -->
+		<script>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			googletag.cmd.push(function() {
+				googletag.pubads().setTargeting('postId', [ '1291751' ]);
+				googletag.pubads().setTargeting('page-type', [ 'single' ]);
+				googletag.pubads().setTargeting('Post-type', [ 'post' ]);
+				googletag.pubads().setTargeting('Author', [ 'Anna Menin' ]);
+				googletag.pubads().setTargeting('Category', [ 'Markets' ]);
+				googletag.pubads().setTargeting('section', [ 'Markets &amp; Economics' ]);
+				googletag.pubads().setTargeting('Category-Secondary', [ '' ]); 			})
+		</script>
+
+		<script async src="https://cdn.tpdads.com/configs/cityam.js"></script> 
+		<script>
+			(function() {
+				var host = window.location.hostname;
+
+				// TPD modification of tag for staging site testing
+				if (host === 'staging.cityam.com' ||
+					host === 'www.publisherdesk.com' ||
+					host === 'cityam.test' ||
+					host === 'vip-staging.cityam.com' ||
+					host === 'cityam.go-vip.net' ||
+					host === 'beta.cityam.com'
+				) {
+					host = 'www.cityam.com';
+				}
+				// End
+
+				var element = document.createElement('script');
+				var firstScript = document.getElementsByTagName('script')[0];
+				var milliseconds = new Date().getTime();
+				var url = 'https://quantcast.mgr.consensu.org'
+					.concat('/choice/', 'D-Lt_AD1n7rLr', '/', host, '/choice.js')
+					.concat('?timestamp=', milliseconds);
+				var uspTries = 0;
+				var uspTriesLimit = 3;
+				element.async = true;
+				element.type = 'text/javascript';
+				element.src = url;
+
+				firstScript.parentNode.insertBefore(element, firstScript);
+
+				function makeStub() {
+					var TCF_LOCATOR_NAME = '__tcfapiLocator';
+					var queue = [];
+					var win = window;
+					var cmpFrame;
+
+					function addFrame() {
+						var doc = win.document;
+						var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+						if (!otherCMP) {
+							if (doc.body) {
+								var iframe = doc.createElement('iframe');
+
+								iframe.style.cssText = 'display:none';
+								iframe.name = TCF_LOCATOR_NAME;
+								doc.body.appendChild(iframe);
+							}
+							else {
+								setTimeout(addFrame, 5);
+							}
+						}
+						return !otherCMP;
+					}
+
+					function tcfAPIHandler() {
+						var gdprApplies;
+						var args = arguments;
+
+						if (!args.length) {
+							return queue;
+						}
+						else if (args[0] === 'setGdprApplies') {
+							if (
+								args.length > 3 &&
+								args[2] === 2 &&
+								typeof args[3] === 'boolean'
+							) {
+								gdprApplies = args[3];
+								if (typeof args[2] === 'function') {
+									args[2]('set', true);
+								}
+							}
+						}
+						else if (args[0] === 'ping') {
+							var retr = {
+								gdprApplies: gdprApplies,
+								cmpLoaded: false,
+								cmpStatus: 'stub',
+							};
+
+							if (typeof args[2] === 'function') {
+								args[2](retr);
+							}
+						}
+						else {
+							queue.push(args);
+						}
+					}
+
+					function postMessageEventHandler(event) {
+						var msgIsString = typeof event.data === 'string';
+						var json = {};
+
+						try {
+							if (msgIsString) {
+								json = JSON.parse(event.data);
+							}
+							else {
+								json = event.data;
+							}
+						}
+						catch (ignore) {}
+
+						var payload = json.__tcfapiCall;
+
+						if (payload) {
+							window.__tcfapi(
+								payload.command,
+								payload.version,
+								function(retValue, success) {
+									var returnMsg = {
+										__tcfapiReturn: {
+											returnValue: retValue,
+											success: success,
+											callId: payload.callId,
+										},
+									};
+									if (msgIsString) {
+										returnMsg = JSON.stringify(returnMsg);
+									}
+									event.source.postMessage(returnMsg, '*');
+								},
+								payload.parameter,
+							);
+						}
+					}
+
+					while (win) {
+						try {
+							if (win.frames[TCF_LOCATOR_NAME]) {
+								cmpFrame = win;
+								break;
+							}
+						}
+						catch (ignore) {}
+
+						if (win === window.top) {
+							break;
+						}
+						win = win.parent;
+					}
+					if (!cmpFrame) {
+						addFrame();
+						win.__tcfapi = tcfAPIHandler;
+						win.addEventListener('message', postMessageEventHandler, false);
+					}
+				};
+				if (typeof module !== 'undefined') {
+					module.exports = makeStub;
+				}
+				else {
+					makeStub();
+				}
+				var uspStubFunction = function() {
+					var arg = arguments;
+					if (typeof window.__uspapi !== uspStubFunction) {
+						setTimeout(function() {
+							if (typeof window.__uspapi !== 'undefined') {
+								window.__uspapi.apply(window.__uspapi, arg);
+							}
+						}, 500);
+					}
+				};
+				var checkIfUspIsReady = function() {
+					uspTries++;
+					if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+						console.warn('USP is not accessible');
+					}
+					else {
+						clearInterval(uspInterval);
+					}
+				};
+				if (typeof window.__uspapi === 'undefined') {
+					window.__uspapi = uspStubFunction;
+					var uspInterval = setInterval(checkIfUspIsReady, 6000);
+				}
+			})();
+		</script>
+		
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.2 (Yoast SEO v17.2) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Alibaba to raise up to $12.9bn in landmark Hong Kong listing</title>
+	<meta name="description" content="Alibaba is set to raise up to $12.9bn (£10bn) from its record-breaking second listing in Hong Kong, ahead of the official pricing announcement today." />
+	<link rel="canonical" href="https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Alibaba to raise up to $12.9bn in landmark Hong Kong listing" />
+	<meta property="og:description" content="Alibaba is set to raise up to $12.9bn (£10bn) from its record-breaking second listing in Hong Kong, pricing its shares at a 2.8 per cent discount to their" />
+	<meta property="og:url" content="https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/" />
+	<meta property="og:site_name" content="CityAM" />
+	<meta property="article:publisher" content="https://www.facebook.com/cityam" />
+	<meta property="article:published_time" content="2019-11-20T09:22:35+00:00" />
+	<meta property="article:modified_time" content="2019-11-20T09:22:38+00:00" />
+	<meta property="og:image" content="https://cityam.test/assets/uploads/main-image/full_width_article_body_image/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg" />
+	<meta property="og:image:width" content="839" />
+	<meta property="og:image:height" content="523" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@annafmenin" />
+	<meta name="twitter:site" content="@CityAM" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Anna Menin" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://www.cityam.com/","name":"CityAM","url":"https://www.cityam.com/","sameAs":["https://www.facebook.com/cityam","https://www.instagram.com/cityamtravel/","http://www.linkedin.com/company/cityam","https://twitter.com/CityAM"],"logo":{"@type":"ImageObject","@id":"https://www.cityam.com/#logo","inLanguage":"en-GB","url":"https://www.cityam.com/wp-content/uploads/2021/10/city-amtrans-1-e1508748685286-6.png","contentUrl":"https://www.cityam.com/wp-content/uploads/2021/10/city-amtrans-1-e1508748685286-6.png","width":300,"height":158,"caption":"CityAM"},"image":{"@id":"https://www.cityam.com/#logo"},"masthead":"https://www.cityam.com/about/"},{"@type":"WebSite","@id":"https://www.cityam.com/#website","url":"https://www.cityam.com/","name":"CityAM","description":"London&#039;s Business Newspaper","publisher":{"@id":"https://www.cityam.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.cityam.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-GB"},{"@type":"ImageObject","@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#primaryimage","inLanguage":"en-GB","url":"https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg","contentUrl":"https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg","width":839,"height":523},{"@type":"WebPage","@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#webpage","url":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/","name":"Alibaba to raise up to $12.9bn in landmark Hong Kong listing","isPartOf":{"@id":"https://www.cityam.com/#website"},"primaryImageOfPage":{"@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#primaryimage"},"datePublished":"2019-11-20T09:22:35+00:00","dateModified":"2019-11-20T09:22:38+00:00","description":"Alibaba is set to raise up to $12.9bn (\u00a310bn) from its record-breaking second listing in Hong Kong, ahead of the official pricing announcement today.","breadcrumb":{"@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"]}]},{"@type":"BreadcrumbList","@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Alibaba to raise up to $12.9bn in landmark Hong Kong listing"}]},{"@type":["Article","NewsArticle"],"@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#article","isPartOf":{"@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#webpage"},"author":{"@id":"https://www.cityam.com/#/schema/person/ccc7e7ca6c80df27e8fdfc8c28a9de04"},"headline":"Alibaba to raise up to $12.9bn in landmark Hong Kong listing","datePublished":"2019-11-20T09:22:35+00:00","dateModified":"2019-11-20T09:22:38+00:00","mainEntityOfPage":{"@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#webpage"},"wordCount":386,"publisher":{"@id":"https://www.cityam.com/#organization"},"image":{"@id":"https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/#primaryimage"},"thumbnailUrl":"https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg","articleSection":["Markets"],"inLanguage":"en-GB"},{"@type":"Person","@id":"https://www.cityam.com/#/schema/person/ccc7e7ca6c80df27e8fdfc8c28a9de04","name":"Anna Menin","image":{"@type":"ImageObject","@id":"https://www.cityam.com/#personlogo","inLanguage":"en-GB","url":"https://secure.gravatar.com/avatar/1b8e42f3e35d89843d20127f0e54f5c8?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/1b8e42f3e35d89843d20127f0e54f5c8?s=96&d=mm&r=g","caption":"Anna Menin"},"description":"Chief City Reporter, covering banking, regulation and London's financial sector. Email stories to anna.menin@cityam.com","sameAs":["https://twitter.com/annafmenin"],"url":"https://www.cityam.com/profile/anna-menin/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//assets.zephr.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="CityAM &raquo; Feed" href="https://www.cityam.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="CityAM &raquo; Comments Feed" href="https://www.cityam.com/comments/feed/" />
+<link rel='stylesheet' id='all-css-0' href='https://www.cityam.com/_static/??-eJyNy0sKgDAMRdENWYP4H4hrqW2QaFqlqUh3rxNBZw4v7x04d0Xe8GFRwIiAJYkw8WZWxTQFHRJITIy5I5/fhwzeYhFwaEkjo0MfP7GzThgU46xN+sfv7d0PGt1QNGXb9H1VdxeH2UG7' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--persian-blue: #1d2ae4;--wp--preset--color--pacific-blue: #0098da;--wp--preset--color--pacific-blue-400: #99d6f0;--wp--preset--color--pacific-blue-300: #b3e0f4;--wp--preset--color--teal: #008091;--wp--preset--color--alizarin-red: #e32932;--wp--preset--color--salem-green: #0f993d;--wp--preset--color--koromiko-orange: #ffb957;--wp--preset--color--gunmetal-black: #121617;--wp--preset--color--grey-870: #313435;--wp--preset--color--grey-700: #595c5d;--wp--preset--color--grey-600: #717374;--wp--preset--color--grey-300: #c1c3c4;--wp--preset--color--grey-200: #d5d7d7;--wp--preset--color--grey-100: #eaebeb;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 0.875rem;--wp--preset--font-size--normal: 16px;--wp--preset--font-size--medium: 1.125rem;--wp--preset--font-size--large: 1.25rem;--wp--preset--font-size--huge: 42px;--wp--preset--font-size--x-large: 1.5rem;--wp--preset--font-size--xx-large: 2rem;--wp--preset--font-size--xxx-large: 3rem;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-persian-blue-color{color: var(--wp--preset--color--persian-blue) !important;}.has-pacific-blue-color{color: var(--wp--preset--color--pacific-blue) !important;}.has-pacific-blue-400-color{color: var(--wp--preset--color--pacific-blue-400) !important;}.has-pacific-blue-300-color{color: var(--wp--preset--color--pacific-blue-300) !important;}.has-teal-color{color: var(--wp--preset--color--teal) !important;}.has-alizarin-red-color{color: var(--wp--preset--color--alizarin-red) !important;}.has-salem-green-color{color: var(--wp--preset--color--salem-green) !important;}.has-koromiko-orange-color{color: var(--wp--preset--color--koromiko-orange) !important;}.has-gunmetal-black-color{color: var(--wp--preset--color--gunmetal-black) !important;}.has-grey-870-color{color: var(--wp--preset--color--grey-870) !important;}.has-grey-700-color{color: var(--wp--preset--color--grey-700) !important;}.has-grey-600-color{color: var(--wp--preset--color--grey-600) !important;}.has-grey-300-color{color: var(--wp--preset--color--grey-300) !important;}.has-grey-200-color{color: var(--wp--preset--color--grey-200) !important;}.has-grey-100-color{color: var(--wp--preset--color--grey-100) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-persian-blue-background-color{background-color: var(--wp--preset--color--persian-blue) !important;}.has-pacific-blue-background-color{background-color: var(--wp--preset--color--pacific-blue) !important;}.has-pacific-blue-400-background-color{background-color: var(--wp--preset--color--pacific-blue-400) !important;}.has-pacific-blue-300-background-color{background-color: var(--wp--preset--color--pacific-blue-300) !important;}.has-teal-background-color{background-color: var(--wp--preset--color--teal) !important;}.has-alizarin-red-background-color{background-color: var(--wp--preset--color--alizarin-red) !important;}.has-salem-green-background-color{background-color: var(--wp--preset--color--salem-green) !important;}.has-koromiko-orange-background-color{background-color: var(--wp--preset--color--koromiko-orange) !important;}.has-gunmetal-black-background-color{background-color: var(--wp--preset--color--gunmetal-black) !important;}.has-grey-870-background-color{background-color: var(--wp--preset--color--grey-870) !important;}.has-grey-700-background-color{background-color: var(--wp--preset--color--grey-700) !important;}.has-grey-600-background-color{background-color: var(--wp--preset--color--grey-600) !important;}.has-grey-300-background-color{background-color: var(--wp--preset--color--grey-300) !important;}.has-grey-200-background-color{background-color: var(--wp--preset--color--grey-200) !important;}.has-grey-100-background-color{background-color: var(--wp--preset--color--grey-100) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-huge-font-size{font-size: var(--wp--preset--font-size--huge) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}.has-xxx-large-font-size{font-size: var(--wp--preset--font-size--xxx-large) !important;}
+</style>
+<link rel='stylesheet' id='all-css-2' href='https://www.cityam.com/_static/??/wp-content/themes/cityam/dist/css/style.css,/wp-content/mu-plugins/jetpack-10.3/css/jetpack.css?m=1637704862' type='text/css' media='all' />
+<script type="text/javascript" src="https://www.cityam.com/_static/??-eJzTLy/QzcxLzilNSS3WzwKiwtLUokoopZebmaeXVayjj0+Rbm5melFiSSpUsX2uraGZsbmZpaWJqUUWAK/PIjI=" ></script><script src='https://assets.zephr.com/zephr-browser/1.0.1/zephr-browser.umd.js?ver=5.8.2' id='zephr-js'></script>
+<link rel="https://api.w.org/" href="https://www.cityam.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.cityam.com/wp-json/wp/v2/posts/1291751" /><link rel='shortlink' href='https://www.cityam.com/?p=1291751' />
+<link rel="alternate" type="application/json+oembed" href="https://www.cityam.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.cityam.com%2Falibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.cityam.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.cityam.com%2Falibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing%2F&#038;format=xml" />
+<meta name="BridPlugin" content="oauth_token:01110011 01100101 01100011 01110010 01100101 01110100|ver:3.2.2|site:18445|widget:1|disable_video_autosave:|channels:Array|width:16|height:9|autoplay:0|aspect:1|user_id:17159|default_channel:18|ovr_def:1|async_embed:1|google_seo:1|raw_embed:0|unit:16444|unit_width:480|unit_height:270|player:24372|video_image:|onready:" />        <style>
+        .getty.aligncenter {
+            text-align: center;
+        }
+        .getty.alignleft {
+            float: none;
+            margin-right: 0;
+        }
+        .getty.alignleft > div {
+            float: left;
+            margin-right: 5px;
+        }
+        .getty.alignright {
+            float: none;
+            margin-left: 0;
+        }
+        .getty.alignright > div {
+            float: right;
+            margin-left: 5px;
+        }
+        </style>
+        
+<!-- BEGIN Parse.ly 2.6.1 -->
+<meta name="parsely-title" content="Alibaba to raise up to $12.9bn in landmark Hong Kong listing" />
+<meta name="parsely-link" content="http://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/" />
+<meta name="parsely-type" content="post" />
+<meta name="parsely-image-url" content="https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg?w=360&amp;h=160&amp;crop=1" />
+<meta name="parsely-pub-date" content="2019-11-20T09:22:35Z" />
+<meta name="parsely-section" content="Markets" />
+<meta name="parsely-author" content="Anna Menin" />
+<!-- END Parse.ly -->
+
+<style type='text/css'>img#wpstats{display:none}</style>
+		<link rel='manifest' href='https://www.cityam.com/wp-content/themes/cityam/manifest.json' /><link rel="amphtml" href="https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/?amp=1"><link rel="icon" href="https://www.cityam.com/wp-content/uploads/2020/03/favicon.ico?w=32" sizes="32x32" />
+<link rel="icon" href="https://www.cityam.com/wp-content/uploads/2020/03/favicon.ico?w=48" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.cityam.com/wp-content/uploads/2020/03/favicon.ico?w=48" />
+<meta name="msapplication-TileImage" content="https://www.cityam.com/wp-content/uploads/2020/03/favicon.ico?w=48" />
+	</head>
+	<body class="post-template-default single single-post postid-1291751 single-format-standard">
+				<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH9SN8S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		
+		<a class="skip-link screen-reader-text" href="#main">
+			Skip to content		</a>
+
+		
+<header class="header">
+	<nav class="header__inner site-navigation" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+
+		<div class="header__logo-area">
+			
+	<div class="site-logo " itemscope itemtype="https://schema.org/Organization">
+		<a class="site-logo__link" itemprop="url" rel="home" href="https://www.cityam.com/">
+			<img class="site-logo__image" itemprop="logo" src="https://www.cityam.com/wp-content/themes/cityam/dist/svg/logo.svg" alt="" width="180" height="40" />
+			<span class="screen-reader-text">CityAM</span>
+		</a>
+	</div>
+		</div>
+
+		<div class="header__tools-area">
+
+			<a href=#main-navigation class="header__nav-toggle" aria-controls="main-navigation">
+				<span class="screen-reader-text">
+					Main navigation				</span>
+				<span aria-hidden="true" class="header__nav-toggle-icons">
+					
+<span class="icon   header__nav-toggle-icon--open">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 3.5v3H.5v-3h24zm0 7v3H.5v-3h24zm0 7v3H.5v-3h24z" fill="currentColor" /></svg>
+			</span>
+	</span>
+					
+<span class="icon   header__nav-toggle-icon--close">
+			<span class="icon__inline-container">
+	
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M3.501 2l8.481 8.481 8.48-8.48 1.414 1.414-8.48 8.48 8.567 8.567-1.414 1.414-8.567-8.566-8.568 8.567L2 20.463l8.568-8.567-8.481-8.482L3.5 2z" /></svg>
+			</span>
+	</span>
+				</span>
+			</a>
+
+			<ul class="header__flexible-tools">
+				<li class="header__flexible-tool header__flexible-tool--search">
+					
+<div itemscope itemtype="http://schema.org/WebSite" class="search">
+	<form role="search" id="searchform" class="search-form" method="get" action="https://www.cityam.com/">
+		<meta itemprop="target" content="https://www.cityam.com/?s={s}" />
+		<label for="search-field" class="search-label">
+			
+<span class="icon   search__icon">
+			<span class="icon__inline-container">
+	
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10.5 2a8.5 8.5 0 017.114 13.154l5.147 5.146-1.414 1.414-5.023-5.023A8.5 8.5 0 1110.5 2zm0 2a6.5 6.5 0 100 13 6.5 6.5 0 000-13z" /></svg>
+			</span>
+	</span>
+			<span class="screen-reader-text">Search for:</span>
+		</label>
+		<input itemprop="query-input" type="search" id="search-field" class="search-field" value="" placeholder="What are you looking for?" name="s" />
+		<button class="button button--is-primary" type="submit">Submit</button>
+	</form>
+</div>
+				</li>
+				<!-- Zephr sign in button -->
+				<!-- <li class="header__flexible-tool"><a href="#">Sign in</a></li> -->
+			</ul>
+
+		</div>
+
+		<div class="header__cta-area">
+			<a href="https://www.cityam.com/newsletters/" class="button button--is-secondary">Subscribe</a>
+		</div>
+
+		<ul id="main-navigation" class="main-navigation"><li id="menu-item-1775497" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-has-children menu-item-1775497"><a href="https://www.cityam.com/news/">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-1780618" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1780618"><a href="https://www.cityam.com/news/">Latest News</a></li>
+	<li id="menu-item-1781109" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1781109"><a href="https://www.cityam.com/property/">Property</a></li>
+	<li id="menu-item-19280" class="dropdown-title menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19280"><a href="https://www.cityam.com/business/">Business</a></li>
+	<li id="menu-item-1782055" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1782055"><a href="https://www.cityam.com/media/">Media</a></li>
+	<li id="menu-item-1781110" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1781110"><a href="https://www.cityam.com/technology/">Technology</a></li>
+	<li id="menu-item-1782051" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1782051"><a href="https://www.cityam.com/retail-and-leisure/">Retail and leisure</a></li>
+	<li id="menu-item-1783274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1783274"><a href="https://www.cityam.com/transport-and-infrastructure/">Transport and infrastructure</a></li>
+	<li id="menu-item-1782050" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1782050"><a href="https://www.cityam.com/law-and-professional-services/">Law &amp; professional services</a></li>
+	<li id="menu-item-1800546" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800546"><a href="https://www.cityam.com/legal-notices/">Legal Notices</a></li>
+	<li id="menu-item-1782047" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1782047"><a href="https://www.cityam.com/banking/">Banking</a></li>
+	<li id="menu-item-1800545" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800545"><a href="https://www.cityam.com/politics/">Politics</a></li>
+	<li id="menu-item-1782744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1782744"><a href="https://www.cityam.com/talk/cfa-institute/">CFA Institute Talk</a></li>
+	<li id="menu-item-1782741" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1782741"><a href="https://www.cityam.com/talk/avado-talk/">Avado Talk</a></li>
+	<li id="menu-item-1800332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1800332"><a href="https://www.cityam.com/talk/icas-talk/">ICAS Talk</a></li>
+	<li id="menu-item-1806041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806041"><a href="https://www.cityam.com/warwick-business-school/">Warwick Business School</a></li>
+	<li id="menu-item-1800449" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1800449"><a href="https://www.cityam.com/the-university-of-bath/">The University of Bath</a></li>
+	<li id="menu-item-1800445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800445"><a href="https://www.cityam.com/tackling-climate-change/">AON</a></li>
+	<li id="menu-item-1782740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1782740"><a href="https://www.cityam.com/talk/wibf-talk/">WIBF Talk</a></li>
+</ul>
+</li>
+<li id="menu-item-1775499" class="menu-item menu-item-type-taxonomy menu-item-object-section current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-1775499"><a href="https://www.cityam.com/markets-economics/">Markets &amp; Economics</a>
+<ul class="sub-menu">
+	<li id="menu-item-1791315" class="menu-item menu-item-type-taxonomy menu-item-object-section current-post-ancestor current-menu-parent current-post-parent menu-item-1791315"><a href="https://www.cityam.com/markets-economics/">Markets &#038; Economics News</a></li>
+	<li id="menu-item-1800547" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800547"><a href="https://www.cityam.com/economics/">Economics</a></li>
+	<li id="menu-item-1800548" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1800548"><a href="https://www.cityam.com/markets/">Markets</a></li>
+	<li id="menu-item-1782738" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1782738"><a href="https://www.cityam.com/talk/schroders/">Schroders Talk</a></li>
+	<li id="menu-item-1803331" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1803331"><a href="https://www.cityam.com/talk/etoro-talk/">eToro Talk</a></li>
+</ul>
+</li>
+<li id="menu-item-1775500" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-has-children menu-item-1775500"><a href="https://www.cityam.com/crypto/">Crypto A.M.</a>
+<ul class="sub-menu">
+	<li id="menu-item-1780648" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1780648"><a href="https://www.cityam.com/crypto/">Crypto News</a></li>
+</ul>
+</li>
+<li id="menu-item-1775501" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-has-children menu-item-1775501"><a href="https://www.cityam.com/opinion/">Opinion</a>
+<ul class="sub-menu">
+	<li id="menu-item-1800549" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800549"><a href="https://www.cityam.com/opinion/">Features</a></li>
+	<li id="menu-item-1800641" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800641"><a href="https://www.cityam.com/letters/">Letters</a></li>
+	<li id="menu-item-1800550" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800550"><a href="https://www.cityam.com/the-city-view-podcast/">The City View</a></li>
+</ul>
+</li>
+<li id="menu-item-1775502" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-has-children menu-item-1775502"><a href="https://www.cityam.com/jobs-and-money/">Jobs and Money</a>
+<ul class="sub-menu">
+	<li id="menu-item-1791319" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1791319"><a href="https://www.cityam.com/jobs-and-money/">Jobs and Money News</a></li>
+	<li id="menu-item-1782385" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1782385"><a href="https://www.cityam.com/personal-development/">Personal Development</a></li>
+	<li id="menu-item-1800559" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800559"><a href="https://www.cityam.com/fintech/">Fintech</a></li>
+	<li id="menu-item-1800555" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800555"><a href="https://www.cityam.com/money/">Money</a></li>
+	<li id="menu-item-1782386" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1782386"><a href="https://www.cityam.com/personal-finance/">Personal Finance</a></li>
+	<li id="menu-item-1800435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800435"><a href="https://www.cityam.com/doceo/">Doceo</a></li>
+	<li id="menu-item-1800428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800428"><a href="https://www.cityam.com/apl-10-excellent-financial-and-legal-solutions/">APL: 10 excellent financial and legal solutions</a></li>
+</ul>
+</li>
+<li id="menu-item-1775498" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-has-children menu-item-1775498"><a href="https://www.cityam.com/unwind/">Unwind</a>
+<ul class="sub-menu">
+	<li id="menu-item-1791323" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1791323"><a href="https://www.cityam.com/unwind/">Unwind</a></li>
+	<li id="menu-item-19298" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19298"><a href="https://www.cityam.com/charity/">Charity</a></li>
+	<li id="menu-item-1803618" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803618"><a href="https://www.cityam.com/giving/top-20/">World&#8217;s Biggest Donors</a></li>
+	<li id="menu-item-1783139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1783139"><a href="https://www.cityam.com/sport/">Sport</a></li>
+	<li id="menu-item-1775503" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1775503"><a href="https://www.cityam.com/the-punter/">The Punter</a></li>
+	<li id="menu-item-1459746" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1459746"><a href="https://www.cityam.com/topic/the-punter-podcast/">The Punter Podcast</a></li>
+	<li id="menu-item-1800564" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1800564"><a href="https://www.cityam.com/life-and-style/">Life &amp; Style</a></li>
+	<li id="menu-item-1783141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1783141"><a href="https://www.cityam.com/the-magazine/">The Magazine</a></li>
+	<li id="menu-item-1800568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1800568"><a href="https://www.cityam.com/topic/travel/">Travel</a></li>
+	<li id="menu-item-1800417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800417"><a href="https://www.cityam.com/discover-malta/">Discover Malta</a></li>
+	<li id="menu-item-1800502" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800502"><a href="https://www.cityam.com/green-economy/">Green Economy</a></li>
+	<li id="menu-item-1800442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800442"><a href="https://www.cityam.com/apl-10-products-and-services-to-improve-your-home/">APL: 10 products and services to improve your home</a></li>
+	<li id="menu-item-1801300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1801300"><a href="https://www.cityam.com/apl-10-great-gifts-for-all-the-family/">APL: 10 great gifts for all the family</a></li>
+	<li id="menu-item-1802319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1802319"><a href="https://www.cityam.com/the-divercity-podcast/">The DiverCity Podcast</a></li>
+</ul>
+</li>
+<li id="menu-item-1775185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1775185 separator"><a href="https://edition.pagesuite.com/html5/reader/production/default.aspx?pubname=&#038;pubid=ba4b284e-4ba7-4f0c-9305-3600bc3f8902">Latest Paper</a></li>
+</ul>		<div class="main-navigation__shim"></div>
+	</nav>
+</header>
+<div class="header__scroll-marker"></div>
+
+		<main id="main" class="main" role="main">
+
+
+<div class="notice-header  notice-header--is-full-content-width">
+			<div id="dsk-banner-ad-a" style="min-height: 90px;"></div>
+	</div>
+
+<div class="sidebar-layout">
+	<div class="sidebar-layout__content">
+		<article class="content-container content-container__single">
+			<header class="article-header ">
+	<div class="date-time article-header__date-time">
+			<time class="date-time__time" datetime="2019-11-20T09:22:35+00:00">
+			Wednesday 20 November 2019 9:22 am		</time>
+	</div>
+
+	<h1 class="article-header__title">
+		Alibaba to raise up to $12.9bn in landmark Hong Kong listing	</h1>
+
+	<div class="article-header__meta">
+		<div class="author-bio author-bio--article-header">
+			
+		<div class="author-bio__content">
+			<p class="author-bio__name">
+				<span class="screen-reader-text">
+					By: 				</span>
+									<a class="author-bio__link" href="https://www.cityam.com/profile/anna-menin/" rel="author">
+						Anna Menin					</a>
+							</p>
+
+					</div>
+	</div>
+	<div class="social article-header__social social--is-share">
+		
+		<ul class="social__actions">
+												<li class="social__actions-item">
+						<a
+							href="https://facebook.com/sharer/sharer.php?u=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"
+							class="social__action social__action--facebook"
+							target="_blank"
+							aria-label="Share City A.M. on Facebook"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-facebook ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.08 8.563v-2.75c0-.76.59-1.375 1.316-1.375h1.316V1H14.08c-2.18 0-3.948 1.847-3.948 4.125v3.438H7.5V12h2.632v11h3.948V12h2.632l1.316-3.438H14.08z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="https://twitter.com/intent/tweet/?url=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/&#038;text=Alibaba%20to%20raise%20up%20to%20$12.9bn%20in%20landmark%20Hong%20Kong%20listing"
+							class="social__action social__action--twitter"
+							target="_blank"
+							aria-label="Share City A.M. on Twitter"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-twitter ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.13 4.25c-.878.38-1.814.634-2.79.756a4.776 4.776 0 002.13-2.65 9.744 9.744 0 01-3.07 1.162A4.879 4.879 0 0016.859 2c-2.681 0-4.84 2.154-4.84 4.795 0 .38.032.746.112 1.094a13.76 13.76 0 01-9.986-5.015 4.788 4.788 0 00-.663 2.423c0 1.66.864 3.132 2.152 3.984a4.823 4.823 0 01-2.189-.59v.053c0 2.33 1.68 4.264 3.882 4.71a4.88 4.88 0 01-1.27.158c-.31 0-.624-.018-.918-.082a4.884 4.884 0 004.527 3.34 9.8 9.8 0 01-6.007 2.044c-.397 0-.778-.017-1.159-.065 2.22 1.414 4.8 2.16 7.432 2.151 8.915 0 13.788-7.308 13.788-13.642 0-.212-.007-.417-.017-.62A9.61 9.61 0 0024.13 4.25z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="whatsapp://send?text=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"
+							class="social__action social__action--whatsapp"
+							target="_blank"
+							aria-label="Share City A.M. on WhatsApp"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-whatsapp ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.406 3.488A11.815 11.815 0 0011.993 0C5.435 0 .103 5.335.1 11.892a11.87 11.87 0 001.587 5.945L0 24l6.305-1.654a11.884 11.884 0 005.682 1.447h.005c6.555 0 11.89-5.335 11.893-11.892a11.822 11.822 0 00-3.48-8.413zm-8.413 18.297h-.006a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.742.981 1-3.65-.236-.373a9.865 9.865 0 01-1.51-5.257c0-5.45 4.437-9.884 9.89-9.884a9.886 9.886 0 019.88 9.89c-.002 5.45-4.436 9.885-9.884 9.885zm5.422-7.403c-.297-.149-1.758-.868-2.031-.97-.273-.1-.47-.147-.668.15-.198.297-.768.97-.941 1.165-.174.195-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.475-.883-.787-1.48-1.76-1.654-2.058-.174-.298-.018-.457.131-.607.133-.133.297-.347.445-.52.149-.174.199-.298.297-.496.1-.198.05-.372-.024-.52-.074-.15-.668-1.612-.916-2.207-.242-.58-.486-.501-.669-.51a11.94 11.94 0 00-.57-.01 1.093 1.093 0 00-.793.371c-.272.298-1.04 1.017-1.04 2.48 0 1.462 1.065 2.875 1.214 3.073.148.199 2.095 3.2 5.075 4.487a17.03 17.03 0 001.694.627c.712.229 1.36.194 1.872.118.57-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.17-1.413-.076-.124-.267-.197-.564-.346z" fill="currentColor" fill-rule="evenodd" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="mailto:?subject=Alibaba%20to%20raise%20up%20to%20$12.9bn%20in%20landmark%20Hong%20Kong%20listing&#038;body=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"
+							class="social__action social__action--email"
+							target="_blank"
+							aria-label="Share City A.M. on Email"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-email ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 13.632L24.983 4H1.015L13 13.632z" fill="currentColor" /><path d="M1 21h24V6.543l-12 9.643L1 6.54V21z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+									</ul>
+	</div>
+	</div>
+</header>
+
+	<figure class="article-header-featured-image">
+		<img width="839" height="523" src="https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg?w=839" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg 839w, https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg?resize=630,393 630w, https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg?resize=768,479 768w, https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg?resize=304,190 304w, https://www.cityam.com/wp-content/uploads/2015/08/alibaba-logo-getty-1024-683-57ed9e94e3d24-57ed9e950fe35.jpg?resize=80,50 80w" sizes="(max-width: 839px) 100vw, 839px" />	</figure>
+<!-- Ads Injected -->
+<p>Alibaba is set to raise up to $12.9bn (£10bn) from its record-breaking second listing in Hong Kong, pricing its shares at a 2.8 per cent discount to their New York close. </p>
+
+
+
+<p>The Chinese e-commerce giant is set to officially announce the terms of the deal later on Wednesday, but investors have been told 176 Hong Kong dollars (£17.43) is likely to be the final numbers, Reuters reported. </p>
+
+
+
+<p><strong>Read more:</strong> <a href="https://www.cityam.com/alibaba-poised-to-launch-record-breaking-13-4bn-hong-kong-listing/">Alibaba poised to launch record-breaking $13.4bn Hong Kong listing</a></p>
+
+<div class="notice-header  notice-header--is-full-content-width notice-header--is-bordered">
+			<div id="mob-box-ad-a" style="min-height: 90px;"></div>
+			<div id="dsk-box-ad-d" style="min-height: 90px;"></div>
+	</div>
+
+
+
+<p>The deal – set to be the largest share sale in Hong Kong for nine years and a world record cross-border secondary share sale – represents a much-needed boost for the city’s bourse, which has been hit by months of anti-government protests.</p>
+
+
+
+<p>At the reported pricing, Alibaba’s secondary listing would raise at least 88 billion Hong Kong dollars – a symbolic total as the number eight is associated with prosperity and good fortune in Chinese culture. </p>
+
+
+
+<p>The deal could eventually raise up to $12.9bn if a “green shoe” option is exercised, allowing underwriters to buy up to an additional 15 per cent of shares at the offering price. </p>
+
+
+
+<p>An Alibaba spokesperson declined to comment on the pricing to Reuters. </p>
+
+
+
+<p>Alibaba shares closed in New York on Tuesday at $185.25, up 0.35%. One of Alibaba’s New York-listed shares will be worth eight of its Hong Kong shares. </p>
+
+<div class="notice-header  notice-header--is-full-content-width notice-header--is-bordered">
+			<div id="mob-box-ad-b" style="min-height: 90px;"></div>
+			<div id="dsk-box-ad-f" style="min-height: 90px;"></div>
+	</div>
+
+
+
+<p>The Chinese company’s decision to float in Hong Kong despite months of often-violent anti-government protests is seen as a vote of confidence from Beijing in the city’s status as a Asian financial hub. </p>
+
+
+
+<p>It is also regarded as significant to Hong Kong, which lost out on Alibaba’s initial public offering to New York in 2013 as the territory would not then accept the company’s unusual governance structure.</p>
+
+
+
+<p>Small investors in Hong Kong have welcomed the deal, subscribing for so many shares they will be allotted the maximum 10 per cent of the total they can get, Reuters reported. </p>
+
+
+
+<p><strong>Read more:</strong> <a href="https://www.cityam.com/tencent-profit-falls-as-alibaba-threat-and-economic-woes-weigh/">Tencent profit falls as Alibaba threat and economic woes weigh</a></p>
+
+
+
+<p>Hong Kong’s exchange operates a system where heavy oversubscription from small investors can result in them getting a greater share of the total offering. </p>
+
+<div class="notice-header  notice-header--is-full-content-width notice-header--is-bordered">
+			<div id="mob-box-ad-c" style="min-height: 90px;"></div>
+			<div id="dsk-box-ad-g" style="min-height: 90px;"></div>
+	</div>
+
+
+
+<p>Alibaba’s listing ceremony is due to be held at the Hong Kong Stock Exchange next Tuesday. </p>
+
+
+
+<p><em>Main image credit: Getty</em></p>
+
+<div class="notice-header  notice-header--is-full-content-width notice-header--is-bordered">
+			<div id="native-ad-a" style="min-height: 250px;"></div>
+	</div>
+<footer class="article-footer ">
+		<div class="social article-footer__social social--is-share">
+					<p class="social__title">
+				Share this article			</p>
+		
+		<ul class="social__actions">
+												<li class="social__actions-item">
+						<a
+							href="https://facebook.com/sharer/sharer.php?u=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"
+							class="social__action social__action--facebook"
+							target="_blank"
+							aria-label="Share City A.M. on Facebook"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-facebook ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.08 8.563v-2.75c0-.76.59-1.375 1.316-1.375h1.316V1H14.08c-2.18 0-3.948 1.847-3.948 4.125v3.438H7.5V12h2.632v11h3.948V12h2.632l1.316-3.438H14.08z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="https://twitter.com/intent/tweet/?url=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/&#038;text=Alibaba%20to%20raise%20up%20to%20$12.9bn%20in%20landmark%20Hong%20Kong%20listing"
+							class="social__action social__action--twitter"
+							target="_blank"
+							aria-label="Share City A.M. on Twitter"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-twitter ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.13 4.25c-.878.38-1.814.634-2.79.756a4.776 4.776 0 002.13-2.65 9.744 9.744 0 01-3.07 1.162A4.879 4.879 0 0016.859 2c-2.681 0-4.84 2.154-4.84 4.795 0 .38.032.746.112 1.094a13.76 13.76 0 01-9.986-5.015 4.788 4.788 0 00-.663 2.423c0 1.66.864 3.132 2.152 3.984a4.823 4.823 0 01-2.189-.59v.053c0 2.33 1.68 4.264 3.882 4.71a4.88 4.88 0 01-1.27.158c-.31 0-.624-.018-.918-.082a4.884 4.884 0 004.527 3.34 9.8 9.8 0 01-6.007 2.044c-.397 0-.778-.017-1.159-.065 2.22 1.414 4.8 2.16 7.432 2.151 8.915 0 13.788-7.308 13.788-13.642 0-.212-.007-.417-.017-.62A9.61 9.61 0 0024.13 4.25z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="whatsapp://send?text=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"
+							class="social__action social__action--whatsapp"
+							target="_blank"
+							aria-label="Share City A.M. on WhatsApp"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-whatsapp ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.406 3.488A11.815 11.815 0 0011.993 0C5.435 0 .103 5.335.1 11.892a11.87 11.87 0 001.587 5.945L0 24l6.305-1.654a11.884 11.884 0 005.682 1.447h.005c6.555 0 11.89-5.335 11.893-11.892a11.822 11.822 0 00-3.48-8.413zm-8.413 18.297h-.006a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.742.981 1-3.65-.236-.373a9.865 9.865 0 01-1.51-5.257c0-5.45 4.437-9.884 9.89-9.884a9.886 9.886 0 019.88 9.89c-.002 5.45-4.436 9.885-9.884 9.885zm5.422-7.403c-.297-.149-1.758-.868-2.031-.97-.273-.1-.47-.147-.668.15-.198.297-.768.97-.941 1.165-.174.195-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.475-.883-.787-1.48-1.76-1.654-2.058-.174-.298-.018-.457.131-.607.133-.133.297-.347.445-.52.149-.174.199-.298.297-.496.1-.198.05-.372-.024-.52-.074-.15-.668-1.612-.916-2.207-.242-.58-.486-.501-.669-.51a11.94 11.94 0 00-.57-.01 1.093 1.093 0 00-.793.371c-.272.298-1.04 1.017-1.04 2.48 0 1.462 1.065 2.875 1.214 3.073.148.199 2.095 3.2 5.075 4.487a17.03 17.03 0 001.694.627c.712.229 1.36.194 1.872.118.57-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.17-1.413-.076-.124-.267-.197-.564-.346z" fill="currentColor" fill-rule="evenodd" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="mailto:?subject=Alibaba%20to%20raise%20up%20to%20$12.9bn%20in%20landmark%20Hong%20Kong%20listing&#038;body=https://www.cityam.com/alibaba-to-raise-up-to-12-9bn-in-landmark-hong-kong-listing/"
+							class="social__action social__action--email"
+							target="_blank"
+							aria-label="Share City A.M. on Email"
+							rel="noopener"
+															data-popup="true"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-email ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 13.632L24.983 4H1.015L13 13.632z" fill="currentColor" /><path d="M1 21h24V6.543l-12 9.643L1 6.54V21z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+									</ul>
+	</div>
+
+	<div class="tags-collection article-footer__tags-collection">
+		<h2 class="screen-reader-text">Similarly tagged content: </h2>
+		<nav class="tags ">
+
+			<h3 class="tags__title">
+			Sections		</h3>
+	
+	<ul class="tags__tags">
+					<li class="tags__tag-item">
+										<a
+							class="tags__tag-link button button--is-tertiary"
+							href="https://www.cityam.com/markets-economics/"
+														aria-label="See more articles about Markets &amp; Economics."
+						>
+						
+						Markets &amp; Economics
+											</a>
+												</li>
+				</ul>
+</nav>
+<nav class="tags ">
+
+			<h3 class="tags__title">
+			Categories		</h3>
+	
+	<ul class="tags__tags">
+					<li class="tags__tag-item">
+										<a
+							class="tags__tag-link button button--is-tertiary"
+							href="https://www.cityam.com/markets/"
+														aria-label="See more articles about Markets."
+						>
+						
+						Markets
+											</a>
+												</li>
+				</ul>
+</nav>
+<nav class="tags ">
+
+			<h3 class="tags__title">
+			Related Topics		</h3>
+	
+	<ul class="tags__tags">
+					<li class="tags__tag-item">
+										<a
+							class="tags__tag-link button button--is-tertiary"
+							href="https://www.cityam.com/topic/alibaba/"
+														aria-label="See more articles about Alibaba."
+						>
+						
+						Alibaba
+											</a>
+												</li>
+				</ul>
+</nav>
+	</div>
+</footer>
+		</article>
+	</div>
+	
+<aside class="sidebar">
+	
+<div class="notice-header  notice-header--is-full-content-width">
+			<div id="dsk-box-ad-c" style="min-height: 250px;"></div>
+	</div>
+	<nav class="content-listing content-listing--has-columns-1 content-listing__sidebar-articles content-listing--has-title content-listing--has-index">
+					<h2 class="content-listing__title">
+				
+					Trending Articles
+								</h2>
+		
+		<ul class="content-listing__content">
+							<li class="content-listing__content-item">
+					<article class="card  card--has-density-ld">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/how-to-build-the-best-digital-marketing-team/">
+						How to build the best digital marketing team
+					</a>
+				</h3>
+		
+			</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-density-ld">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/editorial-slashing-staff-pay-for-remote-work-is-a-slap-dash-response-to-the-shifts-of-the-pandemic/">
+						Editorial: Slashing staff pay for remote work is a slap-dash response to the shifts of the pandemic
+					</a>
+				</h3>
+		
+			</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-density-ld">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/city-moves-whos-switching-jobs-in-the-square-mile-this-week-17/">
+						City Moves: Who&#8217;s switching jobs in the Square Mile this week?
+					</a>
+				</h3>
+		
+			</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-density-ld">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/how-accountancy-can-take-the-lead-when-it-comes-to-inclusive-workplaces/">
+						How accountancy can take the lead when it comes to inclusive workplaces
+					</a>
+				</h3>
+		
+			</div>
+	</article>
+				</li>
+						</ul>
+
+			</nav>
+	
+<div class="notice-header  notice-header--is-full-content-width notice-header--is-sticky">
+			<div id="dsk-box-ad-e" style="min-height: 250px;"></div>
+	</div>
+</aside>
+</div>
+
+	<nav class="content-listing content-listing--has-columns-4  content-listing--has-title">
+					<h2 class="content-listing__title">
+				
+					More from City A.M.
+								</h2>
+		
+		<ul class="content-listing__content">
+							<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-kicker  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/alibaba-ipo-e-commerce-giants-shares-jump-on-blockbuster-hong-kong-debut/">
+						Alibaba IPO: E-commerce giant&#8217;s shares jump on blockbuster Hong Kong debut
+					</a>
+				</h3>
+					<div class="card__meta">
+									<span class="card__kicker">Alibaba&#039;s shares jump on its blockbuster Hong Kong debut</span>
+				
+							</div>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2019/11/877041208.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/11/877041208.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2019/11/877041208.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2019/11/877041208.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2019/11/877041208.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/alibaba-poised-to-launch-record-breaking-13-4bn-hong-kong-listing/">
+						Alibaba poised to launch record-breaking $13.4bn Hong Kong listing
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2019/11/GettyImages-1181362457.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/11/GettyImages-1181362457.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2019/11/GettyImages-1181362457.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2019/11/GettyImages-1181362457.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2019/11/GettyImages-1181362457.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/alibabas-secondary-hong-kong-listing-gets-exchange-approval/">
+						Alibaba’s secondary Hong Kong listing gets exchange approval
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2014/11/alibaba-0-57ed77ad3bc26-57ed77ad4986c.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2014/11/alibaba-0-57ed77ad3bc26-57ed77ad4986c.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2014/11/alibaba-0-57ed77ad3bc26-57ed77ad4986c.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2014/11/alibaba-0-57ed77ad3bc26-57ed77ad4986c.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2014/11/alibaba-0-57ed77ad3bc26-57ed77ad4986c.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/softbank-earns-11bn-for-selling-some-of-its-huge-alibaba-stake/">
+						Softbank earns $11bn for selling some of its huge Alibaba stake
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="594" height="396" src="https://www.cityam.com/wp-content/uploads/2019/06/GettyImages-139477700.jpg?w=594&amp;h=396&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/06/GettyImages-139477700.jpg 594w, https://www.cityam.com/wp-content/uploads/2019/06/GettyImages-139477700.jpg?resize=304,203 304w, https://www.cityam.com/wp-content/uploads/2019/06/GettyImages-139477700.jpg?resize=75,50 75w" sizes="(max-width: 594px) 100vw, 594px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/jack-mas-alibaba-chases-20bn-hong-kong-float/">
+						Jack Ma&#8217;s Alibaba chases &#8216;$20bn Hong Kong float&#8217;
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2019/06/china-based-internet-company-alibaba-debuts-on-new-york-stock-exchange-455724136-5cecfdd2851d8.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/06/china-based-internet-company-alibaba-debuts-on-new-york-stock-exchange-455724136-5cecfdd2851d8.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2019/06/china-based-internet-company-alibaba-debuts-on-new-york-stock-exchange-455724136-5cecfdd2851d8.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2019/06/china-based-internet-company-alibaba-debuts-on-new-york-stock-exchange-455724136-5cecfdd2851d8.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2019/06/china-based-internet-company-alibaba-debuts-on-new-york-stock-exchange-455724136-5cecfdd2851d8.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/uber-float-course-largest-tech-ipo-five-years-firm-looks/">
+						Uber IPO: Ride-hailing firm seeks to sell $10bn of shares in largest tech float since Alibaba
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2019/05/uber-loses-its-private-hire-licence-in-london-851372958-5cada83bb3723.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/05/uber-loses-its-private-hire-licence-in-london-851372958-5cada83bb3723.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2019/05/uber-loses-its-private-hire-licence-in-london-851372958-5cada83bb3723.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2019/05/uber-loses-its-private-hire-licence-in-london-851372958-5cada83bb3723.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2019/05/uber-loses-its-private-hire-licence-in-london-851372958-5cada83bb3723.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/chinas-success-among-western-firms-depend-desirability/">
+						China&#8217;s success among western firms will depend on the desirability of the brand
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2019/05/this-photo-taken-08-february-2007-shows-73297407-5c5945ad6c32b.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/05/this-photo-taken-08-february-2007-shows-73297407-5c5945ad6c32b.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2019/05/this-photo-taken-08-february-2007-shows-73297407-5c5945ad6c32b.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2019/05/this-photo-taken-08-february-2007-shows-73297407-5c5945ad6c32b.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2019/05/this-photo-taken-08-february-2007-shows-73297407-5c5945ad6c32b.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+								<li class="content-listing__content-item">
+					<article class="card  card--has-media  card--has-density-hd-md">
+	<div class="card__content">
+		<h3 class="card__title">
+					<a href="https://www.cityam.com/e-commerce-giant-alibaba-invests-297bn-suning-global-mergers-and-acquisitions-hit-new-high/">
+						E-commerce giant Alibaba invests £2.97bn in Suning as global mergers and acquisitions hit new high
+					</a>
+				</h3>
+		
+			</div>
+			<div class="card__media">
+			<div class="card__media-aspect">
+				<div class="card__media-element">
+					<img width="824" height="463" src="https://www.cityam.com/wp-content/uploads/2019/05/alibaba-logo-57ed9f5173c7f-57ed9f5192e78.jpg?w=824&amp;h=463&amp;crop=1" class="media " alt="" loading="lazy" srcset="https://www.cityam.com/wp-content/uploads/2019/05/alibaba-logo-57ed9f5173c7f-57ed9f5192e78.jpg?resize=400,225 400w, https://www.cityam.com/wp-content/uploads/2019/05/alibaba-logo-57ed9f5173c7f-57ed9f5192e78.jpg?resize=824,463 824w, https://www.cityam.com/wp-content/uploads/2019/05/alibaba-logo-57ed9f5173c7f-57ed9f5192e78.jpg?resize=286,161 286w, https://www.cityam.com/wp-content/uploads/2019/05/alibaba-logo-57ed9f5173c7f-57ed9f5192e78.jpg?resize=203,114 203w" sizes="(max-width: 824px) 100vw, 824px" />				</div>
+			</div>
+		</div>
+	</article>
+				</li>
+						</ul>
+
+			</nav>
+	<section class="subscription   ">
+	<div class="subscription__wrapper">
+					<h2 class="subscription__title">
+				Subscribe			</h2>
+		
+		<div class="subscription__content">
+							<p class="subscription__subtitle">
+					Subscribe to the City A.M. to have our top stories delivered directly to your inbox.				</p>
+			
+			
+	<a
+		href="/newsletters"
+		class="button button--is-primary subscription__button"
+					>
+
+	Subscribe
+	</a>
+
+							<small class="subscription__disclaimer">
+					By signing up to our newsletters you agree to the <a href="https://www.cityam.com/terms-conditions/">Terms and Conditions</a> and <a href="https://www.cityam.com/privacy-policy-2/">Privacy Policy</a>.				</small>
+					</div>
+	</div>
+</section>
+		</main>
+		
+<footer class="footer ">
+	
+<div class="notice-header  notice-header--is-full-content-width notice-header--is-bordered">
+			<div id="oop-ad-a" style="min-height: 1px;"></div>
+	</div>
+	<nav class="footer__navigation">
+		<div class="footer__menus">
+			<ul id="menu-footer-menu-1" class="footer__menu"><li id="menu-item-1783529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1783529"><a href="https://www.cityam.com/about/">About us</a></li>
+<li id="menu-item-19206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19206"><a href="https://www.cityam.com/advertising/">Advertising</a></li>
+<li id="menu-item-1768310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1768310"><a href="https://www.cityam.com/about/">Contact</a></li>
+<li id="menu-item-19209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19209"><a href="https://www.cityam.com/terms-conditions/">Terms  &#038; Conditions</a></li>
+<li id="menu-item-1783528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1783528"><a href="https://www.cityam.com/privacy-policy/">Privacy Policy</a></li>
+</ul><ul id="menu-footer-menu-2" class="footer__menu"><li id="menu-item-1783534" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1783534"><a href="https://www.cityam.com/news/">News</a></li>
+<li id="menu-item-1783537" class="menu-item menu-item-type-taxonomy menu-item-object-section current-post-ancestor current-menu-parent current-post-parent menu-item-1783537"><a href="https://www.cityam.com/markets-economics/">Markets &amp; Economics</a></li>
+<li id="menu-item-1783538" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1783538"><a href="https://www.cityam.com/opinion/">Opinion</a></li>
+<li id="menu-item-1783539" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1783539"><a href="https://www.cityam.com/jobs-and-money/">Jobs and Money</a></li>
+<li id="menu-item-1783536" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1783536"><a href="https://www.cityam.com/unwind/">Unwind</a></li>
+<li id="menu-item-1783535" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1783535"><a href="https://www.cityam.com/crypto/">Crypto A.M.</a></li>
+<li id="menu-item-1783533" class="menu-item menu-item-type-taxonomy menu-item-object-section menu-item-1783533"><a href="https://www.cityam.com/the-punter/">The Punter</a></li>
+</ul><ul id="menu-footer-menu-3" class="footer__menu"><li id="menu-item-1768312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1768312"><a href="https://www.cityam.com/topic/cop26/">COP 26</a></li>
+<li id="menu-item-1783555" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1783555"><a href="https://www.cityam.com/awards/awards-2019/">Awards 2019</a></li>
+</ul>		</div>
+
+			<div class="social footer__social social--is-follow">
+					<p class="social__title">
+				Follow us for breaking news and latest updates			</p>
+		
+		<ul class="social__actions">
+												<li class="social__actions-item">
+						<a
+							href="https://facebook.com/cityam"
+							class="social__action social__action--facebook"
+							target="cityamsocial-facebook"
+							aria-label="Follow us on Facebook"
+							rel="noopener"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-facebook ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.08 8.563v-2.75c0-.76.59-1.375 1.316-1.375h1.316V1H14.08c-2.18 0-3.948 1.847-3.948 4.125v3.438H7.5V12h2.632v11h3.948V12h2.632l1.316-3.438H14.08z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="https://twitter.com/cityam"
+							class="social__action social__action--twitter"
+							target="cityamsocial-twitter"
+							aria-label="Follow us on Twitter"
+							rel="noopener"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-twitter ">
+			<span class="icon__inline-container">
+	
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.13 4.25c-.878.38-1.814.634-2.79.756a4.776 4.776 0 002.13-2.65 9.744 9.744 0 01-3.07 1.162A4.879 4.879 0 0016.859 2c-2.681 0-4.84 2.154-4.84 4.795 0 .38.032.746.112 1.094a13.76 13.76 0 01-9.986-5.015 4.788 4.788 0 00-.663 2.423c0 1.66.864 3.132 2.152 3.984a4.823 4.823 0 01-2.189-.59v.053c0 2.33 1.68 4.264 3.882 4.71a4.88 4.88 0 01-1.27.158c-.31 0-.624-.018-.918-.082a4.884 4.884 0 004.527 3.34 9.8 9.8 0 01-6.007 2.044c-.397 0-.778-.017-1.159-.065 2.22 1.414 4.8 2.16 7.432 2.151 8.915 0 13.788-7.308 13.788-13.642 0-.212-.007-.417-.017-.62A9.61 9.61 0 0024.13 4.25z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="https://www.instagram.com/cityamtravel/"
+							class="social__action social__action--instagram"
+							target="cityamsocial-instagram"
+							aria-label="Follow us on Instagram"
+							rel="noopener"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-instagram ">
+			<span class="icon__inline-container">
+	
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.999 2.002c3.257 0 3.642.013 4.929.071 1.189.054 1.834.253 2.264.42.53.195 1.01.507 1.405.912.405.394.717.874.912 1.404.167.43.366 1.076.42 2.265.058 1.286.071 1.671.071 4.928 0 3.256-.013 3.642-.071 4.928-.054 1.189-.253 1.835-.42 2.265a4.042 4.042 0 01-2.315 2.314c-.43.167-1.075.366-2.264.42-1.286.058-1.672.071-4.929.071-3.257 0-3.643-.013-4.929-.071-1.189-.054-1.835-.253-2.264-.42a3.775 3.775 0 01-1.404-.912 3.775 3.775 0 01-.913-1.404c-.167-.43-.366-1.076-.42-2.265C2.013 15.642 2 15.256 2 12c0-3.257.013-3.642.071-4.928.054-1.19.253-1.835.42-2.265.195-.53.507-1.01.913-1.404a3.776 3.776 0 011.404-.912c.43-.167 1.075-.366 2.264-.42C8.36 2.013 8.744 2 12.001 2l-.002.002zM12.002 0c-3.26 0-3.668.014-4.948.072-1.28.059-2.151.263-2.914.56-.8.301-1.526.773-2.126 1.384A5.891 5.891 0 00.63 4.142c-.297.762-.5 1.636-.558 2.913C.014 8.332 0 8.742 0 12c0 3.259.014 3.668.072 4.947.059 1.28.261 2.15.558 2.912a5.89 5.89 0 001.384 2.125 5.878 5.878 0 002.126 1.385c.763.297 1.636.5 2.913.558 1.277.058 1.689.072 4.948.072 3.26 0 3.668-.014 4.948-.072 1.28-.059 2.149-.261 2.91-.558a6.13 6.13 0 003.51-3.51c.298-.762.5-1.636.559-2.913C23.986 15.67 24 15.26 24 12c0-3.259-.014-3.668-.072-4.947-.059-1.28-.261-2.149-.558-2.911a5.883 5.883 0 00-1.384-2.125A5.891 5.891 0 0019.86.632c-.762-.297-1.636-.5-2.913-.558C15.67.016 15.259.002 12 .002L12.002 0zM12 6a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8zm8-10.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+																<li class="social__actions-item">
+						<a
+							href="https://www.linkedin.com/company/cityam"
+							class="social__action social__action--linkedin"
+							target="cityamsocial-linkedin"
+							aria-label="Follow us on LinkedIn"
+							rel="noopener"
+													>
+							
+<span class="icon icon--is-style-circle icon--is-type-linkedin ">
+			<span class="icon__inline-container">
+	
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path d="M6 3.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM6 8H1v15h5V8zm7.662-.522H9V23h4.663v-8.148c0-4.53 5.657-4.9 5.657 0V23H24v-9.828c0-7.645-8.372-7.366-10.338-3.603v-2.09z" fill="currentColor" /></svg>
+			</span>
+	</span>
+						</a>
+					</li>
+									</ul>
+	</div>
+	</nav>
+
+	<div class="footer__brand">
+		<nav class="footer__brand-menus">
+			<ul id="menu-city-a-m-bottom-rail-footer" class="footer__brand-menu"><li id="menu-item-1075000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1075000"><a href="https://www.cityam.com/newsletters/">Newsletters</a></li>
+<li id="menu-item-1331537" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1331537"><a href="https://edition.pagesuite.com/html5/reader/production/default.aspx?pubname=&#038;pubid=ba4b284e-4ba7-4f0c-9305-3600bc3f8902">Latest paper</a></li>
+<li id="menu-item-1031811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1031811"><a href="https://www.cityam.com/advertising/">Advertising</a></li>
+<li id="menu-item-1364154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1364154"><a href="https://www.cityam.com/crypto/">CryptoAM.io</a></li>
+<li id="menu-item-19214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19214"><a href="https://www.cityam.com/awards/">Awards</a></li>
+<li id="menu-item-1074870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1074870"><a href="https://www.cityam.com/about/">About</a></li>
+<li id="menu-item-19220" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19220"><a target="_blank" rel="noopener" href="http://www.lovetheatre.com/cityam">Tickets</a></li>
+</ul>		</nav>
+		<small class="footer__copyright">
+			Copyright 2021 City A.M. Limited		</small>
+	</div>
+</footer>
+
+<div class="notice-header notice-header--is-sticky-footer notice-header--is-full-content-width notice-header--is-sticky">
+			<div id="mob-banner-ad-a" style="min-height: 50px;"></div>
+	</div>
+<script id='avc_frontend-js-extra'>
+var AdRefreshControl = {"advertiserIds":[],"lineItemIds":[],"sizesToExclude":"","slotIdsToExclude":[],"viewabilityThreshold":"70","refreshInterval":"30","maximumRefreshes":"10","refreshCallback":""};
+</script>
+<script type="text/javascript" src="https://www.cityam.com/_static/??-eJyNj9EOgjAMRX9IaIyK8mD8lrkWGFk70hUNf+8kmvikPjbn3JtbuE+VT2IkBlOc+yAZHFZKnVIeVqQpAoZsMGbodHWxHvMGSjSIjzNSfrLVuRWYFJR6ElJnSSudxQJTzUF+xQqaUly6EONXHROXiQ6XT+v9hg3ExfXBFsd/LS8n8ZXw1Xbh87bZHZu23R9O4wMlTGr+" ></script><script data-cfasync="false" data-parsely-site="cityam.go-vip.net" src='https://cdn.parsely.com/keys/cityam.go-vip.net/p.js?ver=2.6.1' id="parsely-cfg"></script>
+<script src='https://stats.wp.com/e-202148.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.3',blog:'195022106',post:'1291751',tz:'0',srv:'www.cityam.com'} ]);
+	_stq.push([ 'clickTrackerInit', '195022106', '1291751' ]);
+</script>
+	</body>
+</html>

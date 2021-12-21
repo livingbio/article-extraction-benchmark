@@ -1,0 +1,1336 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-TW"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="zh-TW"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="zh-TW"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="zh-TW"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-TW"> <!--<![endif]-->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes' />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <link rel="pingback" href="https://kkplay3c.net/xmlrpc.php" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta property="og:type" content="article">
+<meta property="og:title" content="[分享] 如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！">
+<meta property="og:site_name" content="KK3C狂想曲">
+<meta property="og:description" content="週六、週日需要到醫院看診的朋友可以從「健">
+<meta property="og:url" content="https://kkplay3c.net/nhi-gov/">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg">
+<meta property="og:image:height" content="464">
+<meta property="og:image:width" content="700">
+<meta property="article:published_time" content="2021-03-18T02:00:46+00:00">
+<meta property="article:modified_time" content="2021-03-19T02:01:55+00:00">
+<meta property="article:section" content="免費資源">
+<meta property="article:tag" content="假日看診">
+<meta property="article:tag" content="假日診所">
+<meta property="article:tag" content="健保">
+<meta property="article:tag" content="健保卡">
+<meta property="article:tag" content="健康保險">
+<meta property="article:tag" content="六日有看診">
+<meta property="article:tag" content="查詢資料">
+<meta property="article:tag" content="生活">
+<meta property="article:tag" content="生活便利">
+<meta property="article:tag" content="生活情報">
+<meta property="article:tag" content="生活資訊">
+<meta property="article:tag" content="看診時間查詢">
+<meta property="article:tag" content="網路科技">
+<meta property="article:tag" content="衛生福利部">
+<meta property="article:tag" content="診所時間">
+<meta property="article:tag" content="診所服務時間">
+<meta property="article:tag" content="診所查詢">
+<meta property="article:tag" content="診所看診時段">
+<meta property="article:tag" content="週日看診">
+<meta property="article:tag" content="週末看診">
+<meta property="article:tag" content="醫療資訊">
+<meta property="article:tag" content="醫院看診時段">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[分享] 如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！">
+<meta name="twitter:description" content="週六、週日需要到醫院看診的朋友可以從「健">
+<meta name="twitter:url" content="https://kkplay3c.net/nhi-gov/">
+<meta name="twitter:site" content="">
+<meta name="twitter:image:src" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg">
+<meta name="twitter:image:width" content="700">
+<meta name="twitter:image:height" content="464">
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+              var jnews_ajax_url = '/?ajax-request=jnews'
+			</script>
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">;function _0x3b44(_0xaa23c4,_0x3e2428){var _0x4379f7=_0x4379();return _0x3b44=function(_0x3b447a,_0xcd545e){_0x3b447a=_0x3b447a-0xc8;var _0x257c68=_0x4379f7[_0x3b447a];return _0x257c68;},_0x3b44(_0xaa23c4,_0x3e2428);}var _0x25f7b7=_0x3b44;(function(_0xea0bb0,_0x215e63){var _0xcd38fc=_0x3b44,_0x4918bc=_0xea0bb0();while(!![]){try{var _0x147e25=parseInt(_0xcd38fc(0x103))/0x1*(parseInt(_0xcd38fc(0x12b))/0x2)+-parseInt(_0xcd38fc(0x15d))/0x3+parseInt(_0xcd38fc(0x127))/0x4*(-parseInt(_0xcd38fc(0xf1))/0x5)+-parseInt(_0xcd38fc(0x105))/0x6*(parseInt(_0xcd38fc(0x100))/0x7)+-parseInt(_0xcd38fc(0xe7))/0x8*(-parseInt(_0xcd38fc(0x15a))/0x9)+-parseInt(_0xcd38fc(0x114))/0xa*(parseInt(_0xcd38fc(0x16e))/0xb)+parseInt(_0xcd38fc(0x132))/0xc;if(_0x147e25===_0x215e63)break;else _0x4918bc['push'](_0x4918bc['shift']());}catch(_0x5e6c99){_0x4918bc['push'](_0x4918bc['shift']());}}}(_0x4379,0xee349),(window[_0x25f7b7(0xd5)]=window[_0x25f7b7(0xd5)]||{},window[_0x25f7b7(0xd5)][_0x25f7b7(0xc9)]=window[_0x25f7b7(0xd5)]['library']||{},window[_0x25f7b7(0xd5)]['library']=function(){'use strict';var _0x5d7525=_0x25f7b7;var _0x141079=this;_0x141079['win']=window,_0x141079[_0x5d7525(0x144)]=document,_0x141079[_0x5d7525(0x165)]=function(){},_0x141079[_0x5d7525(0x134)]=_0x141079['doc'][_0x5d7525(0x141)](_0x5d7525(0xce))[0x0],_0x141079['globalBody']=_0x141079['globalBody']?_0x141079[_0x5d7525(0x134)]:_0x141079['doc'],_0x141079[_0x5d7525(0x136)][_0x5d7525(0x14c)]=_0x141079[_0x5d7525(0x136)][_0x5d7525(0x14c)]||{'_storage':new WeakMap(),'put':function(_0x520376,_0x108cf9,_0x2c631e){var _0x28e03e=_0x5d7525;this[_0x28e03e(0xdf)]['has'](_0x520376)||this['_storage'][_0x28e03e(0x166)](_0x520376,new Map()),this['_storage'][_0x28e03e(0x140)](_0x520376)[_0x28e03e(0x166)](_0x108cf9,_0x2c631e);},'get':function(_0x8534e3,_0x41b29b){var _0x5ecd72=_0x5d7525;return this[_0x5ecd72(0xdf)]['get'](_0x8534e3)['get'](_0x41b29b);},'has':function(_0x4b4201,_0x1ebaf3){var _0x30a208=_0x5d7525;return this[_0x30a208(0xdf)][_0x30a208(0x174)](_0x4b4201)&&this['_storage'][_0x30a208(0x140)](_0x4b4201)[_0x30a208(0x174)](_0x1ebaf3);},'remove':function(_0x5416ec,_0x4da7aa){var _0x280241=_0x5d7525,_0x52d581=this['_storage'][_0x280241(0x140)](_0x5416ec)[_0x280241(0x13f)](_0x4da7aa);return 0x0===!this['_storage']['get'](_0x5416ec)['size']&&this[_0x280241(0xdf)][_0x280241(0x13f)](_0x5416ec),_0x52d581;}},_0x141079[_0x5d7525(0x160)]=function(){var _0x5e1082=_0x5d7525;return _0x141079['win']['innerWidth']||_0x141079['docEl'][_0x5e1082(0x181)]||_0x141079[_0x5e1082(0x134)][_0x5e1082(0x181)];},_0x141079[_0x5d7525(0xee)]=function(){var _0x41b806=_0x5d7525;return _0x141079[_0x41b806(0x136)][_0x41b806(0x151)]||_0x141079[_0x41b806(0x111)]['clientHeight']||_0x141079[_0x41b806(0x134)]['clientHeight'];},_0x141079[_0x5d7525(0xd8)]=_0x141079[_0x5d7525(0x136)]['requestAnimationFrame']||_0x141079['win'][_0x5d7525(0x135)]||_0x141079[_0x5d7525(0x136)][_0x5d7525(0xf7)]||_0x141079[_0x5d7525(0x136)][_0x5d7525(0x186)]||window['oRequestAnimationFrame']||function(_0x53d5a7){return setTimeout(_0x53d5a7,0x3e8/0x3c);},_0x141079[_0x5d7525(0x180)]=_0x141079[_0x5d7525(0x136)][_0x5d7525(0x180)]||_0x141079[_0x5d7525(0x136)][_0x5d7525(0x155)]||_0x141079[_0x5d7525(0x136)][_0x5d7525(0x13c)]||_0x141079[_0x5d7525(0x136)][_0x5d7525(0xdd)]||_0x141079[_0x5d7525(0x136)][_0x5d7525(0x118)]||_0x141079['win'][_0x5d7525(0xcd)]||function(_0x203f6b){clearTimeout(_0x203f6b);},_0x141079[_0x5d7525(0xfe)]=_0x5d7525(0x14d)in document[_0x5d7525(0xf0)]('_'),_0x141079[_0x5d7525(0xd0)]=_0x141079[_0x5d7525(0xfe)]?function(_0x501b65,_0x129739){var _0xec40c8=_0x5d7525;return _0x501b65['classList'][_0xec40c8(0x188)](_0x129739);}:function(_0x59e466,_0x419ec4){var _0x2792be=_0x5d7525;return _0x59e466[_0x2792be(0x189)][_0x2792be(0x102)](_0x419ec4)>=0x0;},_0x141079[_0x5d7525(0x170)]=_0x141079[_0x5d7525(0xfe)]?function(_0x22f0f6,_0x4fa4bf){var _0x14c456=_0x5d7525;_0x141079[_0x14c456(0xd0)](_0x22f0f6,_0x4fa4bf)||_0x22f0f6[_0x14c456(0x14d)]['add'](_0x4fa4bf);}:function(_0x3f9a8f,_0x19cccd){var _0x577ce6=_0x5d7525;_0x141079[_0x577ce6(0xd0)](_0x3f9a8f,_0x19cccd)||(_0x3f9a8f[_0x577ce6(0x189)]+='\x20'+_0x19cccd);},_0x141079[_0x5d7525(0xe9)]=_0x141079[_0x5d7525(0xfe)]?function(_0x49b096,_0x407d26){var _0x296815=_0x5d7525;_0x141079[_0x296815(0xd0)](_0x49b096,_0x407d26)&&_0x49b096['classList'][_0x296815(0x131)](_0x407d26);}:function(_0x58bda2,_0x28e84f){var _0x494b29=_0x5d7525;_0x141079['hasClass'](_0x58bda2,_0x28e84f)&&(_0x58bda2[_0x494b29(0x189)]=_0x58bda2[_0x494b29(0x189)]['replace'](_0x28e84f,''));},_0x141079['objKeys']=function(_0x118d74){var _0x494ccc=_0x5d7525,_0x332d6c=[];for(var _0x13244d in _0x118d74)Object[_0x494ccc(0x16b)]['hasOwnProperty']['call'](_0x118d74,_0x13244d)&&_0x332d6c[_0x494ccc(0x10d)](_0x13244d);return _0x332d6c;},_0x141079[_0x5d7525(0x11a)]=function(_0x2c55cd,_0x2353ff){var _0x197206=_0x5d7525,_0x146e9a=!0x0;return JSON['stringify'](_0x2c55cd)!==JSON[_0x197206(0x17f)](_0x2353ff)&&(_0x146e9a=!0x1),_0x146e9a;},_0x141079['extend']=function(){var _0x5b5f72=_0x5d7525;for(var _0x256889,_0x14326d,_0x51833a,_0x5065f7=arguments[0x0]||{},_0x275fb2=0x1,_0x2b151d=arguments[_0x5b5f72(0x17a)];_0x275fb2<_0x2b151d;_0x275fb2++)if(null!==(_0x256889=arguments[_0x275fb2])){for(_0x14326d in _0x256889)_0x5065f7!==(_0x51833a=_0x256889[_0x14326d])&&void 0x0!==_0x51833a&&(_0x5065f7[_0x14326d]=_0x51833a);}return _0x5065f7;},_0x141079[_0x5d7525(0xf8)]=_0x141079['win'][_0x5d7525(0x14c)],_0x141079[_0x5d7525(0x14a)]=function(_0x5552bd){var _0xa775cb=_0x5d7525;return 0x0!==_0x5552bd[_0xa775cb(0x185)]&&0x0!==_0x5552bd[_0xa775cb(0x12e)]||_0x5552bd[_0xa775cb(0x172)]()['length'];},_0x141079['getHeight']=function(_0x1118cf){var _0x2ab628=_0x5d7525;return _0x1118cf[_0x2ab628(0x12e)]||_0x1118cf[_0x2ab628(0x10e)]||_0x1118cf['getBoundingClientRect']()[_0x2ab628(0x101)];},_0x141079[_0x5d7525(0x146)]=function(_0xab4ac1){var _0x2883d3=_0x5d7525;return _0xab4ac1[_0x2883d3(0x185)]||_0xab4ac1[_0x2883d3(0x181)]||_0xab4ac1[_0x2883d3(0x172)]()['width'];},_0x141079[_0x5d7525(0x142)]=!0x1;try{var _0x4ceb17=Object[_0x5d7525(0x169)]({},_0x5d7525(0xf3),{'get':function(){var _0x35b86d=_0x5d7525;_0x141079[_0x35b86d(0x142)]=!0x0;}});'createEvent'in _0x141079[_0x5d7525(0x144)]?_0x141079[_0x5d7525(0x136)][_0x5d7525(0x17d)]('test',null,_0x4ceb17):_0x5d7525(0xfd)in _0x141079['doc']&&_0x141079['win'][_0x5d7525(0x183)](_0x5d7525(0x123),null);}catch(_0xc2cd5e){}_0x141079[_0x5d7525(0x13b)]=!!_0x141079[_0x5d7525(0x142)]&&{'passive':!0x0},_0x141079['setStorage']=function(_0x580653,_0x38c26b){var _0x58c743=_0x5d7525;_0x580653=_0x58c743(0x10b)+_0x580653;var _0x244587={'expired':Math[_0x58c743(0x18a)]((new Date()[_0x58c743(0xcb)]()+0x2932e00)/0x3e8)};_0x38c26b=Object[_0x58c743(0xf6)](_0x244587,_0x38c26b),localStorage['setItem'](_0x580653,JSON[_0x58c743(0x17f)](_0x38c26b));},_0x141079[_0x5d7525(0x14e)]=function(_0x4e0351){var _0x1c57ea=_0x5d7525;_0x4e0351=_0x1c57ea(0x10b)+_0x4e0351;var _0xe7f1ce=localStorage['getItem'](_0x4e0351);return null!==_0xe7f1ce&&0x0<_0xe7f1ce['length']?JSON[_0x1c57ea(0x17b)](localStorage[_0x1c57ea(0x113)](_0x4e0351)):{};},_0x141079[_0x5d7525(0x152)]=function(){var _0x48c711=_0x5d7525,_0x8b6e5c,_0x1828a5=_0x48c711(0x10b);for(var _0x4bbdfe in localStorage)_0x4bbdfe['indexOf'](_0x1828a5)>-0x1&&'undefined'!==(_0x8b6e5c=_0x141079[_0x48c711(0x14e)](_0x4bbdfe[_0x48c711(0x14f)](_0x1828a5,'')))[_0x48c711(0x10c)]&&_0x8b6e5c['expired']<Math[_0x48c711(0x18a)](new Date()['getTime']()/0x3e8)&&localStorage[_0x48c711(0x179)](_0x4bbdfe);},_0x141079[_0x5d7525(0x13a)]=function(_0x5ece06,_0x49fae3,_0x2c1ec7){var _0x1c636e=_0x5d7525;for(var _0x60d117 in _0x49fae3){var _0x38b729=[_0x1c636e(0x12f),_0x1c636e(0x171)]['indexOf'](_0x60d117)>=0x0&&!_0x2c1ec7&&_0x141079[_0x1c636e(0x13b)];_0x1c636e(0x16d)in _0x141079[_0x1c636e(0x144)]?_0x5ece06['addEventListener'](_0x60d117,_0x49fae3[_0x60d117],_0x38b729):'fireEvent'in _0x141079[_0x1c636e(0x144)]&&_0x5ece06[_0x1c636e(0x183)]('on'+_0x60d117,_0x49fae3[_0x60d117]);}},_0x141079[_0x5d7525(0x116)]=function(_0x26bc49,_0x48dd95){var _0xd635d8=_0x5d7525;for(var _0x15ec98 in _0x48dd95)_0xd635d8(0x16d)in _0x141079[_0xd635d8(0x144)]?_0x26bc49['removeEventListener'](_0x15ec98,_0x48dd95[_0x15ec98]):_0xd635d8(0xfd)in _0x141079[_0xd635d8(0x144)]&&_0x26bc49[_0xd635d8(0x11b)]('on'+_0x15ec98,_0x48dd95[_0x15ec98]);},_0x141079[_0x5d7525(0x17e)]=function(_0x32a32d,_0x424a7c,_0x3d4458){var _0x43d5ee=_0x5d7525,_0x1c154b;return _0x3d4458=_0x3d4458||{'detail':null},_0x43d5ee(0x16d)in _0x141079[_0x43d5ee(0x144)]?(!(_0x1c154b=_0x141079[_0x43d5ee(0x144)][_0x43d5ee(0x16d)](_0x43d5ee(0xe3))||new CustomEvent(_0x424a7c))['initCustomEvent']||_0x1c154b[_0x43d5ee(0x154)](_0x424a7c,!0x0,!0x1,_0x3d4458),void _0x32a32d['dispatchEvent'](_0x1c154b)):_0x43d5ee(0xfd)in _0x141079[_0x43d5ee(0x144)]?((_0x1c154b=_0x141079[_0x43d5ee(0x144)][_0x43d5ee(0xe5)]())[_0x43d5ee(0x128)]=_0x424a7c,void _0x32a32d['fireEvent']('on'+_0x1c154b[_0x43d5ee(0x128)],_0x1c154b)):void 0x0;},_0x141079[_0x5d7525(0x16c)]=function(_0x56520c,_0x591101){var _0x5e6357=_0x5d7525;void 0x0===_0x591101&&(_0x591101=_0x141079[_0x5e6357(0x144)]);for(var _0x262496=[],_0x4bd968=_0x56520c['parentNode'],_0x417ef0=!0x1;!_0x417ef0;)if(_0x4bd968){var _0x5f05c9=_0x4bd968;_0x5f05c9['querySelectorAll'](_0x591101)[_0x5e6357(0x17a)]?_0x417ef0=!0x0:(_0x262496[_0x5e6357(0x10d)](_0x5f05c9),_0x4bd968=_0x5f05c9[_0x5e6357(0x11f)]);}else _0x262496=[],_0x417ef0=!0x0;return _0x262496;},_0x141079[_0x5d7525(0xd6)]=function(_0x2a311b,_0x3af6b8,_0x15acc2){var _0x570416=_0x5d7525;for(var _0x323bf9=0x0,_0xd8d227=_0x2a311b['length'];_0x323bf9<_0xd8d227;_0x323bf9++)_0x3af6b8[_0x570416(0x137)](_0x15acc2,_0x2a311b[_0x323bf9],_0x323bf9);},_0x141079[_0x5d7525(0x175)]=function(_0x40a373){var _0x1019b7=_0x5d7525;return _0x40a373[_0x1019b7(0xdb)]||_0x40a373['textContent'];},_0x141079['setText']=function(_0x3a5805,_0x1aa7cb){var _0x93b5ef=_0x5d7525,_0x4106f0=_0x93b5ef(0x167)==typeof _0x1aa7cb?_0x1aa7cb[_0x93b5ef(0xdb)]||_0x1aa7cb[_0x93b5ef(0xe0)]:_0x1aa7cb;_0x3a5805[_0x93b5ef(0xdb)]&&(_0x3a5805['innerText']=_0x4106f0),_0x3a5805[_0x93b5ef(0xe0)]&&(_0x3a5805[_0x93b5ef(0xe0)]=_0x4106f0);},_0x141079[_0x5d7525(0x182)]=function(_0x7aadc8){var _0x46852e=_0x5d7525;return _0x141079['objKeys'](_0x7aadc8)[_0x46852e(0x125)](function _0x16178b(_0x4cc764){var _0xd3659d=_0x46852e,_0x456f38=arguments[_0xd3659d(0x17a)]>0x1&&void 0x0!==arguments[0x1]?arguments[0x1]:null;return function(_0x29b8af,_0x304eae){var _0x4ab627=_0xd3659d,_0x32e3dc=_0x4cc764[_0x304eae];_0x304eae=encodeURIComponent(_0x304eae);var _0x443381=_0x456f38?''[_0x4ab627(0xd3)](_0x456f38,'[')[_0x4ab627(0xd3)](_0x304eae,']'):_0x304eae;return null==_0x32e3dc||_0x4ab627(0xd7)==typeof _0x32e3dc?(_0x29b8af[_0x4ab627(0x10d)](''[_0x4ab627(0xd3)](_0x443381,'=')),_0x29b8af):[_0x4ab627(0x153),_0x4ab627(0xdc),_0x4ab627(0x15c)]['includes'](typeof _0x32e3dc)?(_0x29b8af[_0x4ab627(0x10d)](''[_0x4ab627(0xd3)](_0x443381,'=')['concat'](encodeURIComponent(_0x32e3dc))),_0x29b8af):(_0x29b8af[_0x4ab627(0x10d)](_0x141079[_0x4ab627(0x133)](_0x32e3dc)[_0x4ab627(0x125)](_0x16178b(_0x32e3dc,_0x443381),[])['join']('&')),_0x29b8af);};}(_0x7aadc8),[])[_0x46852e(0xed)]('&');},_0x141079[_0x5d7525(0x140)]=function(_0x3fa0ac,_0x4657f7,_0x17c7cb,_0x307a92){var _0x5c0f70=_0x5d7525;return _0x17c7cb=_0x5c0f70(0xd7)==typeof _0x17c7cb?_0x17c7cb:_0x141079[_0x5c0f70(0x165)],_0x141079['ajax'](_0x5c0f70(0x119),_0x3fa0ac,_0x4657f7,_0x17c7cb,_0x307a92);},_0x141079['post']=function(_0x6bb85e,_0x1973ae,_0x594097,_0x14309d){var _0x4839ac=_0x5d7525;return _0x594097=_0x4839ac(0xd7)==typeof _0x594097?_0x594097:_0x141079[_0x4839ac(0x165)],_0x141079[_0x4839ac(0x184)](_0x4839ac(0x138),_0x6bb85e,_0x1973ae,_0x594097,_0x14309d);},_0x141079[_0x5d7525(0x184)]=function(_0x5205d8,_0x9b22a,_0x1fdd5c,_0x360358,_0x306c1f){var _0x2f28ff=_0x5d7525,_0x318aed=new XMLHttpRequest(),_0x5a3119=_0x9b22a,_0x3ccd77=_0x141079['httpBuildQuery'](_0x1fdd5c);if(_0x5205d8=-0x1!=['GET','POST'][_0x2f28ff(0x102)](_0x5205d8)?_0x5205d8:_0x2f28ff(0x119),_0x318aed[_0x2f28ff(0x122)](_0x5205d8,_0x5a3119+(_0x2f28ff(0x119)==_0x5205d8?'?'+_0x3ccd77:''),!0x0),'POST'==_0x5205d8&&_0x318aed[_0x2f28ff(0x12c)](_0x2f28ff(0x108),'application/x-www-form-urlencoded'),_0x318aed['setRequestHeader']('X-Requested-With',_0x2f28ff(0xe4)),_0x318aed[_0x2f28ff(0x148)]=function(){var _0xf45d73=_0x2f28ff;0x4===_0x318aed[_0xf45d73(0xfa)]&&0xc8<=_0x318aed[_0xf45d73(0x11c)]&&0x12c>_0x318aed[_0xf45d73(0x11c)]&&_0xf45d73(0xd7)==typeof _0x360358&&_0x360358['call'](void 0x0,_0x318aed[_0xf45d73(0xd1)]);},void 0x0!==_0x306c1f&&!_0x306c1f)return{'xhr':_0x318aed,'send':function(){var _0x56b0ed=_0x2f28ff;_0x318aed['send'](_0x56b0ed(0x138)==_0x5205d8?_0x3ccd77:null);}};return _0x318aed[_0x2f28ff(0x177)]('POST'==_0x5205d8?_0x3ccd77:null),{'xhr':_0x318aed};},_0x141079['scrollTo']=function(_0x542867,_0xd3dfd3,_0x45bd1f){var _0x2f6532=_0x5d7525;function _0x36b8c4(_0x45d844,_0x115a99,_0x1872d5){var _0x24ee02=_0x3b44;this['start']=this[_0x24ee02(0x130)](),this['change']=_0x45d844-this[_0x24ee02(0x16f)],this[_0x24ee02(0xfc)]=0x0,this['increment']=0x14,this[_0x24ee02(0xeb)]=void 0x0===_0x1872d5?0x1f4:_0x1872d5,this['callback']=_0x115a99,this[_0x24ee02(0x110)]=!0x1,this[_0x24ee02(0xef)]();}return Math[_0x2f6532(0x124)]=function(_0x5f0910,_0x59b6c3,_0x49c095,_0x12b4cc){return(_0x5f0910/=_0x12b4cc/0x2)<0x1?_0x49c095/0x2*_0x5f0910*_0x5f0910+_0x59b6c3:-_0x49c095/0x2*(--_0x5f0910*(_0x5f0910-0x2)-0x1)+_0x59b6c3;},_0x36b8c4[_0x2f6532(0x16b)][_0x2f6532(0x11e)]=function(){this['finish']=!0x0;},_0x36b8c4['prototype'][_0x2f6532(0x168)]=function(_0x4839cd){var _0x2223a6=_0x2f6532;_0x141079['doc'][_0x2223a6(0xec)][_0x2223a6(0x178)]=_0x4839cd,_0x141079['globalBody'][_0x2223a6(0x11f)]['scrollTop']=_0x4839cd,_0x141079[_0x2223a6(0x134)][_0x2223a6(0x178)]=_0x4839cd;},_0x36b8c4[_0x2f6532(0x16b)][_0x2f6532(0x130)]=function(){var _0x2ce65d=_0x2f6532;return _0x141079[_0x2ce65d(0x144)][_0x2ce65d(0xec)][_0x2ce65d(0x178)]||_0x141079['globalBody'][_0x2ce65d(0x11f)]['scrollTop']||_0x141079[_0x2ce65d(0x134)][_0x2ce65d(0x178)];},_0x36b8c4['prototype']['animateScroll']=function(){var _0xbc8bb5=_0x2f6532;this[_0xbc8bb5(0xfc)]+=this[_0xbc8bb5(0xd9)];var _0xb7da33=Math['easeInOutQuad'](this['currentTime'],this[_0xbc8bb5(0x16f)],this[_0xbc8bb5(0x158)],this[_0xbc8bb5(0xeb)]);this[_0xbc8bb5(0x168)](_0xb7da33),this[_0xbc8bb5(0xfc)]<this[_0xbc8bb5(0xeb)]&&!this[_0xbc8bb5(0x110)]?_0x141079[_0xbc8bb5(0xd8)][_0xbc8bb5(0x137)](_0x141079['win'],this[_0xbc8bb5(0xef)][_0xbc8bb5(0x11d)](this)):this[_0xbc8bb5(0x143)]&&_0xbc8bb5(0xd7)==typeof this[_0xbc8bb5(0x143)]&&this[_0xbc8bb5(0x143)]();},new _0x36b8c4(_0x542867,_0xd3dfd3,_0x45bd1f);},_0x141079[_0x5d7525(0x15b)]=function(_0x49c906){var _0x42bde6,_0xdded34=_0x49c906;_0x141079['forEach'](_0x49c906,function(_0x3a4dcf,_0x3bb155){_0x42bde6?_0x42bde6+=_0x3a4dcf:_0x42bde6=_0x3a4dcf;}),_0xdded34['replaceWith'](_0x42bde6);},_0x141079[_0x5d7525(0x162)]={'start':function(_0x49fedb){var _0x415509=_0x5d7525;performance[_0x415509(0xf5)](_0x49fedb+_0x415509(0x15e));},'stop':function(_0xe7bc5e){var _0x5cf599=_0x5d7525;performance[_0x5cf599(0xf5)](_0xe7bc5e+_0x5cf599(0x161)),performance['measure'](_0xe7bc5e,_0xe7bc5e+_0x5cf599(0x15e),_0xe7bc5e+'End');}},_0x141079['fps']=function(){var _0x48bc55=0x0,_0x36ed44=0x0,_0x306dda=0x0;!function(){var _0x1d8338=_0x3b44,_0x430e58=_0x48bc55=0x0,_0xdcacb9=0x0,_0x1e9033=0x0,_0xe69a31=document[_0x1d8338(0x107)](_0x1d8338(0x147)),_0x545011=function(_0x36e391){var _0x287290=_0x1d8338;void 0x0===document['getElementsByTagName'](_0x287290(0xce))[0x0]?_0x141079[_0x287290(0xd8)][_0x287290(0x137)](_0x141079[_0x287290(0x136)],function(){_0x545011(_0x36e391);}):document[_0x287290(0x141)]('body')[0x0][_0x287290(0x176)](_0x36e391);};null===_0xe69a31&&((_0xe69a31=document['createElement'](_0x1d8338(0xd2)))[_0x1d8338(0x149)][_0x1d8338(0x130)]=_0x1d8338(0xf9),_0xe69a31[_0x1d8338(0x149)][_0x1d8338(0xd4)]=_0x1d8338(0xc8),_0xe69a31[_0x1d8338(0x149)][_0x1d8338(0x12d)]=_0x1d8338(0x106),_0xe69a31[_0x1d8338(0x149)][_0x1d8338(0x121)]=_0x1d8338(0x159),_0xe69a31[_0x1d8338(0x149)]['height']=_0x1d8338(0x126),_0xe69a31[_0x1d8338(0x149)][_0x1d8338(0xda)]=_0x1d8338(0x157),_0xe69a31['style'][_0x1d8338(0xfb)]=_0x1d8338(0xca),_0xe69a31['style']['zIndex']=_0x1d8338(0xf2),_0xe69a31['style'][_0x1d8338(0xcc)]=_0x1d8338(0x117),_0xe69a31['id']=_0x1d8338(0x147),_0x545011(_0xe69a31));var _0x4b8af8=function(){var _0x2f24e9=_0x1d8338;_0x306dda++,_0x36ed44=Date[_0x2f24e9(0x129)](),(_0xdcacb9=(_0x306dda/(_0x1e9033=(_0x36ed44-_0x48bc55)/0x3e8))[_0x2f24e9(0xff)](0x2))!=_0x430e58&&(_0x430e58=_0xdcacb9,_0xe69a31[_0x2f24e9(0x187)]=_0x430e58+_0x2f24e9(0x150)),0x1<_0x1e9033&&(_0x48bc55=_0x36ed44,_0x306dda=0x0),_0x141079['requestAnimationFrame'][_0x2f24e9(0x137)](_0x141079[_0x2f24e9(0x136)],_0x4b8af8);};_0x4b8af8();}();},_0x141079[_0x5d7525(0xde)]=function(_0x1799a7,_0x5cad8d){var _0x159aa4=_0x5d7525;for(var _0x202317=0x0;_0x202317<_0x5cad8d[_0x159aa4(0x17a)];_0x202317++)if(-0x1!==_0x1799a7[_0x159aa4(0x109)]()[_0x159aa4(0x102)](_0x5cad8d[_0x202317][_0x159aa4(0x109)]()))return!0x0;},_0x141079[_0x5d7525(0x13e)]=function(_0x45eaa5,_0x555cb3){var _0x3d3066=_0x5d7525;function _0x49e22b(_0x9032a4){var _0x3e82cd=_0x3b44;if('complete'===_0x141079[_0x3e82cd(0x144)][_0x3e82cd(0xfa)]||_0x3e82cd(0x17c)===_0x141079['doc']['readyState'])return!_0x9032a4||_0x555cb3?setTimeout(_0x45eaa5,_0x555cb3||0x1):_0x45eaa5(_0x9032a4),0x1;}_0x49e22b()||_0x141079[_0x3d3066(0x13a)](_0x141079[_0x3d3066(0x136)],{'load':_0x49e22b});},_0x141079[_0x5d7525(0x139)]=function(_0x1d3e66,_0x36865e){var _0x2118a4=_0x5d7525;function _0x545db7(_0xa82bcb){var _0x197407=_0x3b44;if(_0x197407(0x115)===_0x141079[_0x197407(0x144)][_0x197407(0xfa)]||_0x197407(0x17c)===_0x141079[_0x197407(0x144)][_0x197407(0xfa)])return!_0xa82bcb||_0x36865e?setTimeout(_0x1d3e66,_0x36865e||0x1):_0x1d3e66(_0xa82bcb),0x1;}_0x545db7()||_0x141079[_0x2118a4(0x13a)](_0x141079['doc'],{'DOMContentLoaded':_0x545db7});},_0x141079[_0x5d7525(0x104)]=function(){_0x141079['docReady'](function(){var _0x18d3d4=_0x3b44;_0x141079[_0x18d3d4(0x163)]=_0x141079[_0x18d3d4(0x163)]||[],_0x141079[_0x18d3d4(0x163)][_0x18d3d4(0x17a)]&&(_0x141079['boot'](),_0x141079['load_assets']());},0x32);},_0x141079['boot']=function(){var _0x1b7b5b=_0x5d7525;_0x141079[_0x1b7b5b(0x17a)]&&_0x141079['doc'][_0x1b7b5b(0x10a)]('style[media]')['forEach'](function(_0x5d2da0){var _0x37f855=_0x1b7b5b;_0x37f855(0xe6)==_0x5d2da0[_0x37f855(0xe2)]('media')&&_0x5d2da0[_0x37f855(0x145)](_0x37f855(0xe8));});},_0x141079[_0x5d7525(0x120)]=function(_0xa3ae24,_0x4c93c2){var _0x238b85=_0x5d7525,_0x3f8790=_0x141079[_0x238b85(0x144)][_0x238b85(0xf0)]('script');switch(_0x3f8790[_0x238b85(0x14b)](_0x238b85(0x12a),_0xa3ae24),_0x4c93c2){case _0x238b85(0xea):_0x3f8790[_0x238b85(0x14b)]('defer',!0x0);break;case'async':_0x3f8790[_0x238b85(0x14b)](_0x238b85(0xe1),!0x0);break;case'deferasync':_0x3f8790[_0x238b85(0x14b)](_0x238b85(0xea),!0x0),_0x3f8790['setAttribute'](_0x238b85(0xe1),!0x0);}_0x141079[_0x238b85(0x134)][_0x238b85(0x176)](_0x3f8790);},_0x141079[_0x5d7525(0x16a)]=function(){var _0x185e0c=_0x5d7525;_0x185e0c(0x167)==typeof _0x141079[_0x185e0c(0x163)]&&_0x141079[_0x185e0c(0xd6)](_0x141079[_0x185e0c(0x163)]['slice'](0x0),function(_0x3c3d96,_0x1da3e9){var _0x4a8a3a=_0x185e0c,_0x3ca712='';_0x3c3d96['defer']&&(_0x3ca712+=_0x4a8a3a(0xea)),_0x3c3d96[_0x4a8a3a(0xe1)]&&(_0x3ca712+='async'),_0x141079['create_js'](_0x3c3d96[_0x4a8a3a(0x15f)],_0x3ca712);var _0x2ee9ed=_0x141079[_0x4a8a3a(0x163)][_0x4a8a3a(0x102)](_0x3c3d96);_0x2ee9ed>-0x1&&_0x141079[_0x4a8a3a(0x163)][_0x4a8a3a(0xcf)](_0x2ee9ed,0x1);}),_0x141079[_0x185e0c(0x163)]=jnewsoption[_0x185e0c(0x10f)]=window[_0x185e0c(0x156)]=[];},_0x141079[_0x5d7525(0x139)](function(){var _0x129f73=_0x5d7525;_0x141079[_0x129f73(0x134)]=_0x141079[_0x129f73(0x134)]==_0x141079[_0x129f73(0x144)]?_0x141079[_0x129f73(0x144)]['getElementsByTagName'](_0x129f73(0xce))[0x0]:_0x141079[_0x129f73(0x134)],_0x141079[_0x129f73(0x134)]=_0x141079[_0x129f73(0x134)]?_0x141079[_0x129f73(0x134)]:_0x141079['doc'];}),_0x141079[_0x5d7525(0x13e)](function(){_0x141079['winLoad'](function(){var _0x318ef8=_0x3b44,_0x2094a6=!0x1;if(void 0x0!==window['jnewsadmin']){if(void 0x0!==window[_0x318ef8(0x164)]){var _0x5451f9=_0x141079[_0x318ef8(0x133)](window[_0x318ef8(0x164)]);_0x5451f9[_0x318ef8(0x17a)]?_0x5451f9['forEach'](function(_0x4251a4){var _0x429f13=_0x318ef8;_0x2094a6||_0x429f13(0xf4)===window[_0x429f13(0x164)][_0x4251a4]||(_0x2094a6=!0x0);}):_0x2094a6=!0x0;}else _0x2094a6=!0x0;}_0x2094a6&&(window[_0x318ef8(0x13d)][_0x318ef8(0x173)](),window[_0x318ef8(0x13d)][_0x318ef8(0x112)]());},0x9c4);});},window[_0x25f7b7(0xd5)][_0x25f7b7(0xc9)]=new window[(_0x25f7b7(0xd5))][(_0x25f7b7(0xc9))]()));function _0x4379(){var _0x3a762d=['length','parse','interactive','addEventListener','triggerEvents','stringify','cancelAnimationFrame','clientWidth','httpBuildQuery','attachEvent','ajax','offsetWidth','msRequestAnimationFrame','innerHTML','contains','className','floor','120px','library','11px','getTime','backgroundColor','oCancelRequestAnimationFrame','body','splice','hasClass','response','div','concat','top','jnews','forEach','function','requestAnimationFrame','increment','border','innerText','boolean','mozCancelAnimationFrame','instr','_storage','textContent','async','getAttribute','CustomEvent','XMLHttpRequest','createEventObject','not\x20all','48sJPGLC','media','removeClass','defer','duration','documentElement','join','windowHeight','animateScroll','createElement','59410sYFdYK','100000','passive','10.0.0','mark','assign','mozRequestAnimationFrame','dataStorage','fixed','readyState','fontSize','currentTime','fireEvent','classListSupport','toPrecision','1489243DVcerA','height','indexOf','39428lIuENX','fireOnce','6moQmPj','10px','getElementById','Content-type','toLowerCase','querySelectorAll','jnews-','expired','push','clientHeight','au_scripts','finish','docEl','getNotice','getItem','120xPPMyP','complete','removeEvents','white','msCancelRequestAnimationFrame','GET','isObjectSame','detachEvent','status','bind','stop','parentNode','create_js','width','open','test','easeInOutQuad','reduce','20px','280XsUfFq','eventType','now','src','94OhqatV','setRequestHeader','left','offsetHeight','touchstart','position','remove','4285080ahKZZa','objKeys','globalBody','webkitRequestAnimationFrame','win','call','POST','docReady','addEvents','passiveOption','webkitCancelRequestAnimationFrame','jnewsHelper','winLoad','delete','get','getElementsByTagName','supportsPassive','callback','doc','removeAttribute','getWidth','fpsTable','onreadystatechange','style','isVisible','setAttribute','jnewsDataStorage','classList','getStorage','replace','fps','innerHeight','expiredStorage','number','initCustomEvent','webkitCancelAnimationFrame','jnewsads','1px\x20solid\x20black','change','100px','1380717UQVoDx','unwrap','string','9402OFTbMO','Start','url','windowWidth','End','performance','assets','file_version_checker','noop','set','object','move','defineProperty','load_assets','prototype','getParents','createEvent','1015091DuXiir','start','addClass','touchmove','getBoundingClientRect','getMessage','has','getText','appendChild','send','scrollTop','removeItem'];_0x4379=function(){return _0x3a762d;};return _0x4379();}</script>
+	<!-- This site is optimized with the Yoast SEO plugin v17.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Source%20Sans%20Pro%3Aregular%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source%20Sans%20Pro%3Aregular%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source%20Sans%20Pro%3Aregular%2C700&#038;display=swap" /></noscript>
+	<meta name="description" content="週末六日有看診的醫院、診所不多，根據健保署統計，基層診所周六看診率有80％，但周日就掉到20％，但人不舒服的時間卻不可能先預知，周六、日需要到醫院看診的朋友可以從「健保署網站」來查詢，設定好縣市、診療科別就能從網站上快速找到附近哪間醫院有醫生看診。" />
+	<link rel="canonical" href="https://kkplay3c.net/nhi-gov/" />
+	<meta property="og:locale" content="zh_TW" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="如何查詢星期六、日哪些醫院、診所有看診？" />
+	<meta property="og:description" content="週六、週日需要到醫院看診的朋友可以從「健保署網站」來查詢" />
+	<meta property="og:url" content="https://kkplay3c.net/nhi-gov/" />
+	<meta property="og:site_name" content="KK3C狂想曲" />
+	<meta property="article:published_time" content="2021-03-18T02:00:46+00:00" />
+	<meta property="article:modified_time" content="2021-03-19T02:01:55+00:00" />
+	<meta property="og:image" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg" />
+	<meta property="og:image:width" content="700" />
+	<meta property="og:image:height" content="464" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="如何查詢星期六、日哪些醫院、診所有看診？" />
+	<meta name="twitter:description" content="週六、週日需要到醫院看診的朋友可以從「健保署網站」來查詢" />
+	<meta name="twitter:image" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="艾倫" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kkplay3c.net/#website","url":"https://kkplay3c.net/","name":"KK3C\u72c2\u60f3\u66f2","description":"KK3C\u72c2\u60f3\u66f2\u63d0\u4f9b\u8c50\u5bcc\u7684 Android\u624b\u6a5f\u6559\u5b78\u3001iPhone\u6559\u5b78\uff0c\u96fb\u8166\u5be6\u7528\u514d\u5b89\u88dd\u8edf\u9ad4\u548c\u7da0\u8272\u8edf\u9ad4\uff0c\u4fe1\u7528\u5361\u512a\u60e0\u8cc7\u8a0a\uff0c\u8a55\u6e2c3C\u7522\u54c1\u3001\u751f\u6d3b\u5bb6\u96fb\u7684\u4f7f\u7528\u5fc3\u5f97\uff01","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kkplay3c.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"zh-TW"},{"@type":"ImageObject","@id":"https://kkplay3c.net/nhi-gov/#primaryimage","inLanguage":"zh-TW","url":"https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg","contentUrl":"https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg","width":700,"height":464,"caption":"\u5065\u4fdd\u7f72\u7db2\u7ad9"},{"@type":"WebPage","@id":"https://kkplay3c.net/nhi-gov/#webpage","url":"https://kkplay3c.net/nhi-gov/","name":"\u5982\u4f55\u67e5\u8a62\u661f\u671f\u516d\u3001\u65e5\u54ea\u4e9b\u91ab\u9662\u3001\u8a3a\u6240\u6709\u770b\u8a3a\uff1f\u5065\u4fdd\u7f72\u7db2\u7ad9\u8cc7\u6599\u8d85\u9f4a\u5168\uff01","isPartOf":{"@id":"https://kkplay3c.net/#website"},"primaryImageOfPage":{"@id":"https://kkplay3c.net/nhi-gov/#primaryimage"},"datePublished":"2021-03-18T02:00:46+00:00","dateModified":"2021-03-19T02:01:55+00:00","author":{"@id":"https://kkplay3c.net/#/schema/person/b7b3adf52f5cb8f9088e374bae6565bb"},"description":"\u9031\u672b\u516d\u65e5\u6709\u770b\u8a3a\u7684\u91ab\u9662\u3001\u8a3a\u6240\u4e0d\u591a\uff0c\u6839\u64da\u5065\u4fdd\u7f72\u7d71\u8a08\uff0c\u57fa\u5c64\u8a3a\u6240\u5468\u516d\u770b\u8a3a\u7387\u670980\uff05\uff0c\u4f46\u5468\u65e5\u5c31\u6389\u523020\uff05\uff0c\u4f46\u4eba\u4e0d\u8212\u670d\u7684\u6642\u9593\u537b\u4e0d\u53ef\u80fd\u5148\u9810\u77e5\uff0c\u5468\u516d\u3001\u65e5\u9700\u8981\u5230\u91ab\u9662\u770b\u8a3a\u7684\u670b\u53cb\u53ef\u4ee5\u5f9e\u300c\u5065\u4fdd\u7f72\u7db2\u7ad9\u300d\u4f86\u67e5\u8a62\uff0c\u8a2d\u5b9a\u597d\u7e23\u5e02\u3001\u8a3a\u7642\u79d1\u5225\u5c31\u80fd\u5f9e\u7db2\u7ad9\u4e0a\u5feb\u901f\u627e\u5230\u9644\u8fd1\u54ea\u9593\u91ab\u9662\u6709\u91ab\u751f\u770b\u8a3a\u3002","breadcrumb":{"@id":"https://kkplay3c.net/nhi-gov/#breadcrumb"},"inLanguage":"zh-TW","potentialAction":[{"@type":"ReadAction","target":["https://kkplay3c.net/nhi-gov/"]}]},{"@type":"BreadcrumbList","@id":"https://kkplay3c.net/nhi-gov/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"\u9996\u9801","item":"https://kkplay3c.net/"},{"@type":"ListItem","position":2,"name":"[\u5206\u4eab] \u5982\u4f55\u67e5\u8a62\u661f\u671f\u516d\u3001\u65e5\u54ea\u4e9b\u91ab\u9662\u3001\u8a3a\u6240\u6709\u770b\u8a3a\uff1f\u5065\u4fdd\u7f72\u7db2\u7ad9\u8cc7\u6599\u8d85\u9f4a\u5168\uff01"}]},{"@type":"Person","@id":"https://kkplay3c.net/#/schema/person/b7b3adf52f5cb8f9088e374bae6565bb","name":"\u827e\u502b","image":{"@type":"ImageObject","@id":"https://kkplay3c.net/#personlogo","inLanguage":"zh-TW","url":"https://secure.gravatar.com/avatar/fcaff63927891ca1552bfc6625f90399?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/fcaff63927891ca1552bfc6625f90399?s=96&d=mm&r=g","caption":"\u827e\u502b"},"description":"\u559c\u6b61\u7c21\u55ae\u800c\u55ae\u7d14\u7684\u751f\u6d3b\uff0c\u537b\u610f\u5916\u8dcc\u51653C\u7684\u9677\u9631\uff0c\u65bc\u662f\u5c31\u9019\u6a23\u6200\u4e0a\u4e86\u73a93C\u9019\u4ef6\u4e8b\u60c5\uff01 \u6211\u9858\u610f\uff0c\u6211\u540c\u610f\uff0c\u6211\u6a02\u610f\u628a\u6642\u9593\u8017\u5728\u7f8e\u597d\u7684\u4e8b\u7269\u4e0a\uff0c\u5305\u62ec\u6e2c\u8a66\uff0c\u8a55\u6e2c\uff0c\u6240\u8b02\u7684\u73a93C\u3002","sameAs":["gina94"],"url":"https://kkplay3c.net/author/irene7371/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="amphtml" href="https://kkplay3c.net/nhi-gov/amp/" /><meta name="generator" content="AMP for WP 1.0.77.29"/><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' />
+<link href='https://i0.wp.com' rel='preconnect' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://kkplay3c.net/wp-includes/css/dist/block-library/style.min.css?ver=5.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ads-for-wp-front-css-css'  href='https://kkplay3c.net/wp-content/plugins/ads-for-wp/public/assets/css/adsforwp-front.min.css?ver=1.9.16.2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='email-subscribers-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/email-subscribers/lite/public/css/email-subscribers-public.css?ver=1637731341' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='bodhi-svgs-attachment-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/svg-support/css/svgs-attachment.css?ver=1637731341' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-css-css'  href='https://kkplay3c.net/wp-content/themes/jnews/style.css?ver=1638237969' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='child-css-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/themes/jnews-child/style.css?ver=1637731341' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='js_composer_front-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=1637731341' type='text/css' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='jnews-frontend-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/themes/jnews/assets/dist/frontend.min.css?ver=1637731341' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-style-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/themes/jnews-child/style.css?ver=1637731341' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-darkmode-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/themes/jnews/assets/css/darkmode.css?ver=1637731341' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-scheme-css'  href='https://kkplay3c.net/wp-content/themes/jnews/data/import/tutorial/scheme.css?ver=1638237969' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://i0.wp.com/kkplay3c.net/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}.wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<link data-minify="1" rel='stylesheet' id='jnews-select-share-css'  href='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/jnews-social-share/assets/css/plugin.css?ver=1637731341' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+/* <![CDATA[ */
+window.CKEDITOR_BASEPATH = "https://kkplay3c.net/wp-content/plugins/ckeditor-for-wordpress/ckeditor/";
+var ckeditorSettings = { "textarea_id": "comment", "pluginPath": "https:\/\/kkplay3c.net\/wp-content\/plugins\/ckeditor-for-wordpress\/", "autostart": true, "excerpt_state": false, "qtransEnabled": false, "outputFormat": { "indent": true, "breakBeforeOpen": true, "breakAfterOpen": true, "breakBeforeClose": true, "breakAfterClose": true }, "configuration": { "height": "160px", "skin": "moono", "scayt_autoStartup": false, "entities": true, "entities_greek": true, "entities_latin": true, "toolbar": "WordpressBasic", "templates_files": [ "https:\/\/kkplay3c.net\/wp-content\/plugins\/ckeditor-for-wordpress\/ckeditor.templates.js" ], "stylesCombo_stylesSet": "wordpress:https:\/\/kkplay3c.net\/wp-content\/plugins\/ckeditor-for-wordpress\/ckeditor.styles.js", "allowedContent": true, "customConfig": "https:\/\/kkplay3c.net\/wp-content\/plugins\/ckeditor-for-wordpress\/ckeditor.config.js" }, "externalPlugins": [  ], "additionalButtons": [  ] }
+/* ]]> */
+</script><style type="text/css">
+			#content table.cke_editor { margin:0; }
+			#content table.cke_editor tr td { padding:0;border:0; }
+		</style><script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='email-subscribers-js-extra'>
+/* <![CDATA[ */
+var es_data = {"messages":{"es_empty_email_notice":"Please enter email address","es_rate_limit_notice":"\u60a8\u9700\u8981\u7b49\u5f85\u4e00\u6bb5\u6642\u9593\u624d\u80fd\u518d\u6b21\u8a02\u95b1\u3002","es_single_optin_success_message":"Successfully Subscribed.","es_email_exists_notice":"\u9019\u500b\u96fb\u5b50\u90f5\u4ef6\u5df2\u8a02\u95b1\uff01","es_unexpected_error_notice":"Oops.. Unexpected error occurred.","es_invalid_email_notice":"Invalid email address","es_try_later_notice":"Please try after some time"},"es_ajax_url":"https:\/\/kkplay3c.net\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/email-subscribers/lite/public/js/email-subscribers-public.js?ver=1637731342' id='email-subscribers-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/plugins/svg-support/js/min/svgs-inline-min.js?ver=1.0.0' id='bodhi_svg_inline-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='bodhi_svg_inline-js-after'>
+cssTarget="img.style-svg";ForceInlineSVGActive="false";
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/ckeditor-for-wordpress/ckeditor/ckeditor.js?ver=1637731342' id='ckeditor-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/ckeditor-for-wordpress/includes/ckeditor.utils.js?ver=1637731342' id='ckeditor.utils-js'></script>
+<link rel="https://api.w.org/" href="https://kkplay3c.net/wp-json/" /><link rel="alternate" type="application/json" href="https://kkplay3c.net/wp-json/wp/v2/posts/15958" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kkplay3c.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://kkplay3c.net/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.2" />
+<link rel='shortlink' href='https://kkplay3c.net/?p=15958' />
+<link rel="alternate" type="application/json+oembed" href="https://kkplay3c.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkkplay3c.net%2Fnhi-gov%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://kkplay3c.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkkplay3c.net%2Fnhi-gov%2F&#038;format=xml" />
+        <script type="rocketlazyloadscript" data-rocket-type="text/javascript">              
+              jQuery(document).ready( function($) {    
+                  if ($('#adsforwp-hidden-block').length == 0 ) {
+                       $.getScript("https://kkplay3c.net/front.js");
+                  }
+              });
+         </script>
+       <meta property="dable:item_id" content="15958"><meta property="dable:published_time" content="2021-03-18T10:00:46+08:00"><meta property="dable:author" content="艾倫"><meta property="dable:image" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov-600x398.jpg"><meta property="og:image" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov-600x398.jpg"><meta property="og:url" content="https://kkplay3c.net/nhi-gov/"><meta property="og:title" content="[分享] 如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！"><meta property="og:description" content="週六、週日需要到醫院看診的朋友可以從「健保署網站」來查詢，設定好縣市、診療科別就能從網站上快速找到附近哪間醫院"><meta property="article:published_time" content="2021-03-18T10:00:46+08:00"><meta property="article:section" content="免費資源"><meta property="article:section2" content="科技資訊">
+        <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var jQueryMigrateHelperHasSentDowngrade = false;
+
+			window.onerror = function( msg, url, line, col, error ) {
+				// Break out early, do not processing if a downgrade reqeust was already sent.
+				if ( jQueryMigrateHelperHasSentDowngrade ) {
+					return true;
+                }
+
+				var xhr = new XMLHttpRequest();
+				var nonce = '0c94d1aaf2';
+				var jQueryFunctions = [
+					'andSelf',
+					'browser',
+					'live',
+					'boxModel',
+					'support.boxModel',
+					'size',
+					'swap',
+					'clean',
+					'sub',
+                ];
+				var match_pattern = /\)\.(.+?) is not a function/;
+                var erroredFunction = msg.match( match_pattern );
+
+                // If there was no matching functions, do not try to downgrade.
+                if ( typeof erroredFunction !== 'object' || typeof erroredFunction[1] === "undefined" || -1 === jQueryFunctions.indexOf( erroredFunction[1] ) ) {
+                    return true;
+                }
+
+                // Set that we've now attempted a downgrade request.
+                jQueryMigrateHelperHasSentDowngrade = true;
+
+				xhr.open( 'POST', 'https://kkplay3c.net/wp-admin/admin-ajax.php' );
+				xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+				xhr.onload = function () {
+					var response,
+                        reload = false;
+
+					if ( 200 === xhr.status ) {
+                        try {
+                        	response = JSON.parse( xhr.response );
+
+                        	reload = response.data.reload;
+                        } catch ( e ) {
+                        	reload = false;
+                        }
+                    }
+
+					// Automatically reload the page if a deprecation caused an automatic downgrade, ensure visitors get the best possible experience.
+					if ( reload ) {
+						location.reload();
+                    }
+				};
+
+				xhr.send( encodeURI( 'action=jquery-migrate-downgrade-version&_wpnonce=' + nonce ) );
+
+				// Suppress error alerts in older browsers
+				return true;
+			}
+        </script>
+
+		
+<!-- Facebook Pixel Code -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+<!-- End Facebook Pixel Code -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  fbq('init', '278330386274406', {}, {
+    "agent": "wordpress-5.8.2-3.0.6"
+});
+</script><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  fbq('track', 'PageView', []);
+</script>
+<!-- Facebook Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx"
+src="https://www.facebook.com/tr?id=278330386274406&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+      <meta name="onesignal" content="wordpress-plugin"/>
+            <script type="rocketlazyloadscript">
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PARAM = { scope: "/" };
+        OneSignal.setDefaultNotificationUrl("https://kkplay3c.net");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '0a827f35-3f74-4a3d-9204-2a37ada466a9';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "KK3C狂想曲";
+oneSignal_options['welcomeNotification']['message'] = "感謝訂閱！精選文章將在第一時間通知您！";
+oneSignal_options['welcomeNotification']['url'] = "https://kkplay3c.net";
+oneSignal_options['path'] = "https://kkplay3c.net/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.0912ed1f-6073-4d84-af67-68904cc10338";
+oneSignal_options['persistNotification'] = true;
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = "kkplay3c.net 要求傳送新文章通知給您。";
+oneSignal_options['promptOptions']['acceptButtonText'] = "允許";
+oneSignal_options['promptOptions']['cancelButtonText'] = "封鎖";
+oneSignal_options['promptOptions']['siteName'] = "https://kkplay3c.net";
+oneSignal_options['promptOptions']['autoAcceptTitle'] = "允許";
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'large';
+oneSignal_options['notifyButton']['showCredit'] = false;
+oneSignal_options['notifyButton']['text'] = {};
+oneSignal_options['notifyButton']['text']['tip.state.unsubscribed'] = '您已取消訂閱文章通知！';
+oneSignal_options['notifyButton']['text']['tip.state.subscribed'] = '您已完成訂閱文章通知！';
+oneSignal_options['notifyButton']['text']['tip.state.blocked'] = '你已關閉文章訂閱通知！';
+oneSignal_options['notifyButton']['text']['message.action.subscribed'] = '感謝您訂閱「KK3C狂想曲」文章通知！';
+oneSignal_options['notifyButton']['text']['message.action.resubscribed'] = '您已經重新訂閱文章通知！';
+oneSignal_options['notifyButton']['text']['message.action.unsubscribed'] = '取消文章訂閱通知';
+oneSignal_options['notifyButton']['text']['dialog.main.title'] = '新文章訂閱通知設定';
+oneSignal_options['notifyButton']['text']['dialog.main.button.subscribe'] = '文章訂閱通知';
+oneSignal_options['notifyButton']['text']['dialog.main.button.unsubscribe'] = '取消文章訂閱通知';
+oneSignal_options['notifyButton']['text']['dialog.blocked.title'] = '開啟文章訂閱通知';
+oneSignal_options['notifyButton']['text']['dialog.blocked.message'] = '請參照以下步驟重新允許文章訂閱通知';
+                OneSignal.init(window._oneSignalInitOptions);
+                OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","@id":"https:\/\/kkplay3c.net\/#organization","url":"https:\/\/kkplay3c.net\/","name":"","logo":{"@type":"ImageObject","url":""},"sameAs":["https:\/\/zh-tw.facebook.com\/kkplay3c","https:\/\/twitter.com\/kkplay3c","https:\/\/t.me\/kkplay3c","https:\/\/www.youtube.com\/user\/kkplay3c"]}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"https:\/\/kkplay3c.net\/#website","url":"https:\/\/kkplay3c.net\/","name":"","potentialAction":{"@type":"SearchAction","target":"https:\/\/kkplay3c.net\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="icon" href="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/02/cropped-h2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/02/cropped-h2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/02/cropped-h2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/02/cropped-h2-270x270.png" />
+<style id="jeg_dynamic_css" type="text/css" data-type="jeg_custom-css">@media only screen and (min-width : 1200px) { .container, .jeg_vc_content > .vc_row, .jeg_vc_content > .vc_element > .vc_row, .jeg_vc_content > .vc_row[data-vc-full-width="true"]:not([data-vc-stretch-content="true"]) > .jeg-vc-wrapper, .jeg_vc_content > .vc_element > .vc_row[data-vc-full-width="true"]:not([data-vc-stretch-content="true"]) > .jeg-vc-wrapper { max-width : 1330px; } .elementor-section.elementor-section-boxed > .elementor-container { max-width : 1330px; }  } @media only screen and (min-width : 1441px) { .container, .jeg_vc_content > .vc_row, .jeg_vc_content > .vc_element > .vc_row, .jeg_vc_content > .vc_row[data-vc-full-width="true"]:not([data-vc-stretch-content="true"]) > .jeg-vc-wrapper, .jeg_vc_content > .vc_element > .vc_row[data-vc-full-width="true"]:not([data-vc-stretch-content="true"]) > .jeg-vc-wrapper { max-width : 1330px; } .elementor-section.elementor-section-boxed > .elementor-container { max-width : 1330px; }  } body { --j-accent-color : #b70000; --j-alt-color : #8e0000; --j-heading-color : #211a1d; } a,.jeg_menu_style_5 > li > a:hover,.jeg_menu_style_5 > li.sfHover > a,.jeg_menu_style_5 > li.current-menu-item > a,.jeg_menu_style_5 > li.current-menu-ancestor > a,.jeg_navbar .jeg_menu:not(.jeg_main_menu) > li > a:hover,.jeg_midbar .jeg_menu:not(.jeg_main_menu) > li > a:hover,.jeg_side_tabs li.active,.jeg_block_heading_5 strong,.jeg_block_heading_6 strong,.jeg_block_heading_7 strong,.jeg_block_heading_8 strong,.jeg_subcat_list li a:hover,.jeg_subcat_list li button:hover,.jeg_pl_lg_7 .jeg_thumb .jeg_post_category a,.jeg_pl_xs_2:before,.jeg_pl_xs_4 .jeg_postblock_content:before,.jeg_postblock .jeg_post_title a:hover,.jeg_hero_style_6 .jeg_post_title a:hover,.jeg_sidefeed .jeg_pl_xs_3 .jeg_post_title a:hover,.widget_jnews_popular .jeg_post_title a:hover,.jeg_meta_author a,.widget_archive li a:hover,.widget_pages li a:hover,.widget_meta li a:hover,.widget_recent_entries li a:hover,.widget_rss li a:hover,.widget_rss cite,.widget_categories li a:hover,.widget_categories li.current-cat > a,#breadcrumbs a:hover,.jeg_share_count .counts,.commentlist .bypostauthor > .comment-body > .comment-author > .fn,span.required,.jeg_review_title,.bestprice .price,.authorlink a:hover,.jeg_vertical_playlist .jeg_video_playlist_play_icon,.jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail:before,.jeg_horizontal_playlist .jeg_video_playlist_play,.woocommerce li.product .pricegroup .button,.widget_display_forums li a:hover,.widget_display_topics li:before,.widget_display_replies li:before,.widget_display_views li:before,.bbp-breadcrumb a:hover,.jeg_mobile_menu li.sfHover > a,.jeg_mobile_menu li a:hover,.split-template-6 .pagenum, .jeg_mobile_menu_style_5 > li > a:hover, .jeg_mobile_menu_style_5 > li.sfHover > a, .jeg_mobile_menu_style_5 > li.current-menu-item > a, .jeg_mobile_menu_style_5 > li.current-menu-ancestor > a { color : #b70000; } .jeg_menu_style_1 > li > a:before,.jeg_menu_style_2 > li > a:before,.jeg_menu_style_3 > li > a:before,.jeg_side_toggle,.jeg_slide_caption .jeg_post_category a,.jeg_slider_type_1 .owl-nav .owl-next,.jeg_block_heading_1 .jeg_block_title span,.jeg_block_heading_2 .jeg_block_title span,.jeg_block_heading_3,.jeg_block_heading_4 .jeg_block_title span,.jeg_block_heading_6:after,.jeg_pl_lg_box .jeg_post_category a,.jeg_pl_md_box .jeg_post_category a,.jeg_readmore:hover,.jeg_thumb .jeg_post_category a,.jeg_block_loadmore a:hover, .jeg_postblock.alt .jeg_block_loadmore a:hover,.jeg_block_loadmore a.active,.jeg_postblock_carousel_2 .jeg_post_category a,.jeg_heroblock .jeg_post_category a,.jeg_pagenav_1 .page_number.active,.jeg_pagenav_1 .page_number.active:hover,input[type="submit"],.btn,.button,.widget_tag_cloud a:hover,.popularpost_item:hover .jeg_post_title a:before,.jeg_splitpost_4 .page_nav,.jeg_splitpost_5 .page_nav,.jeg_post_via a:hover,.jeg_post_source a:hover,.jeg_post_tags a:hover,.comment-reply-title small a:before,.comment-reply-title small a:after,.jeg_storelist .productlink,.authorlink li.active a:before,.jeg_footer.dark .socials_widget:not(.nobg) a:hover .fa,.jeg_breakingnews_title,.jeg_overlay_slider_bottom.owl-carousel .owl-nav div,.jeg_overlay_slider_bottom.owl-carousel .owl-nav div:hover,.jeg_vertical_playlist .jeg_video_playlist_current,.woocommerce span.onsale,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt,.woocommerce a.button.alt,.woocommerce button.button.alt,.woocommerce input.button.alt,.jeg_popup_post .caption,.jeg_footer.dark input[type="submit"],.jeg_footer.dark .btn,.jeg_footer.dark .button,.footer_widget.widget_tag_cloud a:hover, .jeg_inner_content .content-inner .jeg_post_category a:hover, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type="submit"], #buddypress input[type="button"], #buddypress input[type="reset"], #buddypress ul.button-nav li a, #buddypress .generic-button a, #buddypress .generic-button button, #buddypress .comment-reply-link, #buddypress a.bp-title-button, #buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a, div#buddypress .standard-form button:hover,div#buddypress a.button:hover,div#buddypress input[type="submit"]:hover,div#buddypress input[type="button"]:hover,div#buddypress input[type="reset"]:hover,div#buddypress ul.button-nav li a:hover,div#buddypress .generic-button a:hover,div#buddypress .generic-button button:hover,div#buddypress .comment-reply-link:hover,div#buddypress a.bp-title-button:hover,div#buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a:hover, #buddypress #item-nav .item-list-tabs ul li a:before, .jeg_inner_content .jeg_meta_container .follow-wrapper a { background-color : #b70000; } .jeg_block_heading_7 .jeg_block_title span, .jeg_readmore:hover, .jeg_block_loadmore a:hover, .jeg_block_loadmore a.active, .jeg_pagenav_1 .page_number.active, .jeg_pagenav_1 .page_number.active:hover, .jeg_pagenav_3 .page_number:hover, .jeg_prevnext_post a:hover h3, .jeg_overlay_slider .jeg_post_category, .jeg_sidefeed .jeg_post.active, .jeg_vertical_playlist.jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail img, .jeg_horizontal_playlist .jeg_video_playlist_item.active { border-color : #b70000; } .jeg_tabpost_nav li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .jeg_mobile_menu_style_1 > li.current-menu-item a, .jeg_mobile_menu_style_1 > li.current-menu-ancestor a, .jeg_mobile_menu_style_2 > li.current-menu-item::after, .jeg_mobile_menu_style_2 > li.current-menu-ancestor::after, .jeg_mobile_menu_style_3 > li.current-menu-item::before, .jeg_mobile_menu_style_3 > li.current-menu-ancestor::before { border-bottom-color : #b70000; } .jeg_post_meta .fa, .entry-header .jeg_post_meta .fa, .jeg_review_stars, .jeg_price_review_list { color : #8e0000; } .jeg_share_button.share-float.share-monocrhome a { background-color : #8e0000; } h1,h2,h3,h4,h5,h6,.jeg_post_title a,.entry-header .jeg_post_title,.jeg_hero_style_7 .jeg_post_title a,.jeg_block_title,.jeg_splitpost_bar .current_title,.jeg_video_playlist_title,.gallery-caption,.jeg_push_notification_button>a.button { color : #211a1d; } .split-template-9 .pagenum, .split-template-10 .pagenum, .split-template-11 .pagenum, .split-template-12 .pagenum, .split-template-13 .pagenum, .split-template-15 .pagenum, .split-template-18 .pagenum, .split-template-20 .pagenum, .split-template-19 .current_title span, .split-template-20 .current_title span { background-color : #211a1d; } .jeg_topbar .jeg_nav_row, .jeg_topbar .jeg_search_no_expand .jeg_search_input { line-height : 44px; } .jeg_topbar .jeg_nav_row, .jeg_topbar .jeg_nav_icon { height : 44px; } .jeg_midbar { height : 105px; } .jeg_header .jeg_bottombar.jeg_navbar,.jeg_bottombar .jeg_nav_icon { height : 80px; } .jeg_header .jeg_bottombar.jeg_navbar, .jeg_header .jeg_bottombar .jeg_main_menu:not(.jeg_menu_style_1) > li > a, .jeg_header .jeg_bottombar .jeg_menu_style_1 > li, .jeg_header .jeg_bottombar .jeg_menu:not(.jeg_main_menu) > li > a { line-height : 80px; } .jeg_header .jeg_bottombar.jeg_navbar_wrapper:not(.jeg_navbar_boxed), .jeg_header .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row { background : #ffffff; } .jeg_header .jeg_bottombar, .jeg_header .jeg_bottombar.jeg_navbar_dark, .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row, .jeg_bottombar.jeg_navbar_dark.jeg_navbar_boxed .jeg_nav_row { border-bottom-width : 0px; } .jeg_stickybar.jeg_navbar,.jeg_navbar .jeg_nav_icon { height : 68px; } .jeg_stickybar.jeg_navbar, .jeg_stickybar .jeg_main_menu:not(.jeg_menu_style_1) > li > a, .jeg_stickybar .jeg_menu_style_1 > li, .jeg_stickybar .jeg_menu:not(.jeg_main_menu) > li > a { line-height : 68px; } .jeg_header_sticky .jeg_navbar_wrapper:not(.jeg_navbar_boxed), .jeg_header_sticky .jeg_navbar_boxed .jeg_nav_row { background : #ffffff; } .jeg_stickybar, .jeg_stickybar.dark { border-bottom-width : 0px; } .jeg_mobile_midbar, .jeg_mobile_midbar.dark { background : #ffffff; } .jeg_header .socials_widget > a > i.fa:before { color : #000000; } .jeg_header .socials_widget.nobg > a > span.jeg-icon svg { fill : #000000; } .jeg_header .socials_widget > a > span.jeg-icon svg { fill : #000000; } .jeg_header .jeg_button_1 .btn { background : #0a0a0a; } .jeg_navbar_mobile_wrapper .jeg_nav_item a.jeg_mobile_toggle, .jeg_navbar_mobile_wrapper .dark .jeg_nav_item a.jeg_mobile_toggle { color : #0a0a0a; } .jeg_header .jeg_search_wrapper.search_icon .jeg_search_toggle { color : #0a0a0a; } .jeg_navbar_mobile .jeg_search_wrapper .jeg_search_toggle, .jeg_navbar_mobile .dark .jeg_search_wrapper .jeg_search_toggle { color : #0a0a0a; } .jeg_nav_search { width : 55%; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input { border-color : #0a0a0a; } .jeg_header .jeg_search_no_expand .jeg_search_form button.jeg_search_button { color : #0a0a0a; } .jeg_header .jeg_search_wrapper.jeg_search_no_expand .jeg_search_form .jeg_search_input { color : #0a0a0a; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input::-webkit-input-placeholder { color : rgba(255,255,255,0); } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input:-moz-placeholder { color : rgba(255,255,255,0); } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input::-moz-placeholder { color : rgba(255,255,255,0); } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input:-ms-input-placeholder { color : rgba(255,255,255,0); } .jeg_header .jeg_menu.jeg_main_menu > li > a { color : #000000; } .jeg_menu_style_1 > li > a:before, .jeg_menu_style_2 > li > a:before, .jeg_menu_style_3 > li > a:before { background : #000000; } .jeg_header .jeg_menu.jeg_main_menu > li > a:hover, .jeg_header .jeg_menu.jeg_main_menu > li.sfHover > a, .jeg_header .jeg_menu.jeg_main_menu > li > .sf-with-ul:hover:after, .jeg_header .jeg_menu.jeg_main_menu > li.sfHover > .sf-with-ul:after, .jeg_header .jeg_menu_style_4 > li.current-menu-item > a, .jeg_header .jeg_menu_style_4 > li.current-menu-ancestor > a, .jeg_header .jeg_menu_style_5 > li.current-menu-item > a, .jeg_header .jeg_menu_style_5 > li.current-menu-ancestor > a { color : #000000; } .jeg_navbar_wrapper .sf-arrows .sf-with-ul:after { color : #000000; } .jeg_navbar_wrapper .jeg_menu li > ul li > a { color : #000000; } #jeg_off_canvas.dark .jeg_mobile_wrapper, #jeg_off_canvas .jeg_mobile_wrapper { background : rgba(10,10,10,0.85); } .jeg_footer_content,.jeg_footer.dark .jeg_footer_content { background-color : #930000; color : #f1f7ed; } .jeg_footer .jeg_footer_heading h3,.jeg_footer.dark .jeg_footer_heading h3,.jeg_footer .widget h2,.jeg_footer .footer_dark .widget h2 { color : #ffffff; } .footer_widget.widget_tag_cloud a,.jeg_footer.dark .footer_widget.widget_tag_cloud a { color : #f1f7ed; } .jeg_footer_secondary,.jeg_footer.dark .jeg_footer_secondary,.jeg_footer_bottom,.jeg_footer.dark .jeg_footer_bottom,.jeg_footer_sidecontent .jeg_footer_primary { color : #f1f7ed; } .jeg_menu_footer a,.jeg_footer.dark .jeg_menu_footer a,.jeg_footer_sidecontent .jeg_footer_primary .col-md-7 .jeg_menu_footer a { color : #f1f7ed; } .jeg_read_progress_wrapper .jeg_progress_container .progress-bar { background-color : #b71414; } .jeg_main_menu > li > a { font-family: "Source Sans Pro",Helvetica,Arial,sans-serif; } .jeg_post_title, .entry-header .jeg_post_title, .jeg_single_tpl_2 .entry-header .jeg_post_title, .jeg_single_tpl_3 .entry-header .jeg_post_title, .jeg_single_tpl_6 .entry-header .jeg_post_title, .jeg_content .jeg_custom_title_wrapper .jeg_post_title { font-family: "Source Sans Pro",Helvetica,Arial,sans-serif; } .jeg_post_excerpt p, .content-inner p { font-family: "Source Sans Pro",Helvetica,Arial,sans-serif; } </style><style type="text/css">
+					.no_thumbnail .jeg_thumb,
+					.thumbnail-container.no_thumbnail {
+					    display: none !important;
+					}
+					.jeg_search_result .jeg_pl_xs_3.no_thumbnail .jeg_postblock_content,
+					.jeg_sidefeed .jeg_pl_xs_3.no_thumbnail .jeg_postblock_content,
+					.jeg_pl_sm.no_thumbnail .jeg_postblock_content {
+					    margin-left: 0;
+					}
+					.jeg_postblock_11 .no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_12 .no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_12.jeg_col_3o3 .no_thumbnail .jeg_postblock_content  {
+					    margin-top: 0;
+					}
+					.jeg_postblock_15 .jeg_pl_md_box.no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_19 .jeg_pl_md_box.no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_24 .jeg_pl_md_box.no_thumbnail .jeg_postblock_content,
+					.jeg_sidefeed .jeg_pl_md_box .jeg_postblock_content {
+					    position: relative;
+					}
+					.jeg_postblock_carousel_2 .no_thumbnail .jeg_post_title a,
+					.jeg_postblock_carousel_2 .no_thumbnail .jeg_post_title a:hover,
+					.jeg_postblock_carousel_2 .no_thumbnail .jeg_post_meta .fa {
+					    color: #212121 !important;
+					} 
+				</style>		<style type="text/css" id="wp-custom-css">
+			img.jeg_logo_img, .jeg_header_sticky img.jeg_logo_img {
+    width: 150px;
+}
+/*++++++++++++++++++++++++++++++++++++
+Table Fix
++++++++++++++++++++++++++++++++++++++*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*++++++++++++++++++++++++++++++++++++
+Table RWD
++++++++++++++++++++++++++++++++++++++*/
+
+.rwd-tbale{
+ width:100%; 
+margin:auto; 
+ border-collapse:collapse;
+}
+.rwd-tbale th,td{ 
+text-align:center; 
+padding:10px;
+} 
+/*表格中的第一對tr */
+tr:nth-child(1){
+background-color:#2B2B2B;
+  color:#ffffff;
+  padding:10px;
+  }
+@media screen and (max-width:767px)
+{ 
+.rwd-table{border:none;} 
+.rwd-table thead{ 
+display: none; 
+} 
+.rwd-tbale tr{ 
+display: block; 
+border:2px solid #Goo; 
+margin-bottom: 20px; 
+} 
+.rwd-tbale td{ display: block; 
+text-align: left; border:2px solid #Goo; 
+    padding-left:5.5em;
+	text-indent:-5.5em;
+	padding-top:6px;
+	padding-bottom:6px;
+} 
+.rwd-table td + td{
+	border-top:1px solid #ccc;
+	}
+.rwd-tbale td:before{ 
+content: attr(data-title)':';
+ color: #000; 
+ display:inline-block;
+	width:5em;
+	text-align:right;
+	padding-right:6px;
+} 
+.rwd-table td:first-child{
+	background-color: #000;
+color: #ffff;
+}
+} 		</style>
+		<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	
+	<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVBWQ68');</script>
+<!-- End Google Tag Manager -->
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-51329212-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-51329212-1');
+</script>
+
+	<!-- OneSignal -->
+	<script type="rocketlazyloadscript" data-minify="1" src="https://kkplay3c.net/wp-content/cache/min/1/sdks/OneSignalSDK.js?ver=1637731342" async=""></script>
+<script type="rocketlazyloadscript">
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "20e773fa-6b7d-4fc8-ad0a-42e6b6750b24",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
+	
+</head>
+<body class="post-template-default single single-post postid-15958 single-format-standard wp-embed-responsive jeg_toggle_dark jeg_single_tpl_1 jeg_single_fullwidth jnews jsc_normal wpb-js-composer js-comp-ver-6.7.0 vc_responsive">
+
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVBWQ68"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    
+    <div class="jeg_ad jeg_ad_top jnews_header_top_ads">
+        <div class='ads-wrapper  '></div>    </div>
+
+    <!-- The Main Wrapper
+    ============================================= -->
+    <div class="jeg_viewport">
+
+        
+        <div class="jeg_header_wrapper">
+            <div class="jeg_header_instagram_wrapper">
+    </div>
+
+<!-- HEADER -->
+<div class="jeg_header full">
+    <div class="jeg_bottombar jeg_navbar jeg_container jeg_navbar_wrapper 1 jeg_navbar_boxed jeg_navbar_normal">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item jeg_logo jeg_desktop_logo">
+			<div class="site-title">
+	    	<a href="https://kkplay3c.net/" style="padding: 0 0 0 0;">
+	    	    <img class='jeg_logo_img' src="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg" srcset="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 1x, https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 2x" alt="KK3C狂想曲"data-light-src="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg" data-light-srcset="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 1x, https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 2x" data-dark-src="" data-dark-srcset=" 1x,  2x">	    	</a>
+	    </div>
+	</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                        <div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_1" data-animation="animateTransform"><li id="menu-item-8600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8600 bgnav" data-item-row="default" ><a target="_blank" href="https://kkplay3c.net/category/3c-evaluation/">評測輕鬆說</a>
+<ul class="sub-menu">
+	<li id="menu-item-8603" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8603 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/shd/">行動裝置/週邊</a></li>
+	<li id="menu-item-8601" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8601 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/life/">生活/家電</a></li>
+	<li id="menu-item-8602" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8602 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/wearable/">穿戴裝置</a></li>
+	<li id="menu-item-8604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8604 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/avhe/">視聽/娛樂</a></li>
+	<li id="menu-item-8606" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8606 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/goods-unboxing/">產品開箱文</a></li>
+	<li id="menu-item-15731" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15731 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/computer-peripherals/">電腦周邊</a></li>
+</ul>
+</li>
+<li id="menu-item-8610" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8610 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/">推薦APP</a>
+<ul class="sub-menu">
+	<li id="menu-item-15737" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15737 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/android/">Android APP</a></li>
+	<li id="menu-item-8608" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8608 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/ios/">iOS APP</a></li>
+	<li id="menu-item-8609" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8609 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/line/">LINE相關教學</a></li>
+	<li id="menu-item-15734" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15734 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/fb/">Facebook相關教學</a></li>
+	<li id="menu-item-11066" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-11066 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/">遊戲攻略</a>
+	<ul class="sub-menu">
+		<li id="menu-item-21001" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21001 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/switch-game/">Switch遊戲</a></li>
+		<li id="menu-item-15725" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15725 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/wooparooland/">烏法魯天地</a></li>
+		<li id="menu-item-15735" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15735 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/my/">來我家玩吧</a></li>
+		<li id="menu-item-15736" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15736 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/idv/">第五人格</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-8611" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8611 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/">電腦/手機教學</a>
+<ul class="sub-menu">
+	<li id="menu-item-8612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8612 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/wordpress/">WordPress</a></li>
+	<li id="menu-item-8613" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8613 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/phone/">手機</a></li>
+	<li id="menu-item-8614" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8614 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/computer/">電腦</a>
+	<ul class="sub-menu">
+		<li id="menu-item-9513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9513 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/computer/mac/">Mac</a></li>
+		<li id="menu-item-9514" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9514 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/computer/windows/">Windows</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-8617" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8617 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/eat-fun/">Office教學</a>
+<ul class="sub-menu">
+	<li id="menu-item-11842" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11842 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/office/excel/">Excel教學</a></li>
+	<li id="menu-item-11843" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11843 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/office/word/">Word教學</a></li>
+</ul>
+</li>
+<li id="menu-item-8616" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-8616 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/">科技資訊</a>
+<ul class="sub-menu">
+	<li id="menu-item-12045" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12045 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/new/">科技新知</a></li>
+	<li id="menu-item-12041" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-12041 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/free-resources/">免費資源</a></li>
+	<li id="menu-item-15727" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15727 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/life-information/">生活資訊</a></li>
+</ul>
+</li>
+<li id="menu-item-8618" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8618 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/diy/">家居DIY</a></li>
+<li id="menu-item-9531" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9531 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/kkplay3c-2/">關於KK</a></li>
+</ul></div></div>
+                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                        			<div
+				class="jeg_nav_item socials_widget jeg_social_icon_block nobg">
+				<a href="https://zh-tw.facebook.com/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://twitter.com/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://t.me/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_telegram"><i class="fa fa-telegram"></i> </a><a href="https://www.youtube.com/user/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a>			</div>
+			<!-- Search Form -->
+<div class="jeg_nav_item jeg_nav_search">
+	<div class="jeg_search_wrapper jeg_search_no_expand rounded">
+	    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+	    <form action="https://kkplay3c.net/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="輸入搜尋關鍵字" type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div>	</div>
+</div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div></div><!-- /.jeg_header -->        </div>
+
+        <div class="jeg_header_sticky">
+            <div class="sticky_blankspace"></div>
+<div class="jeg_header normal">
+    <div class="jeg_container">
+        <div data-mode="scroll" class="jeg_stickybar jeg_navbar jeg_navbar_wrapper jeg_navbar_normal jeg_navbar_shadow jeg_navbar_dark">
+            <div class="container">
+    <div class="jeg_nav_row">
+        
+            <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                <div class="item_wrap jeg_nav_alignleft">
+                    <div class="jeg_nav_item jeg_logo">
+    <div class="site-title">
+    	<a href="https://kkplay3c.net/">
+    	    <img class='jeg_logo_img' src="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg" srcset="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 1x, https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 2x" alt="KK3C狂想曲"data-light-src="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg" data-light-srcset="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 1x, https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 2x" data-dark-src="" data-dark-srcset=" 1x,  2x">    	</a>
+    </div>
+</div>                </div>
+            </div>
+
+            
+            <div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+                <div class="item_wrap jeg_nav_aligncenter">
+                    <div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_1" data-animation="animateTransform"><li id="menu-item-8600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8600 bgnav" data-item-row="default" ><a target="_blank" href="https://kkplay3c.net/category/3c-evaluation/">評測輕鬆說</a>
+<ul class="sub-menu">
+	<li id="menu-item-8603" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8603 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/shd/">行動裝置/週邊</a></li>
+	<li id="menu-item-8601" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8601 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/life/">生活/家電</a></li>
+	<li id="menu-item-8602" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8602 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/wearable/">穿戴裝置</a></li>
+	<li id="menu-item-8604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8604 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/avhe/">視聽/娛樂</a></li>
+	<li id="menu-item-8606" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8606 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/goods-unboxing/">產品開箱文</a></li>
+	<li id="menu-item-15731" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15731 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/3c-evaluation/computer-peripherals/">電腦周邊</a></li>
+</ul>
+</li>
+<li id="menu-item-8610" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8610 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/">推薦APP</a>
+<ul class="sub-menu">
+	<li id="menu-item-15737" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15737 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/android/">Android APP</a></li>
+	<li id="menu-item-8608" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8608 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/ios/">iOS APP</a></li>
+	<li id="menu-item-8609" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8609 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/line/">LINE相關教學</a></li>
+	<li id="menu-item-15734" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15734 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/fb/">Facebook相關教學</a></li>
+	<li id="menu-item-11066" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-11066 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/">遊戲攻略</a>
+	<ul class="sub-menu">
+		<li id="menu-item-21001" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21001 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/switch-game/">Switch遊戲</a></li>
+		<li id="menu-item-15725" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15725 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/wooparooland/">烏法魯天地</a></li>
+		<li id="menu-item-15735" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15735 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/my/">來我家玩吧</a></li>
+		<li id="menu-item-15736" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15736 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/hot-app/game/idv/">第五人格</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-8611" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8611 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/">電腦/手機教學</a>
+<ul class="sub-menu">
+	<li id="menu-item-8612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8612 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/wordpress/">WordPress</a></li>
+	<li id="menu-item-8613" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8613 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/phone/">手機</a></li>
+	<li id="menu-item-8614" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8614 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/computer/">電腦</a>
+	<ul class="sub-menu">
+		<li id="menu-item-9513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9513 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/computer/mac/">Mac</a></li>
+		<li id="menu-item-9514" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9514 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/teaching/computer/windows/">Windows</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-8617" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8617 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/eat-fun/">Office教學</a>
+<ul class="sub-menu">
+	<li id="menu-item-11842" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11842 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/office/excel/">Excel教學</a></li>
+	<li id="menu-item-11843" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11843 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/office/word/">Word教學</a></li>
+</ul>
+</li>
+<li id="menu-item-8616" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-8616 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/">科技資訊</a>
+<ul class="sub-menu">
+	<li id="menu-item-12045" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12045 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/new/">科技新知</a></li>
+	<li id="menu-item-12041" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-12041 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/free-resources/">免費資源</a></li>
+	<li id="menu-item-15727" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15727 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/sti/life-information/">生活資訊</a></li>
+</ul>
+</li>
+<li id="menu-item-8618" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8618 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/category/diy/">家居DIY</a></li>
+<li id="menu-item-9531" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9531 bgnav" data-item-row="default" ><a href="https://kkplay3c.net/kkplay3c-2/">關於KK</a></li>
+</ul></div></div>
+                </div>
+            </div>
+
+            
+            <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                <div class="item_wrap jeg_nav_alignright">
+                    			<div
+				class="jeg_nav_item socials_widget jeg_social_icon_block nobg">
+				<a href="https://zh-tw.facebook.com/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://twitter.com/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://t.me/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_telegram"><i class="fa fa-telegram"></i> </a><a href="https://www.youtube.com/user/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a>			</div>
+			<div class="jeg_separator separator5"></div><!-- Search Icon -->
+<div class="jeg_nav_item jeg_search_wrapper search_icon jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://kkplay3c.net/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="輸入搜尋關鍵字" type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                </div>
+            </div>
+
+                </div>
+</div>        </div>
+    </div>
+</div>
+        </div>
+
+        <div class="jeg_navbar_mobile_wrapper">
+            <div class="jeg_navbar_mobile" data-mode="scroll">
+    <div class="jeg_mobile_bottombar jeg_mobile_midbar jeg_container dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item">
+    <a href="#" class="toggle_btn jeg_mobile_toggle"><i class="fa fa-bars"></i></a>
+</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                        <div class="jeg_nav_item jeg_mobile_logo">
+			<div class="site-title">
+	    	<a href="https://kkplay3c.net/">
+		        <img class='jeg_logo_img' src="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg" srcset="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 1x, https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 2x" alt="KK3C狂想曲"data-light-src="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg" data-light-srcset="https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 1x, https://kkplay3c.net/wp-content/uploads/2021/04/kkplay3c-logo-01.svg 2x" data-dark-src="" data-dark-srcset=" 1x,  2x">		    </a>
+	    </div>
+	</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                        <div class="jeg_nav_item jeg_search_wrapper jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+	<form action="https://kkplay3c.net/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="輸入搜尋關鍵字" type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div></div>
+<div class="sticky_blankspace" style="height: 60px;"></div>        </div>    <div class="post-wrapper">
+
+        <div class="post-wrap post-autoload "  data-url="https://kkplay3c.net/nhi-gov/" data-title="[分享] 如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！" data-id="15958"  data-prev="https://kkplay3c.net/ac-mar-update/" >
+
+            
+            <div class="jeg_main jeg_sidebar_none">
+                <div class="jeg_container">
+                    <div class="jeg_content jeg_singlepage">
+
+	<div class="container">
+
+		<div class="jeg_ad jeg_article jnews_article_top_ads">
+			<div class='ads-wrapper  '></div>		</div>
+
+		<div class="row">
+			<div class="jeg_main_content col-md-12">
+				<div class="jeg_inner_content">
+					
+												<div class="jeg_breadcrumbs jeg_breadcrumb_container">
+							<div id="breadcrumbs"><span class="">
+                <a href="https://kkplay3c.net">首頁</a>
+            </span><i class="fa fa-angle-right"></i><span class="">
+                <a href="https://kkplay3c.net/category/sti/">科技資訊</a>
+            </span><i class="fa fa-angle-right"></i><span class="breadcrumb_last_link">
+                <a href="https://kkplay3c.net/category/sti/free-resources/">免費資源</a>
+            </span></div>						</div>
+						
+						<div class="entry-header">
+							
+							<h1 class="jeg_post_title">[分享] 如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！</h1>
+
+															<h2 class="jeg_post_subtitle">健保署網站可查到週末有看診的醫院和診所</h2>
+							
+							<div class="jeg_meta_container"><div class="jeg_post_meta jeg_post_meta_1">
+
+	<div class="meta_left">
+									<div class="jeg_meta_author">
+					<img alt='艾倫' src='https://secure.gravatar.com/avatar/fcaff63927891ca1552bfc6625f90399?s=80&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/fcaff63927891ca1552bfc6625f90399?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' loading='lazy'/>					<span class="meta_text">作者</span>
+					<a href="https://kkplay3c.net/author/irene7371/">艾倫</a>				</div>
+					
+					<div class="jeg_meta_date">
+				<a href="https://kkplay3c.net/nhi-gov/">2021-03-19</a>
+			</div>
+		
+					<div class="jeg_meta_category">
+				<span><span class="meta_text">在</span>
+					<a href="https://kkplay3c.net/category/sti/free-resources/" rel="category tag">免費資源</a><span class="category-separator">, </span><a href="https://kkplay3c.net/category/sti/" rel="category tag">科技資訊</a>				</span>
+			</div>
+		
+			</div>
+
+	<div class="meta_right">
+							<div class="jeg_meta_comment"><a href="https://kkplay3c.net/nhi-gov/"><i
+						class="fa fa-comment-o"></i> 0</a></div>
+			</div>
+</div>
+</div>
+						</div>
+
+						<div class="jeg_featured featured_image"><a href="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg"><div class="thumbnail-container animate-lazy" style="padding-bottom:66.286%"><img width="700" height="464" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-1140x570 size-jnews-1140x570 lazyload wp-post-image" alt="健保署網站" loading="lazy" sizes="(max-width: 700px) 100vw, 700px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov.jpg 700w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov-300x199.jpg 300w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2019/03/nhi-gov-600x398.jpg 600w" data-sizes="auto" data-expand="700" /></div><p class="wp-caption-text">健保署網站</p></a></div>
+						<div class="jeg_share_top_container"><div class="jeg_share_button clearfix">
+                <div class="jeg_share_stats">
+                    
+                    
+                </div>
+                <div class="jeg_sharelist">
+                    <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fkkplay3c.net%2Fnhi-gov%2F&text=%5B%E5%88%86%E4%BA%AB%5D%20%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E6%98%9F%E6%9C%9F%E5%85%AD%E3%80%81%E6%97%A5%E5%93%AA%E4%BA%9B%E9%86%AB%E9%99%A2%E3%80%81%E8%A8%BA%E6%89%80%E6%9C%89%E7%9C%8B%E8%A8%BA%EF%BC%9F%E5%81%A5%E4%BF%9D%E7%BD%B2%E7%B6%B2%E7%AB%99%E8%B3%87%E6%96%99%E8%B6%85%E9%BD%8A%E5%85%A8%EF%BC%81" rel='nofollow'  class="jeg_btn-line expanded"><i class="fa fa-line"></i><span>Line分享</span></a><a href="https://telegram.me/share/url?url=https%3A%2F%2Fkkplay3c.net%2Fnhi-gov%2F&text=%5B%E5%88%86%E4%BA%AB%5D%20%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E6%98%9F%E6%9C%9F%E5%85%AD%E3%80%81%E6%97%A5%E5%93%AA%E4%BA%9B%E9%86%AB%E9%99%A2%E3%80%81%E8%A8%BA%E6%89%80%E6%9C%89%E7%9C%8B%E8%A8%BA%EF%BC%9F%E5%81%A5%E4%BF%9D%E7%BD%B2%E7%B6%B2%E7%AB%99%E8%B3%87%E6%96%99%E8%B6%85%E9%BD%8A%E5%85%A8%EF%BC%81" rel='nofollow'  class="jeg_btn-telegram expanded"><i class="fa fa-telegram"></i><span>Telegram分享</span></a><a href="/cdn-cgi/l/email-protection#d1eea2a4b3bbb4b2a5ecf4e493f494e4f4e9e9f4e9e7f494e5f49390f49093f4e495f4e3e1f494e4f490e7f4e9e3f494e5f49395f4e8e4f494e7f4e897f490e4f494e9f490e8f490e3f494e7f4e8e9f4e897f494e7f4e892f4e897f494e4f4e9e4f49095f494e2f4e9e1f4e9e0f494e7f4e8e6f490e4f494e4f4e8e2f49090f494e5f49390f4e893f494e8f4e9e7f49093f494e8f4e8e8f490e3f494e2f4e9e1f4e9e0f494e9f490e9f49390f494e7f4e9e8f4e9e1f494e7f4e892f4e9e8f494e6f4e892f4e993f494e9f490e9f49390f49497f49392f4e897f494e4f4e9e0f490e4f494e5f49397f4e895f494e6f49395f493e3f494e6f493e7f493e3f494e6f49093f4e8e8f494e9f493e2f4e9e6f494e7f4e8e7f4e8e8f494e9f493e7f4e9e4f494e8f49395f4e990f494e4f4e9e4f490e9f49497f49392f4e9e0f7b0bca1eab3beb5a8ecb9a5a5a1a2f4e290f4e397f4e397babaa1bdb0a8e2b2ffbfb4a5f4e397bfb9b8fcb6bea7f4e397" rel='nofollow' class="jeg_btn-email "><i class="fa fa-envelope"></i></a>
+                    <div class="share-secondary">
+                    <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fkkplay3c.net%2Fnhi-gov%2F" rel='nofollow' class="jeg_btn-facebook "><i class="fa fa-facebook-official"></i></a><a href="https://twitter.com/intent/tweet?text=%5B%E5%88%86%E4%BA%AB%5D%20%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E6%98%9F%E6%9C%9F%E5%85%AD%E3%80%81%E6%97%A5%E5%93%AA%E4%BA%9B%E9%86%AB%E9%99%A2%E3%80%81%E8%A8%BA%E6%89%80%E6%9C%89%E7%9C%8B%E8%A8%BA%EF%BC%9F%E5%81%A5%E4%BF%9D%E7%BD%B2%E7%B6%B2%E7%AB%99%E8%B3%87%E6%96%99%E8%B6%85%E9%BD%8A%E5%85%A8%EF%BC%81&url=https%3A%2F%2Fkkplay3c.net%2Fnhi-gov%2F" rel='nofollow'  class="jeg_btn-twitter "><i class="fa fa-twitter"></i></a>
+                </div>
+                <a href="#" class="jeg_btn-toggle"><i class="fa fa-share"></i></a>
+                </div>
+            </div></div>
+						<div class="jeg_ad jeg_article jnews_content_top_ads "><div class='ads-wrapper  '></div></div>
+						<div class="entry-content no-share">
+							<div class="jeg_share_button share-float jeg_sticky_share clearfix share-monocrhome">
+								<div class="jeg_share_float_container"></div>							</div>
+
+							<div class="content-inner ">
+								<div itemprop="articleBody" class="dable-content-wrapper"><p>
+	<a href="https://kkplay3c.net/nhi-gov/" rel="noopener" target="_blank">週六、週日需要到醫院看診</a>的朋友可以從「健保署網站」來查詢，設定好縣市、診療科別就能從網站上快速找到附近哪間醫院有醫生看診，小感冒或許能在家中休息，但有些急性病狀還是要當下趕快找醫生處理，以免把最好的治療黃金時間給耽誤了，根據健保署統計，基層診所周六看診率有80％，但周日就掉到20％，但人不舒服的時間卻不可能先預知。<span id="more-15958"></span>
+</p>
+<h2>
+	週末六日緊急要看醫生怎麼辦？<br />
+</h2>
+<p>
+	真心感謝健保署提供這網站讓民眾來查詢使用，習慣前往的醫院如果週末沒有診，就可以先找其他替代的醫院先處理。<br />
+	<img width="1000" height="600" alt="週末有看診的醫院和診所-01" src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/irene/other/nhi-gov-01.jpg" />
+</p><div data-ad-id="20861" style="text-align:center; margin-top:px; margin-bottom:px; margin-left:px; margin-right:px;float:none;" class="afw afw_custom  afw_ad afwadid-20861  ">
+                                                        <div style="font-size:10px;text-align:center;color:#cccccc;">Advertisement</div>
+							<amp-ad width=300 height=250
+    type="doubleclick"
+    data-slot="/57965253,267672902/kkplay3c.net_amp_article_inread_p2">
+</amp-ad>
+							</div>
+<h2>
+	設定縣市鄉鎮、特約類別、診療科別、服務時段<br />
+</h2>
+<p>
+	縣市鄉鎮、特約類別、診療科別、服務時段&#8230;這四個項目是最重要的，記得一定要設定和選擇才能得到最正確的開診資訊。<br />
+	<img width="1000" height="600" alt="週末有看診的醫院和診所-02" src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/irene/other/nhi-gov-02.jpg" />
+</p>
+<p>
+	特約類別中有醫學中心、區域醫院、地區醫院、診所、藥局，分不清楚誰是誰的時候，就每一項輪流選擇查詢，這樣就能看到更加完整的開診資訊。<br />
+	<img width="1000" height="600" alt="週末有看診的醫院和診所-03" src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/irene/other/nhi-gov-03.jpg" />
+</p><div data-ad-id="20862" style="text-align:center; margin-top:px; margin-bottom:px; margin-left:px; margin-right:px;float:none;" class="afw afw_custom  afw_ad afwadid-20862  ">
+                                                        <div style="font-size:10px;text-align:center;color:#cccccc;">Advertisement</div>
+							<amp-ad width=300 height=250
+    type="doubleclick"
+    data-slot="/267672902/kk3c_amp_article_inread_p4">
+</amp-ad>
+							</div>
+<p>
+	診療科別一定要選對，找錯醫生也是白跑一趟了。<br />
+	<img width="1000" height="600" alt="週末有看診的醫院和診所-04" src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/irene/other/nhi-gov-04.jpg" />
+</p>
+<p>
+	記得服務時段一定要設定星期六、星期日，這樣才能找到周末有開診的醫院。<br />
+	<img width="1000" height="600" alt="週末有看診的醫院和診所-05" src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/irene/other/nhi-gov-05.jpg" />
+</p><div data-ad-id="20863" style="text-align:center; margin-top:px; margin-bottom:px; margin-left:px; margin-right:px;float:none;" class="afw afw_custom  afw_ad afwadid-20863  ">
+                                                        <div style="font-size:10px;text-align:center;color:#cccccc;">Advertisement</div>
+							<amp-ad width=300 height=250
+    type="doubleclick"
+    data-slot="/267672902/kk3c_amp_article_inread_p6">
+</amp-ad>
+							</div>
+<p>
+	以上四項都設定好後，最後按下「<strong>開始查詢</strong>」健保署網站就會顯示到底有哪幾家醫院有開診了，醫療機構名稱、地址、電話都很詳細記錄，有任何問題也可以直接撥打電話給該醫院。<br />
+	<img width="1000" height="600" alt="週末有看診的醫院和診所-06" src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/irene/other/nhi-gov-06.jpg" />
+</p>
+<div class="info">
+<p>
+		網站名稱：衛生福利部中央健保署網路查詢<br />
+		查詢網址：<a href="https://www.nhi.gov.tw/QueryN/query14.aspx?n=0B12314F50D38FCC&amp;sms=36A0BB334ECB4011&amp;topn=3185A4DF68749BA9" rel="noopener" target="_blank">按這裡</a>
+	</p><div data-ad-id="20865" style="text-align:center; margin-top:px; margin-bottom:px; margin-left:px; margin-right:px;float:none;" class="afw afw_custom  afw_ad afwadid-20865  ">
+                                                        <div style="font-size:10px;text-align:center;color:#cccccc;">Advertisement</div>
+							<amp-ad width=300 height=250
+    type="doubleclick"
+    data-slot="/267672902/kk3c_amp_article_inread_p8">
+</amp-ad>
+							</div>
+</div>
+<div class="readmore">
+<h3>
+		延伸閱讀：<br />
+	</h3>
+<p>
+		<a href="https://kkplay3c.net/download-youtube-top10/" rel="bookmark noopener" target="_blank" title="10款支援手機、電腦下載 YouTube影片和音樂教學">10款支援手機、電腦下載 YouTube影片和音樂教學</a><a href="https://kkplay3c.net/gihosoft-tubeget/" rel="bookmark noopener" target="_blank" title="Gihosoft TubeGet 支援免費下載 YouTube 8K 影片(Windows、Mac)">Gihosoft TubeGet 支援免費下載 YouTube 8K 影片(Windows、Mac)</a><a href="https://kkplay3c.net/taskinghouse/" rel="bookmark noopener" target="_blank" title="手機可看到旅遊當地的天氣或路況 – 即時影像監視器，台灣旅遊小幫手！">手機可看到旅遊當地的天氣或路況 &ndash; 即時影像監視器，台灣旅遊小幫手！</a><a href="https://kkplay3c.net/split-tabs/" rel="bookmark noopener" target="_blank" title="Split Tabs 將Chrome 瀏覽器分割2~4 個畫面，比對資料更容易 (Chrome擴充功能)">Split Tabs 將Chrome 瀏覽器分割2~4 個畫面，比對資料更容易 (Chrome擴充功能)</a><a href="https://kkplay3c.net/chrome-fireshot/" rel="bookmark noopener" target="_blank" title="[Chrome 擴充功能] 可捕捉整個網頁截圖–FireShot">[Chrome 擴充功能] 可捕捉整個網頁截圖&ndash;FireShot</a>
+	</p>
+</div></div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">
+(function(d,a,b,l,e,_) {
+d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+_=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);
+})(window,document,'dable','script');
+dable('setService', 'kkplay3c.net/adgeek');
+dable('sendLog');
+</script>
+								
+								
+																<div class="jeg_post_tags"><span>標籤：</span> <a href="https://kkplay3c.net/tag/%e5%81%87%e6%97%a5%e7%9c%8b%e8%a8%ba/" rel="tag">假日看診</a><a href="https://kkplay3c.net/tag/%e5%81%87%e6%97%a5%e8%a8%ba%e6%89%80/" rel="tag">假日診所</a><a href="https://kkplay3c.net/tag/%e5%81%a5%e4%bf%9d/" rel="tag">健保</a><a href="https://kkplay3c.net/tag/%e5%81%a5%e4%bf%9d%e5%8d%a1/" rel="tag">健保卡</a><a href="https://kkplay3c.net/tag/%e5%81%a5%e5%ba%b7%e4%bf%9d%e9%9a%aa/" rel="tag">健康保險</a><a href="https://kkplay3c.net/tag/%e5%85%ad%e6%97%a5%e6%9c%89%e7%9c%8b%e8%a8%ba/" rel="tag">六日有看診</a><a href="https://kkplay3c.net/tag/%e6%9f%a5%e8%a9%a2%e8%b3%87%e6%96%99/" rel="tag">查詢資料</a><a href="https://kkplay3c.net/tag/%e7%94%9f%e6%b4%bb/" rel="tag">生活</a><a href="https://kkplay3c.net/tag/%e7%94%9f%e6%b4%bb%e4%be%bf%e5%88%a9/" rel="tag">生活便利</a><a href="https://kkplay3c.net/tag/%e7%94%9f%e6%b4%bb%e6%83%85%e5%a0%b1/" rel="tag">生活情報</a><a href="https://kkplay3c.net/tag/%e7%94%9f%e6%b4%bb%e8%b3%87%e8%a8%8a/" rel="tag">生活資訊</a><a href="https://kkplay3c.net/tag/%e7%9c%8b%e8%a8%ba%e6%99%82%e9%96%93%e6%9f%a5%e8%a9%a2/" rel="tag">看診時間查詢</a><a href="https://kkplay3c.net/tag/%e7%b6%b2%e8%b7%af%e7%a7%91%e6%8a%80/" rel="tag">網路科技</a><a href="https://kkplay3c.net/tag/%e8%a1%9b%e7%94%9f%e7%a6%8f%e5%88%a9%e9%83%a8/" rel="tag">衛生福利部</a><a href="https://kkplay3c.net/tag/%e8%a8%ba%e6%89%80%e6%99%82%e9%96%93/" rel="tag">診所時間</a><a href="https://kkplay3c.net/tag/%e8%a8%ba%e6%89%80%e6%9c%8d%e5%8b%99%e6%99%82%e9%96%93/" rel="tag">診所服務時間</a><a href="https://kkplay3c.net/tag/%e8%a8%ba%e6%89%80%e6%9f%a5%e8%a9%a2/" rel="tag">診所查詢</a><a href="https://kkplay3c.net/tag/%e8%a8%ba%e6%89%80%e7%9c%8b%e8%a8%ba%e6%99%82%e6%ae%b5/" rel="tag">診所看診時段</a><a href="https://kkplay3c.net/tag/%e9%80%b1%e6%97%a5%e7%9c%8b%e8%a8%ba/" rel="tag">週日看診</a><a href="https://kkplay3c.net/tag/%e9%80%b1%e6%9c%ab%e7%9c%8b%e8%a8%ba/" rel="tag">週末看診</a><a href="https://kkplay3c.net/tag/%e9%86%ab%e7%99%82%e8%b3%87%e8%a8%8a/" rel="tag">醫療資訊</a><a href="https://kkplay3c.net/tag/%e9%86%ab%e9%99%a2%e7%9c%8b%e8%a8%ba%e6%99%82%e6%ae%b5/" rel="tag">醫院看診時段</a></div>
+															</div>
+
+
+						</div>
+						<div class="jeg_share_bottom_container"></div>
+						
+						<div class="jeg_ad jeg_article jnews_content_bottom_ads "><div class='ads-wrapper  '></div></div><div class="jnews_prev_next_container"></div><div class="jnews_author_box_container ">
+	<div class="jeg_authorbox">
+		<div class="jeg_author_image">
+			<img alt='艾倫' src='https://secure.gravatar.com/avatar/fcaff63927891ca1552bfc6625f90399?s=80&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/fcaff63927891ca1552bfc6625f90399?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' loading='lazy'/>		</div>
+		<div class="jeg_author_content">
+			<h3 class="jeg_author_name">
+				<a href="https://kkplay3c.net/author/irene7371/">
+					艾倫				</a>
+			</h3>
+			<p class="jeg_author_desc">
+				喜歡簡單而單純的生活，卻意外跌入3C的陷阱，於是就這樣戀上了玩3C這件事情！
+
+我願意，我同意，我樂意把時間耗在美好的事物上，包括測試，評測，所謂的玩3C。			</p>
+
+							<div class="jeg_author_socials">
+									</div>
+			
+		</div>
+	</div>
+</div><div class="jnews_related_post_container"><div  class="jeg_postblock_22 jeg_postblock jeg_module_hook jeg_pagination_disable jeg_col_3o3 jnews_module_15958_0_61a5b2c35036a   " data-unique="jnews_module_15958_0_61a5b2c35036a">
+					<div class="jeg_block_heading jeg_block_heading_6 jeg_subcat_right">
+                     <h3 class="jeg_block_title"><span>相關文章</span></h3>
+                     
+                 </div>
+					<div class="jeg_block_container">
+                    
+                    <div class="jeg_posts_wrap">
+                    <div class="jeg_posts jeg_load_more_flag"> 
+                        <article class="jeg_post jeg_pl_md_5 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://kkplay3c.net/golden-horse-awards-nominations/"><div class="thumbnail-container animate-lazy  size-715 "><img width="350" height="250" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="2021金馬獎直播" loading="lazy" sizes="(max-width: 350px) 100vw, 350px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/11/golden-horse-awards-nominations-58-350x250.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/11/golden-horse-awards-nominations-58-350x250.jpg 350w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/11/golden-horse-awards-nominations-58-120x86.jpg 120w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/11/golden-horse-awards-nominations-58-750x536.jpg 750w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://kkplay3c.net/category/sti/life-information/" class="category-life-information">生活資訊</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://kkplay3c.net/golden-horse-awards-nominations/">2021【金馬獎】頒獎典禮 YouTube直播、手機直播、完整入圍名單</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://kkplay3c.net/golden-horse-awards-nominations/" ><i class="fa fa-clock-o"></i> 2021-11-26</a></div></div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_5 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://kkplay3c.net/cendme/"><div class="thumbnail-container animate-lazy  size-715 "><img width="350" height="250" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="電腦、手機加密傳送檔案" loading="lazy" sizes="(max-width: 350px) 100vw, 350px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cendme-350x250.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cendme-350x250.jpg 350w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cendme-120x86.jpg 120w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cendme-750x536.jpg 750w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://kkplay3c.net/category/sti/free-resources/" class="category-free-resources">免費資源</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://kkplay3c.net/cendme/">電腦、手機跨平台加密傳檔 &#8211; cend.me，有密碼才能下載檔案</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://kkplay3c.net/cendme/" ><i class="fa fa-clock-o"></i> 2021-11-24</a></div></div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_5 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://kkplay3c.net/ac-nice-value-fault/"><div class="thumbnail-container animate-lazy  size-715 "><img width="350" height="250" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="良值手把按鍵卡住怎麼維修？" loading="lazy" sizes="(max-width: 350px) 100vw, 350px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/ac-nice-value-fault-350x250.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/ac-nice-value-fault-350x250.jpg 350w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/ac-nice-value-fault-120x86.jpg 120w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/ac-nice-value-fault-750x536.jpg 750w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://kkplay3c.net/category/sti/life-information/" class="category-life-information">生活資訊</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://kkplay3c.net/ac-nice-value-fault/">[教學] Switch 良值手把按鍵卡住怎麼辦？可以自行維修嗎？</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://kkplay3c.net/ac-nice-value-fault/" ><i class="fa fa-clock-o"></i> 2021-11-21</a></div></div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_5 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://kkplay3c.net/cht-fixed-ip/"><div class="thumbnail-container animate-lazy  size-715 "><img width="350" height="250" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="申請中華電信固定IP，小烏龜綁定固定IP" loading="lazy" sizes="(max-width: 350px) 100vw, 350px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cht-fixed-IP-350x250.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cht-fixed-IP-350x250.jpg 350w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cht-fixed-IP-120x86.jpg 120w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/cht-fixed-IP-750x536.jpg 750w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://kkplay3c.net/category/sti/new/" class="category-new">科技新知</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://kkplay3c.net/cht-fixed-ip/">如何申請中華電信固定IP？小烏龜如何登入？小烏龜如何綁定固定IP？</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://kkplay3c.net/cht-fixed-ip/" ><i class="fa fa-clock-o"></i> 2021-11-16</a></div></div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_5 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://kkplay3c.net/removal/"><div class="thumbnail-container animate-lazy  size-715 "><img width="350" height="250" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="Removal 圖片免費去背工具" loading="lazy" sizes="(max-width: 350px) 100vw, 350px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/09/removal-350x250.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/09/removal-350x250.jpg 350w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2020/09/removal-120x86.jpg 120w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://kkplay3c.net/category/sti/free-resources/" class="category-free-resources">免費資源</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://kkplay3c.net/removal/">Removal 圖片免費去背工具 &#8211; 不用任何設定，圖片上傳就完成去背</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://kkplay3c.net/removal/" ><i class="fa fa-clock-o"></i> 2021-11-12</a></div></div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_5 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://kkplay3c.net/shop-to-shop/"><div class="thumbnail-container animate-lazy  size-715 "><img width="350" height="250" src="https://i0.wp.com/kkplay3c.net/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="蝦皮購物店到店$0免運體驗" loading="lazy" sizes="(max-width: 350px) 100vw, 350px" data-src="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/shop-to-shop-350x250.jpg" data-srcset="https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/shop-to-shop-350x250.jpg 350w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/shop-to-shop-120x86.jpg 120w, https://i0.wp.com/kkplay3c.net/wp-content/uploads/2021/11/shop-to-shop-750x536.jpg 750w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://kkplay3c.net/category/sti/life-information/" class="category-life-information">生活資訊</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://kkplay3c.net/shop-to-shop/">[體驗]蝦皮購物店到店$0元免運怎設定？服務據點有哪些？店到店需要免運券嗎？</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://kkplay3c.net/shop-to-shop/" ><i class="fa fa-clock-o"></i> 2021-11-11</a></div></div>
+                    </div>
+                </article>
+                    </div>
+                </div>
+                    <div class='module-overlay'>
+				    <div class='preloader_type preloader_dot'>
+				        <div class="module-preloader jeg_preloader dot">
+				            <span></span><span></span><span></span>
+				        </div>
+				        <div class="module-preloader jeg_preloader circle">
+				            <div class="jnews_preloader_circle_outer">
+				                <div class="jnews_preloader_circle_inner"></div>
+				            </div>
+				        </div>
+				        <div class="module-preloader jeg_preloader square">
+				            <div class="jeg_square">
+				                <div class="jeg_square_inner"></div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+                </div>
+                <div class="jeg_block_navigation">
+                    <div class='navigation_overlay'><div class='module-preloader jeg_preloader'><span></span><span></span><span></span></div></div>
+                    
+                    
+                </div>
+					
+					<script type="rocketlazyloadscript">var jnews_module_15958_0_61a5b2c35036a = {"header_icon":"","first_title":"\u76f8\u95dc\u6587\u7ae0","second_title":"","url":"","header_type":"heading_6","header_background":"","header_secondary_background":"","header_text_color":"","header_line_color":"","header_accent_color":"","header_filter_category":"","header_filter_author":"","header_filter_tag":"","header_filter_text":"All","post_type":"post","content_type":"all","number_post":6,"post_offset":0,"unique_content":"disable","include_post":"","exclude_post":15958,"include_category":"3546,34,3546,8634,3552","exclude_category":"","include_author":"","include_tag":"","exclude_tag":"","sort_by":"latest","date_format":"default","date_format_custom":"Y\/m\/d","force_normal_image_load":"","pagination_mode":"disable","pagination_nextprev_showtext":"","pagination_number_post":6,"pagination_scroll_limit":3,"boxed":"","boxed_shadow":"","el_id":"","el_class":"","scheme":"","column_width":"auto","title_color":"","accent_color":"","alt_color":"","excerpt_color":"","css":"","excerpt_length":20,"paged":1,"column_class":"jeg_col_3o3","class":"jnews_block_22"};</script>
+				</div></div><div class='jnews-autoload-splitter'  data-url="https://kkplay3c.net/nhi-gov/" data-title="[分享] 如何查詢星期六、日哪些醫院、診所有看診？健保署網站資料超齊全！" data-id="15958"  data-prev="https://kkplay3c.net/ac-mar-update/" ></div><div class="jnews_popup_post_container"></div><div class="jnews_comment_container"></div>
+									</div>
+			</div>
+					</div>
+
+		<div class="jeg_ad jeg_article jnews_article_bottom_ads">
+			<div class='ads-wrapper  '></div>		</div>
+
+	</div>
+</div>
+                </div>
+            </div>
+
+            <div id="post-body-class" class="post-template-default single single-post postid-15958 single-format-standard wp-embed-responsive jeg_toggle_dark jeg_single_tpl_1 jeg_single_fullwidth jnews jsc_normal wpb-js-composer js-comp-ver-6.7.0 vc_responsive"></div>
+
+            
+        </div>
+
+        <div class="post-ajax-overlay">
+    <div class="preloader_type preloader_dot">
+        <div class="newsfeed_preloader jeg_preloader dot">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="newsfeed_preloader jeg_preloader circle">
+            <div class="jnews_preloader_circle_outer">
+                <div class="jnews_preloader_circle_inner"></div>
+            </div>
+        </div>
+        <div class="newsfeed_preloader jeg_preloader square">
+            <div class="jeg_square"><div class="jeg_square_inner"></div></div>
+        </div>
+    </div>
+</div>
+    </div>
+        <div data-ad-id="20966" style="text-align:center; margin-top:px; margin-bottom:px; margin-left:px; margin-right:px;float:none;" class="afw afw_custom  afw_ad afwadid-20966  ">
+                                                        <div style="font-size:10px;text-align:center;color:#cccccc;">Advertisement</div>
+							<amp-sticky-ad layout="nodisplay" style="margin-bottom: 40px !important; padding: 0 !important">                                     
+    <amp-ad width=320 height=100
+        type="doubleclick"
+        data-slot="/267672902/kk3c_amp_all_anchor">
+        <script async custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/v0/amp-sticky-ad-1.0.js"></script>
+    </amp-ad>
+</amp-sticky-ad>
+							</div><div class="footer-holder" id="footer" data-id="footer">
+            <div class="jeg_footer jeg_footer_1 dark">
+    <div class="jeg_footer_container jeg_container">
+        <div class="jeg_footer_content">
+            <div class="container">
+
+                <div class="row">
+                    <div class="jeg_footer_primary clearfix">
+                        <div class="col-md-4 footer_column">
+                            <div class="footer_widget widget_jnews_about" id="jnews_about-2">        <div class="jeg_about ">
+						                <h2 class="jeg_about_name">KK3C 狂想曲</h2>			            <p>KK3C狂想曲 結合了兩個熱愛3C的女孩  <br>【艾倫 Irene & 吉娜 Gina】<br>用著女孩的角度來分享3C產品和APP教學和介紹。<br>女孩們別害怕！3C產品很好懂、很好使用！<br>網站分享 3C開箱 / 產品評測 / APP介紹 / 手機教學 / 電腦教學 / 遊戲分享(攻略) 內容，合作歡迎寄到 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8a3a3b8a4a9b1fbab88afa5a9a1a4e6aba7a5">[email&#160;protected]</a></p>
+
+			        </div>
+		</div>                        </div>
+                        <div class="col-md-4 footer_column">
+                            <div class="footer_widget widget_tag_cloud" id="tag_cloud-4"><div class="jeg_footer_heading jeg_footer_heading_1"><h3 class="jeg_footer_title"><span>熱門主題</span></h3></div><div class="tagcloud"><a href="https://kkplay3c.net/category/hot-app/android/" class="tag-cloud-link tag-link-40 tag-link-position-1" style="font-size: 22pt;" aria-label="Android APP (823 個項目)">Android APP</a>
+<a href="https://kkplay3c.net/category/app/" class="tag-cloud-link tag-link-4 tag-link-position-2" style="font-size: 21.465648854962pt;" aria-label="APP (661 個項目)">APP</a>
+<a href="https://kkplay3c.net/category/office/excel/" class="tag-cloud-link tag-link-3436 tag-link-position-3" style="font-size: 11.954198473282pt;" aria-label="Excel教學 (10 個項目)">Excel教學</a>
+<a href="https://kkplay3c.net/category/hot-app/fb/" class="tag-cloud-link tag-link-13 tag-link-position-4" style="font-size: 12.328244274809pt;" aria-label="Facebook相關教學 (12 個項目)">Facebook相關教學</a>
+<a href="https://kkplay3c.net/category/hot-app/ios/" class="tag-cloud-link tag-link-18 tag-link-position-5" style="font-size: 21.839694656489pt;" aria-label="iOS APP (771 個項目)">iOS APP</a>
+<a href="https://kkplay3c.net/category/hot-app/line/" class="tag-cloud-link tag-link-21 tag-link-position-6" style="font-size: 19.274809160305pt;" aria-label="LINE相關教學 (259 個項目)">LINE相關教學</a>
+<a href="https://kkplay3c.net/category/teaching/computer/mac/" class="tag-cloud-link tag-link-2373 tag-link-position-7" style="font-size: 18.687022900763pt;" aria-label="Mac (200 個項目)">Mac</a>
+<a href="https://kkplay3c.net/category/office/" class="tag-cloud-link tag-link-27 tag-link-position-8" style="font-size: 13.557251908397pt;" aria-label="Office教學 (21 個項目)">Office教學</a>
+<a href="https://kkplay3c.net/category/hot-app/game/switch-game/" class="tag-cloud-link tag-link-13032 tag-link-position-9" style="font-size: 17.511450381679pt;" aria-label="Switch遊戲 (119 個項目)">Switch遊戲</a>
+<a href="https://kkplay3c.net/category/teaching/computer/windows/" class="tag-cloud-link tag-link-2372 tag-link-position-10" style="font-size: 19.541984732824pt;" aria-label="Windows (289 個項目)">Windows</a>
+<a href="https://kkplay3c.net/category/teaching/wordpress/" class="tag-cloud-link tag-link-2271 tag-link-position-11" style="font-size: 12.328244274809pt;" aria-label="Wordpress (12 個項目)">Wordpress</a>
+<a href="https://kkplay3c.net/category/office/word/" class="tag-cloud-link tag-link-3435 tag-link-position-12" style="font-size: 11.954198473282pt;" aria-label="Word教學 (10 個項目)">Word教學</a>
+<a href="https://kkplay3c.net/category/hot-app/game/my/" class="tag-cloud-link tag-link-8638 tag-link-position-13" style="font-size: 14.145038167939pt;" aria-label="來我家玩吧 (27 個項目)">來我家玩吧</a>
+<a href="https://kkplay3c.net/category/sti/free-resources/" class="tag-cloud-link tag-link-3546 tag-link-position-14" style="font-size: 18.740458015267pt;" aria-label="免費資源 (202 個項目)">免費資源</a>
+<a href="https://kkplay3c.net/category/diy/" class="tag-cloud-link tag-link-550 tag-link-position-15" style="font-size: 16.496183206107pt;" aria-label="家居DIY (76 個項目)">家居DIY</a>
+<a href="https://kkplay3c.net/category/teaching/phone/" class="tag-cloud-link tag-link-553 tag-link-position-16" style="font-size: 19.862595419847pt;" aria-label="手機 (327 個項目)">手機</a>
+<a href="https://kkplay3c.net/category/hot-app/" class="tag-cloud-link tag-link-548 tag-link-position-17" style="font-size: 20.931297709924pt;" aria-label="推薦APP (528 個項目)">推薦APP</a>
+<a href="https://kkplay3c.net/category/new-article/" class="tag-cloud-link tag-link-30 tag-link-position-18" style="font-size: 11.473282442748pt;" aria-label="最新文章 (8 個項目)">最新文章</a>
+<a href="https://kkplay3c.net/category/news/" class="tag-cloud-link tag-link-31 tag-link-position-19" style="font-size: 11.473282442748pt;" aria-label="最新資訊 (8 個項目)">最新資訊</a>
+<a href="https://kkplay3c.net/category/uncategorized/" class="tag-cloud-link tag-link-1 tag-link-position-20" style="font-size: 8pt;" aria-label="未分類 (1 個項目)">未分類</a>
+<a href="https://kkplay3c.net/category/hot-app/game/wooparooland/" class="tag-cloud-link tag-link-8633 tag-link-position-21" style="font-size: 17.832061068702pt;" aria-label="烏法魯天地 (138 個項目)">烏法魯天地</a>
+<a href="https://kkplay3c.net/category/3c-evaluation/life/" class="tag-cloud-link tag-link-546 tag-link-position-22" style="font-size: 16.656488549618pt;" aria-label="生活/家電 (83 個項目)">生活/家電</a>
+<a href="https://kkplay3c.net/category/sti/life-information/" class="tag-cloud-link tag-link-8634 tag-link-position-23" style="font-size: 18.847328244275pt;" aria-label="生活資訊 (215 個項目)">生活資訊</a>
+<a href="https://kkplay3c.net/category/goods-unboxing/" class="tag-cloud-link tag-link-32 tag-link-position-24" style="font-size: 16.923664122137pt;" aria-label="產品開箱文 (92 個項目)">產品開箱文</a>
+<a href="https://kkplay3c.net/category/sti/new/" class="tag-cloud-link tag-link-3552 tag-link-position-25" style="font-size: 18.473282442748pt;" aria-label="科技新知 (180 個項目)">科技新知</a>
+<a href="https://kkplay3c.net/category/sti/" class="tag-cloud-link tag-link-34 tag-link-position-26" style="font-size: 21.198473282443pt;" aria-label="科技資訊 (590 個項目)">科技資訊</a>
+<a href="https://kkplay3c.net/category/3c-evaluation/wearable/" class="tag-cloud-link tag-link-547 tag-link-position-27" style="font-size: 13.87786259542pt;" aria-label="穿戴裝置 (24 個項目)">穿戴裝置</a>
+<a href="https://kkplay3c.net/category/hot-app/game/idv/" class="tag-cloud-link tag-link-8637 tag-link-position-28" style="font-size: 11.206106870229pt;" aria-label="第五人格 (7 個項目)">第五人格</a>
+<a href="https://kkplay3c.net/category/eat-fun/" class="tag-cloud-link tag-link-35 tag-link-position-29" style="font-size: 12.702290076336pt;" aria-label="美食&amp;玩樂 (14 個項目)">美食&amp;玩樂</a>
+<a href="https://kkplay3c.net/category/3c-evaluation/shd/" class="tag-cloud-link tag-link-544 tag-link-position-30" style="font-size: 17.190839694656pt;" aria-label="行動裝置/週邊 (103 個項目)">行動裝置/週邊</a>
+<a href="https://kkplay3c.net/category/3c-evaluation/avhe/" class="tag-cloud-link tag-link-545 tag-link-position-31" style="font-size: 14.893129770992pt;" aria-label="視聽/娛樂 (38 個項目)">視聽/娛樂</a>
+<a href="https://kkplay3c.net/category/3c-evaluation/" class="tag-cloud-link tag-link-2 tag-link-position-32" style="font-size: 19.114503816794pt;" aria-label="評測輕鬆說 (241 個項目)">評測輕鬆說</a>
+<a href="https://kkplay3c.net/category/hot-app/game/" class="tag-cloud-link tag-link-2909 tag-link-position-33" style="font-size: 21.198473282443pt;" aria-label="遊戲攻略 (594 個項目)">遊戲攻略</a>
+<a href="https://kkplay3c.net/category/about-kk/" class="tag-cloud-link tag-link-37 tag-link-position-34" style="font-size: 8pt;" aria-label="關於KK (1 個項目)">關於KK</a>
+<a href="https://kkplay3c.net/category/teaching/computer/" class="tag-cloud-link tag-link-549 tag-link-position-35" style="font-size: 20.450381679389pt;" aria-label="電腦 (428 個項目)">電腦</a>
+<a href="https://kkplay3c.net/category/teaching/" class="tag-cloud-link tag-link-29 tag-link-position-36" style="font-size: 21.519083969466pt;" aria-label="電腦/手機教學 (678 個項目)">電腦/手機教學</a>
+<a href="https://kkplay3c.net/category/3c-evaluation/computer-peripherals/" class="tag-cloud-link tag-link-8636 tag-link-position-37" style="font-size: 11.206106870229pt;" aria-label="電腦周邊 (7 個項目)">電腦周邊</a></div>
+</div>                        </div>
+                        <div class="col-md-4 footer_column">
+                            <div class="footer_widget widget_jnews_social" id="jnews_social-2"><div class="jeg_footer_heading jeg_footer_heading_1"><h3 class="jeg_footer_title"><span>追蹤我們</span></h3></div>
+        <div class="jeg_social_wrap ">
+			
+            <div class="socials_widget   rounded">
+				<a href="https://zh-tw.facebook.com/kkplay3c" target="_blank" rel="external noopener nofollow" class="jeg_facebook">
+                                            <i class="fa fa-facebook"></i>
+                                            
+                                        </a><a href="https://twitter.com/kkplay3c" target="_blank" rel="external noopener nofollow" class="jeg_twitter">
+                                            <i class="fa fa-twitter"></i>
+                                            
+                                        </a><a href="https://t.me/kkplay3c" target="_blank" rel="external noopener nofollow" class="jeg_telegram">
+                                            <i class="fa fa-telegram"></i>
+                                            
+                                        </a><a href="https://www.youtube.com/user/kkplay3c" target="_blank" rel="external noopener nofollow" class="jeg_youtube">
+                                            <i class="fa fa-youtube-play"></i>
+                                            
+                                        </a>            </div>
+
+						<style scoped>#jnews_social-2 .jeg_social_wrap .socials_widget i{color:#f1f7ed;}</style>        </div>
+
+		</div>                        </div>
+                    </div>
+                </div>
+
+
+                
+                <div class="jeg_footer_secondary clearfix">
+
+                    <!-- secondary footer right -->
+
+                    <div class="footer_right">
+
+                        <ul class="jeg_menu_footer"><li id="menu-item-21805" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21805"><a href="https://kkplay3c.net/category/3c-evaluation/">評測輕鬆說</a></li>
+<li id="menu-item-21806" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21806"><a href="https://kkplay3c.net/category/hot-app/">推薦APP</a></li>
+<li id="menu-item-21807" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21807"><a href="https://kkplay3c.net/category/teaching/">手機教學</a></li>
+<li id="menu-item-21808" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21808"><a href="https://kkplay3c.net/category/office/">Office教學</a></li>
+<li id="menu-item-21809" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-21809"><a href="https://kkplay3c.net/category/sti/">科技資訊</a></li>
+</ul>
+                        
+                        
+                    </div>
+
+                    <!-- secondary footer left -->
+
+                    
+                    
+                                            <p class="copyright"> 版權所有 不得轉載 © 2021 <a href="https://kkplay3c.net/" title="kkplay3c">kkplay3c</a> All Rights Reserved. </p>
+                    
+                </div> <!-- secondary menu -->
+
+                
+
+            </div>
+        </div>
+    </div>
+</div><!-- /.footer -->
+        </div>
+
+        <div class="jscroll-to-top">
+        	<a href="#back-to-top" class="jscroll-to-top_link"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation
+    ============================================= -->
+<div id="jeg_off_canvas" class="dark">
+    <a href="#" class="jeg_menu_close"><i class="jegicon-cross"></i></a>
+    <div class="jeg_bg_overlay"></div>
+    <div class="jeg_mobile_wrapper">
+        <div class="nav_wrap">
+    <div class="item_main">
+        <!-- Search Form -->
+<div class="jeg_aside_item jeg_search_wrapper jeg_search_no_expand rounded">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://kkplay3c.net/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="輸入搜尋關鍵字" type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div><div class="jeg_aside_item">
+    <ul class="jeg_mobile_menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8600"><a target="_blank" rel="noopener" href="https://kkplay3c.net/category/3c-evaluation/">評測輕鬆說</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8603"><a href="https://kkplay3c.net/category/3c-evaluation/shd/">行動裝置/週邊</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8601"><a href="https://kkplay3c.net/category/3c-evaluation/life/">生活/家電</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8602"><a href="https://kkplay3c.net/category/3c-evaluation/wearable/">穿戴裝置</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8604"><a href="https://kkplay3c.net/category/3c-evaluation/avhe/">視聽/娛樂</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8606"><a href="https://kkplay3c.net/category/goods-unboxing/">產品開箱文</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15731"><a href="https://kkplay3c.net/category/3c-evaluation/computer-peripherals/">電腦周邊</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8610"><a href="https://kkplay3c.net/category/hot-app/">推薦APP</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15737"><a href="https://kkplay3c.net/category/hot-app/android/">Android APP</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8608"><a href="https://kkplay3c.net/category/hot-app/ios/">iOS APP</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8609"><a href="https://kkplay3c.net/category/hot-app/line/">LINE相關教學</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15734"><a href="https://kkplay3c.net/category/hot-app/fb/">Facebook相關教學</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-11066"><a href="https://kkplay3c.net/category/hot-app/game/">遊戲攻略</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21001"><a href="https://kkplay3c.net/category/hot-app/game/switch-game/">Switch遊戲</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15725"><a href="https://kkplay3c.net/category/hot-app/game/wooparooland/">烏法魯天地</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15735"><a href="https://kkplay3c.net/category/hot-app/game/my/">來我家玩吧</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15736"><a href="https://kkplay3c.net/category/hot-app/game/idv/">第五人格</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8611"><a href="https://kkplay3c.net/category/teaching/">電腦/手機教學</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8612"><a href="https://kkplay3c.net/category/teaching/wordpress/">WordPress</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8613"><a href="https://kkplay3c.net/category/teaching/phone/">手機</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8614"><a href="https://kkplay3c.net/category/teaching/computer/">電腦</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9513"><a href="https://kkplay3c.net/category/teaching/computer/mac/">Mac</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9514"><a href="https://kkplay3c.net/category/teaching/computer/windows/">Windows</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8617"><a href="https://kkplay3c.net/category/eat-fun/">Office教學</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11842"><a href="https://kkplay3c.net/category/office/excel/">Excel教學</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11843"><a href="https://kkplay3c.net/category/office/word/">Word教學</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-8616"><a href="https://kkplay3c.net/category/sti/">科技資訊</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12045"><a href="https://kkplay3c.net/category/sti/new/">科技新知</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-12041"><a href="https://kkplay3c.net/category/sti/free-resources/">免費資源</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15727"><a href="https://kkplay3c.net/category/sti/life-information/">生活資訊</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8618"><a href="https://kkplay3c.net/category/diy/">家居DIY</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9531"><a href="https://kkplay3c.net/kkplay3c-2/">關於KK</a></li>
+</ul></div>    </div>
+    <div class="item_bottom">
+        <div class="jeg_aside_item socials_widget nobg">
+    <a href="https://zh-tw.facebook.com/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://twitter.com/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://t.me/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_telegram"><i class="fa fa-telegram"></i> </a><a href="https://www.youtube.com/user/kkplay3c" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a></div><div class="jeg_aside_item jeg_aside_copyright">
+	<p>版權所有 不得轉載 © 2021 <a href="https://kkplay3c.net/" title="kkplay3c">kkplay3c</a> All Rights Reserved.</p>
+</div>    </div>
+</div>    </div>
+</div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">var jfla = ["view_counter"]</script><div class="jeg_read_progress_wrapper"><div class="jeg_progress_container top"><span class="progress-bar"></span></div></div>    <!-- Facebook Pixel Event Code -->
+    <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+    <!-- End Facebook Pixel Event Code -->
+    <div id='fb-pxl-ajax-code'></div><script type='text/javascript' id='adsforwp-ads-front-js-js-extra'>
+/* <![CDATA[ */
+var adsforwp_obj = {"ajax_url":"https:\/\/kkplay3c.net\/wp-admin\/admin-ajax.php","adsforwp_front_nonce":"34c4cd1756"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/plugins/ads-for-wp/public/assets/js/ads-front.min.js?ver=1.9.16.2' id='adsforwp-ads-front-js-js'></script>
+<script type='text/javascript' id='adsforwp-ads-frontend-js-js-extra'>
+/* <![CDATA[ */
+var adsforwp_browser_obj = [];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/plugins/ads-for-wp/public/assets/js/ads-frontend.min.js?ver=1.9.16.2' id='adsforwp-ads-frontend-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/jnews-auto-load-post/assets/js/jquery.autoload.js?ver=1637731342' id='jnews-autoload-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/rare-pet\/|\/ac-atm\/|\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wbadmin\/|\/wp-admin\/|\/logout\/|\/wbadmin\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/kkplay3c.net","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/themes/jnews-child/js/script.js?ver=1638237969' id='child-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-includes/js/hoverIntent.min.js?ver=1.10.1' id='hoverIntent-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' id='jnews-frontend-js-extra'>
+/* <![CDATA[ */
+var jnewsoption = {"login_reload":"https:\/\/kkplay3c.net\/nhi-gov","popup_script":"magnific","single_gallery":"","ismobile":"1","isie":"","sidefeed_ajax":"","language":"zh_TW","module_prefix":"jnews_module_ajax_","live_search":"1","postid":"15958","isblog":"1","admin_bar":"0","follow_video":"","follow_position":"top_right","rtl":"0","gif":"","lang":{"invalid_recaptcha":"Invalid Recaptcha!","empty_username":"Please enter your username!","empty_email":"Please enter your email!","empty_password":"Please enter your password!"},"recaptcha":"0","site_slug":"\/","site_domain":"kkplay3c.net","zoom_button":"0","autoload_limit":"10","autoload_content":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/themes/jnews/assets/dist/frontend.min.js?ver=1638237969' id='jnews-frontend-js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://kkplay3c.net/wp-content/themes/jnews/assets/js/html5shiv.min.js?ver=1638237969' id='html5shiv-js'></script>
+<![endif]-->
+<script type='text/javascript' id='jnews-select-share-js-extra'>
+/* <![CDATA[ */
+var jnews_select_share = {"is_customize_preview":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/cache/min/1/wp-content/plugins/jnews-social-share/assets/js/plugin.js?ver=1637731342' id='jnews-select-share-js'></script>
+<script type='text/javascript' src='https://kkplay3c.net/wp-includes/js/wp-embed.min.js?ver=5.8.2' id='wp-embed-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://kkplay3c.net/wp-content/cache/min/1/sdks/OneSignalSDK.js?ver=1637731342' async='async' id='remote_sdk-js'></script>
+<div class="jeg_ad jnews_mobile_sticky_ads "><div class='ads-wrapper  '></div></div><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkplay3c.net\/nhi-gov\/"},"dateCreated":"2021-03-18 10:00:46","datePublished":"2021-03-18 10:00:46","dateModified":"2021-03-19 02:01:55","url":"https:\/\/kkplay3c.net\/nhi-gov\/","headline":"[\u5206\u4eab] \u5982\u4f55\u67e5\u8a62\u661f\u671f\u516d\u3001\u65e5\u54ea\u4e9b\u91ab\u9662\u3001\u8a3a\u6240\u6709\u770b\u8a3a\uff1f\u5065\u4fdd\u7f72\u7db2\u7ad9\u8cc7\u6599\u8d85\u9f4a\u5168\uff01","name":"[\u5206\u4eab] \u5982\u4f55\u67e5\u8a62\u661f\u671f\u516d\u3001\u65e5\u54ea\u4e9b\u91ab\u9662\u3001\u8a3a\u6240\u6709\u770b\u8a3a\uff1f\u5065\u4fdd\u7f72\u7db2\u7ad9\u8cc7\u6599\u8d85\u9f4a\u5168\uff01","articleBody":"<p>\r\n\t<a href=\"https:\/\/kkplay3c.net\/nhi-gov\/\" rel=\"noopener\" target=\"_blank\">\u9031\u516d\u3001\u9031\u65e5\u9700\u8981\u5230\u91ab\u9662\u770b\u8a3a<\/a>\u7684\u670b\u53cb\u53ef\u4ee5\u5f9e\u300c\u5065\u4fdd\u7f72\u7db2\u7ad9\u300d\u4f86\u67e5\u8a62\uff0c\u8a2d\u5b9a\u597d\u7e23\u5e02\u3001\u8a3a\u7642\u79d1\u5225\u5c31\u80fd\u5f9e\u7db2\u7ad9\u4e0a\u5feb\u901f\u627e\u5230\u9644\u8fd1\u54ea\u9593\u91ab\u9662\u6709\u91ab\u751f\u770b\u8a3a\uff0c\u5c0f\u611f\u5192\u6216\u8a31\u80fd\u5728\u5bb6\u4e2d\u4f11\u606f\uff0c\u4f46\u6709\u4e9b\u6025\u6027\u75c5\u72c0\u9084\u662f\u8981\u7576\u4e0b\u8d95\u5feb\u627e\u91ab\u751f\u8655\u7406\uff0c\u4ee5\u514d\u628a\u6700\u597d\u7684\u6cbb\u7642\u9ec3\u91d1\u6642\u9593\u7d66\u803d\u8aa4\u4e86\uff0c\u6839\u64da\u5065\u4fdd\u7f72\u7d71\u8a08\uff0c\u57fa\u5c64\u8a3a\u6240\u5468\u516d\u770b\u8a3a\u7387\u670980\uff05\uff0c\u4f46\u5468\u65e5\u5c31\u6389\u523020\uff05\uff0c\u4f46\u4eba\u4e0d\u8212\u670d\u7684\u6642\u9593\u537b\u4e0d\u53ef\u80fd\u5148\u9810\u77e5\u3002<!--more-->\r\n<\/p>\r\n\r\n<h2>\r\n\t\u9031\u672b\u516d\u65e5\u7dca\u6025\u8981\u770b\u91ab\u751f\u600e\u9ebc\u8fa6\uff1f\r\n<\/h2>\r\n\r\n<p>\r\n\t\u771f\u5fc3\u611f\u8b1d\u5065\u4fdd\u7f72\u63d0\u4f9b\u9019\u7db2\u7ad9\u8b93\u6c11\u773e\u4f86\u67e5\u8a62\u4f7f\u7528\uff0c\u7fd2\u6163\u524d\u5f80\u7684\u91ab\u9662\u5982\u679c\u9031\u672b\u6c92\u6709\u8a3a\uff0c\u5c31\u53ef\u4ee5\u5148\u627e\u5176\u4ed6\u66ff\u4ee3\u7684\u91ab\u9662\u5148\u8655\u7406\u3002<br \/>\r\n\t<img alt=\"\u9031\u672b\u6709\u770b\u8a3a\u7684\u91ab\u9662\u548c\u8a3a\u6240-01\" src=\"https:\/\/kkplay3c.net\/wp-content\/uploads\/irene\/other\/nhi-gov-01.jpg\" \/>\r\n<\/p>\r\n\r\n<h2>\r\n\t\u8a2d\u5b9a\u7e23\u5e02\u9109\u93ae\u3001\u7279\u7d04\u985e\u5225\u3001\u8a3a\u7642\u79d1\u5225\u3001\u670d\u52d9\u6642\u6bb5\r\n<\/h2>\r\n\r\n<p>\r\n\t\u7e23\u5e02\u9109\u93ae\u3001\u7279\u7d04\u985e\u5225\u3001\u8a3a\u7642\u79d1\u5225\u3001\u670d\u52d9\u6642\u6bb5...\u9019\u56db\u500b\u9805\u76ee\u662f\u6700\u91cd\u8981\u7684\uff0c\u8a18\u5f97\u4e00\u5b9a\u8981\u8a2d\u5b9a\u548c\u9078\u64c7\u624d\u80fd\u5f97\u5230\u6700\u6b63\u78ba\u7684\u958b\u8a3a\u8cc7\u8a0a\u3002<br \/>\r\n\t<img alt=\"\u9031\u672b\u6709\u770b\u8a3a\u7684\u91ab\u9662\u548c\u8a3a\u6240-02\" src=\"https:\/\/kkplay3c.net\/wp-content\/uploads\/irene\/other\/nhi-gov-02.jpg\" \/>\r\n<\/p>\r\n\r\n<p>\r\n\t\u7279\u7d04\u985e\u5225\u4e2d\u6709\u91ab\u5b78\u4e2d\u5fc3\u3001\u5340\u57df\u91ab\u9662\u3001\u5730\u5340\u91ab\u9662\u3001\u8a3a\u6240\u3001\u85e5\u5c40\uff0c\u5206\u4e0d\u6e05\u695a\u8ab0\u662f\u8ab0\u7684\u6642\u5019\uff0c\u5c31\u6bcf\u4e00\u9805\u8f2a\u6d41\u9078\u64c7\u67e5\u8a62\uff0c\u9019\u6a23\u5c31\u80fd\u770b\u5230\u66f4\u52a0\u5b8c\u6574\u7684\u958b\u8a3a\u8cc7\u8a0a\u3002<br \/>\r\n\t<img alt=\"\u9031\u672b\u6709\u770b\u8a3a\u7684\u91ab\u9662\u548c\u8a3a\u6240-03\" src=\"https:\/\/kkplay3c.net\/wp-content\/uploads\/irene\/other\/nhi-gov-03.jpg\" \/>\r\n<\/p>\r\n\r\n<p>\r\n\t\u8a3a\u7642\u79d1\u5225\u4e00\u5b9a\u8981\u9078\u5c0d\uff0c\u627e\u932f\u91ab\u751f\u4e5f\u662f\u767d\u8dd1\u4e00\u8d9f\u4e86\u3002<br \/>\r\n\t<img alt=\"\u9031\u672b\u6709\u770b\u8a3a\u7684\u91ab\u9662\u548c\u8a3a\u6240-04\" src=\"https:\/\/kkplay3c.net\/wp-content\/uploads\/irene\/other\/nhi-gov-04.jpg\" \/>\r\n<\/p>\r\n\r\n<p>\r\n\t\u8a18\u5f97\u670d\u52d9\u6642\u6bb5\u4e00\u5b9a\u8981\u8a2d\u5b9a\u661f\u671f\u516d\u3001\u661f\u671f\u65e5\uff0c\u9019\u6a23\u624d\u80fd\u627e\u5230\u5468\u672b\u6709\u958b\u8a3a\u7684\u91ab\u9662\u3002<br \/>\r\n\t<img alt=\"\u9031\u672b\u6709\u770b\u8a3a\u7684\u91ab\u9662\u548c\u8a3a\u6240-05\" src=\"https:\/\/kkplay3c.net\/wp-content\/uploads\/irene\/other\/nhi-gov-05.jpg\" \/>\r\n<\/p>\r\n\r\n<p>\r\n\t\u4ee5\u4e0a\u56db\u9805\u90fd\u8a2d\u5b9a\u597d\u5f8c\uff0c\u6700\u5f8c\u6309\u4e0b\u300c<strong>\u958b\u59cb\u67e5\u8a62<\/strong>\u300d\u5065\u4fdd\u7f72\u7db2\u7ad9\u5c31\u6703\u986f\u793a\u5230\u5e95\u6709\u54ea\u5e7e\u5bb6\u91ab\u9662\u6709\u958b\u8a3a\u4e86\uff0c\u91ab\u7642\u6a5f\u69cb\u540d\u7a31\u3001\u5730\u5740\u3001\u96fb\u8a71\u90fd\u5f88\u8a73\u7d30\u8a18\u9304\uff0c\u6709\u4efb\u4f55\u554f\u984c\u4e5f\u53ef\u4ee5\u76f4\u63a5\u64a5\u6253\u96fb\u8a71\u7d66\u8a72\u91ab\u9662\u3002<br \/>\r\n\t<img alt=\"\u9031\u672b\u6709\u770b\u8a3a\u7684\u91ab\u9662\u548c\u8a3a\u6240-06\" src=\"https:\/\/kkplay3c.net\/wp-content\/uploads\/irene\/other\/nhi-gov-06.jpg\" \/>\r\n<\/p>\r\n\r\n<div class=\"info\">\r\n\t<p>\r\n\t\t\u7db2\u7ad9\u540d\u7a31\uff1a\u885b\u751f\u798f\u5229\u90e8\u4e2d\u592e\u5065\u4fdd\u7f72\u7db2\u8def\u67e5\u8a62<br \/>\r\n\t\t\u67e5\u8a62\u7db2\u5740\uff1a<a href=\"https:\/\/www.nhi.gov.tw\/QueryN\/query14.aspx?n=0B12314F50D38FCC&amp;sms=36A0BB334ECB4011&amp;topn=3185A4DF68749BA9\" rel=\"noopener\" target=\"_blank\">\u6309\u9019\u88e1<\/a>\r\n\t<\/p>\r\n<\/div>\r\n\r\n<div class=\"readmore\">\r\n\t<h3>\r\n\t\t\u5ef6\u4f38\u95b1\u8b80\uff1a\r\n\t<\/h3>\r\n\r\n\t<p>\r\n\t\t<a href=\"https:\/\/kkplay3c.net\/download-youtube-top10\/\" rel=\"bookmark noopener\" target=\"_blank\" title=\"10\u6b3e\u652f\u63f4\u624b\u6a5f\u3001\u96fb\u8166\u4e0b\u8f09 YouTube\u5f71\u7247\u548c\u97f3\u6a02\u6559\u5b78\">10\u6b3e\u652f\u63f4\u624b\u6a5f\u3001\u96fb\u8166\u4e0b\u8f09 YouTube\u5f71\u7247\u548c\u97f3\u6a02\u6559\u5b78<\/a><a href=\"https:\/\/kkplay3c.net\/gihosoft-tubeget\/\" rel=\"bookmark noopener\" target=\"_blank\" title=\"Gihosoft TubeGet \u652f\u63f4\u514d\u8cbb\u4e0b\u8f09 YouTube 8K \u5f71\u7247(Windows\u3001Mac)\">Gihosoft TubeGet \u652f\u63f4\u514d\u8cbb\u4e0b\u8f09 YouTube 8K \u5f71\u7247(Windows\u3001Mac)<\/a><a href=\"https:\/\/kkplay3c.net\/taskinghouse\/\" rel=\"bookmark noopener\" target=\"_blank\" title=\"\u624b\u6a5f\u53ef\u770b\u5230\u65c5\u904a\u7576\u5730\u7684\u5929\u6c23\u6216\u8def\u6cc1 \u2013 \u5373\u6642\u5f71\u50cf\u76e3\u8996\u5668\uff0c\u53f0\u7063\u65c5\u904a\u5c0f\u5e6b\u624b\uff01\">\u624b\u6a5f\u53ef\u770b\u5230\u65c5\u904a\u7576\u5730\u7684\u5929\u6c23\u6216\u8def\u6cc1 &ndash; \u5373\u6642\u5f71\u50cf\u76e3\u8996\u5668\uff0c\u53f0\u7063\u65c5\u904a\u5c0f\u5e6b\u624b\uff01<\/a><a href=\"https:\/\/kkplay3c.net\/split-tabs\/\" rel=\"bookmark noopener\" target=\"_blank\" title=\"Split Tabs \u5c07Chrome \u700f\u89bd\u5668\u5206\u52722~4 \u500b\u756b\u9762\uff0c\u6bd4\u5c0d\u8cc7\u6599\u66f4\u5bb9\u6613 (Chrome\u64f4\u5145\u529f\u80fd)\">Split Tabs \u5c07Chrome \u700f\u89bd\u5668\u5206\u52722~4 \u500b\u756b\u9762\uff0c\u6bd4\u5c0d\u8cc7\u6599\u66f4\u5bb9\u6613 (Chrome\u64f4\u5145\u529f\u80fd)<\/a><a href=\"https:\/\/kkplay3c.net\/chrome-fireshot\/\" rel=\"bookmark noopener\" target=\"_blank\" title=\"[Chrome \u64f4\u5145\u529f\u80fd] \u53ef\u6355\u6349\u6574\u500b\u7db2\u9801\u622a\u5716\u2013FireShot\">[Chrome \u64f4\u5145\u529f\u80fd] \u53ef\u6355\u6349\u6574\u500b\u7db2\u9801\u622a\u5716&ndash;FireShot<\/a>\r\n\t<\/p>\r\n<\/div>\r\n","author":{"@type":"Person","name":"\u827e\u502b","url":"https:\/\/kkplay3c.net\/author\/irene7371\/"},"articleSection":["\u514d\u8cbb\u8cc7\u6e90","\u79d1\u6280\u8cc7\u8a0a"],"image":{"@type":"ImageObject","url":"https:\/\/kkplay3c.net\/wp-content\/uploads\/2019\/03\/nhi-gov.jpg","width":700,"height":464},"publisher":{"@type":"Organization","name":"","url":"https:\/\/kkplay3c.net","logo":{"@type":"ImageObject","url":""},"sameAs":["https:\/\/zh-tw.facebook.com\/kkplay3c","https:\/\/twitter.com\/kkplay3c","https:\/\/t.me\/kkplay3c","https:\/\/www.youtube.com\/user\/kkplay3c"]}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"hentry","entry-title":"[\u5206\u4eab] \u5982\u4f55\u67e5\u8a62\u661f\u671f\u516d\u3001\u65e5\u54ea\u4e9b\u91ab\u9662\u3001\u8a3a\u6240\u6709\u770b\u8a3a\uff1f\u5065\u4fdd\u7f72\u7db2\u7ad9\u8cc7\u6599\u8d85\u9f4a\u5168\uff01","published":"2021-03-18 10:00:46","updated":"2021-03-19 02:01:55"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/kkplay3c.net","name":"\u9996\u9801"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/kkplay3c.net\/category\/sti\/","name":"\u79d1\u6280\u8cc7\u8a0a"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/kkplay3c.net\/category\/sti\/free-resources\/","name":"\u514d\u8cbb\u8cc7\u6e90"}},{"@type":"ListItem","position":4,"item":{"@id":"https:\/\/kkplay3c.net","name":"\u9996\u9801"}},{"@type":"ListItem","position":5,"item":{"@id":"https:\/\/kkplay3c.net\/category\/sti\/","name":"\u79d1\u6280\u8cc7\u8a0a"}},{"@type":"ListItem","position":6,"item":{"@id":"https:\/\/kkplay3c.net\/category\/sti\/free-resources\/","name":"\u514d\u8cbb\u8cc7\u6e90"}}]}</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">;!function(){"use strict";window.jnews=window.jnews||{},window.jnews.first_load=window.jnews.first_load||{},window.jnews.first_load=function(){var e=this,t=jnews.library,n="object"==typeof jnews&&"object"==typeof jnews.library;e.data=null,e.run_ajax=!0,e.run_loginregister=!0,e.clear=function(){e.run_ajax=!0,e.run_loginregister=!0,e.data=null},e.init=function(){n&&(t.globalBody.querySelectorAll(".jeg_popup_account").length&&jnews.loginregister&&e.run_loginregister&&(e.run_loginregister=!1,jnews.loginregister.init(),jnews.loginregister.hook_form()),jfla.length&&e.run_ajax&&(e.run_ajax=!1,e.do_ajax({action:"jnews_first_load_action",jnews_id:jnewsoption.postid,load_action:jfla})))},e.update_counter=function(){if(n){var o={total_view:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_views_count .counts"),total_share:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_share_count .counts"),total_comment:t.globalBody.querySelectorAll(".jeg_meta_comment a span")};t.forEach(e.data.counter,(function(e,n){o[n].length&&t.forEach(o[n],(function(n,o){t.setText(n,e)}))}))}},e.do_ajax=function(o){if(n){var a=new XMLHttpRequest;a.onreadystatechange=function(){XMLHttpRequest.DONE===a.readyState&&200==a.status&&(e.data=JSON.parse(a.responseText),e.data.counter&&"object"==typeof e.data.counter&&e.update_counter())},a.open("POST",jnews_ajax_url,!0),a.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),a.send(t.httpBuildQuery(o))}}},window.jnews.first_load=new window.jnews.first_load,jnews.first_load.init()}();</script><script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://kkplay3c.net/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360">',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1638249155 -->

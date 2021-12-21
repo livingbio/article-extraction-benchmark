@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+<html>
+<head>
+  <meta charset="UTF-8">
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"6a87e64dee","applicationID":"29160914","transactionName":"dlsPQ0VbDl9RRBoQUUFRTlZFQAtQWFNGTEtdWxY=","queueTime":0,"applicationTime":1535,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"6a87e64dee",applicationID:"29160914"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <title>顎関節症の原因と治療・予防法とは - 【ケアクル】</title>
+  <meta name="msvalidate.01" content="9207CA75BCF88684310CE3FD91BF7D51" />
+  <meta name="google-site-verification" content="H2Se5rtQqb93k_1UYegR54kJzT_869t9X54YPBGJfTk" />
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WQKGXZ6');</script>
+    <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.clipkit.co/clipkit/stylesheets/application-1.0.css">
+  <link rel="stylesheet" href="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/028/original/style.css?1547533798" media="all">
+  <script src="https://cdn.clipkit.co/clipkit/javascripts/default-1.0.js"></script>
+  <link rel="icon" href="https://cdn.clipkit.co/tenants/5/sites/favicons/000/000/001/square/f3672d00-cfa4-4180-a1fd-0ae8bfac5e4c.png?1497778247">
+  <link rel="apple-touch-icon" href="https://cdn.clipkit.co/tenants/5/sites/touch_icons/000/000/001/square/ad232e3d-4af6-4054-8c92-b58469c643ac.png?1497778247">
+  
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@">
+<meta name="twitter:domain" content="media.carecle.com">
+<meta name="twitter:title" content="顎関節症の原因と治療・予防法とは">
+<meta name="twitter:description" content="口を開けたり閉めたりするときに痛くなったり、開けることそのものが難しくなったりするとき、それは顎関節症を起こしているからかもしれません。今回は顎関節症になる原因と治療・予防法についてご説明します。">
+<meta name="twitter:image:src" content="https://cdn.clipkit.co/tenants/5/articles/images/000/000/612/large/0154c5b4-b3e4-4639-9430-9e349cd30b49.png?1509457405">
+<meta name="twitter:url" content="https://media.carecle.com/articles/Mf6iL">
+<meta property="twitter:account_id" content="">
+<meta property="fb:app_id" content="">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="【ケアクル】">
+<meta property="og:title" content="顎関節症の原因と治療・予防法とは">
+<meta property="og:description" content="口を開けたり閉めたりするときに痛くなったり、開けることそのものが難しくなったりするとき、それは顎関節症を起こしているからかもしれません。今回は顎関節症になる原因と治療・予防法についてご説明します。">
+<meta property="og:image" content="https://cdn.clipkit.co/tenants/5/articles/images/000/000/612/large/0154c5b4-b3e4-4639-9430-9e349cd30b49.png?1509457405">
+<meta property="og:url" content="https://media.carecle.com/articles/Mf6iL">
+
+  
+  
+<link rel="canonical" href="https://media.carecle.com/articles/Mf6iL">
+<link rel="amphtml" href="https://media.carecle.com/articles/Mf6iL.amp">
+
+<meta name="description" content="口を開けたり閉めたりするときに痛くなったり、開けることそのものが難しくなったりするとき、それは顎関節症を起こしているからかもしれません。今回は顎関節症になる原因と治療・予防法についてご説明します。">
+<meta name="keywords" content="悩み・症状">
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id": "https://media.carecle.com/articles/Mf6iL"
+    },
+    "headline": "顎関節症の原因と治療・予防法とは",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://cdn.clipkit.co/tenants/5/articles/images/000/000/612/large/0154c5b4-b3e4-4639-9430-9e349cd30b49.png?1509457405",
+      "width": 800,
+      "height": 600
+    },
+    "datePublished": "2017-10-30T11:25:02+09:00",
+    "dateModified": "2017-10-31T22:43:32+09:00",
+    "author": {
+      "@type": "Person",
+      "name": "ケアクル編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "【ケアクル】",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.clipkit.co/tenants/5/sites/logos/000/000/001/logo_sm/6b16c4cb-16d2-4e65-bbba-7048c7a72d6e.png?1502813981"
+      }
+    },
+    "description": "口を開けたり閉めたりするときに痛くなったり、開けることそのものが難しくなったりするとき、それは顎関節症を起こしているからかもしれません。今回は顎関節症になる原因と治療・予防法についてご説明します。"
+  }
+</script>
+
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '341930252923572');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=341930252923572&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="5IhFIkoQKqsB5ht3j6jf48qbAw77NVSK3xfq3ADBEsA9Ooxg/X8DQ3Zoy24Bw5Cn8XCMb9eI2usGibg4Vbp1pA==" /><script>window.routing_root_path = '';
+window.site_name = 'media';
+I18n.defaultLocale = 'ja';
+I18n.locale = 'ja';</script></head>
+<body class="device-desktop">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQKGXZ6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="container">
+      <p class="header_logo">
+        <a href="/" title="【ケアクル】">
+          <img src="https://cdn.clipkit.co/tenants/5/sites/logos/000/000/001/logo_sm/6b16c4cb-16d2-4e65-bbba-7048c7a72d6e.png?1502813981" alt="【ケアクル】">
+        </a>
+      </p>
+      <h1>健康・美容の情報メディア 「ケアクル」</h1>
+      <div class="header_search">
+        <form action="/search" role="search">
+          <input type="text" class="header_search_input" placeholder="記事を探す" name="q" value="">
+          <button class="header_search_btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <p class="to_mypage">
+        <a href="/mypage"><img src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/030/original/ic_input_black_24dp_2x.png?1502795683">ライター登録・ログイン</a>
+      </p>
+      <div class="sns_header">
+        <ul>
+          <li>
+            <a href="https://facebook.com/carecle" target="blank">
+        		<img src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/026/original/facebook.png?1502613206">
+      		</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/carecle" target="blank">
+        		<img src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/027/original/twitter.png?1502613213">
+      		</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="gnavi">
+      
+      <div class="wrap">
+        <ul>
+          
+          
+          
+          
+          <li class="children">
+            <a href="/category/health"><span>健康・予防</span></a>
+            
+            <ul>
+              
+              <li>
+                <a href="/category/bodywork">整体・整骨・鍼灸</a>
+              </li>
+              
+              <li>
+                <a href="/category/lifestyle">生活習慣</a>
+              </li>
+              
+              <li>
+                <a href="/category/exercise2">運動・エクササイズ</a>
+              </li>
+              
+              <li>
+                <a href="/category/relaxation">リラクゼーション</a>
+              </li>
+              
+              <li>
+                <a href="/category/health_product">健康グッズ</a>
+              </li>
+              
+              <li>
+                <a href="/category/fatigue_recovery">疲労回復</a>
+              </li>
+              
+              <li>
+                <a href="/category/sleep">睡眠・呼吸</a>
+              </li>
+              
+              <li>
+                <a href="/category/dental">デンタルケア</a>
+              </li>
+              
+              <li>
+                <a href="/category/skin_care">スキンケア</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          
+          
+          
+          <li class="children">
+            <a href="/category/cosmeticmake"><span>コスメ・メイク</span></a>
+            
+            <ul>
+              
+              <li>
+                <a href="/category/cosmeticgoods">コスメ・メイク・ネイルグッズ</a>
+              </li>
+              
+              <li>
+                <a href="/category/naildesign">ネイル方法・デザイン</a>
+              </li>
+              
+              <li>
+                <a href="/category/hairmake">ヘアメイク・ヘアケア</a>
+              </li>
+              
+              <li>
+                <a href="/category/makeup">メイクアップ</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          
+          
+          
+          <li class="children">
+            <a href="/category/meal"><span>食事・栄養管理</span></a>
+            
+            <ul>
+              
+              <li>
+                <a href="/category/recipe">健康メニュー・レシピ</a>
+              </li>
+              
+              <li>
+                <a href="/category/supplement">サプリメント</a>
+              </li>
+              
+              <li>
+                <a href="/category/healthy_foods">健康食材</a>
+              </li>
+              
+              <li>
+                <a href="/category/food_allergy">食物アレルギー</a>
+              </li>
+              
+              <li>
+                <a href="/category/nutrition">栄養を調べる</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          
+          
+          
+          <li class="children">
+            <a href="/category/dieting"><span>ダイエット</span></a>
+            
+            <ul>
+              
+              <li>
+                <a href="/category/diet_method">ダイエットの方法</a>
+              </li>
+              
+              <li>
+                <a href="/category/basic">ダイエットの基本</a>
+              </li>
+              
+              <li>
+                <a href="/category/worry">ダイエットの悩み</a>
+              </li>
+              
+              <li>
+                <a href="/category/goods">ダイエットグッズ</a>
+              </li>
+              
+              <li>
+                <a href="/category/slimming_medical">痩身医療・エステ</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          
+          
+          
+          <li class="children">
+            <a href="/category/troubles"><span>悩み・症状</span></a>
+            
+            <ul>
+              
+              <li>
+                <a href="/category/facetrouble">頭と目、顔の悩み</a>
+              </li>
+              
+              <li>
+                <a href="/category/upperbody">首・肩・腕の悩み</a>
+              </li>
+              
+              <li>
+                <a href="/category/lowerbody">足と腰の悩み</a>
+              </li>
+              
+              <li>
+                <a href="/category/internalorgans">内臓の悩み</a>
+              </li>
+              
+              <li>
+                <a href="/category/beautytrouble">美容の悩み</a>
+              </li>
+              
+              <li>
+                <a href="/category/wholebody">全身の悩み</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          
+          
+          
+          <li class="">
+            <a href="/category/news"><span>コラム・インタビュー</span></a>
+            
+          </li>
+          
+          
+          
+          <li class="">
+            <a href="/curators"><span>専門家一覧</span></a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </header>
+  
+  <div class="header_breadcrumb">
+    <div class="container">
+      <ul>
+        
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a itemprop="url" href="/">
+            <span itemprop="title">
+              
+              <i class="fa fa-lg">&#xf015;</i>
+              <span class="sr-only">【ケアクル】</span>
+              
+            </span>
+          </a>
+        </li>
+        
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a itemprop="url" href="/category/troubles">
+            <span itemprop="title">
+              
+              悩み・症状
+              
+            </span>
+          </a>
+        </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+  
+  <main role="main" class="main">
+
+<div class="container main_padding">
+  <section>
+    <div class="article_info_01">
+      <h1 class="title">顎関節症の原因と治療・予防法とは</h1>
+      <div class="date_views_favorite">
+        <ul>
+          <li class="date">公開日：2017年10月30日</li>
+          <!--<li class="date">更新日：2017年10月31日</li>
+          <li class="view_num">641</li>-->
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="main_contents">
+    
+    <div class="article_info_02">
+      
+      <p class="description">口を開けたり閉めたりするときに痛くなったり、開けることそのものが難しくなったりするとき、それは顎関節症を起こしているからかもしれません。今回は顎関節症になる原因と治療・予防法についてご説明します。</p>
+      
+
+      <!--<figure class="photo"><img src="https://cdn.clipkit.co/tenants/5/articles/images/000/000/612/large/0154c5b4-b3e4-4639-9430-9e349cd30b49.png?1509457405" alt="顎関節症の原因と治療・予防法とは"></figure>
+      <p class="source">via</p>-->
+
+      
+<div class="sns_share_list_01">
+  <ul>
+    <!--<li class="facebook">-->
+    <!--  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">-->
+    <!--    <span>シェアする</span>-->
+    <!--  </a>-->
+    <!--</li>-->
+    <li class="twitter">
+      <a href="http://twitter.com/share?url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL&text=%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF" target="_blank">
+        <span>ツイートする</span>
+      </a>
+    </li>
+    <!--<li class="google_plus">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+        <span>シェア</span>
+      </a>
+    </li>-->
+    <li class="hatena">
+      <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL&title=%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF">
+        <span>はてなブックマーク</span>
+      </a>
+    </li>
+    <!--<li class="pocket">
+      <a href="http://getpocket.com/edit?url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL&title=%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF" onclick="window.open(this.href, 'FBwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+        <span>シェア</span>
+      </a>
+    </li>
+    <li class="feedly">
+      <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" target="blank">
+        <span>シェア</span>
+      </a>
+    </li>
+    <li class="line">
+      <a href="http://line.me/R/msg/text/?%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF%20https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" target="_blank">
+        <span>友達になる</span>
+      </a>
+    </li>-->
+    <li class="line">
+      <a href="https://line.me/R/ti/p/%40kxy3413f" target="_blank">
+        <span>友達になる</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+      <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+      <!--  <ins class="adsbygoogle"-->
+      <!--       style="display:block; text-align:center; margin-top:20px;"-->
+      <!--       data-ad-layout="in-article"-->
+      <!--       data-ad-format="fluid"-->
+      <!--       data-ad-client="ca-pub-1261400443825091"-->
+      <!--       data-ad-slot="5858791339">-->
+      <!--  </ins>-->
+      <!--  <script>-->
+      <!--       (adsbygoogle = window.adsbygoogle || []).push({});-->
+      <!--  </script>-->
+    </div>
+    
+    <div class="toc">
+      <h3>目次</h3>
+      <ul>
+        
+        
+        <li class="lv2"><a href="#i21445">はじめに</a></li>
+        
+        <li class="lv2"><a href="#i21443">顎関節症ってなに？</a></li>
+        
+        <li class="lv2"><a href="#i21441">顎関節症の検査</a></li>
+        
+        <li class="lv3"><a href="#i21439">問診</a></li>
+        
+        <li class="lv3"><a href="#i21437">触診</a></li>
+        
+        <li class="lv3"><a href="#i21435">レントゲン検査</a></li>
+        
+        <li class="lv2"><a href="#i21433">顎関節症の原因</a></li>
+        
+        <li class="lv3"><a href="#i21432">歯ぎしりや食いしばり</a></li>
+        
+        <li class="lv3"><a href="#i21430">食べ物の嗜好</a></li>
+        
+        <li class="lv3"><a href="#i21428">楽器の演奏</a></li>
+        
+        <li class="lv3"><a href="#i21426">頬杖をつく癖</a></li>
+        
+        <li class="lv3"><a href="#i21424">外傷</a></li>
+        
+        <li class="lv2"><a href="#i21422">顎関節症の治療法</a></li>
+        
+        <li class="lv3"><a href="#i21420">薬物療法</a></li>
+        
+        <li class="lv3"><a href="#i21419">開口訓練</a></li>
+        
+        <li class="lv3"><a href="#i21417">スプリント療法</a></li>
+        
+        <li class="lv3"><a href="#i21415">関節腔洗浄療法</a></li>
+        
+        <li class="lv3"><a href="#i21413">パンピングマニピュレーション</a></li>
+        
+        <li class="lv3"><a href="#i21411">マイオモニター</a></li>
+        
+        <li class="lv2"><a href="#i21409">顎関節症の予防法</a></li>
+        
+        <li class="lv3"><a href="#i21407">歯ぎしりやくいしばり</a></li>
+        
+        <li class="lv3"><a href="#i21405">噛み方</a></li>
+        
+        <li class="lv3"><a href="#i21403">噛み合わせを治す</a></li>
+        
+        <li class="lv3"><a href="#i21401">楽器の演奏</a></li>
+        
+        <li class="lv3"><a href="#i21399">頬杖などの癖</a></li>
+        
+        <li class="lv2"><a href="#i21397">おわりに</a></li>
+        
+        <li class="lv2"><a href="#i25106">監修</a></li>
+        
+      </ul>
+    </div>
+    
+    <article>
+      <div class="article-content">
+        
+          <div id="i21445">
+            <div class="article-item item_heading" id="item21445" data-item-id="21445" data-item-type="ItemHeading"><h2 class="item-body">はじめに</h2></div>
+          </div>
+        
+          <div id="i21926">
+            <div class="article-item item_getty" id="item21926" data-item-id="21926" data-item-type="ItemGetty"><div class="image-large"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/926/medium/de6811cf-23e5-4387-83b5-6239c8c029f6.jpg?1505903982" title=""><img class="img-responsive item-image" alt="thinkstock (21926)" data-reference="http://www.thinkstockphotos.com/image/stock-photo-young-woman-feeling-strong-teeth-pain/522959617" data-gettyId="522959617" src="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/926/medium/de6811cf-23e5-4387-83b5-6239c8c029f6.jpg?1505903982" width="612" height="408" /></a><h4></h4></div><div class="cite"><cite class="item-source"><a href="http://welcome-to-gettyimages.jp/licensed-by-gettyimages/" rel="nofollow" target="_blank" title="Licensed by Getty Images"><div class="caption">Licensed by Getty Images</div><div class="getty-logo white"></div><div class="getty-logo black"></div></a></cite></div></div>
+          </div>
+        
+          <div id="i21444">
+            <div class="article-item item_text" id="item21444" data-item-id="21444" data-item-type="ItemText"><div class="item-body-hbr">ヒトは、食事や会話、あくびなど日常生活で口を開けたり閉めたりすることが欠かせません。口を使わない日はないといっても過言ではありません。<br /><br />ところが、口を開けると痛みが生じたり、開けることが出来なくなったりする病気があります。骨折などの外傷、悪性腫瘍などもその原因として挙げられますが、こうした症状を発症する代表的なものは、顎関節症です。<br /><br />顎関節症になると日常生活に支障を来す様になります。<br />今回は、顎関節症についてまとめてみました。</div></div>
+          </div>
+        
+          <div id="i21443">
+            <div class="article-item item_heading" id="item21443" data-item-id="21443" data-item-type="ItemHeading"><h2 class="item-body">顎関節症ってなに？</h2></div>
+          </div>
+        
+          <div id="i21927">
+            <div class="article-item item_getty" id="item21927" data-item-id="21927" data-item-type="ItemGetty"><div class="image-large"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/927/medium/b56e7625-8141-42a4-acbd-505fbc6f1f23.jpg?1505904014" title=""><img class="img-responsive item-image" alt="thinkstock (21927)" data-reference="http://www.thinkstockphotos.com/image/stock-photo-young-woman-with-a-toothache/486856934" data-gettyId="486856934" src="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/927/medium/b56e7625-8141-42a4-acbd-505fbc6f1f23.jpg?1505904014" width="612" height="408" /></a><h4></h4></div><div class="cite"><cite class="item-source"><a href="http://welcome-to-gettyimages.jp/licensed-by-gettyimages/" rel="nofollow" target="_blank" title="Licensed by Getty Images"><div class="caption">Licensed by Getty Images</div><div class="getty-logo white"></div><div class="getty-logo black"></div></a></cite></div></div>
+          </div>
+        
+          <div id="i21442">
+            <div class="article-item item_text" id="item21442" data-item-id="21442" data-item-type="ItemText"><div class="item-body-hbr">顎関節に生じる病気です。口を開けたり閉めたりするときに、顎を動かす筋肉や顎関節に痛みが生じたり、口を開けにくくなったりするのが主な症状です。こうした症状が単独で起こることもあれば、組み合わさって起こることもあります。</div></div>
+          </div>
+        
+          <div id="i21441">
+            <div class="article-item item_heading" id="item21441" data-item-id="21441" data-item-type="ItemHeading"><h2 class="item-body">顎関節症の検査</h2></div>
+          </div>
+        
+          <div id="i21440">
+            <div class="article-item item_text" id="item21440" data-item-id="21440" data-item-type="ItemText"><div class="item-body-hbr">顎関節症と診断するためには、まず検査が必要です。</div></div>
+          </div>
+        
+          <div id="i21439">
+            <div class="article-item item_heading" id="item21439" data-item-id="21439" data-item-type="ItemHeading"><h3 class="item-body">問診</h3></div>
+          </div>
+        
+          <div id="i21438">
+            <div class="article-item item_text" id="item21438" data-item-id="21438" data-item-type="ItemText"><div class="item-body-hbr">症状とその経過を尋ねます。顎関節症を引き起こしそうな日常生活での問題点の有無なども確認します。</div></div>
+          </div>
+        
+          <div id="i21437">
+            <div class="article-item item_heading" id="item21437" data-item-id="21437" data-item-type="ItemHeading"><h3 class="item-body">触診</h3></div>
+          </div>
+        
+          <div id="i21436">
+            <div class="article-item item_text" id="item21436" data-item-id="21436" data-item-type="ItemText"><div class="item-body-hbr">顎関節の動きや痛み、雑音の有無、筋肉痛の有無を調べます。</div></div>
+          </div>
+        
+          <div id="i21435">
+            <div class="article-item item_heading" id="item21435" data-item-id="21435" data-item-type="ItemHeading"><h3 class="item-body">レントゲン検査</h3></div>
+          </div>
+        
+          <div id="i21434">
+            <div class="article-item item_text" id="item21434" data-item-id="21434" data-item-type="ItemText"><div class="item-body-hbr">顎関節を構成している骨の状態を確認します。シュラー氏法という撮影方法を使えば、両側の顎関節の動きも確認することが出来ます。</div></div>
+          </div>
+        
+          <div id="i21433">
+            <div class="article-item item_heading" id="item21433" data-item-id="21433" data-item-type="ItemHeading"><h2 class="item-body">顎関節症の原因</h2></div>
+          </div>
+        
+          <div id="i21928">
+            <div class="article-item item_getty" id="item21928" data-item-id="21928" data-item-type="ItemGetty"><div class="image-large"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/928/medium/3fe37856-3994-430a-85fe-1498a4600bf5.jpg?1505904070" title=""><img class="img-responsive item-image" alt="gettyimages (21928)" data-reference="http://www.gettyimages.com/detail/photo/bitten-lip-royalty-free-image/147526751" data-gettyId="147526751" src="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/928/medium/3fe37856-3994-430a-85fe-1498a4600bf5.jpg?1505904070" width="612" height="612" /></a><h4></h4></div><div class="cite"><cite class="item-source"><a href="http://welcome-to-gettyimages.jp/licensed-by-gettyimages/" rel="nofollow" target="_blank" title="Licensed by Getty Images"><div class="caption">Licensed by Getty Images</div><div class="getty-logo white"></div><div class="getty-logo black"></div></a></cite></div></div>
+          </div>
+        
+          <div id="i21432">
+            <div class="article-item item_heading" id="item21432" data-item-id="21432" data-item-type="ItemHeading"><h3 class="item-body">歯ぎしりや食いしばり</h3></div>
+          </div>
+        
+          <div id="i21431">
+            <div class="article-item item_text" id="item21431" data-item-id="21431" data-item-type="ItemText"><div class="item-body-hbr">顎関節症の原因として最も多いと思われるのが、歯ぎしりや食いしばりです。<br />上下の歯は、実は何もしていないときは接触していません。これを安静時空隙といい、上下の歯の噛み合わせは、およそ5mmほど隙間が開いているといわれています。この安静時空隙が保てるように、口を開け閉めする筋肉や顎関節腔の広さはバランスをとっています。<br /><br />歯ぎしりや食いしばりの癖があると、口を閉じる閉口筋を常に使った状態になり、そして顎関節では、下顎頭という下顎骨の頂点に当たる部分が顎関節を常に突き上げた状態になります。その結果、閉口筋を中心とする筋肉痛や、口を開いたり閉じたりするときに顎関節痛が起こるのです。</div></div>
+          </div>
+        
+          <div id="i21430">
+            <div class="article-item item_heading" id="item21430" data-item-id="21430" data-item-type="ItemHeading"><h3 class="item-body">食べ物の嗜好</h3></div>
+          </div>
+        
+          <div id="i21429">
+            <div class="article-item item_text" id="item21429" data-item-id="21429" data-item-type="ItemText"><div class="item-body-hbr">硬い食べ物を日常から好んで食べている場合、特に片側咬みの癖があると、関節や筋肉に大きな負荷がかかるために、顎関節症を起こします。</div></div>
+          </div>
+        
+          <div id="i21428">
+            <div class="article-item item_heading" id="item21428" data-item-id="21428" data-item-type="ItemHeading"><h3 class="item-body">楽器の演奏</h3></div>
+          </div>
+        
+          <div id="i21427">
+            <div class="article-item item_text" id="item21427" data-item-id="21427" data-item-type="ItemText"><div class="item-body-hbr">主に管弦楽器に見られます。長時間にわたって楽器を口にくわえていることで、顎関節やその周囲の筋肉に負担がかかるのが原因です。<br />バイオリンは管弦楽器ではありませんが、バイオリンを抱える姿勢が同様に負担をかけることで、顎関節症を引き起こす原因になることがあります。</div></div>
+          </div>
+        
+          <div id="i21426">
+            <div class="article-item item_heading" id="item21426" data-item-id="21426" data-item-type="ItemHeading"><h3 class="item-body">頬杖をつく癖</h3></div>
+          </div>
+        
+          <div id="i21425">
+            <div class="article-item item_text" id="item21425" data-item-id="21425" data-item-type="ItemText"><div class="item-body-hbr">日常的に頬杖をついていると、頬杖をついた側の反対方向へ下顎骨を不自然に押してしまうことになります。関節腔内の圧力が高まったり、関節内部の関節円板という部位の位置がずれてしまうことで、口が開きにくくなる開口障害や開口痛が発現します。</div></div>
+          </div>
+        
+          <div id="i21424">
+            <div class="article-item item_heading" id="item21424" data-item-id="21424" data-item-type="ItemHeading"><h3 class="item-body">外傷</h3></div>
+          </div>
+        
+          <div id="i21423">
+            <div class="article-item item_text" id="item21423" data-item-id="21423" data-item-type="ItemText"><div class="item-body-hbr">転倒や交通事故などにより、顎関節を強くうった場合に、開口障害や疼痛が発現することがあります。これを外傷性顎関節症といいます。ただし、顎関節に骨折を認めた場合は、下顎骨骨折となるのでこの病気には該当しません。</div></div>
+          </div>
+        
+          <div id="i21422">
+            <div class="article-item item_heading" id="item21422" data-item-id="21422" data-item-type="ItemHeading"><h2 class="item-body">顎関節症の治療法</h2></div>
+          </div>
+        
+          <div id="i21929">
+            <div class="article-item item_getty" id="item21929" data-item-id="21929" data-item-type="ItemGetty"><div class="image-large"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/929/medium/1601b20c-2129-4072-a811-28bd6ca7c980.jpg?1505904114" title=""><img class="img-responsive item-image" alt="gettyimages (21929)" data-reference="http://www.gettyimages.com/detail/photo/male-dentist-working-on-patient-royalty-free-image/84426327" data-gettyId="84426327" src="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/929/medium/1601b20c-2129-4072-a811-28bd6ca7c980.jpg?1505904114" width="612" height="408" /></a><h4></h4></div><div class="cite"><cite class="item-source"><a href="http://welcome-to-gettyimages.jp/licensed-by-gettyimages/" rel="nofollow" target="_blank" title="Licensed by Getty Images"><div class="caption">Licensed by Getty Images</div><div class="getty-logo white"></div><div class="getty-logo black"></div></a></cite></div></div>
+          </div>
+        
+          <div id="i21420">
+            <div class="article-item item_heading" id="item21420" data-item-id="21420" data-item-type="ItemHeading"><h3 class="item-body">薬物療法</h3></div>
+          </div>
+        
+          <div id="i21421">
+            <div class="article-item item_text" id="item21421" data-item-id="21421" data-item-type="ItemText"><div class="item-body-hbr">口を開けたり閉めたりする時に痛みが強い場合は、鎮痛薬で痛みを取り除きます。鎮痛薬としては、非ステロイド性消炎鎮痛薬（NSAIDs）が用いられます。<br /><br />咬筋や側頭筋など、筋肉痛による痛みの場合は、消炎鎮痛薬に加えて、筋肉の緊張を和らげる目的で筋弛緩剤が処方されます。<br /><br />鎮痛薬は痛みの強さに応じて毎食後の定期処方にするか、痛いときのみに飲む屯用にするかの２パターンがあります。筋弛緩剤については、定期処方のみとなります。</div></div>
+          </div>
+        
+          <div id="i21419">
+            <div class="article-item item_heading" id="item21419" data-item-id="21419" data-item-type="ItemHeading"><h3 class="item-body">開口訓練</h3></div>
+          </div>
+        
+          <div id="i21418">
+            <div class="article-item item_text" id="item21418" data-item-id="21418" data-item-type="ItemText"><div class="item-body-hbr">口を開けるのが困難な場合に行なわれます。開口器を用いて行なうのですが、顎骨骨折の手術後や悪性腫瘍の放射線治療後に生じた開口障害など、顎関節症以外の開口障害にも行なわれます。</div></div>
+          </div>
+        
+          <div id="i21417">
+            <div class="article-item item_heading" id="item21417" data-item-id="21417" data-item-type="ItemHeading"><h3 class="item-body">スプリント療法</h3></div>
+          </div>
+        
+          <div id="i21416">
+            <div class="article-item item_text" id="item21416" data-item-id="21416" data-item-type="ItemText"><div class="item-body-hbr">スプリント療法とは、いわゆるマウスピースを使った治療法です。正式名称は咬合挙上副子といいます。<br />スプリントを歯に装着すると、上下の歯に隙間ができます。そして、顎関節部の負担が軽減され、安静が図れる様になります。食いしばりなど噛み合わせによって生じた顎関節症の治療に有効です。</div></div>
+          </div>
+        
+          <div id="i21415">
+            <div class="article-item item_heading" id="item21415" data-item-id="21415" data-item-type="ItemHeading"><h3 class="item-body">関節腔洗浄療法</h3></div>
+          </div>
+        
+          <div id="i21414">
+            <div class="article-item item_text" id="item21414" data-item-id="21414" data-item-type="ItemText"><div class="item-body-hbr">顎関節腔に注射針を2本刺し、一方から生理食塩水や局所麻酔薬などを流し込み、もう片方から排出を図ることで関節腔内部を洗浄する方法です。関節腔内にたまった炎症性物質や老廃物を洗い流し、関節の動きをスムーズにし、痛みと開口障害を和らげます。</div></div>
+          </div>
+        
+          <div id="i21413">
+            <div class="article-item item_heading" id="item21413" data-item-id="21413" data-item-type="ItemHeading"><h3 class="item-body">パンピングマニピュレーション</h3></div>
+          </div>
+        
+          <div id="i21412">
+            <div class="article-item item_text" id="item21412" data-item-id="21412" data-item-type="ItemText"><div class="item-body-hbr">パンピングマニピュレーションでは関節腔洗浄療法に加えて、関節腔内に圧力を加える様にします。関節腔とは、関節を形成している二つの骨の端の間にある狭い空洞です。関節腔内に加圧をすることにより、関節腔の容積を拡大し、開口障害を緩和しようとする治療法です。</div></div>
+          </div>
+        
+          <div id="i21411">
+            <div class="article-item item_heading" id="item21411" data-item-id="21411" data-item-type="ItemHeading"><h3 class="item-body">マイオモニター</h3></div>
+          </div>
+        
+          <div id="i21410">
+            <div class="article-item item_text" id="item21410" data-item-id="21410" data-item-type="ItemText"><div class="item-body-hbr">マイオモニターとは低周波治療器のことです。顔にパットを装着し、顎関節の周囲の筋肉に電気的な刺激を与えることで、筋肉の緊張を緩和します。筋肉のリラクゼーション効果とともに痛みを緩和する効果があります。</div></div>
+          </div>
+        
+          <div id="i21409">
+            <div class="article-item item_heading" id="item21409" data-item-id="21409" data-item-type="ItemHeading"><h2 class="item-body">顎関節症の予防法</h2></div>
+          </div>
+        
+          <div id="i21930">
+            <div class="article-item item_getty" id="item21930" data-item-id="21930" data-item-type="ItemGetty"><div class="image-large"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/930/medium/b3eac17e-d939-4232-a81f-3cea8f1ae9f0.jpg?1505904144" title=""><img class="img-responsive item-image" alt="thinkstock (21930)" data-reference="http://www.thinkstockphotos.com/image/stock-photo-girl-fixes-transparent-aligner/545434052" data-gettyId="545434052" src="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/930/medium/b3eac17e-d939-4232-a81f-3cea8f1ae9f0.jpg?1505904144" width="612" height="459" /></a><h4></h4></div><div class="cite"><cite class="item-source"><a href="http://welcome-to-gettyimages.jp/licensed-by-gettyimages/" rel="nofollow" target="_blank" title="Licensed by Getty Images"><div class="caption">Licensed by Getty Images</div><div class="getty-logo white"></div><div class="getty-logo black"></div></a></cite></div></div>
+          </div>
+        
+          <div id="i21408">
+            <div class="article-item item_text" id="item21408" data-item-id="21408" data-item-type="ItemText"><div class="item-body-hbr">顎関節症にならない様にするためには、その原因となる行為をしないようにすることが大切です。</div></div>
+          </div>
+        
+          <div id="i21407">
+            <div class="article-item item_heading" id="item21407" data-item-id="21407" data-item-type="ItemHeading"><h3 class="item-body">歯ぎしりやくいしばり</h3></div>
+          </div>
+        
+          <div id="i21406">
+            <div class="article-item item_text" id="item21406" data-item-id="21406" data-item-type="ItemText"><div class="item-body-hbr">朝起きた時に、顎がダルい、もしくは口が開けられない、そんな症状があれば、寝ている間に歯ぎしりをしたり、食いしばったりしている可能性があります。日中、重いものを持つ仕事をしていたり、パソコンなどをよく使う仕事をしていたりすると、知らない間に歯を食いしばっていることがあります。<br /><br />このようなときは、歯ぎしり治療用のマウスピースを使うといいでしょう。ストレスが歯ぎしりや食いしばりを誘発していることがあるので、ストレスを緩和し、リラックスした生活をおくるよう心がけましょう。</div></div>
+          </div>
+        
+          <div id="i21405">
+            <div class="article-item item_heading" id="item21405" data-item-id="21405" data-item-type="ItemHeading"><h3 class="item-body">噛み方</h3></div>
+          </div>
+        
+          <div id="i21404">
+            <div class="article-item item_text" id="item21404" data-item-id="21404" data-item-type="ItemText"><div class="item-body-hbr">食事の際に、両側の歯を使って均等に噛んで食事をする様に心がけてください。食べ物の硬さは、極端に硬いものや軟らかいものに偏るのを避け、バランスの良い食事をする様にしましょう。</div></div>
+          </div>
+        
+          <div id="i21403">
+            <div class="article-item item_heading" id="item21403" data-item-id="21403" data-item-type="ItemHeading"><h3 class="item-body">噛み合わせを治す</h3></div>
+          </div>
+        
+          <div id="i21402">
+            <div class="article-item item_text" id="item21402" data-item-id="21402" data-item-type="ItemText"><div class="item-body-hbr">むし歯や歯周病を放置し、もしくは歯が欠損したままなど、きちんと噛み合わせることが出来ない状態にあれば、しっかり治療しましょう。</div></div>
+          </div>
+        
+          <div id="i21401">
+            <div class="article-item item_heading" id="item21401" data-item-id="21401" data-item-type="ItemHeading"><h3 class="item-body">楽器の演奏</h3></div>
+          </div>
+        
+          <div id="i21400">
+            <div class="article-item item_text" id="item21400" data-item-id="21400" data-item-type="ItemText"><div class="item-body-hbr">長時間にわたって口にくわえる様な楽器の演奏をしないように気をつけましょう。そして、定期的にこまめに休憩をはさみ、関節に負担がかからない様にして下さい。</div></div>
+          </div>
+        
+          <div id="i21399">
+            <div class="article-item item_heading" id="item21399" data-item-id="21399" data-item-type="ItemHeading"><h3 class="item-body">頬杖などの癖</h3></div>
+          </div>
+        
+          <div id="i21398">
+            <div class="article-item item_text" id="item21398" data-item-id="21398" data-item-type="ItemText"><div class="item-body-hbr">頬杖をつく癖など、顎関節に負担がかかってくる様な癖は治しましょう。</div></div>
+          </div>
+        
+          <div id="i21397">
+            <div class="article-item item_heading" id="item21397" data-item-id="21397" data-item-type="ItemHeading"><h2 class="item-body">おわりに</h2></div>
+          </div>
+        
+          <div id="i21931">
+            <div class="article-item item_getty" id="item21931" data-item-id="21931" data-item-type="ItemGetty"><div class="image-large"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/931/medium/8acb3707-2ba3-4965-a51f-484f7fecd2d2.jpg?1505904183" title=""><img class="img-responsive item-image" alt="thinkstock (21931)" data-reference="http://www.thinkstockphotos.com/image/stock-photo-beauty-woman-with-white-smile-at-home/504376668" data-gettyId="504376668" src="https://cdn.clipkit.co/tenants/5/item_getties/images/000/021/931/medium/8acb3707-2ba3-4965-a51f-484f7fecd2d2.jpg?1505904183" width="612" height="408" /></a><h4></h4></div><div class="cite"><cite class="item-source"><a href="http://welcome-to-gettyimages.jp/licensed-by-gettyimages/" rel="nofollow" target="_blank" title="Licensed by Getty Images"><div class="caption">Licensed by Getty Images</div><div class="getty-logo white"></div><div class="getty-logo black"></div></a></cite></div></div>
+          </div>
+        
+          <div id="i21396">
+            <div class="article-item item_text" id="item21396" data-item-id="21396" data-item-type="ItemText"><div class="item-body-hbr">顎関節症は、口を開けたり閉めたりする時に痛みが生じたり、口を開ける行為そのものが難しくなったりする病気です。<br /><br />顎関節症を生じる原因はいろいろあります。代表的なものは歯ぎしりや食いしばりですが、食べものの嗜好や楽器など、一見すると関係なさそうなものもあります。もし、こうしたことに心当たりがあるのなら、顎関節症を予防するためにも注意しておいた方がよいでしょう。</div></div>
+          </div>
+        
+          <div id="i25106">
+            <div class="article-item item_heading" id="item25106" data-item-id="25106" data-item-type="ItemHeading"><h2 class="item-body">監修</h2></div>
+          </div>
+        
+          <div id="i25107">
+            <div class="article-item item_image" id="item25107" data-item-id="25107" data-item-type="ItemImage"><div class="media"><div class="pull-sm-left"><a class="lightbox" href="https://cdn.clipkit.co/tenants/5/item_images/images/000/025/107/medium/80852692-800a-4ff9-8185-c68482e9bfd1.jpg?1509330269" title="・総合診療医 院長 豊田早苗"><span class="inline-image"><img class="img-responsive item-image" alt="・総合診療医 院長 豊田早苗" data-reference="" src="https://cdn.clipkit.co/tenants/5/item_images/images/000/025/107/medium/80852692-800a-4ff9-8185-c68482e9bfd1.jpg?1509330269" width="488" height="432" /></span></a></div><div class="media-body"><h4 class="media-heading item-body">・総合診療医 院長 豊田早苗</h4><div class="item-comment">専門分野　 <br />総合診療医 <br /><br />経歴 <br />鳥取大学医学部医学科卒業。２００１年 医師国家試験取得。 <br />２００６年とよだクリニック開業。 <br />２０１4年認知症予防・リハビリのための脳トレーニングの推進および脳トレパズルの制作・研究を行う認知症予防・リハビリセンターを開設。 <br /><br />資格 <br />医師免許 <br /><br />所属学会：総合診療医学会、認知症予防学会</div></div></div></div>
+          </div>
+        
+      </div>
+    </article>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center; margin-top:20px;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-1261400443825091"
+             data-ad-slot="5858791339">
+        </ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    <div class="article_info_03">
+      
+<div class="sns_share_list_01">
+  <ul>
+    <!--<li class="facebook">-->
+    <!--  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">-->
+    <!--    <span>シェアする</span>-->
+    <!--  </a>-->
+    <!--</li>-->
+    <li class="twitter">
+      <a href="http://twitter.com/share?url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL&text=%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF" target="_blank">
+        <span>ツイートする</span>
+      </a>
+    </li>
+    <!--<li class="google_plus">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+        <span>シェア</span>
+      </a>
+    </li>-->
+    <li class="hatena">
+      <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL&title=%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF">
+        <span>はてなブックマーク</span>
+      </a>
+    </li>
+    <!--<li class="pocket">
+      <a href="http://getpocket.com/edit?url=https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL&title=%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF" onclick="window.open(this.href, 'FBwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+        <span>シェア</span>
+      </a>
+    </li>
+    <li class="feedly">
+      <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" target="blank">
+        <span>シェア</span>
+      </a>
+    </li>
+    <li class="line">
+      <a href="http://line.me/R/msg/text/?%E9%A1%8E%E9%96%A2%E7%AF%80%E7%97%87%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%A8%E6%B2%BB%E7%99%82%E3%83%BB%E4%BA%88%E9%98%B2%E6%B3%95%E3%81%A8%E3%81%AF%20https%3A%2F%2Fmedia.carecle.com%2Farticles%2FMf6iL" target="_blank">
+        <span>友達になる</span>
+      </a>
+    </li>-->
+    <li class="line">
+      <a href="https://line.me/R/ti/p/%40kxy3413f" target="_blank">
+        <span>友達になる</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+    
+    
+    <section>
+      <h2 class="title_01 bottom-mg-00">関連する記事</h2>
+      <div class="article_03">
+        <div class="articles">
+          
+        <div id="_popIn_recommend"></div>
+            <script type="text/javascript">
+            (function() {
+                var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.charset = "utf-8"; pa.async = true;
+                pa.src = window.location.protocol + "//api.popin.cc/searchbox/carecle.js";
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+            })();
+            </script>
+            <!-- x-lift_widget -->
+                <div class="_XL_recommend" data-tagid="1944310644"></div>
+                <script type="text/javascript">
+                (function () {
+                    var pa = document.createElement('script');
+                    pa.type = 'text/javascript';
+                    pa.charset = "utf-8";
+                    pa.async = true;
+                    pa.src = window.location.protocol + "//cdn.x-lift.jp/js/site/1941661775.js";
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(pa, s);
+                })();
+                </script>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section>
+      <h2 class="title_01">関連するキーワード</h2>
+      <div class="tag_list_01">
+        <ul>
+          
+          <li>
+            <a class="fa fa-tag" href="/tags/%E6%82%A9%E3%81%BF%E3%83%BB%E7%97%87%E7%8A%B6">悩み・症状</a>
+          </li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    <section>
+      <h2 class="title_01">著者</h2>
+      <div class="curator_info_02">
+        <a href="/authors/Jhyoj">
+          <dl>
+            <dt class="photo">
+              <figure style="background: url(https://cdn.clipkit.co/tenants/5/users/images/000/000/120/avater_lg/d2735e29-c4f1-47df-a507-d421c12f4cfc.png?1505884290) center center no-repeat;"></figure>
+            </dt>
+            <dd class="name">ケアクル編集部</dd>
+          </dl>
+        </a>
+      </div>
+    </section>
+    
+  </section>
+  <aside class="sub_contents">
+    <div class="fixed_contents">
+      <a href="https://carecle.com/?utm_source=media&utm_medium=banner&utm_campaign=carecle-media" target="_blank">
+         <img src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/039/original/carecle_banner.png?1523010931" style="width:100%;">
+      </a>
+      
+<section class="ranking_articles">
+  <div class="title_01">
+    <div class="ranking_content">
+      <div class="fa fa-trophy"></div>
+      <h2>RANKING</h2>
+      <p>人気の記事</p>
+    </div>
+  </div>
+  
+  <div class="articles">
+    
+    
+    <article class="article_02">
+      <dl>
+        <dt class="photo" style="background: url(https://cdn.clipkit.co/tenants/5/articles/images/000/000/650/square/b37c1746-d955-4425-8c63-893b20c791d8.png?1506652051) center center no-repeat"></dt>
+        <dd class="text">
+          <h3 class="title"><a href="/articles/VKKoD">背中の左側が痛い！そんな時に考えられる病気や対策は？</a></h3>
+        </dd>
+      </dl>
+      <p class="ranking rank_01">1</p>
+      <a class="anchor" href="/articles/VKKoD">記事を読む</a>
+    </article>
+    
+    <article class="article_02">
+      <dl>
+        <dt class="photo" style="background: url(https://cdn.clipkit.co/tenants/5/articles/images/000/000/249/square/f48eb0ff-eab8-44f1-a83e-d16dbed7cc0e.png?1567150378) center center no-repeat"></dt>
+        <dd class="text">
+          <h3 class="title"><a href="/articles/yGMDy">胃痛による突然の痛みを和らげる対処法と痛くならないための予防法を解説</a></h3>
+        </dd>
+      </dl>
+      <p class="ranking rank_02">2</p>
+      <a class="anchor" href="/articles/yGMDy">記事を読む</a>
+    </article>
+    
+    <article class="article_02">
+      <dl>
+        <dt class="photo" style="background: url(https://cdn.clipkit.co/tenants/5/item_getties/images/000/020/520/square/f637cd69-2542-4c02-9c49-34620cd5fdd5.jpg?1504448607) center center no-repeat"></dt>
+        <dd class="text">
+          <h3 class="title"><a href="/articles/oj6Xj">タイ古式マッサージって痛いの？効果と注意点について解説します。</a></h3>
+        </dd>
+      </dl>
+      <p class="ranking rank_03">3</p>
+      <a class="anchor" href="/articles/oj6Xj">記事を読む</a>
+    </article>
+    
+    <article class="article_02">
+      <dl>
+        <dt class="photo" style="background: url(https://cdn.clipkit.co/tenants/5/articles/images/000/001/161/square/304092c6-f2e6-48df-b3a3-c1f58ba324eb.jpg?1572357998) center center no-repeat"></dt>
+        <dd class="text">
+          <h3 class="title"><a href="/articles/G5bzH">手首が痛い？腱鞘炎の予防と治療法！筋トレとストレッチでケア</a></h3>
+        </dd>
+      </dl>
+      <p class="ranking rank_04">4</p>
+      <a class="anchor" href="/articles/G5bzH">記事を読む</a>
+    </article>
+    
+    <article class="article_02">
+      <dl>
+        <dt class="photo" style="background: url(https://cdn.clipkit.co/tenants/5/item_getties/images/000/040/521/square/e862f381-d590-42a8-a686-a1ff830dc951.jpg?1549784860) center center no-repeat"></dt>
+        <dd class="text">
+          <h3 class="title"><a href="/articles/y78nD">ハンドマッサージにはどんな効果があるの？ハンドマッサージのやり方を覚えよう！</a></h3>
+        </dd>
+      </dl>
+      <p class="ranking rank_05">5</p>
+      <a class="anchor" href="/articles/y78nD">記事を読む</a>
+    </article>
+    
+  </div>
+  
+  
+  <p class="anchor_01">
+    <a href="/ranking">
+      <span>続きを見る</span>
+    </a>
+  </p>
+  
+</section>
+
+      <section class="content popular_keyword">
+  <div class="title_01">
+    <div class="popular_content">
+      <div class="fa fa-tag"></div>
+      <h2>HOT TAGS</h2>
+      <p>人気のタグ</p>
+    </div>
+  </div>
+  <div class="tag_list_01">
+    <ul>
+      
+      
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E9%8D%BC%E7%81%B8">鍼灸</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E9%8D%BC%E7%81%B8%E6%B2%BB%E7%99%82">鍼灸治療</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E6%95%B4%E9%AA%A8%E9%99%A2">整骨院</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E3%81%8A%E8%82%8C">お肌</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8">マッサージ</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E6%9F%94%E9%81%93%E6%95%B4%E5%BE%A9%E5%B8%AB">柔道整復師</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E5%B0%8F%E9%A1%94">小顔</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E6%95%B4%E4%BD%93%E9%99%A2">整体院</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E7%BE%8E%E5%AE%B9%E9%8D%BC">美容鍼</a>
+      </li>
+      
+      <li>
+        <a class="fa fa-tag" href="/tags/%E9%8D%BC%E7%81%B8%E9%99%A2">鍼灸院</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</section>
+      <section class="content facebook_sns">
+  <div class="sns_list_01">
+    
+    <div class="fb-page" data-href="https://www.facebook.com/carecle/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/carecle/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/carecle/">ケアくる</a></blockquote></div>
+    
+  </div>
+</section>
+    </div>
+  </aside>
+</div></main>
+  <div class="footer">
+    <div class="sns_footer">
+        <ul>
+          <li>
+            <a href="https://facebook.com/carecle" target="blank">
+        		<img src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/026/original/facebook.png?1502613206">
+      		</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/carecle" target="blank">
+        		<img src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/027/original/twitter.png?1502613213">
+      		</a>
+          </li>
+        </ul>
+      </div>
+    <div class="footer_navi">
+      <ul>
+        <li><a href="/about">ケアクル編集部について</a></li>
+        <li><a href="/company">運営会社</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+        <li><a href="/privacy">プライバシーポリシー</a></li>
+        <li><a href="/term">利用規約</a></li>
+      </ul>
+    </div>
+    <p class="copyright">&copy;&nbsp;【ケアクル】</p>
+    <p class="page_top"><i class="fa fa-angle-up" aria-hidden="true"></i></p>
+  </div>
+  <script src="https://cdn.clipkit.co/clipkit/javascripts/application-1.0.js" async></script>
+  
+  <script src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/022/original/fixed_side_navi.js?1502535240" async></script>
+  <script src="https://cdn.clipkit.co/tenants/5/resources/assets/000/000/018/original/behavior.js?1502535239" async></script>
+  
+  <script>
+      function getUrlVars() {
+        var vars = [], max = 0, hash = "", array = "";
+        var url = window.location.search;
+        hash  = url.slice(1).split('&'); max = hash.length;
+        for (var i = 0; i < max; i++) {
+          array = hash[i].split('='); vars.push(array[0]); vars[array[0]] = array[1];
+        }
+        return vars;
+      }
+      var val = getUrlVars();
+      if (val['q']) document.getElementById('nav-keyword-search').value = decodeURIComponent(val['q']).replace('+', ' ');
+  </script>
+  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7&appId=184731421659034";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script src="//usage-cdn.gettyimages.com/js/submit-usage.min.js"></script><script>$(function() { submitViewedAssetsViaDataAttr("CzvhEnfi"); });</script><script async="async" defer="defer" src="//www.instagram.com/embed.js"></script><script src="//cdn.clipkit.co/clipkit_assets/beacon-81729317976d2ddc8ffa498bb082d67dfffd0801bc3e5915e8dd02110b9a0786.js" async="async" id="clipkit-beacon" data-page-type="article" data-page-id="612" data-domain="media.carecle.com" data-url="/articles/Mf6iL" data-href="https://media.carecle.com/media/beacon"></script><script async="async" data-label="saas" src="//b.clipkit.co/"></script>
+
+<!--Clipkit(R) v11.6.1-1-gbd1532546-20211111 Copyright (C) 2021 Smartmedia inc.-->
+
+</body>
+</html>
